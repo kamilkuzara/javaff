@@ -214,3 +214,6 @@ nbdist/
 .nb-gradle/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,bluej,netbeans
+
+# Just a simple script to remove all the .class files from the workspace
+clean.sh
