@@ -215,5 +215,7 @@ nbdist/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,bluej,netbeans
 
-# Just a simple script to remove all the .class files from the workspace
+# A couple of simple scripts to make the common tasks less tedious
 clean.sh
+compile.sh
+run.sh
