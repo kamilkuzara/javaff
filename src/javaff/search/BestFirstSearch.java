@@ -3,26 +3,26 @@
  * Department of Computer and Information Sciences,
  * University of Strathclyde, Glasgow, UK
  * http://planning.cis.strath.ac.uk/
- * 
+ *
  * Copyright 2007, Keith Halsey
  * Copyright 2008, Andrew Coles and Amanda Smith
  * Copyright 2015, David Pattison
  *
  * This file is part of JavaFF.
- * 
+ *
  * JavaFF is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * JavaFF is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with JavaFF.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  ************************************************************************/
 
 package javaff.search;
@@ -32,12 +32,17 @@ import javaff.planning.Filter;
 import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.Hashtable;
+import java.util.List;
+import java.util.Set;
+import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
 {
 
 	protected Hashtable closed;
 	protected TreeSet open;
+
+	private BigDecimal heuristicsTime;
 
 	public BestFirstSearch(State s)
 	{
@@ -51,11 +56,33 @@ public class BestFirstSearch extends Search
 
 		closed = new Hashtable();
 		open = new TreeSet(comp);
+		heuristicsTime = BigDecimal.ZERO;
 	}
 
 	public void updateOpen(State S)
 	{
-		open.addAll(S.getNextStates(filter.getActions(S)));
+		// 1) get actions applicable in the state S (according to the filter)
+		// 2) generate new/children states from state S
+		// 3) add the new states to the open list
+		// the list is ordered by the h value (lower values go first), so the h value
+		// has to be calculated for every new state as it is added to the open list
+		// (in the compare(...) method), or before
+
+		List applicableActions = filter.getActions(S);
+		Set<State> successorStates = S.getNextStates(applicableActions);
+
+		long startTime = 0;
+		long endTime = 0;
+		for(State state : successorStates)
+		{
+			// compute the heuristic value for the state and measure the time needed
+			startTime = System.nanoTime();
+			state.getHValue();		// compute the h value
+			endTime = System.nanoTime();
+			heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
+
+			open.add(state);	// add the state to the open list
+		}
 	}
 
 	public State removeNext()
@@ -95,10 +122,15 @@ public class BestFirstSearch extends Search
 		{
 			State s = removeNext();
 			if (needToVisit(s))
-			{
+			{		// expand the node/state
 				++nodeCount;
+
+				// check if s contains the goal, if yes return it,
+				// else add the children of s to the open list
 				if (s.goalReached())
 				{
+					double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
+					System.out.println("Total time computing heuristics: " + hTime);
 					return s;
 				} else
 				{

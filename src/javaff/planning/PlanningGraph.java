@@ -3,7 +3,7 @@
  * Department of Computer and Information Sciences,
  * University of Strathclyde, Glasgow, UK
  * http://planning.cis.strath.ac.uk/
- * 
+ *
  * Copyright 2007, Keith Halsey
  * Copyright 2008, Andrew Coles and Amanda Smith
  * Copyright 2011, David Pattison
@@ -11,20 +11,20 @@
  * (Questions/bug reports now to be sent to Andrew Coles)
  *
  * This file is part of JavaFF.
- * 
+ *
  * JavaFF is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * JavaFF is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with JavaFF.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  ************************************************************************/
 
 package javaff.planning;
@@ -87,13 +87,13 @@ public class PlanningGraph
 	protected Set<PGFact> initial, goal;
 	protected Set<MutexPair> propMutexes;
 	protected Set<MutexPair> actionMutexes;
-	public List<Set<PGFact>> memoised; 
+	public List<Set<PGFact>> memoised;
 
 	protected List<Set<Fact>> factLayers = new ArrayList<Set<Fact>>();
-	
+
 
 	protected Set<PGAction> readyActions = null; // PGActions that have all
-							
+
 	protected boolean level_off = false;
 	protected static int NUMERIC_LIMIT = 4;
 	protected int numeric_level_off = 0;
@@ -119,19 +119,19 @@ public class PlanningGraph
 		this.readyActions = new HashSet<PlanningGraph.PGAction>();
 		this.memoised = new ArrayList<Set<PGFact>>();
 	}
-	
+
 //	/**
 //	 * Initialise this planning graph based upon another. Note that this does not actually construct
 //	 * the PG, see clone() for that functionality. Instead, it is intended for PGs which have the same
 //	 * resources (actions, proposition etc), so that the internals of the PG do not need to be set
-//	 * up every time. 
-//	 * 
+//	 * up every time.
+//	 *
 //	 * @param existingGraph
 //	 */
 //	public PlanningGraph(PlanningGraph existingGraph)
 //	{
 //		this();
-//		
+//
 //		this.actionMap = existingGraph.actionMap;
 //		this.actionMutexes = existingGraph.actionMutexes;
 //		this.actions = existingGraph.actions;
@@ -163,11 +163,11 @@ public class PlanningGraph
 		createNoOps();
 		setGoal(goal);
 	}
-	
+
 
 	/**
 	 * Populate a new plan graph from an existing plan graph. Note that the data within the existing graph
-	 * is only references, not cloned/ 
+	 * is only references, not cloned/
 	 * @param existingPG
 	 */
 	protected PlanningGraph(PlanningGraph existingPG)
@@ -219,21 +219,21 @@ public class PlanningGraph
 
 		return clone;
 	}
-	
-	
+
+
 	/**
 	 * The creation of a Planning Graph is an extremely costly process in both time and resources. This is
 	 * primarily due to the need to recreate information used during the construction process, but for most problems
 	 * this information will never change between instances of PG. Therefore, this method creates a new PG while
 	 * retaining all this information which would otherwise be destroyed and recreated (such as mutex relationships
 	 * etc).
-	 * @return An empty PlanningGraph, which has already had its preprocessing information computed/copied from 
+	 * @return An empty PlanningGraph, which has already had its preprocessing information computed/copied from
 	 * this PG.
 	 */
 	public PlanningGraph branch()
 	{
 		PlanningGraph branch = new PlanningGraph();
-	
+
 		branch.actionMap = this.actionMap;
 		branch.actionMutexes = this.actionMutexes;
 		branch.actions = this.actions;
@@ -248,11 +248,10 @@ public class PlanningGraph
 		branch.propositions = this.propositions;
 		branch.negativePCActions = this.negativePCActions;
 //		branch.readyActions = this.readyActions;
-//		branch.state = this.state;
-		
+
 		return branch;
 	}
-	
+
 	/**
 	 * Returns the number of fact layers in the graph, including the initial state.
 	 * @return
@@ -262,7 +261,7 @@ public class PlanningGraph
 		return this.num_layers;
 	}
 
-	
+
 	public Plan getPlan(State s)
 	{
 		setInitial(s);
@@ -297,7 +296,7 @@ public class PlanningGraph
 //				this.level_off = true;
 //				break;
 //			}
-			
+
 			++num_layers;
 			scheduledActs = this.createFactLayer(scheduledFacts, num_layers);
 
@@ -319,7 +318,7 @@ public class PlanningGraph
 				this.factLayers.add(factList); // add current layer
 
 			}
-			
+
 //			currentState = this.applyActions(currentState, scheduledActs);
 
 			if (this.goalMet() && !this.goalMutex())
@@ -339,7 +338,7 @@ public class PlanningGraph
 //		this.printGraph();
 
 		Plan top = this.constructPlan(plan, s.goal);
-		
+
 		//assert(top.getPlanLength() == num_layers);
 //		if (top.getPlanLength() != (num_layers-1))
 //			System.out.println("WRONG");
@@ -347,7 +346,7 @@ public class PlanningGraph
 		return top;
 
 	}
-	
+
 	/**
 	 * Construct a {@link TotalOrderPlan} for the Planning graph. This method is called when a Plan must be returned, and acts as a hotspot for overriding what a plan
 	 * graph classes as a "plan".
@@ -375,7 +374,7 @@ public class PlanningGraph
 			return p;
 		}
 		// this.setGoal(oldGoal);
-		
+
 		return p;
 	}
 
@@ -402,16 +401,16 @@ public class PlanningGraph
 	{
 		//FIXME in the same way that action which have only negative preconditions are cached, so should all which have at least one negative PC
 		//because this loop is extremely inefficient
-		
+
 		ArrayList<PGFact> set = new ArrayList<PlanningGraph.PGFact>(facts);
-		
-		//this for loop is necessary for negative preconditions. Essentially, it checks if an 
+
+		//this for loop is necessary for negative preconditions. Essentially, it checks if an
 		//action which is otherwise scheduled to be checked at this layer (caused by it having
-		//at-least one positive precondition) has a negative precondition. If it does, and the 
+		//at-least one positive precondition) has a negative precondition. If it does, and the
 		//previous layer does not explicitly have this negative fact, we increment its counter
-		//by 1, which is us effectively saying "this negative precondition is implicitly true". 
+		//by 1, which is us effectively saying "this negative precondition is implicitly true".
 		//Without this increment, the requirement of having N actions achieve the N preconditions
-		//will never be met in getAvailableActions(), so the action may never be applicable or 
+		//will never be met in getAvailableActions(), so the action may never be applicable or
 		//only applicable in layers later than it should be.
 		for (PGFact f : facts)
 		{
@@ -432,14 +431,14 @@ public class PlanningGraph
 				}
 			}
 		}
-		
+
 		return set;
 	}
-	
+
 	/**
 	 * Build the PG until it is fully stable with the specified state (including
 	 * goal), but do not construct any kind of plan.
-	 * 
+	 *
 	 * @param s
 	 * @return
 	 */
@@ -454,9 +453,9 @@ public class PlanningGraph
 		List<PGFact> scheduledFacts = new ArrayList<PGFact>(this.initial);
 		scheduledFacts = this.filterFactLayer(scheduledFacts);
 		List<PGAction> scheduledActs = null;
-		
+
 		scheduledActs = createFactLayer(scheduledFacts, 0);
-		
+
 		List plan = null;
 
 		//
@@ -473,7 +472,7 @@ public class PlanningGraph
 		while (true)
 		{
 
-			
+
 			scheduledFacts = createActionLayer(scheduledActs, num_layers);
 			scheduledFacts = this.filterFactLayer(scheduledFacts);
 
@@ -494,7 +493,7 @@ public class PlanningGraph
 //					this.level_off = true;
 //					break; //no new facts added
 //				}
-				
+
 				this.factLayers.add(factList); // add current layer
 
 			}
@@ -513,25 +512,25 @@ public class PlanningGraph
 	{
 		return this.factLayers.get(i);
 	}
-	
+
 
 	public Set<Action> getActionsAtLayer(int l)
 	{
 		HashSet<Action> app = new HashSet<Action>();
 		if (l < 0)
 			return app;
-		
+
 		for (Entry<Action, PGAction> a : this.actionMap.entrySet())
 		{
 			if (a.getValue().getLayer() == l)
 //			if (a.getValue().layer <= l && a.getValue().layer >= 0)
 				app.add(a.getKey());
-		
+
 		}
-		
+
 		return app;
 	}
-	
+
 
 //	public Set<Action> getActionsUpToLayer(int l)
 //	{
@@ -540,16 +539,16 @@ public class PlanningGraph
 //		{
 //			if (a.getValue().layer <= l)
 //				app.add(a.getKey());
-//		
+//
 //		}
-//		
+//
 //		return app;
 //	}
 
 	/**
 	 * Returns the distance/layer which contains the first instance of the
 	 * specified proposition.
-	 * 
+	 *
 	 * @param p
 	 * @return The distance to the proposition, or -1 if it is not found in any
 	 *         layer.
@@ -612,16 +611,16 @@ public class PlanningGraph
 //			{
 //				this.emptyPreconditions.add(pga);
 //			}
-			
+
 
 			boolean onlyNegativePcs = true;
 			Set<Fact> pcs = pga.getAction().getPreconditions();
 			for (Fact p : pcs)
-			{				
+			{
 				PGFact pgp = this.getPGFact(p);
 				pga.getConditions().add(pgp);
 				pgp.getEnables().add(pga);
-				
+
 				//if there is at least one precondition which is positive
 				//then it is not worth recording it, as the PG construction
 				//will work as normal. Actions which only have negative PCs
@@ -651,7 +650,7 @@ public class PlanningGraph
 				//actually "achieves" them in order for PG and RPG to work
 				PGFact pgNot = this.getPGFact(p);
 				PGFact pgFact = this.getPGFact(p.getLiteral());
-				
+
 				//say that the actual deleted fact is deleted by this action, and that this action
 				//deletes the (positive) fact
 				pga.getDeletes().add(pgFact);
@@ -708,11 +707,11 @@ public class PlanningGraph
 	public void setInitial(State S)
 	{
 		this.initial = new HashSet<PGFact>();
-		
+
 		//always add a TrueCondition to allow empty-precondition actions to execute
 		PGFact truePGFact = this.getPGFact(TrueCondition.getInstance());
 		initial.add(truePGFact);
-		
+
 		for (Fact p : ((STRIPSState) S).getFacts())
 		{
 			PGFact pgp = this.getPGFact(p);
@@ -743,7 +742,7 @@ public class PlanningGraph
 		memoised.add(new HashSet<PGFact>());
 		ArrayList<PGAction> scheduledActs = new ArrayList<PGAction>();
 		HashSet<MutexPair> newMutexes = new HashSet<MutexPair>();
-		
+
 //		//first, we add in all actions which have no preconditions and therefore are always applicable.
 //		//this has to be done separately because the loop below assumes that there will actually be at-least
 //		//one fact true in the current relaxed state. If there are none, and the first action in every plan has
@@ -763,8 +762,8 @@ public class PlanningGraph
 //				}
 //			}
 //		}
-		
-		
+
+
 		//check positive facts
 		for (PGFact f : trueFacts)
 		{
@@ -775,7 +774,7 @@ public class PlanningGraph
 
 				//add all actions which this fact enables
 				scheduledActs.addAll(f.getEnables());
-				 
+
 				level_off = false;
 
 				// calculate mutexes
@@ -797,7 +796,7 @@ public class PlanningGraph
 		/* 26/10/2012 -- David Pattison
 		 * Yet another hack to enable negative preconditions in a PG. Having checked for actions which are
 		 * activated using the positive literals in the current state, we need to check for actions which are
-		 * activated using *negative* preconditions. This is a subtle bug, as actions which contain at-least 
+		 * activated using *negative* preconditions. This is a subtle bug, as actions which contain at-least
 		 * one positive precondition mask the problem at hand. However, if only negative preconditions are
 		 * present in the action spec, then the action can only be activated by the addition, and subsequent
 		 * deletion of the required Nots -- when in reality they should be activatable right from the initial state
@@ -811,7 +810,7 @@ public class PlanningGraph
 		{
 			hackState.addFact(f.getFact());
 		}
-		
+
 		//loop through only the actions which we know have ONLY negative preconditions -- no point in checking the others as actions with positive
 		//preconditions will always be picked up by the above code.
 		for (PGAction a : this.negativePCActions)
@@ -829,7 +828,7 @@ public class PlanningGraph
 
 							//add all actions which this fact enables
 							scheduledActs.addAll(f.getEnables());
-							 
+
 							level_off = false;
 
 							// calculate mutexes
@@ -850,7 +849,7 @@ public class PlanningGraph
 					}
 				}
 			}
-			
+
 		}
 
 		// check old mutexes
@@ -960,7 +959,7 @@ public class PlanningGraph
 		HashSet<PGAction> actionSet = new HashSet<PGAction>();
 		for (PGAction a : pActions)
 		{
-			
+
 			if (a.getLayer() < 0)
 			{
 				a.setCounter(a.getCounter() + 1);
@@ -974,11 +973,11 @@ public class PlanningGraph
 		}
 		return actionSet;
 	}
-	
-	//this is how PG actions were being chosen for quite some time (non vanilla JavaFF) -- it is wrong. 
+
+	//this is how PG actions were being chosen for quite some time (non vanilla JavaFF) -- it is wrong.
 	//The bug is in checking to see if an actionis applicable in the current state. the problem is this current
 	//state is formed in an RPG style (probalby a cut-paste job at some point), where all facts are true in a
-	//single state, which makes more actions applicable than should be. Current version of 
+	//single state, which makes more actions applicable than should be. Current version of
 	//getAvailableActions() just uses the vanilla JavaFF/Graphplan approach
 //	protected HashSet<PGAction> getAvailableActions(List<PGAction> pActions,
 //			int pLayer)
@@ -1068,7 +1067,7 @@ public class PlanningGraph
 	{
 		return checkActionMutex((PGAction) m.getNode1(), (PGAction) m.getNode2(), l);
 	}
-	
+
 	public boolean checkActionMutex(PGAction a1, PGAction a2, int l)
 	{
 		if (a1 == a2)
@@ -1079,13 +1078,13 @@ public class PlanningGraph
 		while (p1it.hasNext())
 		{
 			PGFact p1 = (PGFact) p1it.next();
-			
+
 			if (a2.getAchieves().contains(p1))
 				return true;
 			if (a2.getConditions().contains(p1))
 				return true;
 		}
-		
+
 		//check for delete mutex (A2 delete PC or Add of A1)
 		Iterator p2it = a2.getDeletes().iterator();
 		while (p2it.hasNext())
@@ -1124,13 +1123,13 @@ public class PlanningGraph
 //		while (p1it.hasNext())
 //		{
 //			PGFact p1 = (PGFact) p1it.next();
-//			
+//
 //			if (a2.getAchieves().contains(p1))
 //				return true;
 //			if (a2.getConditions().contains(p1))
 //				return true;
 //		}
-//		
+//
 //		//check for delete mutex (A2 delete PC or Add of A1)
 //		Iterator p2it = a2.getDeletes().iterator();
 //		while (p2it.hasNext())
@@ -1243,7 +1242,7 @@ public class PlanningGraph
 			else
 				return null;
 		}
-		// get the set of goals at this layer which are known not to have a 
+		// get the set of goals at this layer which are known not to have a
 		// supporting plan. If any of the goals we want are in this set, return
 		// null as there is no possible plan
 		Set<PGFact> badGoalSet = memoised.get(l);
@@ -1251,7 +1250,7 @@ public class PlanningGraph
 		{
 			if (badGoalSet.contains(goalSet))
 				return null;
-			
+
 //			for (PGFact g : goalSet)
 //			{
 //				 if (badGoalSet.contains(g))
@@ -1274,8 +1273,8 @@ public class PlanningGraph
 				// construct a new goal set
 				// from the non-mutex action
 				// set's effects
-				
-				 //deprecated, as we now keep static facts in actions -- 
+
+				 //deprecated, as we now keep static facts in actions --
 				//vanilla JavaFF removes these, but this will cause invalid plans to be produced
 				//unless we explicitly ignore them here
 				newgoal.addAll(a.getConditions());
@@ -1305,7 +1304,7 @@ public class PlanningGraph
 	}
 
 	/**
-	 * Searches a specific level of the PG for a set of goal achievers. 
+	 * Searches a specific level of the PG for a set of goal achievers.
 	 * @param goalSet The set of goals to find achievers for
 	 * @param layer
 	 * @return A list of non-mutex sets of actions which can be applied at this layer
@@ -1324,7 +1323,7 @@ public class PlanningGraph
 		Set<PGFact> newGoalSet = new HashSet<PGFact>(goalSet);
 
 		Iterator<PGFact> git = goalSet.iterator();
-		PGFact g = (PGFact) git.next(); 
+		PGFact g = (PGFact) git.next();
 		newGoalSet.remove(g); //pop the first thing off the queue and deal with the others in a recursive call?
 
 		// always prefer No-ops
@@ -1349,7 +1348,7 @@ public class PlanningGraph
 				}
 			}
 		}
-		
+
 		for (PGAction a : g.getAchievedBy())
 		{
 			// ignore no-ops
@@ -1362,7 +1361,7 @@ public class PlanningGraph
 														// achieved by A
 				//search the same layer for the remaining goals
 				List<Set<PGAction>> allActionCombinations = this.searchLevel(newnewGoalSet, layer);
-				
+
 				for (Set<PGAction> actionSet : allActionCombinations)
 				{
 					if (this.noMutexesTest(a, actionSet, layer))
@@ -1396,7 +1395,7 @@ public class PlanningGraph
 		private Set mutexes;
 
 		private Map mutexTable;
-		
+
 		//speed up access to hashcodes
 		private int hash;
 
@@ -1404,46 +1403,46 @@ public class PlanningGraph
 		{
 			this.mutexes = new HashSet(1);
 			this.mutexTable = new HashMap(1);
-			
+
 			this.updateHash();
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{
 			if (obj == null || obj instanceof Node == false)
 				return false;
-			
+
 			Node other = (Node) obj;
-			
+
 			boolean eq = this.getLayer() == other.getLayer();
 			if (!eq)
 				return eq;
-			
+
 			eq = this.getMutexes().equals(other.getMutexes());
 			if (!eq)
 				return eq;
-			
+
 //			eq = this.getMutexTable().equals(other.getMutexTable());
 //			if (!eq)
 //				return eq;
-			
+
 			return true;
-			
-		}		
-		
+
+		}
+
 		private int updateHash()
 		{
 			this.hash = this.getLayer() ^ this.getMutexes().hashCode() ^ this.getMutexTable().hashCode() ^ 31;
-			
+
 			return this.hash;
 		}
-		
+
 		@Override
-		public int hashCode() 
+		public int hashCode()
 		{
 //			return this.hash;
-			
+
 			return this.updateHash(); //in reality, faster to just compute the hash as needed rather than caching it
 		}
 
@@ -1452,7 +1451,7 @@ public class PlanningGraph
 			setLayer(-1);
 			setMutexes(new HashSet(1));
 			setMutexTable(new Hashtable(1));
-			
+
 			this.updateHash();
 		}
 
@@ -1460,7 +1459,7 @@ public class PlanningGraph
 		{
 			n.getMutexTable().put(this, new Integer(l));
 			this.getMutexTable().put(n, new Integer(l));
-			
+
 //			this.updateHash();
 		}
 
@@ -1513,7 +1512,7 @@ public class PlanningGraph
 		private Set<PGFact> conditions;
 		private Set<PGFact> achieves;
 		private Set<PGFact> deletes;
-		
+
 		private int hash;
 
 		public PGAction()
@@ -1521,40 +1520,40 @@ public class PlanningGraph
 			this.action = null;
 			this.counter = -1;
 			this.difficulty = -1;
-			
+
 			this.setConditions(new HashSet<PlanningGraph.PGFact>());
 			this.setAchieves(new HashSet<PlanningGraph.PGFact>());
 			this.setDeletes(new HashSet<PlanningGraph.PGFact>());
-			
+
 			this.updateHash();
 		}
 
 		public PGAction(Action a)
 		{
 			this();
-			
+
 			setAction(a);
-			
+
 			this.updateHash();
 		}
-		
-		
+
+
 		@Override
 		public boolean equals(Object obj)
 		{
 			if (obj == null || obj instanceof PGAction == false)
 				return false;
-			
+
 			PGAction other = (PGAction) obj;
-			
+
 			boolean eq = super.equals(other);
 			if (!eq)
 				return eq;
-			
+
 			eq = (this.getCounter() == other.getCounter()) && (this.getLayer() == other.getLayer());
 			if (!eq)
 				return eq;
-			
+
 			if (this.getAction() == null ^ other.getAction() == null)
 				return false;
 			else if (this.getAction() != null && other.getAction() != null)
@@ -1563,24 +1562,24 @@ public class PlanningGraph
 				if (!eq)
 					return eq;
 			}
-			
+
 			return true;
-		}	
-		
+		}
+
 		private int updateHash()
 		{
 			this.hash = super.hashCode();
 			if (this.getAction() != null)
 			{
-				this.hash = this.hashCode() ^ this.getAction().hashCode() 
+				this.hash = this.hashCode() ^ this.getAction().hashCode()
 				^ this.getCounter() ^ this.getDifficulty() ^ 31;
 			}
-			
+
 			return this.hash;
 		}
-		
+
 		@Override
-		public int hashCode() 
+		public int hashCode()
 		{
 			return this.hash;
 		}
@@ -1600,7 +1599,7 @@ public class PlanningGraph
 			super.reset();
 			setCounter(0);
 			setDifficulty(0);
-			
+
 			this.updateHash();
 		}
 
@@ -1663,30 +1662,30 @@ public class PlanningGraph
 	public class PGNoOp extends PGAction
 	{
 		private PGFact proposition;
-		
+
 		private int hash;
 
 		public PGNoOp(PGFact p)
 		{
 			setProposition(p);
-			
+
 			this.updateHash();
 		}
-		
-		
+
+
 		@Override
 		public boolean equals(Object obj)
 		{
 			if (obj == null || obj instanceof PGNoOp == false)
 				return false;
-			
+
 			PGNoOp other = (PGNoOp) obj;
 			boolean eq = super.equals(obj);
 			if (!eq)
 				return eq;
-			
+
 			return this.getProposition().equals(other.getProposition());
-		}	
+		}
 
 		public String toString()
 		{
@@ -1702,15 +1701,15 @@ public class PlanningGraph
 		{
 			return PlanningGraph.EmptySet;
 		}
-		
+
 		private int updateHash()
 		{
 			this.hash = super.hashCode() ^ this.getProposition().hashCode() ^ 31;
 			return this.hash;
 		}
-		
+
 		@Override
-		public int hashCode() 
+		public int hashCode()
 		{
 			return this.hash;
 		}
@@ -1732,9 +1731,9 @@ public class PlanningGraph
 		private Set<PGAction> enables;
 		private Set<PGAction> achievedBy;
 		private Set<PGAction> deletedBy;
-		
+
 		private int hash;
-		
+
 		private PGFact()
 		{
 			this.setEnables(new HashSet<PGAction>());
@@ -1745,35 +1744,35 @@ public class PlanningGraph
 		public PGFact(Fact p)
 		{
 			this();
-			
+
 			setFact(p);
-			
+
 			this.updateHash();
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{
 			if (obj == null || obj instanceof PGFact == false)
 				return false;
-			
+
 			PGFact other = (PGFact) obj;
 			boolean eq = super.equals(obj);
-			
+
 			if (!eq)
 				return eq;
-			
+
 			return this.getFact().equals(other.getFact());
 		}
-		
+
 		private int updateHash()
 		{
 			this.hash = super.hashCode() ^ this.getFact().hashCode();
 			return this.hash;
 		}
-		
+
 		@Override
-		public int hashCode() 
+		public int hashCode()
 		{
 			return this.hash;
 		}
@@ -1828,23 +1827,23 @@ public class PlanningGraph
 	{
 		private Node node1;
 		private Node node2;
-		
+
 		private int hash;
 
 		public MutexPair(Node n1, Node n2)
 		{
 			setNode1(n1);
 			setNode2(n2);
-			
+
 			this.updateHash();
 		}
-		
+
 		@Override
 		public boolean equals(Object obj)
 		{
 			return this.getNode1().equals(this.getNode2());
 		}
-		
+
 		private int updateHash()
 		{
 			this.hash = 31;
@@ -1852,12 +1851,12 @@ public class PlanningGraph
 				this.hash = this.hash ^ this.getNode1().hashCode();
 			if (this.getNode2() != null)
 				this.hash = this.hash ^ this.getNode2().hashCode();
-			
+
 			return this.hash;
 		}
-		
+
 		@Override
-		public int hashCode() 
+		public int hashCode()
 		{
 			return this.hash;
 		}
