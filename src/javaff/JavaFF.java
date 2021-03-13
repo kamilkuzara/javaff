@@ -52,6 +52,7 @@ import javaff.planning.State;
 import javaff.planning.TemporalMetricState;
 import javaff.planning.NullFilter;
 import javaff.search.BestFirstSearch;
+import javaff.search.ParallelBestFirstSearch;
 import javaff.search.EnforcedHillClimbingSearch;
 import javaff.search.Search;
 import javaff.search.UnreachableGoalException;
@@ -873,7 +874,11 @@ public class JavaFF
 		{
 			infoOutput.println("Performing search using BFS");
 			// create a Best-First Searcher
-			BestFirstSearch BFS = new BestFirstSearch(initialState);
+			// BestFirstSearch BFS = new BestFirstSearch(initialState);
+			// BFS.setFilter(NullFilter.getInstance());
+			// goalState = BFS.search();
+
+			ParallelBestFirstSearch BFS = new ParallelBestFirstSearch(initialState);
 			BFS.setFilter(NullFilter.getInstance());
 			goalState = BFS.search();
 
