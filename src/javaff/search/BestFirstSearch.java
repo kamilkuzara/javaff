@@ -37,18 +37,23 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Set;
-import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.Semaphore;
+// import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
 {
-	// private static final NUM_THREADS = 4;
+	private static final int NUM_THREADS = 3;
 
 	protected Hashtable closed;
 	protected TreeSet open;
 
 	// private BigDecimal heuristicsTime;
-	// private ExecutorService workerThreadPool;
-	// private Semaphore semaphore;
+	private Set<BFSWorker> workerThreads;
+	private Semaphore semaphore;
+	private Lock openMutex;
 
 	public BestFirstSearch(State s)
 	{
@@ -62,10 +67,13 @@ public class BestFirstSearch extends Search
 
 		closed = new Hashtable();
 		open = new TreeSet(comp);
-		BFSWorker.setOpen(open);
-		// semaphore = new Semaphore(0);
-		// BFSWorker.initialise(open, semaphore);
-		// workerThreadPool = Executors.newFixedThreadPool(NUM_THREADS);
+		semaphore = new Semaphore(0);
+		openMutex = new ReentrantLock();
+		BFSWorker.initialise(open, semaphore, openMutex);
+
+		workerThreads = new HashSet();
+		for(int i = 0; i < NUM_THREADS; i++)
+			workerThreads.add(new BFSWorker());
 
 		// heuristicsTime = BigDecimal.ZERO;
 	}
@@ -80,29 +88,55 @@ public class BestFirstSearch extends Search
 		// has to be calculated for every new state as it is added to the open list
 		// (in the compare(...) method), or before
 
-		List<BFSWorker> workerThreads = new ArrayList();
-		int workerThreadsNumber = 4;
-		for(int i = 0; i < workerThreadsNumber; i++)
-			// workerThreads[i] = new BFSWorker();
-			workerThreads.add(new BFSWorker());
-
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
 		BFSWorker.reset(S, applicableActions);
 
-		for(BFSWorker t : workerThreads){
-			t.reset();
-			t.start();
-				System.out.println("Thread started");
-		}
+		semaphore.release(NUM_THREADS);
 
-		for(BFSWorker t : workerThreads){
-			try{
-				t.join();
-					System.out.println("	Thread join");
-			}catch(InterruptedException e){
-				e.printStackTrace();
+		// compute h concurrently
+		Set localOpen = new HashSet();
+		boolean finished = false;
+		while(!finished){
+			Action action = null;
+				// System.out.println("Before getting an action");
+			synchronized(applicableActions){
+				action = applicableActions.pollFirst();   // remove first or return null
+			}
+				// System.out.println("After getting an action");
+
+			if(action == null){
+
+				openMutex.lock();
+				try{
+					open.addAll(localOpen);
+				}finally{
+					openMutex.unlock();
+				}
+					// System.out.println("Return");
+				finished = true;
+				continue;
+			}
+
+			State s = S.getNextState(action);
+			s.getHValue();
+			localOpen.add(s);
+
+			if(openMutex.tryLock()){
+				try{
+					open.addAll(localOpen);
+				}finally{
+					openMutex.unlock();
+				}
 			}
 		}
+
+		try{
+			semaphore.acquire(NUM_THREADS);
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+
+			System.out.println("New states added");
 
 		// Set<State> successorStates = S.getNextStates(applicableActions);
 		//
@@ -153,6 +187,11 @@ public class BestFirstSearch extends Search
 
 		open.add(start);
 
+		for(BFSWorker t : workerThreads){
+			t.start();
+				System.out.println("Thread started");
+		}
+
 		while (!open.isEmpty())
 		{
 			State s = removeNext();
@@ -166,6 +205,18 @@ public class BestFirstSearch extends Search
 				{
 					// double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
 					// System.out.println("Total time computing heuristics: " + hTime);
+
+					BFSWorker.searchFinishedNotify();
+					for(BFSWorker t : workerThreads){
+						t.interrupt();
+
+						try{
+							t.join();
+								System.out.println("	Thread join");
+						}catch(InterruptedException e){
+							e.printStackTrace();
+						}
+					}
 					return s;
 				} else
 				{
@@ -173,6 +224,18 @@ public class BestFirstSearch extends Search
 				}
 			}
 
+		}
+
+		BFSWorker.searchFinishedNotify();
+		for(BFSWorker t : workerThreads){
+			t.interrupt();
+
+			try{
+				t.join();
+					System.out.println("	Thread join");
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}

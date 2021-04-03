@@ -31,6 +31,8 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.concurrent.Semaphore;
 // import java.math.BigDecimal;
 
 public class BFSWorker extends Thread
@@ -39,8 +41,12 @@ public class BFSWorker extends Thread
   private static LinkedList<Action> actions;
   private static TreeSet open;
   private static javaff.planning.State state;
-  private static Lock openMutex = new ReentrantLock();
-  // private static Semaphore semaphore;
+  private static Lock openMutex;
+  private static Semaphore semaphore;
+  private static boolean searchFinished = false;
+  private static ReentrantReadWriteLock searchFinishedMutex = new ReentrantReadWriteLock();
+  private static Lock searchFinishedMutexRead = searchFinishedMutex.readLock();
+  private static Lock searchFinishedMutexWrite = searchFinishedMutex.writeLock();
 
   private Set localOpen;
 
@@ -48,18 +54,19 @@ public class BFSWorker extends Thread
     localOpen = new HashSet();
   }
 
-  // public static void initialise(TreeSet open, Semaphore s){
-  //   BFSWorker.open = open;
-  //   BFSWorker.semaphore = s;
-  // }
+  public static void initialise(TreeSet open, Semaphore s, Lock mutex){
+    BFSWorker.open = open;
+    BFSWorker.semaphore = s;
+    BFSWorker.openMutex = mutex;
+  }
 
   public static void setActions(LinkedList actions){
     BFSWorker.actions = actions;
   }
 
-  public static void setOpen(TreeSet open){
-    BFSWorker.open = open;
-  }
+  // public static void setOpen(TreeSet open){
+  //   BFSWorker.open = open;
+  // }
 
   public static void setState(javaff.planning.State s){
     BFSWorker.state = s;
@@ -74,44 +81,76 @@ public class BFSWorker extends Thread
     localOpen = new HashSet();
   }
 
+  public static void searchFinishedNotify(){
+    searchFinishedMutexWrite.lock();
+    try{
+      searchFinished = true;
+    } finally {
+      searchFinishedMutexWrite.unlock();
+    }
+  }
+
+  private static boolean searchNotFinished(){
+    boolean rValue = true;
+    searchFinishedMutexRead.lock();
+    try{
+      rValue = !searchFinished;
+    } finally {
+      searchFinishedMutexRead.unlock();
+    }
+    return rValue;
+  }
+
   public void run(){
 
-    boolean finished = false;
-    while(!finished){
-      Action action = null;
-        System.out.println("Before getting an action");
-      synchronized(BFSWorker.actions){
-        action = BFSWorker.actions.pollFirst();   // remove first or return null
-      }
-        System.out.println("After getting an action");
+    while(searchNotFinished()){
 
-      if(action == null){
+      reset();
 
-        openMutex.lock();
-        try{
-          BFSWorker.open.addAll(localOpen);
-        }finally{
-          openMutex.unlock();
-        }
-          System.out.println("Return");
-        finished = true;
+      try{
+        BFSWorker.semaphore.acquire();
+      } catch(InterruptedException e){
+        BFSWorker.semaphore.release();
         continue;
       }
 
-      javaff.planning.State s = BFSWorker.state.getNextState(action);
-      s.getHValue();
-      localOpen.add(s);
+      boolean finished = false;
+      while(!finished){
+        Action action = null;
+          // System.out.println("Before getting an action");
+        synchronized(BFSWorker.actions){
+          action = BFSWorker.actions.pollFirst();   // remove first or return null
+        }
+          // System.out.println("After getting an action");
 
-      if(openMutex.tryLock()){
-        try{
-          BFSWorker.open.addAll(localOpen);
-        }finally{
-          openMutex.unlock();
+        if(action == null){
+
+          openMutex.lock();
+          try{
+            BFSWorker.open.addAll(localOpen);
+          }finally{
+            openMutex.unlock();
+          }
+            // System.out.println("Return");
+          finished = true;
+          continue;
+        }
+
+        javaff.planning.State s = BFSWorker.state.getNextState(action);
+        s.getHValue();
+        localOpen.add(s);
+
+        if(openMutex.tryLock()){
+          try{
+            BFSWorker.open.addAll(localOpen);
+          }finally{
+            openMutex.unlock();
+          }
         }
       }
-    }
 
-    // BFSWorker.semaphore.release();
+      BFSWorker.semaphore.release();
+    }
   }
 
 }
