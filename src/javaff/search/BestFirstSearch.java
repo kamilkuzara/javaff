@@ -28,21 +28,27 @@
 package javaff.search;
 
 import javaff.planning.State;
+import javaff.data.Action;
 import javaff.planning.Filter;
 import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Set;
 import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
 {
+	// private static final NUM_THREADS = 4;
 
 	protected Hashtable closed;
 	protected TreeSet open;
 
-	private BigDecimal heuristicsTime;
+	// private BigDecimal heuristicsTime;
+	// private ExecutorService workerThreadPool;
+	// private Semaphore semaphore;
 
 	public BestFirstSearch(State s)
 	{
@@ -56,11 +62,17 @@ public class BestFirstSearch extends Search
 
 		closed = new Hashtable();
 		open = new TreeSet(comp);
-		heuristicsTime = BigDecimal.ZERO;
+		BFSWorker.setOpen(open);
+		// semaphore = new Semaphore(0);
+		// BFSWorker.initialise(open, semaphore);
+		// workerThreadPool = Executors.newFixedThreadPool(NUM_THREADS);
+
+		// heuristicsTime = BigDecimal.ZERO;
 	}
 
 	public void updateOpen(State S)
 	{
+		System.out.println("Update open");
 		// 1) get actions applicable in the state S (according to the filter)
 		// 2) generate new/children states from state S
 		// 3) add the new states to the open list
@@ -68,21 +80,44 @@ public class BestFirstSearch extends Search
 		// has to be calculated for every new state as it is added to the open list
 		// (in the compare(...) method), or before
 
-		List applicableActions = filter.getActions(S);
-		Set<State> successorStates = S.getNextStates(applicableActions);
+		List<BFSWorker> workerThreads = new ArrayList();
+		int workerThreadsNumber = 4;
+		for(int i = 0; i < workerThreadsNumber; i++)
+			// workerThreads[i] = new BFSWorker();
+			workerThreads.add(new BFSWorker());
 
-		long startTime = 0;
-		long endTime = 0;
-		for(State state : successorStates)
-		{
-			// compute the heuristic value for the state and measure the time needed
-			startTime = System.nanoTime();
-			state.getHValue();		// compute the h value
-			endTime = System.nanoTime();
-			heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
+		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
+		BFSWorker.reset(S, applicableActions);
 
-			open.add(state);	// add the state to the open list
+		for(BFSWorker t : workerThreads){
+			t.reset();
+			t.start();
+				System.out.println("Thread started");
 		}
+
+		for(BFSWorker t : workerThreads){
+			try{
+				t.join();
+					System.out.println("	Thread join");
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
+		}
+
+		// Set<State> successorStates = S.getNextStates(applicableActions);
+		//
+		// long startTime = 0;
+		// long endTime = 0;
+		// for(State state : successorStates)
+		// {
+		// 	// compute the heuristic value for the state and measure the time needed
+		// 	startTime = System.nanoTime();
+		// 	state.getHValue();		// compute the h value
+		// 	endTime = System.nanoTime();
+		// 	heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
+		//
+		// 	open.add(state);	// add the state to the open list
+		// }
 	}
 
 	public State removeNext()
@@ -129,8 +164,8 @@ public class BestFirstSearch extends Search
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-					double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
-					System.out.println("Total time computing heuristics: " + hTime);
+					// double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
+					// System.out.println("Total time computing heuristics: " + hTime);
 					return s;
 				} else
 				{
