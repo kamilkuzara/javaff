@@ -27,16 +27,20 @@ import java.util.Set;
 
 public class BFSSearcher extends Thread
 {
-  private ParallelBestFirstSearch searchInstance;
+  private static ParallelBestFirstSearch searchInstance;
 
 	// private BigDecimal heuristicsTime;
 
-	public BFSSearcher(ParallelBestFirstSearch searchIn)
-	{
-    searchInstance = searchIn;
+	// public BFSSearcher(ParallelBestFirstSearch searchIn)
+	// {
+  //   searchInstance = searchIn;
+  //
+	// 	// heuristicsTime = BigDecimal.ZERO;
+	// }
 
-		// heuristicsTime = BigDecimal.ZERO;
-	}
+  public static void initialise(ParallelBestFirstSearch searchInstance){
+    BFSSearcher.searchInstance = searchInstance;
+  }
 
 	public void updateOpen(javaff.planning.State S)
 	{
@@ -61,11 +65,11 @@ public class BFSSearcher extends Thread
 			// heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
 		}
 
-    searchInstance.updateOpen(successorStates);
+    searchInstance.addAllToOpen(successorStates);
 	}
 
-  private boolean keepSearching(){
-    return !this.searchInstance.isSolutionFound().get();
+  private static boolean keepSearching(){
+    return searchInstance.keepSearching();
   }
 
 	public void search()
@@ -75,11 +79,15 @@ public class BFSSearcher extends Thread
 		{
         System.out.println(this.getName() + " - looking for solution");
 			javaff.planning.State s = searchInstance.removeNext();
-			if (searchInstance.needToVisit(s))
+
+      if(s == null)
+        continue;
+
+      if (searchInstance.needToVisit(s))
 			{		// expand the node/state
 				// ++nodeCount;   // commented out for now
-          String x = (s != null)?"1":"null";
-          System.out.println("checking state - " + x);
+          // String x = (s != null)?"1":"null";
+          // System.out.println("checking state - " + x);
 				// check if s contains the goal, if yes return it,
 				// else add the children of s to the open list
 				if (s.goalReached())
