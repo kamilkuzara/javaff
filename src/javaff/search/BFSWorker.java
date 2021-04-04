@@ -39,8 +39,7 @@ public class BFSWorker extends Thread
   private static LinkedList<Action> actions;
   private static TreeSet open;
   private static javaff.planning.State state;
-  private static Lock openMutex = new ReentrantLock();
-  // private static Semaphore semaphore;
+  private static Lock openMutex;
 
   private Set localOpen;
 
@@ -48,26 +47,22 @@ public class BFSWorker extends Thread
     localOpen = new HashSet();
   }
 
-  // public static void initialise(TreeSet open, Semaphore s){
-  //   BFSWorker.open = open;
-  //   BFSWorker.semaphore = s;
-  // }
-
-  public static void setActions(LinkedList actions){
-    BFSWorker.actions = actions;
-  }
-
-  public static void setOpen(TreeSet open){
+  public static void initialise(TreeSet open, Lock mutex){
     BFSWorker.open = open;
-  }
-
-  public static void setState(javaff.planning.State s){
-    BFSWorker.state = s;
+    BFSWorker.openMutex = mutex;
   }
 
   public static void reset(javaff.planning.State s, LinkedList actions){
     setActions(actions);
     setState(s);
+  }
+
+  private static void setActions(LinkedList actions){
+    BFSWorker.actions = actions;
+  }
+
+  private static void setState(javaff.planning.State s){
+    BFSWorker.state = s;
   }
 
   public void reset(){

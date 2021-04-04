@@ -37,18 +37,20 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Set;
+import java.util.HashSet;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
 {
-	// private static final NUM_THREADS = 4;
+	private static final int NUM_THREADS = 4;
 
 	protected Hashtable closed;
 	protected TreeSet open;
 
 	// private BigDecimal heuristicsTime;
-	// private ExecutorService workerThreadPool;
-	// private Semaphore semaphore;
+	private Lock openMutex;
 
 	public BestFirstSearch(State s)
 	{
@@ -62,10 +64,8 @@ public class BestFirstSearch extends Search
 
 		closed = new Hashtable();
 		open = new TreeSet(comp);
-		BFSWorker.setOpen(open);
-		// semaphore = new Semaphore(0);
-		// BFSWorker.initialise(open, semaphore);
-		// workerThreadPool = Executors.newFixedThreadPool(NUM_THREADS);
+		openMutex = new ReentrantLock();
+		BFSWorker.initialise(open, openMutex);
 
 		// heuristicsTime = BigDecimal.ZERO;
 	}
@@ -81,9 +81,7 @@ public class BestFirstSearch extends Search
 		// (in the compare(...) method), or before
 
 		List<BFSWorker> workerThreads = new ArrayList();
-		int workerThreadsNumber = 4;
-		for(int i = 0; i < workerThreadsNumber; i++)
-			// workerThreads[i] = new BFSWorker();
+		for(int i = 0; i < NUM_THREADS; i++)
 			workerThreads.add(new BFSWorker());
 
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
@@ -94,6 +92,42 @@ public class BestFirstSearch extends Search
 			t.start();
 				System.out.println("Thread started");
 		}
+
+		Set localOpen = new HashSet();
+		boolean finished = false;
+    while(!finished){
+      Action action = null;
+        System.out.println("Before getting an action");
+      synchronized(applicableActions){
+        action = applicableActions.pollFirst();   // remove first or return null
+      }
+        System.out.println("After getting an action");
+
+      if(action == null){
+
+        openMutex.lock();
+        try{
+          open.addAll(localOpen);
+        }finally{
+          openMutex.unlock();
+        }
+          System.out.println("Return");
+        finished = true;
+        continue;
+      }
+
+      State s = S.getNextState(action);
+      s.getHValue();
+      localOpen.add(s);
+
+      if(openMutex.tryLock()){
+        try{
+          open.addAll(localOpen);
+        }finally{
+          openMutex.unlock();
+        }
+      }
+    }
 
 		for(BFSWorker t : workerThreads){
 			try{
