@@ -44,11 +44,16 @@ public class EHCSearcher extends Thread
   private Condition localOpenNotEmpty;
 
   private EHCSearcher nextThread;
+  private BigDecimal localBestHValue;   // cache the best h value for that thread
 
   public EHCSearcher(){
     localOpen = new LinkedList();
     localOpenMutex = new ReentrantLock();
     localOpenNotEmpty = localOpenMutex.newCondition();
+  }
+
+  public void setLocalBestHValue(BigDecimal newLocalBest){
+    localBestHValue = newLocalBest;
   }
 
   public void setNextThread(EHCSearcher nextThread){
@@ -208,7 +213,13 @@ public class EHCSearcher extends Thread
 				searchInstance.signalAll(this);
 			} else {
 				searchInstance.updateClosed(succState);
-				newBestFoundLocally = searchInstance.checkIfNewBest(succH);
+
+        if(succH.compareTo(localBestHValue) < 0){ // only enter if succH better than cached local best
+          localBestHValue = succH;
+
+          // will return true if new global best was found locally
+  				newBestFoundLocally = searchInstance.checkIfNewBest(succH);
+        }
 			}
 
 			if(newBestFoundLocally){

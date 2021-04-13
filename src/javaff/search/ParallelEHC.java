@@ -252,6 +252,9 @@ public class ParallelEHC extends Search
 
 		bestHValue = start.getHValue();	// get h value of the initial state as the best so far
 
+		for(EHCSearcher thread : threads)
+			thread.setLocalBestHValue(new BigDecimal(bestHValue.intValue()));
+
 		// start the first n - 1 threads
 		for(int i = 0; i < threads.size() - 1; i++)
 			threads.get(i).start();
