@@ -53,6 +53,7 @@ import javaff.planning.TemporalMetricState;
 import javaff.planning.NullFilter;
 import javaff.search.BestFirstSearch;
 import javaff.search.EnforcedHillClimbingSearch;
+import javaff.search.ParallelEHC;
 import javaff.search.Search;
 import javaff.search.UnreachableGoalException;
 
@@ -128,7 +129,8 @@ public class JavaFF
 		this.domainFile = null;
 		this.useOutputFile = null;
 		this.useEHC = true;
-		this.useBFS = true;
+		// this.useBFS = true;
+		this.useBFS = false;
 	}
 
 
@@ -854,15 +856,25 @@ public class JavaFF
 			infoOutput
 					.println("Performing search using EHC with standard helpful action filter");
 
-			Search EHCS = new EnforcedHillClimbingSearch(initialState);
+			// Search EHCS = new EnforcedHillClimbingSearch(initialState);
+			//
+			// // EHCS.setFilter(NullFilter.getInstance());
+			// EHCS.setFilter(HelpfulFilter.getInstance()); // and use the helpful
+			// 												// actions
+			// 												// neighbourhood
+			//
+			// // Try and find a plan using EHC
+			// goalState = EHCS.search();
+
+			Search PEHC = new ParallelEHC(initialState);
 
 			// EHCS.setFilter(NullFilter.getInstance());
-			EHCS.setFilter(HelpfulFilter.getInstance()); // and use the helpful
+			PEHC.setFilter(HelpfulFilter.getInstance()); // and use the helpful
 															// actions
 															// neighbourhood
 
 			// Try and find a plan using EHC
-			goalState = EHCS.search();
+			goalState = PEHC.search();
 
 			if (goalState != null)
 				return goalState;
