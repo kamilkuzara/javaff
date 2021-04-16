@@ -45,11 +45,14 @@ public class EHCSearcher extends Thread
 
   private EHCSearcher nextThread;
   private BigDecimal localBestHValue;   // cache the best h value for that thread
+  private LinkedList<StateActionPair> queueForNextThread;
 
   public EHCSearcher(){
     localOpen = new LinkedList();
     localOpenMutex = new ReentrantLock();
     localOpenNotEmpty = localOpenMutex.newCondition();
+
+    queueForNextThread = new LinkedList();
   }
 
   public void setLocalBestHValue(BigDecimal newLocalBest){
@@ -141,6 +144,21 @@ public class EHCSearcher extends Thread
     }
   }
 
+  public boolean tryAddingAllToOpen(List<StateActionPair> newPairs){
+    if(localOpenMutex.tryLock()){
+      try{
+        localOpen.addAll(newPairs);
+
+        if(!localOpen.isEmpty())
+          localOpenNotEmpty.signal();
+      } finally {
+        localOpenMutex.unlock();
+      }
+      return true;
+    } else
+      return false;
+  }
+
   /**
 	 * Tests whether any of the actions in the RELAXED plan associated with this state
 	 * delete a goal.
@@ -226,11 +244,17 @@ public class EHCSearcher extends Thread
 				searchInstance.signalAll(this);
 				searchInstance.resetSearch(succState);
 			} else {
-				List<StateActionPair> newPairs = new LinkedList();
-				for(Action action : searchInstance.getFilter().getActions(succState))
-					newPairs.add(new StateActionPair(succState, action));
+				// List<StateActionPair> newPairs = new LinkedList();
+				// for(Action action : searchInstance.getFilter().getActions(succState))
+				// 	newPairs.add(new StateActionPair(succState, action));
 
-				nextThread.addAllToOpen(newPairs);
+        for(Action action : searchInstance.getFilter().getActions(succState))
+					queueForNextThread.add(new StateActionPair(succState, action));
+
+				boolean pairsAdded = nextThread.tryAddingAllToOpen(queueForNextThread);
+
+        if(pairsAdded)
+          queueForNextThread.clear();
 			}
 		}
 	}
