@@ -40,7 +40,9 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.Semaphore;
+// import java.util.concurrent.Semaphore;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.BrokenBarrierException;
 // import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
@@ -52,8 +54,10 @@ public class BestFirstSearch extends Search
 
 	// private BigDecimal heuristicsTime;
 	private LinkedList<BFSWorker> workerThreads;
-	private Semaphore semaphore;
 	private Lock openMutex;
+	private CyclicBarrier barrierA;
+	private CyclicBarrier barrierB;
+	private CyclicBarrier barrierC;
 
 	public BestFirstSearch(State s)
 	{
@@ -67,9 +71,13 @@ public class BestFirstSearch extends Search
 
 		closed = new Hashtable();
 		open = new TreeSet(comp);
-		semaphore = new Semaphore(0);
 		openMutex = new ReentrantLock();
-		BFSWorker.initialise(open, semaphore, openMutex);
+
+		barrierA = new CyclicBarrier(NUM_THREADS);
+		barrierB = new CyclicBarrier(NUM_THREADS);
+		barrierC = new CyclicBarrier(NUM_THREADS);
+
+		BFSWorker.initialise(open, openMutex, barrierA, barrierB, barrierC);
 
 		workerThreads = new LinkedList();
 		for(int i = 0; i < NUM_THREADS; i++)
@@ -91,32 +99,30 @@ public class BestFirstSearch extends Search
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
 		BFSWorker.reset(S, applicableActions);
 
-		semaphore.release(NUM_THREADS - 1);
+		try {
+			barrierA.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+		barrierA.reset();
+
+		try {
+			barrierB.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+		barrierB.reset();
 
 		workerThreads.getLast().computeHValues();
 
-		try{
-			semaphore.acquire(NUM_THREADS - 1);
-		} catch(InterruptedException e) {
+		try {
+			barrierC.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
 			e.printStackTrace();
 		}
+		barrierC.reset();
 
 			System.out.println("New states added");
-
-		// Set<State> successorStates = S.getNextStates(applicableActions);
-		//
-		// long startTime = 0;
-		// long endTime = 0;
-		// for(State state : successorStates)
-		// {
-		// 	// compute the heuristic value for the state and measure the time needed
-		// 	startTime = System.nanoTime();
-		// 	state.getHValue();		// compute the h value
-		// 	endTime = System.nanoTime();
-		// 	heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
-		//
-		// 	open.add(state);	// add the state to the open list
-		// }
 	}
 
 	public State removeNext()
@@ -170,21 +176,8 @@ public class BestFirstSearch extends Search
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-					// double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
-					// System.out.println("Total time computing heuristics: " + hTime);
+					terminateSearch();
 
-					BFSWorker.searchFinishedNotify();
-					for(int i = 0; i < NUM_THREADS - 1; i++){
-						Thread t = workerThreads.get(i);
-						t.interrupt();
-
-						try{
-							t.join();
-								System.out.println("	Thread join");
-						}catch(InterruptedException e){
-							e.printStackTrace();
-						}
-					}
 					return s;
 				} else
 				{
@@ -194,19 +187,27 @@ public class BestFirstSearch extends Search
 
 		}
 
-		BFSWorker.searchFinishedNotify();
-		for(int i = 0; i < NUM_THREADS - 1; i++){
-			Thread t = workerThreads.get(i);
-			t.interrupt();
+		terminateSearch();
 
-			try{
-				t.join();
-					System.out.println("	Thread join");
-			}catch(InterruptedException e){
-				e.printStackTrace();
-			}
-		}
 		return null;
+	}
+
+	private void terminateSearch(){
+
+		try {
+			barrierA.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+
+		BFSWorker.searchFinishedNotify();
+
+		try {
+			barrierB.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

@@ -32,7 +32,9 @@ import java.util.HashSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.concurrent.Semaphore;
+// import java.util.concurrent.Semaphore;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.BrokenBarrierException;
 // import java.math.BigDecimal;
 
 public class BFSWorker extends Thread
@@ -42,7 +44,9 @@ public class BFSWorker extends Thread
   private static TreeSet open;
   private static javaff.planning.State state;
   private static Lock openMutex;
-  private static Semaphore semaphore;
+  private static CyclicBarrier barrierA;
+	private static CyclicBarrier barrierB;
+  private static CyclicBarrier barrierC;
   private static AtomicBool searchFinished = new AtomicBool(false);
 
   private Set localOpen;
@@ -51,10 +55,12 @@ public class BFSWorker extends Thread
     localOpen = new HashSet();
   }
 
-  public static void initialise(TreeSet open, Semaphore s, Lock mutex){
+  public static void initialise(TreeSet open, Lock mutex, CyclicBarrier barrierA, CyclicBarrier barrierB, CyclicBarrier barrierC){
     BFSWorker.open = open;
-    BFSWorker.semaphore = s;
     BFSWorker.openMutex = mutex;
+    BFSWorker.barrierA = barrierA;
+    BFSWorker.barrierB = barrierB;
+    BFSWorker.barrierC = barrierC;
   }
 
   public static void setActions(LinkedList actions){
@@ -85,18 +91,31 @@ public class BFSWorker extends Thread
 
   public void run(){
 
-    while(searchFinished.get()){
+    while(!searchFinished.get()){
 
-      try{
-        BFSWorker.semaphore.acquire();
-      } catch(InterruptedException e){
-        BFSWorker.semaphore.release();
-        continue;
-      }
+      try {
+  			barrierA.await();
+  		} catch(InterruptedException | BrokenBarrierException e) {
+  			e.printStackTrace();
+  		}
+
+      try {
+  			barrierB.await();
+  		} catch(InterruptedException | BrokenBarrierException e) {
+  			e.printStackTrace();
+  		}
+
+      if(searchFinished.get())
+        break;
 
       computeHValues();
 
-      BFSWorker.semaphore.release();
+      try {
+  			barrierC.await();
+  		} catch(InterruptedException | BrokenBarrierException e) {
+  			e.printStackTrace();
+  		}
+
     }
   }
 
