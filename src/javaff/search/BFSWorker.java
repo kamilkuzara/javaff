@@ -94,30 +94,28 @@ public class BFSWorker extends Thread
 
     while(true){
 
-      try {
-  			barrierA.await();
-  		} catch(InterruptedException | BrokenBarrierException e) {
-  			e.printStackTrace();
-  		}
+      awaitBarrier(barrierA);
 
-      try {
-  			barrierB.await();
-  		} catch(InterruptedException | BrokenBarrierException e) {
-  			e.printStackTrace();
-  		}
+      awaitBarrier(barrierB);
 
       if(searchFinished.get())
         break;
 
       computeHValues();
 
-      try {
-  			barrierC.await();
-  		} catch(InterruptedException | BrokenBarrierException e) {
-  			e.printStackTrace();
-  		}
+      awaitBarrier(barrierC);
 
     }
+  }
+
+  private static void awaitBarrier(CyclicBarrier barrier){
+
+    try {
+      barrier.await();
+    } catch(InterruptedException | BrokenBarrierException e) {
+      e.printStackTrace();
+    }
+
   }
 
   public void computeHValues(){

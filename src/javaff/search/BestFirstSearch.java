@@ -89,37 +89,19 @@ public class BestFirstSearch extends Search
 	public void updateOpen(State S)
 	{
 		System.out.println("Update open");
-		// 1) get actions applicable in the state S (according to the filter)
-		// 2) generate new/children states from state S
-		// 3) add the new states to the open list
-		// the list is ordered by the h value (lower values go first), so the h value
-		// has to be calculated for every new state as it is added to the open list
-		// (in the compare(...) method), or before
 
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
 		BFSWorker.reset(S, applicableActions);
 
-		try {
-			barrierA.await();
-		} catch(InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		}
+		awaitBarrier(barrierA);
 		barrierA.reset();
 
-		try {
-			barrierB.await();
-		} catch(InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		}
+		awaitBarrier(barrierB);
 		barrierB.reset();
 
 		workerThreads.getLast().computeHValues();
 
-		try {
-			barrierC.await();
-		} catch(InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		}
+		awaitBarrier(barrierC);
 		barrierC.reset();
 
 			System.out.println("New states added");
@@ -129,15 +111,7 @@ public class BestFirstSearch extends Search
 	{
 		State S = (State) (open).first();
 		open.remove(S);
-		/*
-		 * System.out.println("================================");
-		 * S.getSolution().print(System.out); System.out.println("----Helpful
-		 * Actions-------------"); javaff.planning.TemporalMetricState ms =
-		 * (javaff.planning.TemporalMetricState) S;
-		 * System.out.println(ms.helpfulActions);
-		 * System.out.println("----Relaxed Plan----------------");
-		 * ms.RelaxedPlan.print(System.out);
-		 */
+
 		return S;
 	}
 
@@ -192,22 +166,20 @@ public class BestFirstSearch extends Search
 		return null;
 	}
 
+	private void awaitBarrier(CyclicBarrier barrier){
+
+    try {
+      barrier.await();
+    } catch(InterruptedException | BrokenBarrierException e) {
+      e.printStackTrace();
+    }
+
+  }
+
 	private void terminateSearch(){
-
-		try {
-			barrierA.await();
-		} catch(InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		}
-
+		awaitBarrier(barrierA);
 		BFSWorker.searchFinishedNotify();
-
-		try {
-			barrierB.await();
-		} catch(InterruptedException | BrokenBarrierException e) {
-			e.printStackTrace();
-		}
-
+		awaitBarrier(barrierB);
 	}
 
 }
