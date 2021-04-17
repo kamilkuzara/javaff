@@ -45,13 +45,13 @@ import java.util.concurrent.Semaphore;
 
 public class BestFirstSearch extends Search
 {
-	private static final int NUM_THREADS = 3;
+	private static final int NUM_THREADS = 4;
 
 	protected Hashtable closed;
 	protected TreeSet open;
 
 	// private BigDecimal heuristicsTime;
-	private Set<BFSWorker> workerThreads;
+	private LinkedList<BFSWorker> workerThreads;
 	private Semaphore semaphore;
 	private Lock openMutex;
 
@@ -71,7 +71,7 @@ public class BestFirstSearch extends Search
 		openMutex = new ReentrantLock();
 		BFSWorker.initialise(open, semaphore, openMutex);
 
-		workerThreads = new HashSet();
+		workerThreads = new LinkedList();
 		for(int i = 0; i < NUM_THREADS; i++)
 			workerThreads.add(new BFSWorker());
 
@@ -91,47 +91,12 @@ public class BestFirstSearch extends Search
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
 		BFSWorker.reset(S, applicableActions);
 
-		semaphore.release(NUM_THREADS);
+		semaphore.release(NUM_THREADS - 1);
 
-		// compute h concurrently
-		Set localOpen = new HashSet();
-		boolean finished = false;
-		while(!finished){
-			Action action = null;
-				// System.out.println("Before getting an action");
-			synchronized(applicableActions){
-				action = applicableActions.pollFirst();   // remove first or return null
-			}
-				// System.out.println("After getting an action");
-
-			if(action == null){
-
-				openMutex.lock();
-				try{
-					open.addAll(localOpen);
-				}finally{
-					openMutex.unlock();
-				}
-					// System.out.println("Return");
-				finished = true;
-				continue;
-			}
-
-			State s = S.getNextState(action);
-			s.getHValue();
-			localOpen.add(s);
-
-			if(openMutex.tryLock()){
-				try{
-					open.addAll(localOpen);
-				}finally{
-					openMutex.unlock();
-				}
-			}
-		}
+		workerThreads.getLast().computeHValues();
 
 		try{
-			semaphore.acquire(NUM_THREADS);
+			semaphore.acquire(NUM_THREADS - 1);
 		} catch(InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -187,8 +152,10 @@ public class BestFirstSearch extends Search
 
 		open.add(start);
 
-		for(BFSWorker t : workerThreads){
-			t.start();
+		// start all workers except the last one
+		// the last one is executed by the main thread
+		for(int i = 0; i < NUM_THREADS - 1; i++){
+			workerThreads.get(i).start();
 				System.out.println("Thread started");
 		}
 
@@ -207,7 +174,8 @@ public class BestFirstSearch extends Search
 					// System.out.println("Total time computing heuristics: " + hTime);
 
 					BFSWorker.searchFinishedNotify();
-					for(BFSWorker t : workerThreads){
+					for(int i = 0; i < NUM_THREADS - 1; i++){
+						Thread t = workerThreads.get(i);
 						t.interrupt();
 
 						try{
@@ -227,7 +195,8 @@ public class BestFirstSearch extends Search
 		}
 
 		BFSWorker.searchFinishedNotify();
-		for(BFSWorker t : workerThreads){
+		for(int i = 0; i < NUM_THREADS - 1; i++){
+			Thread t = workerThreads.get(i);
 			t.interrupt();
 
 			try{

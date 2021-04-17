@@ -127,7 +127,8 @@ public class JavaFF
 	{
 		this.domainFile = null;
 		this.useOutputFile = null;
-		this.useEHC = true;
+		// this.useEHC = true;
+		this.useEHC = false;
 		this.useBFS = true;
 	}
 
@@ -398,6 +399,8 @@ public class JavaFF
 			afterEHCPlanning = System.nanoTime();
 			planningEHCTime = (afterEHCPlanning - startTime) / JavaFF.Nanos;
 		}
+
+		afterEHCPlanning = System.nanoTime();
 
 		if (goalState != null)
 		{
