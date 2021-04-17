@@ -89,9 +89,10 @@ public class BFSWorker extends Thread
     searchFinished.set(true);
   }
 
+  @Override
   public void run(){
 
-    while(!searchFinished.get()){
+    while(true){
 
       try {
   			barrierA.await();
