@@ -240,7 +240,6 @@ public class ParallelBestFirstSearch extends Search
 		open.add(start);
 
 		for(Thread t : threads){
-			t.setDaemon(true);
 			t.start();
 		}
 
