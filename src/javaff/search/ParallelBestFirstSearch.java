@@ -34,8 +34,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.Semaphore;
 
-// import java.math.BigDecimal;
-
 public class ParallelBestFirstSearch extends Search
 {
 	private static final int NUM_THREADS = 2;
@@ -54,8 +52,6 @@ public class ParallelBestFirstSearch extends Search
 	private Lock solutionMutex;
 
 	private AtomicBool stateSpaceExhausted;
-
-	// private BigDecimal heuristicsTime;
 
 	public ParallelBestFirstSearch(State s)
 	{
@@ -87,8 +83,6 @@ public class ParallelBestFirstSearch extends Search
       threads.add(new BFSSearcher());
 
 		waitingRoom = new WaitingRoom(NUM_THREADS);
-
-		// heuristicsTime = BigDecimal.ZERO;
 	}
 
 	public boolean keepSearching(){
@@ -110,11 +104,6 @@ public class ParallelBestFirstSearch extends Search
 		} finally {
 			openMutex.unlock();
 		}
-
-
-    // String x = (this.solution != null)?"1":"null";
-    // String y = (solutionIn != null)?"1":"null";
-    // System.out.println("assigning final state - " + x + " - " + y);
   }
 
 	public void addAllToOpen(Set<State> newStates){
@@ -135,19 +124,7 @@ public class ParallelBestFirstSearch extends Search
 
 	public State removeNext()
 	{
-    // boolean stateAcquired = false;
     State S = null;
-
-    // while(!stateAcquired){
-    //   synchronized(this){
-    //     if(!open.isEmpty()){
-    //       S = (State) (open).first();
-    //   		 open.remove(S);
-		//
-    //       stateAcquired = true;
-    //     }
-    //   }
-    // }
 
 		openMutex.lock();
 
@@ -220,16 +197,8 @@ public class ParallelBestFirstSearch extends Search
 		List applicableActions = getFilter().getActions(S);
 		Set<State> successorStates = S.getNextStates(applicableActions);
 
-		// long startTime = 0;
-		// long endTime = 0;
 		for(State state : successorStates)
-		{
-			// compute the heuristic value for the state and measure the time needed
-			// startTime = System.nanoTime();
 			state.getHValue();		// compute the h value
-			// endTime = System.nanoTime();
-			// heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
-		}
 
     addAllToOpen(successorStates);
 	}
@@ -239,25 +208,9 @@ public class ParallelBestFirstSearch extends Search
 
 		open.add(start);
 
-		for(Thread t : threads){
+		for(Thread t : threads)
 			t.start();
-		}
 
-    // for(Thread t : threads){
-    //   try{
-    //     t.join();
-    //   }catch(InterruptedException e){
-    //     e.printStackTrace();
-    //   }
-    // }
-
-    // while(!solutionFound.get()){
-    //   try{
-    //     Thread.sleep(50);
-    //   }catch(InterruptedException e){
-    //     e.printStackTrace();
-    //   }
-    // }
 
 		while (keepSearching())
 		{
@@ -270,14 +223,11 @@ public class ParallelBestFirstSearch extends Search
       if (needToVisit(s))
 			{		// expand the node/state
 				// ++nodeCount;   // commented out for now
-          // String x = (s != null)?"1":"null";
-          // System.out.println("checking state - " + x);
+
 				// check if s contains the goal, if yes return it,
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-					// double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
-					// System.out.println("Total time computing heuristics: " + hTime);
             System.out.println(">>>>>> Solution has been found <<<<<< " + Thread.currentThread().getName());
 					setSolution(s);
 				} else
@@ -291,9 +241,6 @@ public class ParallelBestFirstSearch extends Search
     State rState = null;
 		solutionMutex.lock();
     try{
-        // System.out.println("Assigning state to return");
-        // String x = (this.solution != null)?"1":"null";
-        // System.out.println("final state - " + x);
       rState = solution;
     } finally {
 			solutionMutex.unlock();

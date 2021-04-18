@@ -23,20 +23,11 @@ package javaff.search;
 import javaff.planning.State;
 import java.util.List;
 import java.util.Set;
-// import java.math.BigDecimal;
 
 public class BFSSearcher extends Thread
 {
   private static ParallelBestFirstSearch searchInstance;
 
-	// private BigDecimal heuristicsTime;
-
-	// public BFSSearcher(ParallelBestFirstSearch searchIn)
-	// {
-  //   searchInstance = searchIn;
-  //
-	// 	// heuristicsTime = BigDecimal.ZERO;
-	// }
 
   public static void initialise(ParallelBestFirstSearch searchInstance){
     BFSSearcher.searchInstance = searchInstance;
@@ -54,16 +45,8 @@ public class BFSSearcher extends Thread
 		List applicableActions = searchInstance.getFilter().getActions(S);
 		Set<javaff.planning.State> successorStates = S.getNextStates(applicableActions);
 
-		// long startTime = 0;
-		// long endTime = 0;
 		for(javaff.planning.State state : successorStates)
-		{
-			// compute the heuristic value for the state and measure the time needed
-			// startTime = System.nanoTime();
-			state.getHValue();		// compute the h value
-			// endTime = System.nanoTime();
-			// heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
-		}
+		  state.getHValue();		// compute the h value
 
     searchInstance.addAllToOpen(successorStates);
 	}
@@ -86,14 +69,11 @@ public class BFSSearcher extends Thread
       if (searchInstance.needToVisit(s))
 			{		// expand the node/state
 				// ++nodeCount;   // commented out for now
-          // String x = (s != null)?"1":"null";
-          // System.out.println("checking state - " + x);
+
 				// check if s contains the goal, if yes return it,
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-					// double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
-					// System.out.println("Total time computing heuristics: " + hTime);
             System.out.println(">>>>>> Solution has been found <<<<<< " + this.getName());
 					searchInstance.setSolution(s);
 				} else
@@ -103,7 +83,6 @@ public class BFSSearcher extends Thread
 			}
 
 		}
-		// searchInstance.setSolution(null);
 	}
 
   @Override
