@@ -28,7 +28,6 @@ import java.util.Hashtable;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -51,15 +50,10 @@ public class ParallelBestFirstSearch extends Search
 	private Condition openNotEmpty;
 
 	private State solution;
-	private boolean solutionFound;
-	private ReentrantReadWriteLock solutionMutex;
-  private Lock solutionMutexRead;
-	private Lock solutionMutexWrite;
+	private AtomicBool solutionFound;
+	private Lock solutionMutex;
 
-	private boolean stateSpaceExhausted;
-	private ReentrantReadWriteLock stateSpaceExhaustedMutex;
-  private Lock stateSpaceExhaustedMutexRead;
-	private Lock stateSpaceExhaustedMutexWrite;
+	private AtomicBool stateSpaceExhausted;
 
 	// private BigDecimal heuristicsTime;
 
@@ -79,16 +73,11 @@ public class ParallelBestFirstSearch extends Search
 		openMutex = new ReentrantLock();
 		openNotEmpty = openMutex.newCondition();
 
-		solutionFound = false;
+		solutionFound = new AtomicBool(false);
     solution = null;
-		solutionMutex = new ReentrantReadWriteLock();
-		solutionMutexRead = solutionMutex.readLock();
-		solutionMutexWrite = solutionMutex.writeLock();
+		solutionMutex = new ReentrantLock();
 
-		stateSpaceExhausted = false;
-		stateSpaceExhaustedMutex = new ReentrantReadWriteLock();
-		stateSpaceExhaustedMutexRead = stateSpaceExhaustedMutex.readLock();
-		stateSpaceExhaustedMutexWrite = stateSpaceExhaustedMutex.writeLock();
+		stateSpaceExhausted = new AtomicBool(false);
 
 		BFSSearcher.initialise(this);
 
@@ -103,41 +92,16 @@ public class ParallelBestFirstSearch extends Search
 	}
 
 	public boolean keepSearching(){
-		boolean keepSearching = false;
-
-		solutionMutexRead.lock();
-		try{
-			keepSearching = !solutionFound;
-		} finally {
-			solutionMutexRead.unlock();
-		}
-
-		stateSpaceExhaustedMutexRead.lock();
-		try{
-			keepSearching = keepSearching && !stateSpaceExhausted;
-		} finally {
-			stateSpaceExhaustedMutexRead.unlock();
-		}
-
-		return keepSearching;
-	}
-
-	private void stateSpaceExhaustedNotify(){
-		stateSpaceExhaustedMutexWrite.lock();
-		try{
-			stateSpaceExhausted = true;
-		} finally {
-			stateSpaceExhaustedMutexWrite.unlock();
-		}
+		return !solutionFound.get() && !stateSpaceExhausted.get();
 	}
 
   public void setSolution(State solutionIn){
-		solutionMutexWrite.lock();
+		solutionMutex.lock();
 		try{
 			solution = solutionIn;
-			solutionFound = true;
+			solutionFound.set(true);	// note that another lock will have to be acquired here
 		} finally {
-			solutionMutexWrite.unlock();
+			solutionMutex.unlock();
 		}
 
 		openMutex.lock();
@@ -201,7 +165,7 @@ public class ParallelBestFirstSearch extends Search
 						System.out.println("After await");
 					}
 				} else {
-					stateSpaceExhaustedNotify();
+					stateSpaceExhausted.set(true);
 					openNotEmpty.signal();
 					openMutex.unlock();
 					return null;
