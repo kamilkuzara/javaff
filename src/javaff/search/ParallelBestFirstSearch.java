@@ -27,7 +27,7 @@ import java.util.TreeSet;
 import java.util.Hashtable;
 import java.util.Set;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -36,9 +36,9 @@ import java.util.concurrent.Semaphore;
 
 public class ParallelBestFirstSearch extends Search
 {
-	private static final int NUM_THREADS = 2;
+	private static final int NUM_THREADS = 4;
 
-	private List<Thread> threads;
+	private LinkedList<Thread> threads;
 	private WaitingRoom waitingRoom;
 
 	protected Hashtable closed;
@@ -77,12 +77,12 @@ public class ParallelBestFirstSearch extends Search
 
 		BFSSearcher.initialise(this);
 
-		threads = new ArrayList();
+		threads = new LinkedList();
 
     for(int i = 0; i < NUM_THREADS; i++)
       threads.add(new BFSSearcher());
 
-		waitingRoom = new WaitingRoom(NUM_THREADS);
+		waitingRoom = new WaitingRoom(NUM_THREADS - 1);
 	}
 
 	public boolean keepSearching(){
@@ -208,35 +208,13 @@ public class ParallelBestFirstSearch extends Search
 
 		open.add(start);
 
-		for(Thread t : threads)
-			t.start();
+		// start all the threads except the last one,
+		// the last one will be executed in the main thread (see below)
+		for(int i = 0; i < NUM_THREADS - 1; i++)
+			threads.get(i).start();
 
-
-		while (keepSearching())
-		{
-        System.out.println(Thread.currentThread().getName() + " - looking for solution");
-			State s = removeNext();
-
-      if(s == null)
-        continue;
-
-      if (needToVisit(s))
-			{		// expand the node/state
-				// ++nodeCount;   // commented out for now
-
-				// check if s contains the goal, if yes return it,
-				// else add the children of s to the open list
-				if (s.goalReached())
-				{
-            System.out.println(">>>>>> Solution has been found <<<<<< " + Thread.currentThread().getName());
-					setSolution(s);
-				} else
-				{
-					updateOpen(s);
-				}
-			}
-
-		}
+		// execute the last worker in the main thread
+		threads.getLast().run();
 
     State rState = null;
 		solutionMutex.lock();
