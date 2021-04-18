@@ -290,14 +290,14 @@ public class ParallelBestFirstSearch extends Search
 		}
 
     State rState = null;
-		solutionMutexRead.lock();
+		solutionMutex.lock();
     try{
         // System.out.println("Assigning state to return");
         // String x = (this.solution != null)?"1":"null";
         // System.out.println("final state - " + x);
       rState = solution;
     } finally {
-			solutionMutexRead.unlock();
+			solutionMutex.unlock();
 		}
 
     return rState;
