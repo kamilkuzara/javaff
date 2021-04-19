@@ -41,9 +41,9 @@ public class ParallelBestFirstSearch extends Search
 	private LinkedList<Thread> threads;
 	private WaitingRoom waitingRoom;
 
-	protected Hashtable closed;
+	private Hashtable closed;
 
-	protected TreeSet open;
+	private TreeSet open;
 	private Lock openMutex;
 	private Condition openNotEmpty;
 
@@ -183,24 +183,6 @@ public class ParallelBestFirstSearch extends Search
     }
 
 		return rValue;
-	}
-
-	public void updateOpen(State S)
-	{
-		// 1) get actions applicable in the state S (according to the filter)
-		// 2) generate new/children states from state S
-		// 3) add the new states to the open list
-		// the list is ordered by the h value (lower values go first), so the h value
-		// has to be calculated for every new state as it is added to the open list
-		// (in the compare(...) method), or before
-
-		List applicableActions = getFilter().getActions(S);
-		Set<State> successorStates = S.getNextStates(applicableActions);
-
-		for(State state : successorStates)
-			state.getHValue();		// compute the h value
-
-    addAllToOpen(successorStates);
 	}
 
 	public State search()
