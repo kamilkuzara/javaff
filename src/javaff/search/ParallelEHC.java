@@ -122,14 +122,18 @@ public class ParallelEHC extends Search
 
 	public void waitForBarriers(){
 		if( newBestStateFound.get() ){
-			try{
-				barrierA.await();
-	      barrierB.await();
-			} catch(InterruptedException | BrokenBarrierException e) {
-				e.printStackTrace();
-			}
+			awaitBarrier(barrierA);
+			awaitBarrier(barrierB);
     }
   }
+
+	private void awaitBarrier(CyclicBarrier barrier){
+		try{
+			barrier.await();
+		} catch(InterruptedException | BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public boolean isSolutionFound(){
 		return solutionFound.get();
@@ -155,7 +159,8 @@ public class ParallelEHC extends Search
 		for(EHCSearcher thread : threads){
 			// NOTE: the if-stmt should not be necessary to prevent deadlock
 			// because reentrant locks are used (they can be locked multiple
-			// times by the same thread)
+			// times by the same thread),
+			// otherwise:
 			// if(thread == invokingThread)
 			// 	continue;
 
@@ -207,11 +212,7 @@ public class ParallelEHC extends Search
 	}
 
 	public void resetSearch(State state){
-		try{
-			barrierA.await();
-		} catch(InterruptedException | BrokenBarrierException e){
-			e.printStackTrace();	// TODO: need to implement proper error handling
-		}
+		awaitBarrier(barrierA);
 		barrierA.reset();	// reset the barrier to initial state after it was broken
 
 		// clear all local open lists
@@ -227,11 +228,7 @@ public class ParallelEHC extends Search
 
 		newBestStateFound.set(false);	// very important to reset the flag!
 
-		try{
-			barrierB.await();
-		} catch(InterruptedException | BrokenBarrierException e){
-			e.printStackTrace();	// TODO: need to implement proper error handling
-		}
+		awaitBarrier(barrierB);
 		barrierB.reset();	// reset the barrier to initial state after it was broken
 	}
 
