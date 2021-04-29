@@ -240,10 +240,15 @@ public class ParallelEHC extends Search
 
 		updateClosed(start);
 
+		int statesExpandedTotal = 1;
+		int statesGeneratedTotal = 0;
+
 		// fill the starting open list with children of the current best state
 		List<StateActionPair> newPairs = new LinkedList();
 		for(Action action : filter.getActions(start))
 			newPairs.add(new StateActionPair(start, action));
+
+		statesGeneratedTotal += newPairs.size();
 
 		threads.get(0).addAllToOpen(newPairs);
 
@@ -266,6 +271,18 @@ public class ParallelEHC extends Search
 				e.printStackTrace();	// TODO: need to implement proper error handling
 			}
 		}
+
+		// collect all information for statistics from all threads
+		for(EHCSearcher thread : threads){
+			statesExpandedTotal += thread.getStatesExpanded();
+			statesGeneratedTotal += thread.getStatesGenerated();
+		}
+
+		System.out.println("-------------------- Statistics --------------------");
+		System.out.println("Number of threads used: " + NUM_THREADS);
+		System.out.println("States expanded: " + statesExpandedTotal);
+		System.out.println("States generated: " + statesGeneratedTotal);
+		System.out.println("----------------------------------------------------");
 
 		return solution;	// only one thread at this point, no need to lock
 	}

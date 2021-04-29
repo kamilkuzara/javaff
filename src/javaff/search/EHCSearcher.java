@@ -47,12 +47,18 @@ public class EHCSearcher extends Thread
   private BigDecimal localBestHValue;   // cache the best h value for that thread
   private LinkedList<StateActionPair> queueForNextThread;
 
+  private int statesExpanded;
+  private int statesGenerated;
+
   public EHCSearcher(){
     localOpen = new LinkedList();
     localOpenMutex = new ReentrantLock();
     localOpenNotEmpty = localOpenMutex.newCondition();
 
     queueForNextThread = new LinkedList();
+
+    statesExpanded = 0;
+    statesGenerated = 0;
   }
 
   public void setLocalBestHValue(BigDecimal newLocalBest){
@@ -211,6 +217,8 @@ public class EHCSearcher extends Thread
 			if( searchInstance.alreadyVisited(succState) )
 				continue;
 
+      statesExpanded++;
+
 			BigDecimal succH = succState.getHValue();
 
 			//check we have not entered a dead-end
@@ -248,8 +256,10 @@ public class EHCSearcher extends Thread
 				// for(Action action : searchInstance.getFilter().getActions(succState))
 				// 	newPairs.add(new StateActionPair(succState, action));
 
-        for(Action action : searchInstance.getFilter().getActions(succState))
-					queueForNextThread.add(new StateActionPair(succState, action));
+        for(Action action : searchInstance.getFilter().getActions(succState)){
+          queueForNextThread.add(new StateActionPair(succState, action));
+          statesGenerated++;
+        }
 
 				boolean pairsAdded = nextThread.tryAddingAllToOpen(queueForNextThread);
 
@@ -264,31 +274,11 @@ public class EHCSearcher extends Thread
     search();
   }
 
+  public int getStatesExpanded(){
+    return statesExpanded;
+  }
 
-
-
-
-// -----------------------------------------------------------------------------
-
-  // public static State getSolution(){
-  //   State rState = null;
-  //
-  //   solutionMutex.lock();
-	// 	try{
-	// 		rState = solution;
-	// 	} finally {
-	// 		solutionMutex.unlock();
-	// 	}
-  //
-  //   return rState;
-  // }
-
-  // public static void setBestHValue(BigDecimal hValue){
-  //   bestHMutex.lock();
-	// 	try{
-	// 		bestHValue = hValue;
-	// 	} finally {
-	// 		bestHMutex.unlock();
-	// 	}
-  // }
+  public int getStatesGenerated(){
+    return statesGenerated;
+  }
 }

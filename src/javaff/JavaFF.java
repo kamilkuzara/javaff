@@ -467,9 +467,9 @@ public class JavaFF
 						.println("Final plan length is " + tsp.actions.size());
 			}
 
-			infoOutput.println("EHC Plan Time = " + planningEHCTime + "sec");
-			infoOutput.println("BFS Plan Time = " + planningBFSTime + "sec");
-			infoOutput.println("Scheduling Time = " + schedulingTime + "sec");
+			infoOutput.println("EHC Plan Time = " + planningEHCTime + " sec");
+			infoOutput.println("BFS Plan Time = " + planningBFSTime + " sec");
+			infoOutput.println("Scheduling Time = " + schedulingTime + " sec");
 			// TODO: Display more detailed statistics (heuristics time, state evaluation time, etc.)
 			// For this, a more complex object with both the plan and the statistics has to be returned to this method
 		}
