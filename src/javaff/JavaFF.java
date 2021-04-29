@@ -121,14 +121,12 @@ public class JavaFF
 
 	protected File useOutputFile;
 
-	protected boolean useEHC, useBFS;
+	protected static boolean useEHC, useBFS;
 
 	protected JavaFF()
 	{
 		this.domainFile = null;
 		this.useOutputFile = null;
-		this.useEHC = true;
-		this.useBFS = true;
 	}
 
 
@@ -209,48 +207,99 @@ public class JavaFF
 
 		boolean useOutputFile = false;
 
-		if (args.length < 2)
+		if (args.length < 3)
 		{
 			System.out
-					.println("Parameters needed: domainFile.pddl problemFile.pddl [outputfile.sol]");
-
+					.println("Parameters needed: <setting> domainFile.pddl problemFile.pddl [outputfile.sol]\n");
+			System.out.println("Available settings:");
+			System.out.println("\t0 - use both EHC and BFS");
+			System.out.println("\t1 - use EHC only");
+			System.out.println("\t2 - use BFS only");
 		}
 		else
 		{
 			//TODO write a decent arg parser
-			File domainFile = new File(args[0]);
-			File problemFile = new File(args[1]);
-			File solutionFile = null;
-			if (args.length > 2)
-			{
-				solutionFile = new File(args[2]);
-				useOutputFile = true;
+			boolean settingParsed = false;
+			int setting = 0;
+			try{
+				setting = Integer.parseInt(args[0]);
+				settingParsed = true;
+			} catch(Exception e){
+				settingParsed = false;
+			}
 
-				for (int i = 3; i < args.length; i++)
+			if(settingParsed && settingValid(setting)){
+				File domainFile = new File(args[1]);
+				File problemFile = new File(args[2]);
+				File solutionFile = null;
+				if (args.length > 3)
 				{
-					if (args[i].equals("--deterministic")
-							|| args[i].equals("-d"))
+					solutionFile = new File(args[3]);
+					useOutputFile = true;
+
+					for (int i = 4; i < args.length; i++)
 					{
-						JavaFF.Deterministic = true;
+						if (args[i].equals("--deterministic")
+								|| args[i].equals("-d"))
+						{
+							JavaFF.Deterministic = true;
+						}
 					}
 				}
-			}
 
-			try
-			{
-				JavaFF planner = new JavaFF(domainFile, solutionFile);
-				Plan p = planner.plan(problemFile);
-			}
-			catch (UnreachableGoalException e)
-			{
-				System.out.println("Goal " + e.getUnreachables().toString()
-						+ " is unreachable");
-			}
-			catch (ParseException e)
-			{
-				System.out.println(e.getMessage());
+				try
+				{
+					JavaFF planner = new JavaFF(domainFile, solutionFile);
+					Plan p = planner.plan(problemFile);
+				}
+				catch (UnreachableGoalException e)
+				{
+					System.out.println("Goal " + e.getUnreachables().toString()
+							+ " is unreachable");
+				}
+				catch (ParseException e)
+				{
+					System.out.println(e.getMessage());
+				}
+			} else {
+				System.out
+						.println("Invalid setting\n");
+				System.out.println("Available settings:");
+				System.out.println("\t0 - use both EHC and BFS");
+				System.out.println("\t1 - use EHC only");
+				System.out.println("\t2 - use BFS only");
 			}
 		}
+	}
+
+	private static boolean settingValid(int setting){
+		boolean settingValid = false;
+
+		switch(setting){
+			case 0:
+				useEHC = true;
+				useBFS = true;
+				settingValid = true;
+				break;
+
+			case 1:
+				useEHC = true;
+				useBFS = false;
+				settingValid = true;
+				break;
+
+			case 2:
+				useEHC = false;
+				useBFS = true;
+				settingValid = true;
+				break;
+
+			default:
+				settingValid = false;
+				break;
+		}
+
+		return settingValid;
 	}
 
 	/**
@@ -921,21 +970,21 @@ public class JavaFF
 
 	public boolean isUseEHC()
 	{
-		return useEHC;
+		return JavaFF.useEHC;
 	}
 
 	public void setUseEHC(boolean useEHC)
 	{
-		this.useEHC = useEHC;
+		JavaFF.useEHC = useEHC;
 	}
 
 	public boolean isUseBFS()
 	{
-		return useBFS;
+		return JavaFF.useBFS;
 	}
 
 	public void setUseBFS(boolean useBFS)
 	{
-		this.useBFS = useBFS;
+		JavaFF.useBFS = useBFS;
 	}
 }
