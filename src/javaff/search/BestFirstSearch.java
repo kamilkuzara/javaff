@@ -72,20 +72,18 @@ public class BestFirstSearch extends Search
 
 		List applicableActions = filter.getActions(S);
 		Set<State> successorStates = S.getNextStates(applicableActions);
+		statesGeneratedCount += successorStates.size();
 
 		long startTime = 0;
 		long endTime = 0;
-		for(State state : successorStates)
-		{
-			// compute the heuristic value for the state and measure the time needed
-			startTime = System.nanoTime();
-			state.getHValue();		// compute the h value
-			endTime = System.nanoTime();
-			heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
 
-			open.add(state);	// add the state to the open list
-			statesGeneratedCount++;
-		}
+		// compute the heuristic values for the states and measure the time needed
+		startTime = System.nanoTime();
+
+		open.addAll(successorStates);	// add the states to the open list
+
+		endTime = System.nanoTime();
+		heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
 	}
 
 	public State removeNext()
