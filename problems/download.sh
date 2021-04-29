@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for num in {1..20}
+mkdir $1
+
+for num in $(eval echo "{1..$2}")
 do
-	curl -s https://www.cs.colostate.edu/meps/aips02data/zenotravel/Strips/pfile$num --output pfile$num.pddl
+	curl -s https://www.cs.colostate.edu/meps/aips02data/$1/Strips/pfile$num --output ./$1/pfile$num.pddl
 done
