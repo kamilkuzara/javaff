@@ -400,7 +400,7 @@ public class JavaFF
 			planningEHCTime = (afterEHCPlanning - startTime) / JavaFF.Nanos;
 		}
 
-		afterEHCPlanning = System.nanoTime();
+		startTime = System.nanoTime();
 
 		if (goalState != null)
 		{
@@ -413,7 +413,7 @@ public class JavaFF
 			System.out.println("Running FF with BFS...");
 			goalState = this.performFFSearch(initialState, false);
 			afterBFSPlanning = System.nanoTime();
-			planningBFSTime = (afterBFSPlanning - afterEHCPlanning) / JavaFF.Nanos;
+			planningBFSTime = (afterBFSPlanning - startTime) / JavaFF.Nanos;
 
 			if (goalState != null)
 			{

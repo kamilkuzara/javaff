@@ -7,6 +7,7 @@
  * Copyright 2007, Keith Halsey
  * Copyright 2008, Andrew Coles and Amanda Smith
  * Copyright 2015, David Pattison
+ * Copyright 2021, Kamil Kuzara
  *
  * This file is part of JavaFF.
  *
@@ -40,10 +41,9 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-// import java.util.concurrent.Semaphore;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.BrokenBarrierException;
-// import java.math.BigDecimal;
+import java.math.BigDecimal;
 
 public class BestFirstSearch extends Search
 {
@@ -52,7 +52,9 @@ public class BestFirstSearch extends Search
 	protected Hashtable closed;
 	protected TreeSet open;
 
-	// private BigDecimal heuristicsTime;
+	private BigDecimal heuristicsTime;
+	private int statesGeneratedCount;
+
 	private LinkedList<BFSWorker> workerThreads;
 	private Lock openMutex;
 	private CyclicBarrier barrierA;
@@ -83,15 +85,22 @@ public class BestFirstSearch extends Search
 		for(int i = 0; i < NUM_THREADS; i++)
 			workerThreads.add(new BFSWorker());
 
-		// heuristicsTime = BigDecimal.ZERO;
+		heuristicsTime = BigDecimal.ZERO;
+		statesGeneratedCount = 0;
 	}
 
 	public void updateOpen(State S)
 	{
-		System.out.println("Update open");
+		// System.out.println("Update open");
 
 		LinkedList<Action> applicableActions = new LinkedList(filter.getActions(S));
 		BFSWorker.reset(S, applicableActions);
+		statesGeneratedCount += applicableActions.size();
+
+		long startTime = 0;
+		long endTime = 0;
+
+		startTime = System.nanoTime();
 
 		awaitBarrier(barrierA);
 		barrierA.reset();
@@ -104,7 +113,10 @@ public class BestFirstSearch extends Search
 		awaitBarrier(barrierC);
 		barrierC.reset();
 
-			System.out.println("New states added");
+		endTime = System.nanoTime();
+		heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
+
+			// System.out.println("New states added");
 	}
 
 	public State removeNext()
@@ -136,7 +148,7 @@ public class BestFirstSearch extends Search
 		// the last one is executed by the main thread
 		for(int i = 0; i < NUM_THREADS - 1; i++){
 			workerThreads.get(i).start();
-				System.out.println("Thread started");
+				// System.out.println("Thread started");
 		}
 
 		while (!open.isEmpty())
@@ -151,6 +163,13 @@ public class BestFirstSearch extends Search
 				if (s.goalReached())
 				{
 					terminateSearch();
+
+					double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
+					System.out.println("-------------------- Statistics --------------------");
+					System.out.println("Total time computing heuristics: " + hTime + " sec");
+					System.out.println("States expanded: " + nodeCount);
+					System.out.println("States generated: " + statesGeneratedCount);
+					System.out.println("----------------------------------------------------");
 
 					return s;
 				} else
