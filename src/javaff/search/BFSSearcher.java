@@ -28,6 +28,14 @@ public class BFSSearcher extends Thread
 {
   private static ParallelBestFirstSearch searchInstance;
 
+  private int statesExpanded;
+  private int statesGenerated;
+
+  public BFSSearcher(){
+    statesExpanded = 0;
+    statesGenerated = 0;
+  }
+
 
   public static void initialise(ParallelBestFirstSearch searchInstance){
     BFSSearcher.searchInstance = searchInstance;
@@ -44,6 +52,7 @@ public class BFSSearcher extends Thread
 
 		List applicableActions = searchInstance.getFilter().getActions(S);
 		Set<javaff.planning.State> successorStates = S.getNextStates(applicableActions);
+    statesGenerated += successorStates.size();
 
 		for(javaff.planning.State state : successorStates)
 		  state.getHValue();		// compute the h value
@@ -60,7 +69,7 @@ public class BFSSearcher extends Thread
 
 		while (keepSearching())
 		{
-        System.out.println(this.getName() + " - looking for solution");
+        // System.out.println(this.getName() + " - looking for solution");
 			javaff.planning.State s = searchInstance.removeNext();
 
       if(s == null)
@@ -68,13 +77,13 @@ public class BFSSearcher extends Thread
 
       if (searchInstance.needToVisit(s))
 			{		// expand the node/state
-				// ++nodeCount;   // commented out for now
+				statesExpanded++;
 
 				// check if s contains the goal, if yes return it,
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-            System.out.println(">>>>>> Solution has been found <<<<<< " + this.getName());
+            // System.out.println(">>>>>> Solution has been found <<<<<< " + this.getName());
 					searchInstance.setSolution(s);
 				} else
 				{
@@ -88,6 +97,14 @@ public class BFSSearcher extends Thread
   @Override
   public void run(){
     this.search();
+  }
+
+  public int getStatesExpanded(){
+    return statesExpanded;
+  }
+
+  public int getStatesGenerated(){
+    return statesGenerated;
   }
 
 }

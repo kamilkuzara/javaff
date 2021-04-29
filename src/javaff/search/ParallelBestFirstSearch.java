@@ -38,7 +38,7 @@ public class ParallelBestFirstSearch extends Search
 {
 	private static final int NUM_THREADS = 4;
 
-	private LinkedList<Thread> threads;
+	private LinkedList<BFSSearcher> threads;
 	private WaitingRoom waitingRoom;
 
 	private Hashtable closed;
@@ -111,11 +111,11 @@ public class ParallelBestFirstSearch extends Search
     try{
 			open.addAll(newStates);
 
-				System.out.println("Open size: " + open.size());
+				// System.out.println("Open size: " + open.size());
 
 			if(!open.isEmpty()){	 // this conditional stmt is not strictly necessary
 				openNotEmpty.signal();
-					System.out.println("Signalling");
+					// System.out.println("Signalling");
 			}
     } finally {
       openMutex.unlock();
@@ -133,13 +133,13 @@ public class ParallelBestFirstSearch extends Search
 			if(keepSearching()){
 				if(waitingRoom.tryEntering()){
 					try{
-							System.out.println("Before await");
+							// System.out.println("Before await");
 						openNotEmpty.await();
 					} catch(InterruptedException e){
 						e.printStackTrace();
 					} finally {
 						waitingRoom.leave();
-						System.out.println("After await");
+						// System.out.println("After await");
 					}
 				} else {
 					stateSpaceExhausted.set(true);
@@ -158,7 +158,7 @@ public class ParallelBestFirstSearch extends Search
 		try{
 			S = (State) (open).first();
 			open.remove(S);
-				System.out.println("Removing first state");
+				// System.out.println("Removing first state");
 		} finally {
 			openMutex.unlock();
 		}
@@ -197,6 +197,30 @@ public class ParallelBestFirstSearch extends Search
 
 		// execute the last worker in the main thread
 		threads.getLast().run();
+
+		// wait for other threads to finish before retrieving statistics
+		for(int i = 0; i < NUM_THREADS - 1; i++){
+			try{
+				threads.get(i).join();
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
+		}
+
+		// get the statistics
+		int statesExpandedTotal = 0;
+		int statesGeneratedTotal = 0;
+
+		for(BFSSearcher thread : threads){
+			statesExpandedTotal += thread.getStatesExpanded();
+			statesGeneratedTotal += thread.getStatesGenerated();
+		}
+
+		System.out.println("-------------------- Statistics --------------------");
+		System.out.println("Number of threads used: " + NUM_THREADS);
+		System.out.println("States expanded: " + statesExpandedTotal);
+		System.out.println("States generated: " + statesGeneratedTotal);
+		System.out.println("----------------------------------------------------");
 
     State rState = null;
 		solutionMutex.lock();
