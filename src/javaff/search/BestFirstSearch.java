@@ -43,6 +43,7 @@ public class BestFirstSearch extends Search
 	protected TreeSet open;
 
 	private BigDecimal heuristicsTime;
+	private int statesGeneratedCount;
 
 	public BestFirstSearch(State s)
 	{
@@ -57,6 +58,7 @@ public class BestFirstSearch extends Search
 		closed = new Hashtable();
 		open = new TreeSet(comp);
 		heuristicsTime = BigDecimal.ZERO;
+		statesGeneratedCount = 0;
 	}
 
 	public void updateOpen(State S)
@@ -82,6 +84,7 @@ public class BestFirstSearch extends Search
 			heuristicsTime = heuristicsTime.add(BigDecimal.valueOf(endTime - startTime));
 
 			open.add(state);	// add the state to the open list
+			statesGeneratedCount++;
 		}
 	}
 
@@ -130,7 +133,11 @@ public class BestFirstSearch extends Search
 				if (s.goalReached())
 				{
 					double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
-					System.out.println("Total time computing heuristics: " + hTime);
+					System.out.println("-------------------- Statistics --------------------");
+					System.out.println("Total time computing heuristics: " + hTime + " sec");
+					System.out.println("States expanded: " + nodeCount);
+					System.out.println("States generated: " + statesGeneratedCount);
+					System.out.println("----------------------------------------------------");
 					return s;
 				} else
 				{

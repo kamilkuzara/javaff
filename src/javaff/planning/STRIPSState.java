@@ -3,26 +3,26 @@
  * Department of Computer and Information Sciences,
  * University of Strathclyde, Glasgow, UK
  * http://planning.cis.strath.ac.uk/
- * 
+ *
  * Copyright 2007, Keith Halsey
  * Copyright 2008, Andrew Coles and Amanda Smith
  * Copyright 2015, David Pattison
  *
  * This file is part of JavaFF.
- * 
+ *
  * JavaFF is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * JavaFF is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with JavaFF.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  ************************************************************************/
 
 package javaff.planning;
@@ -57,7 +57,7 @@ public class STRIPSState extends State implements Cloneable
 	protected Set<Fact> factsTrue;
 	protected Set<Not> factsNegated;
 	protected Set<Action> actions;
-	
+
 	protected Plan RelaxedPlan;
 
 	protected RelaxedPlanningGraph RPG;
@@ -67,34 +67,34 @@ public class STRIPSState extends State implements Cloneable
 	protected STRIPSState()
 	{
 		super();
-		
+
 		this.factsNegated = new HashSet<Not>();
 		this.factsTrue = new HashSet<Fact>();
 		this.actions = new HashSet<Action>();
-		
+
 		this.RelaxedPlan = null;
-		
+
 		this.HValue = new BigDecimal(-1);
-		
+
 		this.RPG = null;
 		this.RPCalculated = false;
 		this.HValue = null;
-				
+
 	}
 
 	public STRIPSState(Set<Action> a, Set<Fact> f, GroundFact g)
 	{
 		this();
-		
+
 		factsTrue = f;
 		goal = g;
 		actions = a;
 	}
-	
+
 	public STRIPSState(Set<Action> actions, Set<Fact> trueFacts, Set<Not> negatedFacts, GroundFact goal)
 	{
 		this(actions, trueFacts, goal);
-		
+
 		factsNegated = negatedFacts;
 	}
 
@@ -104,28 +104,28 @@ public class STRIPSState extends State implements Cloneable
 		plan = p;
 	}
 
-	
+
 	public Set<Fact> getTrueFacts()
 	{
 		return this.factsTrue;
 	}
-	
+
 	public Set<Not> getFalseFacts()
 	{
 		return this.factsNegated;
 	}
-	
+
 	public void addFacts(Collection<Fact> facts)
 	{
 		for (Fact f : facts)
 			this.addFact(f);
 	}
-	
+
 	public Plan getRelaxedPlan()
 	{
 		return this.RelaxedPlan;
 	}
-	
+
 	public void addFact(Fact f)
 	{
 		if (f instanceof Proposition || TrueCondition.isSimpleTrue(f) == 1)
@@ -148,7 +148,7 @@ public class STRIPSState extends State implements Cloneable
 		else
 			throw new IllegalArgumentException("Invalid fact type. Must be of type Proposition or Not.");
 	}
-	
+
 	public boolean removeFact(Fact f)
 	{
 		if (f instanceof Proposition)
@@ -169,21 +169,21 @@ public class STRIPSState extends State implements Cloneable
 //				return this.factsNegated.remove((Not)f);
 				return this.factsNegated.remove(((Not)f).getLiteral());
 		}
-		else	
+		else
 			throw new IllegalArgumentException("STRIPSState only supports Propositions and Nots");
-		
+
 	}
 
 	public TotalOrderPlan getPlan()
 	{
 		return (TotalOrderPlan) plan;
 	}
-	
+
 //	public State cloneShallow()
 //	{
-//		
+//
 //	}
-	
+
 	public Object clone()
 	{
 		Set<Proposition> trueFacts = (Set<Proposition>) ((HashSet) factsTrue).clone();
@@ -191,25 +191,25 @@ public class STRIPSState extends State implements Cloneable
 		TotalOrderPlan p = (TotalOrderPlan) plan.clone();
 		STRIPSState SS = new STRIPSState(new HashSet<Action>(actions), trueFacts, (GroundFact) goal.clone(), p);
 		SS.factsNegated = falseFacts;
-		
+
 		if (this.RPG != null)
 		{
 			RelaxedPlanningGraph rpg = (RelaxedPlanningGraph) this.RPG.clone();
 			SS.RPG = rpg;
-			
+
 			SS.RPCalculated = this.RPCalculated;
 		}
-		
+
 		if (this.HValue != null)
 		{
 			SS.HValue = new BigDecimal(this.HValue.toString());
 		}
-		
+
 		if (SS.plan != null)
 		{
 			SS.plan = (TotalOrderPlan) this.plan.clone();
 		}
-		
+
 		// SS.setFilter(filter);
 		return SS;
 	}
@@ -229,26 +229,26 @@ public class STRIPSState extends State implements Cloneable
 		//old code -- works but is inefficient as RPg is cloned then immediately destroyed and recomputed by successor state
 //		STRIPSState succ = (STRIPSState) this.clone(); //VERY slow because RPG is cloned too
 
-		//create a successor state, which is the same as this one, but has no RPG. The positive and negative facts must be 
+		//create a successor state, which is the same as this one, but has no RPG. The positive and negative facts must be
 		//copied to new Sets because application of actions will add/remove facts from these. If a new set is not constructed
 		//for each, then plans will be invalid.
 		STRIPSState succ = new STRIPSState(this.actions, new HashSet<Fact>(this.factsTrue), new HashSet<Not>(this.factsNegated), this.goal);
-//		succ.RPG = new RelaxedPlanningGraph(this.actions, this.goal); //MASSIVE memory consumption -- cannot explain why
-		succ.RPG = this.RPG.branch(); //branch the RPG instead of cloning the old one -- retains the mutex info etc
-		
+		succ.RPG = new RelaxedPlanningGraph(this.actions, this.goal); //MASSIVE memory consumption -- cannot explain why
+		// succ.RPG = this.RPG.branch(); //branch the RPG instead of cloning the old one -- retains the mutex info etc
+
 		//TODO add in initial state to RPG from RPG constructor
 		succ.RPCalculated = false; //should be false by default, but put it in anyway. Forces the EHC heuristic to construct the RPG -- the
 								   //above line only sets up the required parameters.
 		succ.getRPG().setInitial(succ);
 		succ.getRPG().setGoal(this.goal);
 		succ.plan = (TotalOrderPlan) this.plan.clone(); //clone because we may have multiple lead states
-		
+
 //		System.out.print("Applying in state "+succ.hashCode());
 //		if (a.isApplicable(this) == false)
 //			throw new NullPointerException("Action not applicable in state");
-			
+
 		a.apply(succ);
-		
+
 		succ.plan.addAction(a);
 		return succ;
 	}
@@ -263,7 +263,7 @@ public class STRIPSState extends State implements Cloneable
 		//23/8/11 - all illegal statics should have been removed by now, so if a fact has somehow
 		//			made it to here (probably embedded in a Quantified literal), then it must be legal and
 		//			therefore true.
-		
+
 		if (p instanceof CompoundLiteral)
 		{
 			for (Fact c : ((CompoundLiteral) p).getCompoundFacts())
@@ -272,16 +272,16 @@ public class STRIPSState extends State implements Cloneable
 				if (res == false)
 					return false;
 			}
-					
+
 			return true;
 		}
-		
+
 		//20/5/14 -- commented out static check as ADL decompilation is causing static facts which are
-		//not true in the initial state to be generated, which leads to untrue facts being classed as true 
+		//not true in the initial state to be generated, which leads to untrue facts being classed as true
 		//in every state.
 		if (p.isStatic())
-			return true;  
-		
+			return true;
+
 		if (p instanceof Proposition)
 			return this.factsTrue.contains(p);
 		else if (p instanceof Not)
@@ -310,14 +310,14 @@ public class STRIPSState extends State implements Cloneable
 				this.HValue = new BigDecimal(this.RelaxedPlan.getPlanLength());
 
 
-			} 
+			}
 			else
 				this.HValue = javaff.JavaFF.MAX_DURATION;
-			
+
 			this.RPCalculated = true;
 		}
 	}
-	
+
 
 	public BigDecimal getHValue()
 	{
@@ -351,7 +351,7 @@ public class STRIPSState extends State implements Cloneable
 		hash = 31 * hash ^ factsTrue.hashCode();
 		return hash;
 	}
-	
+
 	@Override
 	public String toString()
 	{
@@ -360,7 +360,7 @@ public class STRIPSState extends State implements Cloneable
 		{
 			strBuf.append(o+", ");
 		}
-		
+
 		return strBuf.toString();
 	}
 

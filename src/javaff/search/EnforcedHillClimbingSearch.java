@@ -3,26 +3,26 @@
  * Department of Computer and Information Sciences,
  * University of Strathclyde, Glasgow, UK
  * http://planning.cis.strath.ac.uk/
- * 
+ *
  * Copyright 2007, Keith Halsey
  * Copyright 2008, Andrew Coles and Amanda Smith
  * Copyright 2015, David Pattison
  *
  * This file is part of JavaFF.
- * 
+ *
  * JavaFF is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
- * 
+ *
  * JavaFF is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with JavaFF.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  ************************************************************************/
 
 package javaff.search;
@@ -111,10 +111,11 @@ public class EnforcedHillClimbingSearch extends Search
 
 		javaff.JavaFF.infoOutput.print(bestHValue+" into depth ");
 		int statesEvaluated = 1;
+		int statesGenerated = 1;
 		int maxDepth = 1;
 		HashMap<State, Integer> successorLayers = new HashMap<State, Integer>();
 		successorLayers.put(start, 1);
-		
+
 		int currentDepth = 1, prevDepth = 0;
 		out: while (!open.isEmpty()) // whilst still states to consider
 		{
@@ -123,30 +124,31 @@ public class EnforcedHillClimbingSearch extends Search
 			currentDepth = successorLayers.get(curr);
 			if (currentDepth > maxDepth)
 				maxDepth = currentDepth;
-			
+
 			if (currentDepth > prevDepth)
 			{
 				JavaFF.infoOutput.print("["+(currentDepth)+"]");
 				prevDepth = currentDepth;
 			}
-			
+
 			List<Action> applicable = filter.getActions(curr);
+			statesGenerated += applicable.size();
 			in: for (Action a : applicable)
 			{
 				State succ = curr.getNextState(a);
-				
+
 				if (this.closed.contains(succ.hashCode()) == true)
 				{
 					continue in;
 				}
 				++statesEvaluated;
-				
+
 				BigDecimal succH = succ.getHValue();
 				//check we have no entered a dead-end
 				if (((STRIPSState) succ).getRelaxedPlan() == null)
 					continue;
-				
-				//now do online goal-ordering check -- this is used by FF to prevent deleting goals early in the 
+
+				//now do online goal-ordering check -- this is used by FF to prevent deleting goals early in the
 				//relaxed plan, which would then need negated again later on
 				boolean threatensGoal = this.isGoalThreatened(((STRIPSState) succ).getRelaxedPlan(), succ.goal);
 				if (threatensGoal)
@@ -154,13 +156,18 @@ public class EnforcedHillClimbingSearch extends Search
 //					closed.add(succ); //The real FF says that this state should be "removed" from the state-space -- we just skip it
 					continue; //skip successor state
 				}
-				
+
 				if (succ.goalReached())
 				{ // if we've found a goal state -
 					// return it as the
 					// solution
 					JavaFF.infoOutput.println("\nEvaluated "+statesEvaluated+" states to a max depth of "+maxDepth);
-					
+
+					System.out.println("-------------------- Statistics --------------------");
+					System.out.println("States expanded: " + statesEvaluated);
+					System.out.println("States generated: " + statesGenerated);
+					System.out.println("----------------------------------------------------");
+
 					return succ;
 				}
 				else if (succH.compareTo(bestHValue) < 0)
@@ -171,15 +178,15 @@ public class EnforcedHillClimbingSearch extends Search
 
 					bestHValue = succH; // note the new best value
 					open.clear();
-					
+
 					open.add(succ); // add it to the open list
 					successorLayers.clear();
 					successorLayers.put(succ, 1);
 					prevDepth = 0;
 					currentDepth = 1;
-					
+
 					JavaFF.infoOutput.print("\n"+bestHValue+" into depth ");
-					
+
 					continue out; // and skip looking at the other successors
 				}
 				else
@@ -189,10 +196,10 @@ public class EnforcedHillClimbingSearch extends Search
 //					prevDepth = currentDepth;
 				}
 			}
-			
+
 		}
 		JavaFF.infoOutput.println();
-		
+
 		return null;
 	}
 
@@ -209,22 +216,22 @@ public class EnforcedHillClimbingSearch extends Search
 		//be checked at each timestep to see if any already achieved goals are deleted.
 		HashSet<Fact> achieved = new HashSet<Fact>();
 		List<Action> actions = relaxedPlan.getActions();
-		
-		
+
+
 		for (Action a : actions)
 		{
 			for (Fact g : goal.getFacts())
 			{
-				//if this action deletes a goal and that goal has already been achieved by 
+				//if this action deletes a goal and that goal has already been achieved by
 				//a previous action in the RP, immediately return
 				if (a.deletes(g) && achieved.contains(g))
 					return true;
 			}
-			
+
 			achieved.addAll(a.getAddPropositions());
 			achieved.addAll(a.getDeletePropositions()); //needed for ADL goals
 		}
-		
+
 		return false;
 	}
 }
