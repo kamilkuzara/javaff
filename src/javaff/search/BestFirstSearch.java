@@ -130,7 +130,7 @@ public class BestFirstSearch extends Search
 				// else add the children of s to the open list
 				if (s.goalReached())
 				{
-					double hTime = heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
+					double hTime = getHeuristicsTime();
 					System.out.println("-------------------- Statistics --------------------");
 					System.out.println("Total time computing heuristics: " + hTime + " sec");
 					System.out.println("States expanded: " + nodeCount);
@@ -145,6 +145,10 @@ public class BestFirstSearch extends Search
 
 		}
 		return null;
+	}
+
+	public double getHeuristicsTime(){
+		return heuristicsTime.divide(BigDecimal.valueOf(1000000000)).doubleValue();
 	}
 
 }
