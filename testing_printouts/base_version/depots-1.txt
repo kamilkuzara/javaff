@@ -1,0 +1,950 @@
+-------------------------------------- depots - 1 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 46 reachable facts from 58 original facts.
+Found 90 applicable actions from 270 original actions
+Goal is: (and (on crate0 pallet2)  (on crate1 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 20 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 20
+States generated: 25
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate1 pallet0 depot0)
+1: (load hoist0 crate1 truck1 depot0)
+2: (drive truck1 depot0 distributor0)
+3: (lift hoist1 crate0 pallet1 distributor0)
+4: (load hoist1 crate0 truck1 distributor0)
+5: (unload hoist1 crate1 truck1 distributor0)
+6: (drive truck1 distributor0 distributor1)
+7: (drop hoist1 crate1 pallet1 distributor0)
+8: (unload hoist2 crate0 truck1 distributor1)
+9: (drop hoist2 crate0 pallet2 distributor1)
+Final plan length is 10
+EHC Plan Time = 0.062371596 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/depots-1-1.sol
+Checking plan: ./solutions/base_version/depots-1-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10
+
+Successful plans:
+Value: 10
+ ./solutions/base_version/depots-1-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 2 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 82 reachable facts from 94 original facts.
+Found 210 applicable actions from 666 original actions
+Goal is: (and (on crate0 pallet2)  (on crate2 pallet0)  (on crate1 crate3)  (on crate3 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 24 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 24
+States generated: 42
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate0 pallet0 depot0)
+1: (load hoist0 crate0 truck1 depot0)
+2: (lift hoist2 crate2 crate1 distributor1)
+3: (drive truck1 depot0 distributor1)
+4: (load hoist2 crate2 truck1 distributor1)
+5: (lift hoist2 crate1 pallet2 distributor1)
+6: (load hoist2 crate1 truck1 distributor1)
+7: (unload hoist2 crate0 truck1 distributor1)
+8: (drive truck1 distributor1 depot0)
+9: (drop hoist2 crate0 pallet2 distributor1)
+10: (unload hoist0 crate2 truck1 depot0)
+11: (drive truck1 depot0 distributor0)
+12: (drop hoist0 crate2 pallet0 depot0)
+13: (unload hoist1 crate1 truck1 distributor0)
+14: (drop hoist1 crate1 crate3 distributor0)
+Final plan length is 15
+EHC Plan Time = 0.128144055 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/depots-2-1.sol
+Checking plan: ./solutions/base_version/depots-2-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 15
+
+Successful plans:
+Value: 15
+ ./solutions/base_version/depots-2-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 3 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 126 reachable facts from 138 original facts.
+Found 378 applicable actions from 1206 original actions
+Goal is: (and (on crate2 pallet0)  (on crate5 crate0)  (on crate3 crate2)  (on crate4 pallet1)  (on crate1 pallet2)  (on crate0 crate1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+26 into depth [1]
+25 into depth [1][2]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1][2]
+21 into depth [1]
+20 into depth [1][2][3][4]
+19 into depth [1]
+18 into depth [1][2][3][4][5][6]
+17 into depth [1]
+16 into depth [1][2][3][4][5][6][7][8][9]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 4 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 178 reachable facts from 190 original facts.
+Found 594 applicable actions from 1890 original actions
+Goal is: (and (on crate0 crate4)  (on crate2 crate6)  (on crate5 pallet2)  (on crate7 pallet0)  (on crate4 crate7)  (on crate6 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+20 into depth [1]
+19 into depth [1]
+17 into depth [1][2]
+15 into depth [1]
+14 into depth [1][2][3]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1][2][3]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-4-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-4-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 5 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 238 reachable facts from 250 original facts.
+Found 858 applicable actions from 2718 original actions
+Goal is: (and (on crate9 pallet0)  (on crate2 crate0)  (on crate5 crate4)  (on crate6 crate9)  (on crate8 crate3)  (on crate1 pallet1)  (on crate4 crate6)  (on crate7 crate1)  (on crate0 crate5)  (on crate3 pallet2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+34 into depth [1][2]
+32 into depth [1][2]
+31 into depth [1]
+30 into depth [1][2][3]
+29 into depth [1]
+28 into depth [1][2]
+27 into depth [1][2][3][4][5][6][7]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 6 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 423 reachable facts from 435 original facts.
+Found 1728 applicable actions from 5418 original actions
+Goal is: (and (on crate12 pallet2)  (on crate3 crate12)  (on crate5 crate0)  (on crate9 pallet1)  (on crate4 crate11)  (on crate8 pallet0)  (on crate11 crate5)  (on crate0 crate8)  (on crate1 crate9)  (on crate2 crate1)  (on crate10 crate4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+47 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1][2][3][4][5]
+40 into depth [1][2][3]
+38 into depth [1]
+37 into depth [1][2][3][4][5]
+36 into depth [1][2][3][4][5][6]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 7 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 150 reachable facts from 168 original facts.
+Found 450 applicable actions from 1530 original actions
+Goal is: (and (on crate0 pallet3)  (on crate1 crate4)  (on crate5 crate1)  (on crate3 pallet1)  (on crate4 pallet5) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+22 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1][2]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2][3]
+9 into depth [1]
+8 into depth [1][2][3]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-7-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-7-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 8 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 274 reachable facts from 292 original facts.
+Found 978 applicable actions from 3258 original actions
+Goal is: (and (on crate0 pallet3)  (on crate3 crate8)  (on crate9 pallet0)  (on crate7 pallet1)  (on crate1 crate0)  (on crate8 pallet4)  (on crate6 pallet2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1][2]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1][2][3][4]
+18 into depth [1][2][3][4]
+16 into depth [1][2]
+15 into depth [1][2]
+14 into depth [1][2]
+13 into depth [1][2]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1][2][3]
+7 into depth [1][2][3]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-8-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-8-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 9 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 474 reachable facts from 492 original facts.
+Found 1908 applicable actions from 6228 original actions
+Goal is: (and (on crate4 crate6)  (on crate0 crate5)  (on crate1 crate2)  (on crate10 pallet2)  (on crate6 pallet4)  (on crate9 crate1)  (on crate12 crate14)  (on crate11 pallet1)  (on crate14 pallet3)  (on crate2 crate10)  (on crate5 pallet5)  (on crate3 pallet0)  (on crate13 crate3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+40 into depth [1]
+39 into depth [1][2][3][4]
+38 into depth [1][2][3][4][5]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 10 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 198 reachable facts from 258 original facts.
+Found 900 applicable actions from 6120 original actions
+Goal is: (and (on crate0 crate4)  (on crate2 pallet3)  (on crate4 pallet5)  (on crate3 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+23 into depth [1]
+22 into depth [1]
+21 into depth [1][2]
+20 into depth [1]
+19 into depth [1][2][3]
+18 into depth [1][2][3]
+17 into depth [1]
+16 into depth [1]
+14 into depth [1]
+13 into depth [1][2]
+12 into depth [1][2][3][4][5]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1][2][3]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-10-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-10-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 11 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 346 reachable facts from 406 original facts.
+Found 1932 applicable actions from 13032 original actions
+Goal is: (and (on crate6 crate5)  (on crate2 pallet5)  (on crate3 crate9)  (on crate4 pallet0)  (on crate7 crate1)  (on crate5 pallet2)  (on crate8 pallet3)  (on crate9 crate2)  (on crate0 crate7)  (on crate1 pallet4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+42 into depth [1]
+41 into depth [1][2]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1][2]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1][2][3]
+32 into depth [1][2][3]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1][2][3][4]
+27 into depth [1][2][3]
+26 into depth [1]
+25 into depth [1][2][3][4][5][6][7][8]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1][2][3][4]
+17 into depth [1][2][3][4][5][6][7]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-11-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-11-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 12 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 576 reachable facts from 636 original facts.
+Found 3762 applicable actions from 24912 original actions
+Goal is: (and (on crate1 crate12)  (on crate12 pallet5)  (on crate2 crate0)  (on crate14 crate10)  (on crate0 pallet4)  (on crate5 pallet0)  (on crate3 crate9)  (on crate9 pallet2)  (on crate6 crate2)  (on crate10 crate13)  (on crate13 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+50 into depth [1]
+48 into depth [1]
+47 into depth [1][2]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1][2][3][4][5]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 13 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 230 reachable facts from 310 original facts.
+Found 1068 applicable actions from 7848 original actions
+Goal is: (and (on crate4 pallet9)  (on crate3 pallet7)  (on crate2 pallet4)  (on crate5 pallet1)  (on crate1 pallet5)  (on crate0 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1][2]
+14 into depth [1]
+13 into depth [1][2]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 69 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 69
+States generated: 120
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate2 pallet0 depot0)
+1: (load hoist0 crate2 truck1 depot0)
+2: (drive truck0 distributor1 depot1)
+3: (drive truck1 depot0 distributor1)
+4: (lift hoist0 crate3 pallet8 depot0)
+5: (lift hoist3 crate4 pallet3 distributor0)
+6: (drop hoist0 crate3 pallet7 depot0)
+7: (unload hoist4 crate2 truck1 distributor1)
+8: (drop hoist3 crate4 pallet9 distributor0)
+9: (drop hoist4 crate2 pallet4 distributor1)
+10: (lift hoist2 crate5 crate1 depot2)
+11: (drive truck0 depot1 depot2)
+12: (load hoist2 crate5 truck0 depot2)
+13: (lift hoist2 crate1 crate0 depot2)
+14: (load hoist2 crate1 truck0 depot2)
+15: (lift hoist2 crate0 pallet2 depot2)
+16: (load hoist2 crate0 truck0 depot2)
+17: (drive truck0 depot2 depot0)
+18: (unload hoist0 crate0 truck0 depot0)
+19: (drive truck0 depot0 depot1)
+20: (drop hoist0 crate0 pallet0 depot0)
+21: (unload hoist1 crate5 truck0 depot1)
+22: (drive truck0 depot1 distributor2)
+23: (drop hoist1 crate5 pallet1 depot1)
+24: (unload hoist5 crate1 truck0 distributor2)
+25: (drop hoist5 crate1 pallet5 distributor2)
+Final plan length is 26
+EHC Plan Time = 1.427553073 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/depots-13-1.sol
+Checking plan: ./solutions/base_version/depots-13-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/base_version/depots-13-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 14 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 394 reachable facts from 474 original facts.
+Found 2212 applicable actions from 15912 original actions
+Goal is: (and (on crate1 pallet8)  (on crate2 pallet3)  (on crate9 crate7)  (on crate7 crate6)  (on crate4 pallet0)  (on crate5 pallet5)  (on crate6 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1][2]
+16 into depth [1]
+15 into depth [1][2]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1][2][3]
+10 into depth [1][2]
+8 into depth [1][2][3][4][5][6]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-14-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-14-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 15 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 644 reachable facts from 724 original facts.
+Found 4182 applicable actions from 29232 original actions
+Goal is: (and (on crate6 pallet6)  (on crate9 crate4)  (on crate1 crate10)  (on crate14 pallet9)  (on crate12 crate5)  (on crate0 crate8)  (on crate4 crate7)  (on crate2 pallet0)  (on crate10 crate11)  (on crate13 pallet8)  (on crate3 pallet1)  (on crate5 pallet5)  (on crate7 pallet4)  (on crate8 pallet7)  (on crate11 crate9) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1][2]
+46 into depth [1][2][3]
+45 into depth [1][2][3][4]
+44 into depth [1][2]
+42 into depth [1][2]
+41 into depth [1]
+40 into depth [1][2][3][4][5][6]
+39 into depth [1][2][3]
+38 into depth [1][2][3][4][5]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 16 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 234 reachable facts from 282 original facts.
+Found 1516 applicable actions from 6976 original actions
+Goal is: (and (on crate0 pallet3)  (on crate2 pallet1)  (on crate4 crate3)  (on crate5 pallet2)  (on crate3 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+27 into depth [1]
+26 into depth [1]
+24 into depth [1]
+23 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1][2]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 65 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 65
+States generated: 144
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate5 crate2 depot0)
+1: (lift hoist5 crate3 crate1 depot1)
+2: (load hoist0 crate5 truck2 depot0)
+3: (load hoist5 crate3 truck0 depot1)
+4: (drive truck2 depot0 distributor0)
+5: (lift hoist6 crate1 pallet1 depot1)
+6: (lift hoist0 crate2 pallet0 depot0)
+7: (drive truck0 depot1 depot0)
+8: (load hoist0 crate2 truck0 depot0)
+9: (lift hoist2 crate4 pallet2 distributor0)
+10: (load hoist2 crate4 truck2 distributor0)
+11: (unload hoist0 crate3 truck0 depot0)
+12: (drop hoist0 crate3 pallet0 depot0)
+13: (drive truck0 depot0 depot1)
+14: (lift hoist5 crate0 pallet4 depot1)
+15: (load hoist5 crate0 truck0 depot1)
+16: (unload hoist2 crate5 truck2 distributor0)
+17: (drive truck2 distributor0 depot0)
+18: (drop hoist2 crate5 pallet2 distributor0)
+19: (unload hoist0 crate4 truck2 depot0)
+20: (drop hoist0 crate4 crate3 depot0)
+21: (unload hoist5 crate2 truck0 depot1)
+22: (drive truck0 depot1 distributor1)
+23: (drop hoist5 crate2 pallet1 depot1)
+24: (unload hoist7 crate0 truck0 distributor1)
+25: (drop hoist7 crate0 pallet3 distributor1)
+Final plan length is 26
+EHC Plan Time = 1.923241149 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/depots-16-1.sol
+Checking plan: ./solutions/base_version/depots-16-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/base_version/depots-16-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 17 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 398 reachable facts from 446 original facts.
+Found 3114 applicable actions from 14144 original actions
+Goal is: (and (on crate3 crate8)  (on crate2 pallet4)  (on crate7 crate3)  (on crate4 pallet0)  (on crate6 pallet1)  (on crate1 pallet7)  (on crate8 pallet6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+27 into depth [1]
+26 into depth [1]
+24 into depth [1]
+23 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+15 into depth [1][2][3]
+14 into depth [1][2][3][4]
+13 into depth [1][2][3][4][5][6][7][8]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 18 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 648 reachable facts from 696 original facts.
+Found 5824 applicable actions from 25984 original actions
+Goal is: (and (on crate12 crate5)  (on crate10 pallet1)  (on crate1 pallet6)  (on crate6 pallet7)  (on crate13 pallet3)  (on crate9 crate1)  (on crate8 crate4)  (on crate0 crate10)  (on crate2 crate12)  (on crate14 pallet0)  (on crate5 pallet2)  (on crate11 pallet5)  (on crate4 pallet4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+58 into depth [1]
+57 into depth [1]
+55 into depth [1]
+54 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1][2]
+45 into depth [1][2]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1][2]
+39 into depth [1]
+38 into depth [1][2]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1][2]
+28 into depth [1]
+26 into depth [1]
+25 into depth [1][2]
+24 into depth [1][2]
+23 into depth [1][2]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1][2]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1][2]
+4 into depth [1]
+3 into depth [1]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-18-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-18-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 19 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 380 reachable facts from 506 original facts.
+Found 2512 applicable actions from 22784 original actions
+Goal is: (and (on crate1 pallet8)  (on crate6 pallet4)  (on crate0 pallet6)  (on crate7 crate4)  (on crate5 crate7)  (on crate4 pallet5)  (on crate3 crate1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1][2][3]
+27 into depth [1]
+26 into depth [1][2][3][4]
+25 into depth [1]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1][2][3]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1][2][3][4][5]
+18 into depth [1][2][3][4][5]
+16 into depth [1][2][3][4][5][6]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1][2][3][4]
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/base_version/depots-19-1.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/base_version/depots-19-1.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 20 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 758 reachable facts from 884 original facts.
+Found 6166 applicable actions from 55936 original actions
+Goal is: (and (on crate4 crate5)  (on crate5 crate14)  (on crate1 crate11)  (on crate9 crate8)  (on crate2 pallet6)  (on crate3 crate0)  (on crate0 pallet3)  (on crate6 pallet4)  (on crate7 pallet2)  (on crate13 crate2)  (on crate11 pallet5)  (on crate14 pallet1)  (on crate8 pallet7)  (on crate12 crate6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+66 into depth [1]
+65 into depth [1]
+64 into depth [1]
+63 into depth [1]
+61 into depth [1]
+60 into depth [1]
+59 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1]
+54 into depth [1]
+53 into depth [1]
+52 into depth [1][2][3][4]
+51 into depth [1]
+50 into depth [1][2][3][4]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 21 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile21.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 782 reachable facts from 1167 original facts.
+Found 8934 applicable actions from 130464 original actions
+Goal is: (and (on crate8 pallet15)  (on crate0 pallet2)  (on crate7 pallet18)  (on crate6 pallet12)  (on crate2 pallet11)  (on crate5 pallet5)  (on crate1 pallet7)  (on crate3 pallet3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+36 into depth [1]
+34 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 117 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 117
+States generated: 266
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist13 crate3 pallet15 depot1)
+1: (drive truck1 depot0 depot1)
+2: (drive truck3 distributor0 depot1)
+3: (lift hoist0 crate1 pallet0 depot0)
+4: (lift hoist1 crate0 pallet16 depot1)
+5: (load hoist1 crate0 truck1 depot1)
+6: (drive truck1 depot1 depot2)
+7: (lift hoist11 crate2 pallet13 distributor5)
+8: (lift hoist4 crate6 pallet4 depot4)
+9: (drop hoist11 crate2 pallet11 distributor5)
+10: (load hoist0 crate1 truck4 depot0)
+11: (drive truck4 depot0 distributor1)
+12: (lift hoist7 crate8 pallet7 distributor1)
+13: (load hoist7 crate8 truck4 distributor1)
+14: (load hoist13 crate3 truck3 depot1)
+15: (lift hoist13 crate5 pallet1 depot1)
+16: (load hoist13 crate5 truck3 depot1)
+17: (drive truck3 depot1 depot3)
+18: (load hoist4 crate6 truck5 depot4)
+19: (drive truck5 depot4 distributor1)
+20: (unload hoist2 crate0 truck1 depot2)
+21: (drop hoist2 crate0 pallet2 depot2)
+22: (unload hoist3 crate3 truck3 depot3)
+23: (drive truck3 depot3 depot5)
+24: (drop hoist3 crate3 pallet3 depot3)
+25: (unload hoist12 crate5 truck3 depot5)
+26: (drop hoist12 crate5 pallet5 depot5)
+27: (unload hoist7 crate6 truck5 distributor1)
+28: (drop hoist7 crate6 pallet12 distributor1)
+29: (unload hoist7 crate1 truck4 distributor1)
+30: (drive truck4 distributor1 depot1)
+31: (drop hoist7 crate1 pallet7 distributor1)
+32: (unload hoist1 crate8 truck4 depot1)
+33: (drop hoist1 crate8 pallet15 depot1)
+Final plan length is 34
+EHC Plan Time = 36.887415413 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/depots-21-1.sol
+Checking plan: ./solutions/base_version/depots-21-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 34
+
+Successful plans:
+Value: 34
+ ./solutions/base_version/depots-21-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 22 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile22.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 1622 reachable facts from 2007 original facts.
+Found 22924 applicable actions from 332064 original actions
+Goal is: (and (on crate6 pallet6)  (on crate1 pallet15)  (on crate12 pallet16)  (on crate10 crate17)  (on crate13 crate16)  (on crate18 pallet4)  (on crate17 pallet2)  (on crate5 pallet12)  (on crate8 crate10)  (on crate9 pallet17)  (on crate16 crate15)  (on crate19 pallet9)  (on crate11 pallet1)  (on crate15 pallet7)  (on crate2 pallet13)  (on crate7 pallet5)  (on crate0 pallet14)  (on crate3 pallet18) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+87 into depth [1]
+86 into depth [1]
+84 into depth [1]
+82 into depth [1]
+81 into depth [1]
+80 into depth [1]
+79 into depth [1]
+78 into depth [1]
+77 into depth [1]
+76 into depth [1]
+75 into depth [1]
+74 into depth [1]---------------------------------------------------------------------------------------------
+
+

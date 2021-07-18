@@ -1,0 +1,2243 @@
+-------------------------------------- satellite - 1 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 17 reachable facts from 17 original facts.
+Found 52 applicable actions from 52 original actions
+Goal is: (and (have_image phenomenon4 thermograph0)  (have_image phenomenon6 thermograph0)  (have_image star5 thermograph0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+8 into depth [1]
+7 into depth [1][2]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 12 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 12
+States generated: 24
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (turn_to satellite0 groundstation2 phenomenon6)
+2: (calibrate satellite0 instrument0 groundstation2)
+3: (turn_to satellite0 phenomenon4 groundstation2)
+4: (take_image satellite0 phenomenon4 instrument0 thermograph0)
+5: (turn_to satellite0 phenomenon6 phenomenon4)
+6: (take_image satellite0 phenomenon6 instrument0 thermograph0)
+7: (turn_to satellite0 star5 phenomenon6)
+8: (take_image satellite0 star5 instrument0 thermograph0)
+Final plan length is 9
+EHC Plan Time = 0.034745259 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-1-1.sol
+Checking plan: ./solutions/base_version/satellite-1-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 9
+
+Successful plans:
+Value: 9
+ ./solutions/base_version/satellite-1-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 2 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 37 reachable facts from 37 original facts.
+Found 102 applicable actions from 102 original actions
+Goal is: (and (have_image planet3 infrared0)  (have_image phenomenon5 image2)  (have_image star7 infrared0)  (have_image phenomenon6 infrared0)  (have_image planet4 infrared0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+15 into depth [1]
+11 into depth [1][2]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 19 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 19
+States generated: 50
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument1 satellite0)
+1: (turn_to satellite0 groundstation2 planet4)
+2: (calibrate satellite0 instrument1 groundstation2)
+3: (turn_to satellite0 phenomenon5 groundstation2)
+4: (take_image satellite0 phenomenon5 instrument1 image2)
+5: (turn_to satellite0 phenomenon6 phenomenon5)
+6: (take_image satellite0 phenomenon6 instrument1 infrared0)
+7: (turn_to satellite0 planet3 phenomenon6)
+8: (take_image satellite0 planet3 instrument1 infrared0)
+9: (turn_to satellite0 planet4 planet3)
+10: (take_image satellite0 planet4 instrument1 infrared0)
+11: (turn_to satellite0 star7 planet4)
+12: (take_image satellite0 star7 instrument1 infrared0)
+Final plan length is 13
+EHC Plan Time = 0.054857623 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-2-1.sol
+Checking plan: ./solutions/base_version/satellite-2-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 13
+
+Successful plans:
+Value: 13
+ ./solutions/base_version/satellite-2-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 3 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 50 reachable facts from 50 original facts.
+Found 188 applicable actions from 188 original actions
+Goal is: (and (pointing satellite0 phenomenon5)  (have_image star4 spectrograph2)  (have_image star3 infrared0)  (have_image phenomenon7 spectrograph2)  (have_image phenomenon5 spectrograph2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+10 into depth [1]
+9 into depth [1][2][3][4]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 26 states to a max depth of 4
+-------------------- Statistics --------------------
+States expanded: 26
+States generated: 52
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (turn_to satellite0 star1 star4)
+2: (calibrate satellite0 instrument0 star1)
+3: (turn_to satellite0 phenomenon5 star1)
+4: (take_image satellite0 phenomenon5 instrument0 spectrograph2)
+5: (turn_to satellite0 phenomenon7 phenomenon5)
+6: (take_image satellite0 phenomenon7 instrument0 spectrograph2)
+7: (turn_to satellite0 phenomenon5 phenomenon7)
+8: (turn_to satellite0 star3 phenomenon5)
+9: (take_image satellite0 star3 instrument0 infrared0)
+10: (turn_to satellite0 phenomenon5 star3)
+11: (turn_to satellite0 star4 phenomenon5)
+12: (take_image satellite0 star4 instrument0 spectrograph2)
+13: (turn_to satellite0 phenomenon5 star4)
+Final plan length is 14
+EHC Plan Time = 0.082549038 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-3-1.sol
+Checking plan: ./solutions/base_version/satellite-3-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 14
+
+Successful plans:
+Value: 14
+ ./solutions/base_version/satellite-3-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 4 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 58 original facts.
+Found 259 applicable actions from 259 original actions
+Goal is: (and (pointing satellite1 planet5)  (have_image phenomenon9 infrared0)  (have_image star4 infrared1)  (have_image star6 infrared1)  (have_image phenomenon8 thermograph2)  (have_image planet5 thermograph2)  (have_image star7 infrared0)  (have_image planet3 infrared1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+23 into depth [1]
+22 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 38 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 38
+States generated: 133
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument1 satellite1)
+2: (turn_to satellite0 phenomenon8 star6)
+3: (turn_to satellite1 phenomenon9 star0)
+4: (turn_to satellite1 planet5 phenomenon9)
+5: (turn_to satellite1 star2 planet5)
+6: (calibrate satellite1 instrument1 star2)
+7: (turn_to satellite1 phenomenon8 star2)
+8: (take_image satellite1 phenomenon8 instrument1 thermograph2)
+9: (turn_to satellite1 phenomenon9 phenomenon8)
+10: (take_image satellite1 phenomenon9 instrument1 infrared0)
+11: (turn_to satellite1 planet3 phenomenon9)
+12: (take_image satellite1 planet3 instrument1 infrared1)
+13: (turn_to satellite1 planet5 planet3)
+14: (take_image satellite1 planet5 instrument1 thermograph2)
+15: (turn_to satellite1 star4 planet5)
+16: (take_image satellite1 star4 instrument1 infrared1)
+17: (turn_to satellite1 planet5 star4)
+18: (turn_to satellite1 star6 planet5)
+19: (take_image satellite1 star6 instrument1 infrared1)
+20: (turn_to satellite1 planet5 star6)
+21: (turn_to satellite1 star7 planet5)
+22: (take_image satellite1 star7 instrument1 infrared0)
+23: (turn_to satellite1 planet5 star7)
+Final plan length is 24
+EHC Plan Time = 0.15254224 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-4-1.sol
+Checking plan: ./solutions/base_version/satellite-4-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 24
+
+Successful plans:
+Value: 24
+ ./solutions/base_version/satellite-4-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 5 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 81 reachable facts from 81 original facts.
+Found 497 applicable actions from 497 original actions
+Goal is: (and (pointing satellite0 phenomenon5)  (pointing satellite1 groundstation2)  (have_image planet9 spectrograph1)  (have_image phenomenon8 image2)  (have_image phenomenon6 image2)  (have_image star3 thermograph0)  (have_image phenomenon5 image2)  (have_image star7 thermograph0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+26 into depth [1]
+22 into depth [1]
+15 into depth [1][2]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 46 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 46
+States generated: 126
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument2 satellite0)
+1: (switch_on instrument3 satellite1)
+2: (turn_to satellite0 groundstation0 phenomenon8)
+3: (calibrate satellite0 instrument2 groundstation0)
+4: (turn_to satellite0 phenomenon5 groundstation0)
+5: (take_image satellite0 phenomenon5 instrument2 image2)
+6: (turn_to satellite0 phenomenon6 phenomenon5)
+7: (take_image satellite0 phenomenon6 instrument2 image2)
+8: (turn_to satellite0 phenomenon5 phenomenon6)
+9: (turn_to satellite0 phenomenon8 phenomenon5)
+10: (take_image satellite0 phenomenon8 instrument2 image2)
+11: (turn_to satellite0 phenomenon5 phenomenon8)
+12: (turn_to satellite1 groundstation0 groundstation2)
+13: (calibrate satellite1 instrument3 groundstation0)
+14: (turn_to satellite1 groundstation2 groundstation0)
+15: (turn_to satellite1 planet9 groundstation2)
+16: (take_image satellite1 planet9 instrument3 spectrograph1)
+17: (turn_to satellite1 groundstation2 planet9)
+18: (turn_to satellite1 star3 groundstation2)
+19: (take_image satellite1 star3 instrument3 thermograph0)
+20: (turn_to satellite1 groundstation2 star3)
+21: (turn_to satellite1 star7 groundstation2)
+22: (take_image satellite1 star7 instrument3 thermograph0)
+23: (turn_to satellite1 groundstation2 star7)
+Final plan length is 24
+EHC Plan Time = 0.209553368 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-5-1.sol
+Checking plan: ./solutions/base_version/satellite-5-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 24
+
+Successful plans:
+Value: 24
+ ./solutions/base_version/satellite-5-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 6 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 90 reachable facts from 90 original facts.
+Found 455 applicable actions from 455 original actions
+Goal is: (and (have_image phenomenon8 spectrograph0)  (have_image star9 infrared1)  (have_image planet5 spectrograph0)  (have_image star10 infrared3)  (have_image star7 infrared3)  (have_image planet4 thermograph2)  (have_image star6 thermograph2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+20 into depth [1]
+19 into depth [1]
+16 into depth [1][2][3]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1][2][3][4]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 42 states to a max depth of 4
+-------------------- Statistics --------------------
+States expanded: 42
+States generated: 115
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument2 satellite1)
+2: (turn_to satellite0 star1 phenomenon8)
+3: (calibrate satellite0 instrument0 star1)
+4: (turn_to satellite0 phenomenon8 star1)
+5: (take_image satellite0 phenomenon8 instrument0 spectrograph0)
+6: (turn_to satellite0 planet5 phenomenon8)
+7: (take_image satellite0 planet5 instrument0 spectrograph0)
+8: (turn_to satellite0 star9 planet5)
+9: (take_image satellite0 star9 instrument0 infrared1)
+10: (turn_to satellite1 star2 star6)
+11: (calibrate satellite1 instrument2 star2)
+12: (turn_to satellite1 planet4 star2)
+13: (take_image satellite1 planet4 instrument2 thermograph2)
+14: (turn_to satellite1 star10 planet4)
+15: (take_image satellite1 star10 instrument2 infrared3)
+16: (turn_to satellite1 star6 star10)
+17: (take_image satellite1 star6 instrument2 thermograph2)
+18: (turn_to satellite1 star7 star6)
+19: (take_image satellite1 star7 instrument2 infrared3)
+Final plan length is 20
+EHC Plan Time = 0.210936259 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-6-1.sol
+Checking plan: ./solutions/base_version/satellite-6-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 20
+
+Successful plans:
+Value: 20
+ ./solutions/base_version/satellite-6-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 7 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 116 reachable facts from 116 original facts.
+Found 756 applicable actions from 756 original actions
+Goal is: (and (have_image star6 image1)  (have_image planet11 image2)  (pointing satellite2 phenomenon5)  (have_image planet9 image3)  (have_image planet10 image0)  (have_image planet8 image0)  (pointing satellite1 star1)  (have_image phenomenon5 image0)  (have_image star7 image0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+28 into depth [1]
+27 into depth [1]
+22 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1][2][3][4][5]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 81 states to a max depth of 5
+-------------------- Statistics --------------------
+States expanded: 81
+States generated: 227
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument1 satellite0)
+1: (switch_on instrument3 satellite1)
+2: (switch_on instrument4 satellite2)
+3: (turn_to satellite0 groundstation0 star6)
+4: (calibrate satellite0 instrument1 groundstation0)
+5: (turn_to satellite0 planet9 groundstation0)
+6: (take_image satellite0 planet9 instrument1 image3)
+7: (turn_to satellite1 planet11 groundstation0)
+8: (turn_to satellite2 star1 star6)
+9: (calibrate satellite2 instrument4 star1)
+10: (turn_to satellite2 phenomenon5 star1)
+11: (take_image satellite2 phenomenon5 instrument4 image0)
+12: (turn_to satellite1 groundstation4 planet11)
+13: (calibrate satellite1 instrument3 groundstation4)
+14: (turn_to satellite1 planet11 groundstation4)
+15: (take_image satellite1 planet11 instrument3 image2)
+16: (turn_to satellite1 star1 planet11)
+17: (turn_to satellite1 planet8 star1)
+18: (take_image satellite1 planet8 instrument3 image0)
+19: (turn_to satellite1 star1 planet8)
+20: (turn_to satellite1 star7 star1)
+21: (take_image satellite1 star7 instrument3 image0)
+22: (turn_to satellite1 star1 star7)
+23: (turn_to satellite2 planet10 phenomenon5)
+24: (take_image satellite2 planet10 instrument4 image0)
+25: (turn_to satellite2 phenomenon5 planet10)
+26: (turn_to satellite2 star6 phenomenon5)
+27: (take_image satellite2 star6 instrument4 image1)
+28: (turn_to satellite2 phenomenon5 star6)
+Final plan length is 29
+EHC Plan Time = 0.453647165 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-7-1.sol
+Checking plan: ./solutions/base_version/satellite-7-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 29
+
+Successful plans:
+Value: 29
+ ./solutions/base_version/satellite-7-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 8 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 144 reachable facts from 144 original facts.
+Found 1185 applicable actions from 1185 original actions
+Goal is: (and (have_image phenomenon5 thermograph1)  (have_image planet11 thermograph2)  (have_image phenomenon9 image0)  (have_image star7 spectrograph3)  (have_image star10 spectrograph3)  (have_image phenomenon8 image0)  (have_image star6 thermograph1)  (have_image phenomenon12 image0)  (have_image phenomenon14 thermograph2)  (have_image phenomenon13 thermograph1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+32 into depth [1]
+28 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 38 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 38
+States generated: 200
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument3 satellite1)
+1: (switch_on instrument1 satellite0)
+2: (switch_on instrument9 satellite3)
+3: (turn_to satellite0 star2 phenomenon14)
+4: (calibrate satellite0 instrument1 star2)
+5: (turn_to satellite0 phenomenon13 star2)
+6: (turn_to satellite1 groundstation1 star4)
+7: (calibrate satellite1 instrument3 groundstation1)
+8: (take_image satellite0 phenomenon13 instrument1 thermograph1)
+9: (turn_to satellite0 phenomenon14 phenomenon13)
+10: (take_image satellite0 phenomenon14 instrument1 thermograph2)
+11: (turn_to satellite0 phenomenon5 phenomenon14)
+12: (take_image satellite0 phenomenon5 instrument1 thermograph1)
+13: (turn_to satellite0 star10 phenomenon5)
+14: (take_image satellite0 star10 instrument1 spectrograph3)
+15: (turn_to satellite0 star6 star10)
+16: (take_image satellite0 star6 instrument1 thermograph1)
+17: (turn_to satellite0 star7 star6)
+18: (take_image satellite0 star7 instrument1 spectrograph3)
+19: (turn_to satellite1 phenomenon12 groundstation1)
+20: (take_image satellite1 phenomenon12 instrument3 image0)
+21: (turn_to satellite1 phenomenon8 phenomenon12)
+22: (take_image satellite1 phenomenon8 instrument3 image0)
+23: (turn_to satellite1 phenomenon9 phenomenon8)
+24: (take_image satellite1 phenomenon9 instrument3 image0)
+25: (turn_to satellite1 planet11 phenomenon9)
+26: (take_image satellite1 planet11 instrument3 thermograph2)
+Final plan length is 27
+EHC Plan Time = 0.340499836 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-8-1.sol
+Checking plan: ./solutions/base_version/satellite-8-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 27
+
+Successful plans:
+Value: 27
+ ./solutions/base_version/satellite-8-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 9 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 177 reachable facts from 177 original facts.
+Found 1473 applicable actions from 1473 original actions
+Goal is: (and (have_image phenomenon6 image3)  (have_image phenomenon7 infrared1)  (have_image planet11 spectrograph0)  (have_image phenomenon8 image2)  (have_image planet10 image4)  (have_image planet5 image2)  (pointing satellite0 phenomenon7)  (pointing satellite4 planet5)  (have_image star9 image3)  (have_image star14 image4)  (pointing satellite3 star9)  (have_image phenomenon13 spectrograph0)  (have_image phenomenon12 image3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 43 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 43
+States generated: 372
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument2 satellite0)
+1: (switch_on instrument4 satellite1)
+2: (switch_on instrument6 satellite2)
+3: (switch_on instrument7 satellite3)
+4: (switch_on instrument8 satellite4)
+5: (turn_to satellite0 phenomenon7 star0)
+6: (turn_to satellite1 phenomenon6 planet11)
+7: (turn_to satellite1 star3 phenomenon6)
+8: (calibrate satellite1 instrument4 star3)
+9: (turn_to satellite1 phenomenon12 star3)
+10: (take_image satellite1 phenomenon12 instrument4 image3)
+11: (turn_to satellite1 phenomenon6 phenomenon12)
+12: (take_image satellite1 phenomenon6 instrument4 image3)
+13: (turn_to satellite1 phenomenon8 phenomenon6)
+14: (take_image satellite1 phenomenon8 instrument4 image2)
+15: (turn_to satellite1 planet5 phenomenon8)
+16: (take_image satellite1 planet5 instrument4 image2)
+17: (turn_to satellite1 star9 planet5)
+18: (take_image satellite1 star9 instrument4 image3)
+19: (turn_to satellite2 phenomenon13 phenomenon6)
+20: (turn_to satellite3 star0 planet10)
+21: (calibrate satellite3 instrument7 star0)
+22: (turn_to satellite3 phenomenon13 star0)
+23: (take_image satellite3 phenomenon13 instrument7 spectrograph0)
+24: (turn_to satellite3 planet10 phenomenon13)
+25: (take_image satellite3 planet10 instrument7 image4)
+26: (turn_to satellite3 planet11 planet10)
+27: (take_image satellite3 planet11 instrument7 spectrograph0)
+28: (turn_to satellite3 star14 planet11)
+29: (take_image satellite3 star14 instrument7 image4)
+30: (turn_to satellite3 star9 star14)
+31: (turn_to satellite4 groundstation1 star9)
+32: (calibrate satellite4 instrument8 groundstation1)
+33: (turn_to satellite4 phenomenon7 groundstation1)
+34: (take_image satellite4 phenomenon7 instrument8 infrared1)
+35: (turn_to satellite4 planet5 phenomenon7)
+Final plan length is 36
+EHC Plan Time = 0.514524138 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-9-1.sol
+Checking plan: ./solutions/base_version/satellite-9-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 36
+
+Successful plans:
+Value: 36
+ ./solutions/base_version/satellite-9-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 10 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 197 reachable facts from 197 original facts.
+Found 1784 applicable actions from 1784 original actions
+Goal is: (and (have_image phenomenon8 image4)  (have_image phenomenon14 spectrograph1)  (have_image planet9 infrared0)  (pointing satellite4 planet9)  (have_image star7 image4)  (have_image star16 image2)  (have_image planet5 image4)  (have_image star6 infrared3)  (have_image star12 image4)  (have_image planet10 infrared3)  (have_image star15 spectrograph1)  (have_image phenomenon13 image4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+42 into depth [1]
+33 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1][2][3][4][5][6][7]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1][2][3]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 108 states to a max depth of 7
+-------------------- Statistics --------------------
+States expanded: 108
+States generated: 359
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument10 satellite4)
+1: (switch_on instrument3 satellite1)
+2: (calibrate satellite1 instrument3 star4)
+3: (switch_on instrument7 satellite3)
+4: (turn_to satellite1 planet10 star4)
+5: (take_image satellite1 planet10 instrument3 infrared3)
+6: (turn_to satellite1 planet9 planet10)
+7: (take_image satellite1 planet9 instrument3 infrared0)
+8: (turn_to satellite1 star6 planet9)
+9: (take_image satellite1 star6 instrument3 infrared3)
+10: (turn_to satellite3 phenomenon14 groundstation3)
+11: (turn_to satellite4 phenomenon13 planet10)
+12: (turn_to satellite4 star0 phenomenon13)
+13: (calibrate satellite4 instrument10 star0)
+14: (turn_to satellite4 phenomenon13 star0)
+15: (take_image satellite4 phenomenon13 instrument10 image4)
+16: (turn_to satellite4 phenomenon8 phenomenon13)
+17: (take_image satellite4 phenomenon8 instrument10 image4)
+18: (turn_to satellite4 planet5 phenomenon8)
+19: (take_image satellite4 planet5 instrument10 image4)
+20: (turn_to satellite4 planet9 planet5)
+21: (turn_to satellite3 star4 phenomenon14)
+22: (calibrate satellite3 instrument7 star4)
+23: (turn_to satellite3 phenomenon14 star4)
+24: (take_image satellite3 phenomenon14 instrument7 spectrograph1)
+25: (turn_to satellite3 star15 phenomenon14)
+26: (take_image satellite3 star15 instrument7 spectrograph1)
+27: (turn_to satellite3 star12 star15)
+28: (take_image satellite3 star12 instrument7 image4)
+29: (turn_to satellite3 star7 star12)
+30: (take_image satellite3 star7 instrument7 image4)
+31: (turn_to satellite4 star16 planet9)
+32: (take_image satellite4 star16 instrument10 image2)
+33: (turn_to satellite4 planet9 star16)
+Final plan length is 34
+EHC Plan Time = 1.203737903 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-10-1.sol
+Checking plan: ./solutions/base_version/satellite-10-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 34
+
+Successful plans:
+Value: 34
+ ./solutions/base_version/satellite-10-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 11 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 223 reachable facts from 223 original facts.
+Found 2287 applicable actions from 2287 original actions
+Goal is: (and (have_image star8 image3)  (pointing satellite1 star4)  (have_image phenomenon7 infrared1)  (pointing satellite4 star11)  (have_image planet16 image3)  (have_image star5 image3)  (have_image planet13 spectrograph4)  (pointing satellite0 phenomenon9)  (have_image star10 thermograph2)  (have_image planet14 thermograph2)  (have_image phenomenon15 infrared0)  (have_image star17 infrared0)  (have_image star11 infrared1)  (have_image planet6 infrared1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+39 into depth [1]
+35 into depth [1]
+34 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1][2][3]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1][2]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 57 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 57
+States generated: 330
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument1 satellite1)
+1: (calibrate satellite1 instrument1 groundstation3)
+2: (switch_on instrument5 satellite2)
+3: (switch_on instrument7 satellite3)
+4: (turn_to satellite0 phenomenon9 star8)
+5: (turn_to satellite1 phenomenon15 groundstation3)
+6: (take_image satellite1 phenomenon15 instrument1 infrared0)
+7: (turn_to satellite1 phenomenon7 phenomenon15)
+8: (take_image satellite1 phenomenon7 instrument1 infrared1)
+9: (turn_to satellite1 planet6 phenomenon7)
+10: (take_image satellite1 planet6 instrument1 infrared1)
+11: (turn_to satellite1 star11 planet6)
+12: (take_image satellite1 star11 instrument1 infrared1)
+13: (turn_to satellite1 star17 star11)
+14: (take_image satellite1 star17 instrument1 infrared0)
+15: (turn_to satellite1 star4 star17)
+16: (turn_to satellite2 planet13 star4)
+17: (turn_to satellite3 planet16 phenomenon9)
+18: (turn_to satellite4 star11 phenomenon9)
+19: (turn_to satellite2 star0 planet13)
+20: (calibrate satellite2 instrument5 star0)
+21: (turn_to satellite2 planet13 star0)
+22: (take_image satellite2 planet13 instrument5 spectrograph4)
+23: (turn_to satellite2 planet14 planet13)
+24: (take_image satellite2 planet14 instrument5 thermograph2)
+25: (turn_to satellite2 star10 planet14)
+26: (take_image satellite2 star10 instrument5 thermograph2)
+27: (turn_to satellite3 star2 planet16)
+28: (calibrate satellite3 instrument7 star2)
+29: (turn_to satellite3 planet16 star2)
+30: (take_image satellite3 planet16 instrument7 image3)
+31: (turn_to satellite3 star5 planet16)
+32: (take_image satellite3 star5 instrument7 image3)
+33: (turn_to satellite3 star8 star5)
+34: (take_image satellite3 star8 instrument7 image3)
+Final plan length is 35
+EHC Plan Time = 0.803737033 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-11-1.sol
+Checking plan: ./solutions/base_version/satellite-11-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 35
+
+Successful plans:
+Value: 35
+ ./solutions/base_version/satellite-11-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 12 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 275 reachable facts from 275 original facts.
+Found 3555 applicable actions from 3555 original actions
+Goal is: (and (have_image phenomenon6 spectrograph4)  (have_image planet8 infrared1)  (have_image phenomenon21 thermograph2)  (have_image star19 thermograph2)  (have_image planet10 thermograph2)  (have_image star23 spectrograph4)  (have_image phenomenon13 spectrograph4)  (have_image planet11 infrared3)  (have_image phenomenon24 infrared0)  (have_image star9 spectrograph4)  (have_image star14 thermograph2)  (have_image phenomenon17 spectrograph4)  (have_image planet16 infrared1)  (have_image star22 infrared1)  (have_image star7 infrared0)  (have_image planet5 infrared0)  (have_image star18 spectrograph4)  (have_image planet20 thermograph2)  (have_image star15 infrared3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+58 into depth [1]
+48 into depth [1]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1][2]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1][2]
+26 into depth [1]
+25 into depth [1][2]
+24 into depth [1]
+23 into depth [1][2][3][4]
+22 into depth [1]
+21 into depth [1][2][3][4][5]
+20 into depth [1]
+19 into depth [1][2][3][4][5][6]
+18 into depth [1]
+17 into depth [1][2][3][4][5][6][7]
+16 into depth [1]
+15 into depth [1][2][3][4][5][6][7]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1][2][3][4][5][6]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 488 states to a max depth of 7
+-------------------- Statistics --------------------
+States expanded: 488
+States generated: 965
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument3 satellite1)
+2: (calibrate satellite1 instrument3 star4)
+3: (switch_on instrument7 satellite4)
+4: (turn_to satellite4 planet11 star14)
+5: (turn_to satellite4 star2 planet11)
+6: (calibrate satellite4 instrument7 star2)
+7: (turn_to satellite4 planet11 star2)
+8: (take_image satellite4 planet11 instrument7 infrared3)
+9: (turn_to satellite4 planet16 planet11)
+10: (take_image satellite4 planet16 instrument7 infrared1)
+11: (turn_to satellite4 planet8 planet16)
+12: (take_image satellite4 planet8 instrument7 infrared1)
+13: (turn_to satellite4 star15 planet8)
+14: (take_image satellite4 star15 instrument7 infrared3)
+15: (turn_to satellite4 star22 star15)
+16: (take_image satellite4 star22 instrument7 infrared1)
+17: (turn_to satellite1 phenomenon13 star4)
+18: (take_image satellite1 phenomenon13 instrument3 spectrograph4)
+19: (turn_to satellite1 phenomenon17 phenomenon13)
+20: (take_image satellite1 phenomenon17 instrument3 spectrograph4)
+21: (turn_to satellite1 phenomenon21 phenomenon17)
+22: (turn_to satellite1 phenomenon24 phenomenon21)
+23: (take_image satellite1 phenomenon24 instrument3 infrared0)
+24: (turn_to satellite1 phenomenon21 phenomenon24)
+25: (turn_to satellite1 phenomenon6 phenomenon21)
+26: (take_image satellite1 phenomenon6 instrument3 spectrograph4)
+27: (turn_to satellite1 phenomenon21 phenomenon6)
+28: (turn_to satellite1 planet5 phenomenon21)
+29: (take_image satellite1 planet5 instrument3 infrared0)
+30: (turn_to satellite1 phenomenon21 planet5)
+31: (turn_to satellite1 star18 phenomenon21)
+32: (take_image satellite1 star18 instrument3 spectrograph4)
+33: (turn_to satellite1 phenomenon21 star18)
+34: (turn_to satellite1 star23 phenomenon21)
+35: (take_image satellite1 star23 instrument3 spectrograph4)
+36: (turn_to satellite1 phenomenon21 star23)
+37: (turn_to satellite1 star7 phenomenon21)
+38: (take_image satellite1 star7 instrument3 infrared0)
+39: (turn_to satellite1 phenomenon21 star7)
+40: (turn_to satellite1 star9 phenomenon21)
+41: (take_image satellite1 star9 instrument3 spectrograph4)
+42: (switch_off instrument3 satellite1)
+43: (switch_on instrument4 satellite1)
+44: (turn_to satellite1 phenomenon21 star9)
+45: (turn_to satellite1 star4 phenomenon21)
+46: (calibrate satellite1 instrument4 star4)
+47: (turn_to satellite1 phenomenon21 star4)
+48: (take_image satellite1 phenomenon21 instrument4 thermograph2)
+49: (turn_to satellite1 planet10 phenomenon21)
+50: (take_image satellite1 planet10 instrument4 thermograph2)
+51: (turn_to satellite1 planet20 planet10)
+52: (take_image satellite1 planet20 instrument4 thermograph2)
+53: (turn_to satellite1 star14 planet20)
+54: (take_image satellite1 star14 instrument4 thermograph2)
+55: (turn_to satellite1 star19 star14)
+56: (take_image satellite1 star19 instrument4 thermograph2)
+Final plan length is 57
+EHC Plan Time = 9.217932454 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-12-1.sol
+Checking plan: ./solutions/base_version/satellite-12-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 57
+
+Successful plans:
+Value: 57
+ ./solutions/base_version/satellite-12-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 13 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 323 reachable facts from 323 original facts.
+Found 4917 applicable actions from 4917 original actions
+Goal is: (and (have_image planet23 thermograph1)  (have_image planet25 thermograph1)  (have_image star22 image4)  (pointing satellite4 planet11)  (have_image planet11 thermograph2)  (have_image star21 thermograph1)  (have_image planet9 thermograph0)  (have_image planet15 thermograph0)  (have_image star14 image3)  (have_image phenomenon27 thermograph1)  (have_image planet8 image3)  (have_image phenomenon18 image3)  (have_image planet7 image3)  (have_image planet10 thermograph1)  (have_image planet28 thermograph2)  (have_image planet16 image3)  (have_image planet13 thermograph1)  (pointing satellite2 planet11)  (have_image star26 thermograph0)  (have_image star19 thermograph0)  (have_image phenomenon5 thermograph1)  (have_image planet6 image4)  (have_image planet24 thermograph2)  (have_image planet29 thermograph0)  (pointing satellite1 phenomenon5)  (have_image planet17 image4)  (have_image phenomenon12 image3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+72 into depth [1]
+69 into depth [1]
+64 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1][2][3][4][5]
+54 into depth [1]
+53 into depth [1]
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1]
+47 into depth [1]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1][2]
+37 into depth [1]
+36 into depth [1][2]
+35 into depth [1]
+34 into depth [1][2]
+33 into depth [1]
+32 into depth [1][2]
+31 into depth [1]
+30 into depth [1][2]
+29 into depth [1]
+28 into depth [1][2]
+27 into depth [1]
+26 into depth [1][2]
+25 into depth [1]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1][2]
+21 into depth [1]
+20 into depth [1][2]
+19 into depth [1]
+18 into depth [1][2]
+17 into depth [1]
+16 into depth [1][2]
+15 into depth [1]
+14 into depth [1][2]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 422 states to a max depth of 5
+-------------------- Statistics --------------------
+States expanded: 422
+States generated: 1283
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument1 satellite0)
+1: (switch_on instrument2 satellite1)
+2: (switch_on instrument3 satellite2)
+3: (switch_on instrument6 satellite4)
+4: (turn_to satellite0 planet10 star19)
+5: (turn_to satellite0 star22 planet10)
+6: (turn_to satellite4 star4 phenomenon5)
+7: (calibrate satellite4 instrument6 star4)
+8: (turn_to satellite1 groundstation3 planet17)
+9: (calibrate satellite1 instrument2 groundstation3)
+10: (turn_to satellite1 phenomenon5 groundstation3)
+11: (turn_to satellite2 planet11 planet7)
+12: (turn_to satellite4 phenomenon12 star4)
+13: (take_image satellite4 phenomenon12 instrument6 image3)
+14: (turn_to satellite4 phenomenon18 phenomenon12)
+15: (take_image satellite4 phenomenon18 instrument6 image3)
+16: (turn_to satellite4 phenomenon27 phenomenon18)
+17: (take_image satellite4 phenomenon27 instrument6 thermograph1)
+18: (turn_to satellite4 phenomenon5 phenomenon27)
+19: (take_image satellite4 phenomenon5 instrument6 thermograph1)
+20: (turn_to satellite4 planet10 phenomenon5)
+21: (take_image satellite4 planet10 instrument6 thermograph1)
+22: (turn_to satellite4 planet11 planet10)
+23: (turn_to satellite1 planet11 phenomenon5)
+24: (take_image satellite1 planet11 instrument2 thermograph2)
+25: (turn_to satellite1 phenomenon5 planet11)
+26: (turn_to satellite1 planet17 phenomenon5)
+27: (take_image satellite1 planet17 instrument2 image4)
+28: (turn_to satellite1 phenomenon5 planet17)
+29: (turn_to satellite1 planet24 phenomenon5)
+30: (take_image satellite1 planet24 instrument2 thermograph2)
+31: (turn_to satellite1 phenomenon5 planet24)
+32: (turn_to satellite1 planet28 phenomenon5)
+33: (take_image satellite1 planet28 instrument2 thermograph2)
+34: (turn_to satellite1 phenomenon5 planet28)
+35: (turn_to satellite1 planet6 phenomenon5)
+36: (take_image satellite1 planet6 instrument2 image4)
+37: (turn_to satellite1 phenomenon5 planet6)
+38: (turn_to satellite1 star22 phenomenon5)
+39: (take_image satellite1 star22 instrument2 image4)
+40: (turn_to satellite1 phenomenon5 star22)
+41: (turn_to satellite4 planet13 planet11)
+42: (take_image satellite4 planet13 instrument6 thermograph1)
+43: (turn_to satellite4 planet11 planet13)
+44: (turn_to satellite4 planet15 planet11)
+45: (take_image satellite4 planet15 instrument6 thermograph0)
+46: (turn_to satellite4 planet11 planet15)
+47: (turn_to satellite4 planet16 planet11)
+48: (take_image satellite4 planet16 instrument6 image3)
+49: (turn_to satellite4 planet11 planet16)
+50: (turn_to satellite4 planet23 planet11)
+51: (take_image satellite4 planet23 instrument6 thermograph1)
+52: (turn_to satellite4 planet11 planet23)
+53: (turn_to satellite4 planet25 planet11)
+54: (take_image satellite4 planet25 instrument6 thermograph1)
+55: (turn_to satellite4 planet11 planet25)
+56: (turn_to satellite4 planet29 planet11)
+57: (take_image satellite4 planet29 instrument6 thermograph0)
+58: (turn_to satellite4 planet11 planet29)
+59: (turn_to satellite4 planet7 planet11)
+60: (take_image satellite4 planet7 instrument6 image3)
+61: (turn_to satellite4 planet11 planet7)
+62: (turn_to satellite4 planet8 planet11)
+63: (take_image satellite4 planet8 instrument6 image3)
+64: (turn_to satellite4 planet11 planet8)
+65: (turn_to satellite4 planet9 planet11)
+66: (take_image satellite4 planet9 instrument6 thermograph0)
+67: (turn_to satellite4 planet11 planet9)
+68: (turn_to satellite4 star14 planet11)
+69: (take_image satellite4 star14 instrument6 image3)
+70: (turn_to satellite4 planet11 star14)
+71: (turn_to satellite4 star19 planet11)
+72: (take_image satellite4 star19 instrument6 thermograph0)
+73: (turn_to satellite4 planet11 star19)
+74: (turn_to satellite4 star21 planet11)
+75: (take_image satellite4 star21 instrument6 thermograph1)
+76: (turn_to satellite4 planet11 star21)
+77: (turn_to satellite4 star26 planet11)
+78: (take_image satellite4 star26 instrument6 thermograph0)
+79: (turn_to satellite4 planet11 star26)
+Final plan length is 80
+EHC Plan Time = 11.951433999 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-13-1.sol
+Checking plan: ./solutions/base_version/satellite-13-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 80
+
+Successful plans:
+Value: 80
+ ./solutions/base_version/satellite-13-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 14 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 305 reachable facts from 305 original facts.
+Found 4311 applicable actions from 4311 original actions
+Goal is: (and (have_image phenomenon5 image1)  (have_image star19 thermograph4)  (have_image star20 thermograph4)  (have_image star9 thermograph0)  (have_image planet15 image2)  (have_image planet8 image2)  (pointing satellite0 planet21)  (have_image star14 thermograph4)  (have_image phenomenon12 thermograph0)  (have_image phenomenon13 image1)  (have_image planet21 thermograph0)  (pointing satellite2 star14)  (have_image phenomenon7 thermograph0)  (have_image star10 thermograph3)  (have_image planet23 image1)  (have_image planet17 image2)  (have_image phenomenon18 image1)  (pointing satellite5 planet17)  (have_image star22 thermograph3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+61 into depth [1]
+48 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1][2][3][4][5][6][7]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1][2]
+10 into depth [1]
+9 into depth [1][2]
+8 into depth [1]
+7 into depth [1][2]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 231 states to a max depth of 7
+-------------------- Statistics --------------------
+States expanded: 231
+States generated: 580
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument3 satellite1)
+2: (switch_on instrument7 satellite3)
+3: (calibrate satellite3 instrument7 groundstation4)
+4: (turn_to satellite1 phenomenon7 groundstation1)
+5: (turn_to satellite3 planet15 groundstation4)
+6: (take_image satellite3 planet15 instrument7 image2)
+7: (turn_to satellite3 planet17 planet15)
+8: (take_image satellite3 planet17 instrument7 image2)
+9: (turn_to satellite3 planet8 planet17)
+10: (take_image satellite3 planet8 instrument7 image2)
+11: (turn_to satellite3 star10 planet8)
+12: (take_image satellite3 star10 instrument7 thermograph3)
+13: (turn_to satellite3 star22 star10)
+14: (take_image satellite3 star22 instrument7 thermograph3)
+15: (turn_to satellite5 planet17 phenomenon11)
+16: (turn_to satellite1 star14 phenomenon7)
+17: (turn_to satellite2 star14 groundstation2)
+18: (turn_to satellite0 groundstation2 phenomenon12)
+19: (calibrate satellite0 instrument0 groundstation2)
+20: (turn_to satellite0 phenomenon12 groundstation2)
+21: (take_image satellite0 phenomenon12 instrument0 thermograph0)
+22: (turn_to satellite0 phenomenon13 phenomenon12)
+23: (take_image satellite0 phenomenon13 instrument0 image1)
+24: (turn_to satellite0 phenomenon18 phenomenon13)
+25: (take_image satellite0 phenomenon18 instrument0 image1)
+26: (turn_to satellite0 phenomenon5 phenomenon18)
+27: (take_image satellite0 phenomenon5 instrument0 image1)
+28: (turn_to satellite0 phenomenon7 phenomenon5)
+29: (take_image satellite0 phenomenon7 instrument0 thermograph0)
+30: (turn_to satellite0 planet21 phenomenon7)
+31: (take_image satellite0 planet21 instrument0 thermograph0)
+32: (turn_to satellite0 planet23 planet21)
+33: (take_image satellite0 planet23 instrument0 image1)
+34: (turn_to satellite0 planet21 planet23)
+35: (turn_to satellite0 star9 planet21)
+36: (take_image satellite0 star9 instrument0 thermograph0)
+37: (turn_to satellite0 planet21 star9)
+38: (turn_to satellite1 groundstation2 star14)
+39: (calibrate satellite1 instrument3 groundstation2)
+40: (turn_to satellite1 star14 groundstation2)
+41: (take_image satellite1 star14 instrument3 thermograph4)
+42: (turn_to satellite1 star19 star14)
+43: (take_image satellite1 star19 instrument3 thermograph4)
+44: (turn_to satellite1 star20 star19)
+45: (take_image satellite1 star20 instrument3 thermograph4)
+Final plan length is 46
+EHC Plan Time = 5.926145892 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-14-1.sol
+Checking plan: ./solutions/base_version/satellite-14-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 46
+
+Successful plans:
+Value: 46
+ ./solutions/base_version/satellite-14-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 15 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 371 reachable facts from 371 original facts.
+Found 5632 applicable actions from 5632 original actions
+Goal is: (and (pointing satellite1 planet22)  (have_image phenomenon9 infrared0)  (have_image planet21 infrared0)  (have_image planet20 image1)  (have_image phenomenon16 image1)  (have_image star13 thermograph3)  (have_image phenomenon5 spectrograph2)  (have_image planet17 thermograph3)  (have_image planet24 infrared0)  (pointing satellite5 planet24)  (have_image planet6 spectrograph2)  (have_image star18 image1)  (pointing satellite2 star13)  (pointing satellite7 star3)  (pointing satellite3 planet14)  (have_image phenomenon10 image1)  (have_image planet23 thermograph3)  (have_image star12 thermograph3)  (pointing satellite0 star19)  (have_image planet14 thermograph4)  (have_image planet11 image1)  (have_image planet22 image1)  (have_image planet7 infrared0)  (have_image star15 thermograph4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+66 into depth [1]
+57 into depth [1]
+51 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1][2]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1][2]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1][2]
+12 into depth [1]
+11 into depth [1][2]
+10 into depth [1]
+9 into depth [1][2][3][4][5]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 139 states to a max depth of 5
+-------------------- Statistics --------------------
+States expanded: 139
+States generated: 658
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument10 satellite5)
+2: (switch_on instrument13 satellite6)
+3: (turn_to satellite2 star13 star19)
+4: (turn_to satellite3 planet14 star4)
+5: (turn_to satellite7 star3 planet11)
+6: (turn_to satellite0 groundstation0 star19)
+7: (calibrate satellite0 instrument0 groundstation0)
+8: (turn_to satellite0 phenomenon10 groundstation0)
+9: (take_image satellite0 phenomenon10 instrument0 image1)
+10: (turn_to satellite0 phenomenon16 phenomenon10)
+11: (take_image satellite0 phenomenon16 instrument0 image1)
+12: (turn_to satellite0 planet11 phenomenon16)
+13: (take_image satellite0 planet11 instrument0 image1)
+14: (turn_to satellite0 planet14 planet11)
+15: (take_image satellite0 planet14 instrument0 thermograph4)
+16: (turn_to satellite0 planet20 planet14)
+17: (take_image satellite0 planet20 instrument0 image1)
+18: (turn_to satellite0 planet22 planet20)
+19: (take_image satellite0 planet22 instrument0 image1)
+20: (turn_to satellite0 star15 planet22)
+21: (take_image satellite0 star15 instrument0 thermograph4)
+22: (turn_to satellite0 star18 star15)
+23: (take_image satellite0 star18 instrument0 image1)
+24: (turn_to satellite0 star19 star18)
+25: (turn_to satellite1 planet22 star18)
+26: (turn_to satellite5 groundstation0 planet6)
+27: (calibrate satellite5 instrument10 groundstation0)
+28: (turn_to satellite5 phenomenon5 groundstation0)
+29: (take_image satellite5 phenomenon5 instrument10 spectrograph2)
+30: (turn_to satellite5 phenomenon9 phenomenon5)
+31: (take_image satellite5 phenomenon9 instrument10 infrared0)
+32: (turn_to satellite5 planet21 phenomenon9)
+33: (take_image satellite5 planet21 instrument10 infrared0)
+34: (turn_to satellite5 planet24 planet21)
+35: (take_image satellite5 planet24 instrument10 infrared0)
+36: (turn_to satellite5 planet6 planet24)
+37: (take_image satellite5 planet6 instrument10 spectrograph2)
+38: (turn_to satellite5 planet24 planet6)
+39: (turn_to satellite5 planet7 planet24)
+40: (take_image satellite5 planet7 instrument10 infrared0)
+41: (turn_to satellite5 planet24 planet7)
+42: (turn_to satellite6 star3 planet17)
+43: (calibrate satellite6 instrument13 star3)
+44: (turn_to satellite6 planet17 star3)
+45: (take_image satellite6 planet17 instrument13 thermograph3)
+46: (turn_to satellite6 planet23 planet17)
+47: (take_image satellite6 planet23 instrument13 thermograph3)
+48: (turn_to satellite6 star12 planet23)
+49: (take_image satellite6 star12 instrument13 thermograph3)
+50: (turn_to satellite6 star13 star12)
+51: (take_image satellite6 star13 instrument13 thermograph3)
+Final plan length is 52
+EHC Plan Time = 4.960352893 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-15-1.sol
+Checking plan: ./solutions/base_version/satellite-15-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 52
+
+Successful plans:
+Value: 52
+ ./solutions/base_version/satellite-15-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 16 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 431 reachable facts from 431 original facts.
+Found 7194 applicable actions from 7194 original actions
+Goal is: (and (have_image planet10 image0)  (have_image phenomenon18 spectrograph3)  (have_image planet22 image2)  (have_image phenomenon9 image2)  (have_image star12 image0)  (have_image planet21 thermograph1)  (have_image planet7 image0)  (pointing satellite5 planet6)  (have_image star13 image0)  (have_image star15 image0)  (have_image planet11 infrared4)  (have_image phenomenon17 infrared4)  (pointing satellite7 star3)  (pointing satellite9 star16)  (have_image phenomenon5 thermograph1)  (have_image planet6 infrared4)  (have_image phenomenon23 image0)  (have_image star20 image0)  (have_image star14 thermograph1)  (have_image star24 infrared4)  (pointing satellite8 star15)  (have_image planet8 thermograph1)  (have_image star16 thermograph1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+79 into depth [1]
+71 into depth [1]
+59 into depth [1]
+48 into depth [1]
+47 into depth [1]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1][2][3]
+41 into depth [1][2][3][4][5]
+40 into depth [1][2][3]
+39 into depth [1][2]
+38 into depth [1]
+37 into depth [1][2]
+35 into depth [1][2]
+33 into depth [1]
+32 into depth [1][2]
+30 into depth [1][2]
+28 into depth [1][2]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 439 states to a max depth of 5
+-------------------- Statistics --------------------
+States expanded: 439
+States generated: 918
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument10 satellite4)
+2: (switch_on instrument14 satellite6)
+3: (turn_to satellite0 phenomenon17 star15)
+4: (turn_to satellite4 phenomenon18 planet19)
+5: (turn_to satellite6 phenomenon5 planet11)
+6: (turn_to satellite8 star15 groundstation4)
+7: (turn_to satellite7 star3 planet11)
+8: (turn_to satellite9 star16 planet11)
+9: (turn_to satellite0 planet6 phenomenon17)
+10: (turn_to satellite5 planet6 planet10)
+11: (turn_to satellite0 star3 planet6)
+12: (calibrate satellite0 instrument0 star3)
+13: (turn_to satellite0 planet11 star3)
+14: (turn_to satellite4 planet22 phenomenon18)
+15: (take_image satellite0 planet11 instrument0 infrared4)
+16: (turn_to satellite4 star2 planet22)
+17: (turn_to satellite0 planet6 planet11)
+18: (calibrate satellite4 instrument10 star2)
+19: (take_image satellite0 planet6 instrument0 infrared4)
+20: (turn_to satellite0 phenomenon17 planet6)
+21: (take_image satellite0 phenomenon17 instrument0 infrared4)
+22: (turn_to satellite4 star13 star2)
+23: (take_image satellite4 star13 instrument10 image0)
+24: (turn_to satellite4 phenomenon23 star13)
+25: (take_image satellite4 phenomenon23 instrument10 image0)
+26: (turn_to satellite0 star24 phenomenon17)
+27: (take_image satellite0 star24 instrument0 infrared4)
+28: (turn_to satellite6 star3 phenomenon5)
+29: (calibrate satellite6 instrument14 star3)
+30: (turn_to satellite4 phenomenon18 phenomenon23)
+31: (take_image satellite4 phenomenon18 instrument10 spectrograph3)
+32: (turn_to satellite4 phenomenon9 phenomenon18)
+33: (take_image satellite4 phenomenon9 instrument10 image2)
+34: (turn_to satellite4 planet22 phenomenon9)
+35: (take_image satellite4 planet22 instrument10 image2)
+36: (turn_to satellite4 planet7 planet22)
+37: (take_image satellite4 planet7 instrument10 image0)
+38: (turn_to satellite4 star12 planet7)
+39: (take_image satellite4 star12 instrument10 image0)
+40: (turn_to satellite4 star15 star12)
+41: (take_image satellite4 star15 instrument10 image0)
+42: (turn_to satellite4 star20 star15)
+43: (take_image satellite4 star20 instrument10 image0)
+44: (turn_to satellite6 phenomenon5 star3)
+45: (take_image satellite6 phenomenon5 instrument14 thermograph1)
+46: (turn_to satellite6 planet10 phenomenon5)
+47: (take_image satellite6 planet10 instrument14 image0)
+48: (turn_to satellite6 planet21 planet10)
+49: (take_image satellite6 planet21 instrument14 thermograph1)
+50: (turn_to satellite6 planet8 planet21)
+51: (take_image satellite6 planet8 instrument14 thermograph1)
+52: (turn_to satellite6 star14 planet8)
+53: (take_image satellite6 star14 instrument14 thermograph1)
+54: (turn_to satellite6 star16 star14)
+55: (take_image satellite6 star16 instrument14 thermograph1)
+Final plan length is 56
+EHC Plan Time = 21.295479381 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-16-1.sol
+Checking plan: ./solutions/base_version/satellite-16-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 56
+
+Successful plans:
+Value: 56
+ ./solutions/base_version/satellite-16-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 17 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 485 reachable facts from 485 original facts.
+Found 8322 applicable actions from 8322 original actions
+Goal is: (and (have_image planet7 image4)  (have_image planet11 image4)  (have_image star10 thermograph1)  (have_image planet12 thermograph1)  (have_image phenomenon24 infrared3)  (have_image planet5 image0)  (have_image star22 image4)  (pointing satellite8 planet16)  (have_image phenomenon15 infrared2)  (have_image phenomenon23 infrared3)  (have_image phenomenon14 infrared2)  (have_image planet6 image4)  (have_image planet13 infrared3)  (have_image star21 thermograph1)  (pointing satellite4 phenomenon20)  (have_image phenomenon17 thermograph1)  (have_image planet16 infrared2)  (pointing satellite1 star22)  (have_image phenomenon9 image4)  (have_image star18 image4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+65 into depth [1]
+64 into depth [1]
+60 into depth [1]
+53 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+34 into depth [1]
+33 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1][2][3][4][5][6][7][8][9]
+15 into depth [1]
+14 into depth [1][2]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2]
+1 into depth [1]
+Evaluated 124 states to a max depth of 9
+-------------------- Statistics --------------------
+States expanded: 124
+States generated: 739
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument1 satellite1)
+1: (switch_on instrument0 satellite0)
+2: (switch_on instrument10 satellite4)
+3: (switch_on instrument14 satellite6)
+4: (turn_to satellite0 groundstation0 planet5)
+5: (calibrate satellite0 instrument0 groundstation0)
+6: (switch_on instrument4 satellite2)
+7: (turn_to satellite0 phenomenon23 groundstation0)
+8: (take_image satellite0 phenomenon23 instrument0 infrared3)
+9: (turn_to satellite0 phenomenon24 phenomenon23)
+10: (take_image satellite0 phenomenon24 instrument0 infrared3)
+11: (turn_to satellite0 planet13 phenomenon24)
+12: (take_image satellite0 planet13 instrument0 infrared3)
+13: (turn_to satellite2 groundstation2 star21)
+14: (calibrate satellite2 instrument4 groundstation2)
+15: (turn_to satellite1 star22 planet5)
+16: (turn_to satellite2 phenomenon14 groundstation2)
+17: (take_image satellite2 phenomenon14 instrument4 infrared2)
+18: (turn_to satellite2 phenomenon15 phenomenon14)
+19: (take_image satellite2 phenomenon15 instrument4 infrared2)
+20: (turn_to satellite2 phenomenon17 phenomenon15)
+21: (take_image satellite2 phenomenon17 instrument4 thermograph1)
+22: (turn_to satellite2 planet12 phenomenon17)
+23: (take_image satellite2 planet12 instrument4 thermograph1)
+24: (turn_to satellite2 planet16 planet12)
+25: (take_image satellite2 planet16 instrument4 infrared2)
+26: (turn_to satellite2 star10 planet16)
+27: (take_image satellite2 star10 instrument4 thermograph1)
+28: (turn_to satellite2 star21 star10)
+29: (take_image satellite2 star21 instrument4 thermograph1)
+30: (turn_to satellite8 planet16 phenomenon23)
+31: (turn_to satellite4 star3 star22)
+32: (calibrate satellite4 instrument10 star3)
+33: (turn_to satellite4 phenomenon20 star3)
+34: (turn_to satellite4 phenomenon9 phenomenon20)
+35: (take_image satellite4 phenomenon9 instrument10 image4)
+36: (turn_to satellite4 phenomenon20 phenomenon9)
+37: (turn_to satellite4 planet11 phenomenon20)
+38: (take_image satellite4 planet11 instrument10 image4)
+39: (turn_to satellite4 phenomenon20 planet11)
+40: (turn_to satellite4 planet5 phenomenon20)
+41: (take_image satellite4 planet5 instrument10 image0)
+42: (turn_to satellite4 phenomenon20 planet5)
+43: (turn_to satellite4 planet6 phenomenon20)
+44: (take_image satellite4 planet6 instrument10 image4)
+45: (turn_to satellite4 phenomenon20 planet6)
+46: (turn_to satellite4 planet7 phenomenon20)
+47: (take_image satellite4 planet7 instrument10 image4)
+48: (turn_to satellite4 phenomenon20 planet7)
+49: (turn_to satellite4 star18 phenomenon20)
+50: (take_image satellite4 star18 instrument10 image4)
+51: (turn_to satellite4 phenomenon20 star18)
+52: (turn_to satellite4 star22 phenomenon20)
+53: (take_image satellite4 star22 instrument10 image4)
+54: (turn_to satellite4 phenomenon20 star22)
+Final plan length is 55
+EHC Plan Time = 7.702951336 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-17-1.sol
+Checking plan: ./solutions/base_version/satellite-17-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 55
+
+Successful plans:
+Value: 55
+ ./solutions/base_version/satellite-17-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 18 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 281 reachable facts from 281 original facts.
+Found 3589 applicable actions from 3589 original actions
+Goal is: (and (have_image star9 image1)  (have_image phenomenon17 thermograph4)  (have_image phenomenon5 thermograph4)  (have_image planet20 thermograph4)  (have_image star15 thermograph2)  (have_image phenomenon13 thermograph2)  (have_image planet7 image1)  (have_image phenomenon21 image1)  (have_image star8 thermograph3)  (have_image star10 image1)  (have_image phenomenon18 image1)  (have_image planet19 thermograph2)  (have_image star22 thermograph3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+47 into depth [1]
+39 into depth [1]
+35 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1][2][3][4]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 107 states to a max depth of 4
+-------------------- Statistics --------------------
+States expanded: 107
+States generated: 325
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument4 satellite1)
+2: (switch_on instrument8 satellite2)
+3: (turn_to satellite0 phenomenon13 star8)
+4: (turn_to satellite2 planet19 star4)
+5: (turn_to satellite2 star3 planet19)
+6: (calibrate satellite2 instrument8 star3)
+7: (turn_to satellite2 phenomenon13 star3)
+8: (take_image satellite2 phenomenon13 instrument8 thermograph2)
+9: (turn_to satellite2 phenomenon17 phenomenon13)
+10: (take_image satellite2 phenomenon17 instrument8 thermograph4)
+11: (turn_to satellite2 phenomenon5 phenomenon17)
+12: (take_image satellite2 phenomenon5 instrument8 thermograph4)
+13: (turn_to satellite2 planet19 phenomenon5)
+14: (take_image satellite2 planet19 instrument8 thermograph2)
+15: (turn_to satellite2 planet20 planet19)
+16: (take_image satellite2 planet20 instrument8 thermograph4)
+17: (turn_to satellite2 star15 planet20)
+18: (take_image satellite2 star15 instrument8 thermograph2)
+19: (turn_to satellite2 star22 star15)
+20: (take_image satellite2 star22 instrument8 thermograph3)
+21: (turn_to satellite2 star8 star22)
+22: (take_image satellite2 star8 instrument8 thermograph3)
+23: (turn_to satellite1 star1 phenomenon21)
+24: (calibrate satellite1 instrument4 star1)
+25: (turn_to satellite1 phenomenon18 star1)
+26: (take_image satellite1 phenomenon18 instrument4 image1)
+27: (turn_to satellite1 phenomenon21 phenomenon18)
+28: (take_image satellite1 phenomenon21 instrument4 image1)
+29: (turn_to satellite1 planet7 phenomenon21)
+30: (take_image satellite1 planet7 instrument4 image1)
+31: (turn_to satellite1 star10 planet7)
+32: (take_image satellite1 star10 instrument4 image1)
+33: (turn_to satellite1 star9 star10)
+34: (take_image satellite1 star9 instrument4 image1)
+Final plan length is 35
+EHC Plan Time = 2.167551954 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-18-1.sol
+Checking plan: ./solutions/base_version/satellite-18-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 35
+
+Successful plans:
+Value: 35
+ ./solutions/base_version/satellite-18-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 19 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 380 reachable facts from 380 original facts.
+Found 4300 applicable actions from 4300 original actions
+Goal is: (and (have_image planet9 spectrograph0)  (have_image star12 spectrograph6)  (have_image planet9 spectrograph6)  (have_image star19 infrared3)  (have_image planet21 image5)  (have_image phenomenon5 infrared7)  (have_image star10 spectrograph6)  (have_image star19 thermograph1)  (pointing satellite0 planet17)  (have_image phenomenon5 image4)  (have_image star18 infrared2)  (have_image star14 infrared2)  (have_image star12 thermograph1)  (have_image phenomenon13 infrared7)  (have_image phenomenon24 image5)  (have_image phenomenon7 thermograph1)  (have_image planet17 image5)  (have_image planet22 infrared2)  (have_image phenomenon24 spectrograph6)  (have_image phenomenon11 infrared2)  (have_image phenomenon13 infrared2)  (have_image phenomenon20 spectrograph0)  (have_image planet15 infrared2)  (have_image star10 infrared3)  (have_image planet21 infrared3)  (have_image star23 infrared2)  (have_image star16 image4)  (have_image planet17 image4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+97 into depth [1]
+84 into depth [1]
+76 into depth [1]
+72 into depth [1]
+71 into depth [1]
+61 into depth [1]
+60 into depth [1]
+59 into depth [1]
+58 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1]
+54 into depth [1]
+53 into depth [1]
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1]
+47 into depth [1][2][3][4][5][6][7][8][9][10]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1][2][3][4][5][6][7][8][9][10]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1][2]
+21 into depth [1]
+20 into depth [1][2]
+19 into depth [1]
+18 into depth [1][2]
+17 into depth [1]
+16 into depth [1][2]
+15 into depth [1]
+14 into depth [1][2]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1][2][3][4][5]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 705 states to a max depth of 10
+-------------------- Statistics --------------------
+States expanded: 705
+States generated: 1643
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (switch_on instrument10 satellite2)
+2: (switch_on instrument16 satellite3)
+3: (switch_on instrument24 satellite4)
+4: (switch_on instrument3 satellite1)
+5: (turn_to satellite0 phenomenon11 planet21)
+6: (turn_to satellite3 phenomenon24 phenomenon20)
+7: (turn_to satellite4 groundstation0 star14)
+8: (calibrate satellite4 instrument24 groundstation0)
+9: (turn_to satellite4 phenomenon20 groundstation0)
+10: (take_image satellite4 phenomenon20 instrument24 spectrograph0)
+11: (turn_to satellite4 planet21 phenomenon20)
+12: (take_image satellite4 planet21 instrument24 infrared3)
+13: (turn_to satellite4 planet9 planet21)
+14: (take_image satellite4 planet9 instrument24 spectrograph0)
+15: (turn_to satellite4 star10 planet9)
+16: (take_image satellite4 star10 instrument24 infrared3)
+17: (turn_to satellite4 star19 star10)
+18: (take_image satellite4 star19 instrument24 infrared3)
+19: (turn_to satellite1 star1 planet21)
+20: (calibrate satellite1 instrument3 star1)
+21: (turn_to satellite1 phenomenon24 star1)
+22: (take_image satellite1 phenomenon24 instrument3 image5)
+23: (turn_to satellite1 phenomenon7 phenomenon24)
+24: (take_image satellite1 phenomenon7 instrument3 thermograph1)
+25: (turn_to satellite1 planet17 phenomenon7)
+26: (take_image satellite1 planet17 instrument3 image5)
+27: (turn_to satellite1 planet21 planet17)
+28: (take_image satellite1 planet21 instrument3 image5)
+29: (turn_to satellite1 star12 planet21)
+30: (take_image satellite1 star12 instrument3 thermograph1)
+31: (turn_to satellite1 star19 star12)
+32: (take_image satellite1 star19 instrument3 thermograph1)
+33: (turn_to satellite0 groundstation0 phenomenon11)
+34: (calibrate satellite0 instrument0 groundstation0)
+35: (turn_to satellite0 phenomenon11 groundstation0)
+36: (take_image satellite0 phenomenon11 instrument0 infrared2)
+37: (turn_to satellite0 phenomenon13 phenomenon11)
+38: (take_image satellite0 phenomenon13 instrument0 infrared2)
+39: (turn_to satellite0 phenomenon5 phenomenon13)
+40: (take_image satellite0 phenomenon5 instrument0 image4)
+41: (turn_to satellite0 planet15 phenomenon5)
+42: (take_image satellite0 planet15 instrument0 infrared2)
+43: (turn_to satellite0 planet17 planet15)
+44: (take_image satellite0 planet17 instrument0 image4)
+45: (turn_to satellite0 planet22 planet17)
+46: (take_image satellite0 planet22 instrument0 infrared2)
+47: (turn_to satellite0 planet17 planet22)
+48: (turn_to satellite0 star14 planet17)
+49: (take_image satellite0 star14 instrument0 infrared2)
+50: (turn_to satellite0 planet17 star14)
+51: (turn_to satellite0 star16 planet17)
+52: (take_image satellite0 star16 instrument0 image4)
+53: (turn_to satellite0 planet17 star16)
+54: (turn_to satellite0 star18 planet17)
+55: (take_image satellite0 star18 instrument0 infrared2)
+56: (turn_to satellite0 planet17 star18)
+57: (turn_to satellite0 star23 planet17)
+58: (take_image satellite0 star23 instrument0 infrared2)
+59: (turn_to satellite0 planet17 star23)
+60: (turn_to satellite2 groundstation4 phenomenon5)
+61: (calibrate satellite2 instrument10 groundstation4)
+62: (turn_to satellite2 phenomenon13 groundstation4)
+63: (take_image satellite2 phenomenon13 instrument10 infrared7)
+64: (turn_to satellite2 phenomenon5 phenomenon13)
+65: (take_image satellite2 phenomenon5 instrument10 infrared7)
+66: (turn_to satellite3 star2 phenomenon24)
+67: (calibrate satellite3 instrument16 star2)
+68: (turn_to satellite3 phenomenon24 star2)
+69: (take_image satellite3 phenomenon24 instrument16 spectrograph6)
+70: (turn_to satellite3 planet9 phenomenon24)
+71: (take_image satellite3 planet9 instrument16 spectrograph6)
+72: (turn_to satellite3 star10 planet9)
+73: (take_image satellite3 star10 instrument16 spectrograph6)
+74: (turn_to satellite3 star12 star10)
+75: (take_image satellite3 star12 instrument16 spectrograph6)
+Final plan length is 76
+EHC Plan Time = 18.228696356 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-19-1.sol
+Checking plan: ./solutions/base_version/satellite-19-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 76
+
+Successful plans:
+Value: 76
+ ./solutions/base_version/satellite-19-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 20 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 438 reachable facts from 438 original facts.
+Found 4437 applicable actions from 4437 original actions
+Goal is: (and (have_image planet13 spectrograph6)  (have_image planet13 image2)  (have_image phenomenon21 image4)  (have_image phenomenon14 thermograph7)  (have_image planet7 spectrograph6)  (have_image phenomenon8 spectrograph6)  (have_image planet9 spectrograph6)  (have_image planet7 image2)  (have_image star11 thermograph7)  (have_image star6 spectrograph6)  (have_image phenomenon8 thermograph7)  (have_image star10 spectrograph6)  (have_image star6 spectrograph0)  (have_image planet18 infrared5)  (have_image phenomenon5 spectrograph0)  (have_image planet13 infrared5)  (have_image phenomenon19 image4)  (have_image star11 image3)  (have_image star16 image3)  (have_image star24 infrared5)  (have_image planet18 infrared9)  (have_image star23 infrared9)  (have_image phenomenon12 image4)  (have_image phenomenon19 image2)  (have_image planet22 spectrograph6)  (have_image planet22 image2)  (have_image planet7 infrared5)  (have_image phenomenon8 infrared5)  (have_image planet15 image3)  (have_image star24 spectrograph6)  (have_image phenomenon5 image3)  (have_image star20 spectrograph0)  (pointing satellite1 phenomenon19)  (have_image star6 image3)  (have_image star23 image2)  (have_image star11 image4)  (have_image phenomenon21 image2)  (have_image star16 image4)  (have_image phenomenon21 thermograph7)  (have_image phenomenon5 thermograph8)  (have_image planet18 thermograph7) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+120 into depth [1]
+110 into depth [1]
+99 into depth [1]
+89 into depth [1]
+88 into depth [1]
+87 into depth [1]
+86 into depth [1]
+85 into depth [1]
+84 into depth [1]
+83 into depth [1]
+82 into depth [1]
+81 into depth [1]
+80 into depth [1]
+79 into depth [1]
+78 into depth [1]
+77 into depth [1]
+76 into depth [1]
+75 into depth [1]
+74 into depth [1]
+73 into depth [1]
+72 into depth [1]
+71 into depth [1]
+70 into depth [1]
+69 into depth [1]
+68 into depth [1]
+67 into depth [1]
+66 into depth [1]
+65 into depth [1]
+64 into depth [1]
+63 into depth [1]
+62 into depth [1]
+61 into depth [1]
+60 into depth [1]
+59 into depth [1]
+58 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1][2][3][4][5][6][7][8][9][10]
+54 into depth [1]
+53 into depth [1][2]
+52 into depth [1]
+51 into depth [1][2]
+50 into depth [1]
+49 into depth [1][2]
+48 into depth [1]
+47 into depth [1][2]
+46 into depth [1]
+45 into depth [1][2]
+44 into depth [1]
+43 into depth [1][2]
+42 into depth [1]
+41 into depth [1][2]
+40 into depth [1]
+39 into depth [1][2]
+38 into depth [1]
+37 into depth [1][2]
+36 into depth [1]
+35 into depth [1][2][3][4][5]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1][2][3][4][5][6][7][8][9][10][11]
+23 into depth [1]
+22 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 1581 states to a max depth of 11
+-------------------- Statistics --------------------
+States expanded: 1581
+States generated: 3371
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (switch_on instrument10 satellite1)
+1: (switch_on instrument0 satellite0)
+2: (switch_on instrument17 satellite2)
+3: (turn_to satellite0 phenomenon5 groundstation1)
+4: (turn_to satellite2 phenomenon8 phenomenon14)
+5: (turn_to satellite3 groundstation1 star10)
+6: (switch_on instrument20 satellite3)
+7: (calibrate satellite3 instrument20 groundstation1)
+8: (turn_to satellite3 phenomenon12 groundstation1)
+9: (take_image satellite3 phenomenon12 instrument20 image4)
+10: (turn_to satellite3 phenomenon19 phenomenon12)
+11: (take_image satellite3 phenomenon19 instrument20 image2)
+12: (take_image satellite3 phenomenon19 instrument20 image4)
+13: (turn_to satellite3 phenomenon21 phenomenon19)
+14: (take_image satellite3 phenomenon21 instrument20 image2)
+15: (take_image satellite3 phenomenon21 instrument20 image4)
+16: (turn_to satellite3 phenomenon5 phenomenon21)
+17: (take_image satellite3 phenomenon5 instrument20 image3)
+18: (turn_to satellite3 planet13 phenomenon5)
+19: (take_image satellite3 planet13 instrument20 image2)
+20: (turn_to satellite3 planet15 planet13)
+21: (take_image satellite3 planet15 instrument20 image3)
+22: (turn_to satellite3 planet22 planet15)
+23: (take_image satellite3 planet22 instrument20 image2)
+24: (turn_to satellite3 planet7 planet22)
+25: (take_image satellite3 planet7 instrument20 image2)
+26: (turn_to satellite3 star11 planet7)
+27: (take_image satellite3 star11 instrument20 image3)
+28: (take_image satellite3 star11 instrument20 image4)
+29: (turn_to satellite3 star16 star11)
+30: (take_image satellite3 star16 instrument20 image3)
+31: (take_image satellite3 star16 instrument20 image4)
+32: (turn_to satellite3 star23 star16)
+33: (take_image satellite3 star23 instrument20 image2)
+34: (turn_to satellite3 star6 star23)
+35: (take_image satellite3 star6 instrument20 image3)
+36: (turn_to satellite4 groundstation1 star16)
+37: (turn_to satellite1 star4 phenomenon19)
+38: (calibrate satellite1 instrument10 star4)
+39: (turn_to satellite1 phenomenon19 star4)
+40: (turn_to satellite1 phenomenon5 phenomenon19)
+41: (take_image satellite1 phenomenon5 instrument10 thermograph8)
+42: (turn_to satellite1 phenomenon19 phenomenon5)
+43: (turn_to satellite1 phenomenon8 phenomenon19)
+44: (take_image satellite1 phenomenon8 instrument10 spectrograph6)
+45: (turn_to satellite1 phenomenon19 phenomenon8)
+46: (turn_to satellite1 planet13 phenomenon19)
+47: (take_image satellite1 planet13 instrument10 spectrograph6)
+48: (turn_to satellite1 phenomenon19 planet13)
+49: (turn_to satellite1 planet22 phenomenon19)
+50: (take_image satellite1 planet22 instrument10 spectrograph6)
+51: (turn_to satellite1 phenomenon19 planet22)
+52: (turn_to satellite1 planet7 phenomenon19)
+53: (take_image satellite1 planet7 instrument10 spectrograph6)
+54: (turn_to satellite1 phenomenon19 planet7)
+55: (turn_to satellite1 planet9 phenomenon19)
+56: (take_image satellite1 planet9 instrument10 spectrograph6)
+57: (turn_to satellite1 phenomenon19 planet9)
+58: (turn_to satellite1 star10 phenomenon19)
+59: (take_image satellite1 star10 instrument10 spectrograph6)
+60: (turn_to satellite1 phenomenon19 star10)
+61: (turn_to satellite1 star24 phenomenon19)
+62: (take_image satellite1 star24 instrument10 spectrograph6)
+63: (turn_to satellite1 phenomenon19 star24)
+64: (turn_to satellite1 star6 phenomenon19)
+65: (take_image satellite1 star6 instrument10 spectrograph6)
+66: (turn_to satellite1 phenomenon19 star6)
+67: (turn_to satellite2 star0 phenomenon8)
+68: (calibrate satellite2 instrument17 star0)
+69: (turn_to satellite2 phenomenon8 star0)
+70: (take_image satellite2 phenomenon8 instrument17 infrared5)
+71: (turn_to satellite2 planet13 phenomenon8)
+72: (take_image satellite2 planet13 instrument17 infrared5)
+73: (turn_to satellite2 planet18 planet13)
+74: (take_image satellite2 planet18 instrument17 infrared5)
+75: (turn_to satellite2 planet7 planet18)
+76: (take_image satellite2 planet7 instrument17 infrared5)
+77: (turn_to satellite2 star24 planet7)
+78: (take_image satellite2 star24 instrument17 infrared5)
+79: (switch_on instrument27 satellite4)
+80: (switch_off instrument0 satellite0)
+81: (switch_on instrument8 satellite0)
+82: (turn_to satellite0 planet18 phenomenon5)
+83: (turn_to satellite0 star2 planet18)
+84: (calibrate satellite0 instrument8 star2)
+85: (turn_to satellite0 phenomenon14 star2)
+86: (take_image satellite0 phenomenon14 instrument8 thermograph7)
+87: (turn_to satellite0 phenomenon21 phenomenon14)
+88: (take_image satellite0 phenomenon21 instrument8 thermograph7)
+89: (turn_to satellite0 phenomenon5 phenomenon21)
+90: (take_image satellite0 phenomenon5 instrument8 spectrograph0)
+91: (turn_to satellite0 phenomenon8 phenomenon5)
+92: (take_image satellite0 phenomenon8 instrument8 thermograph7)
+93: (turn_to satellite0 planet18 phenomenon8)
+94: (take_image satellite0 planet18 instrument8 infrared9)
+95: (take_image satellite0 planet18 instrument8 thermograph7)
+96: (turn_to satellite0 star11 planet18)
+97: (take_image satellite0 star11 instrument8 thermograph7)
+98: (turn_to satellite0 star20 star11)
+99: (take_image satellite0 star20 instrument8 spectrograph0)
+100: (turn_to satellite0 star23 star20)
+101: (take_image satellite0 star23 instrument8 infrared9)
+102: (turn_to satellite0 star6 star23)
+103: (take_image satellite0 star6 instrument8 spectrograph0)
+Final plan length is 104
+EHC Plan Time = 41.059553687 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-20-1.sol
+Checking plan: ./solutions/base_version/satellite-20-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 104
+
+Successful plans:
+Value: 104
+ ./solutions/base_version/satellite-20-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+

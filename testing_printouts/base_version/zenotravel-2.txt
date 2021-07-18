@@ -1,0 +1,608 @@
+-------------------------------------- zenotravel - 1 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 18 reachable facts from 18 original facts.
+Found 129 applicable actions from 129 original actions
+Goal is: (and (at person1 city0)  (at person2 city2)  (at plane1 city1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.003293623 sec
+States expanded: 2
+States generated: 5
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (fly plane1 city0 city1 fl1 fl0)
+Final plan length is 1
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.027794606 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-1-2.sol
+Checking plan: ./solutions/base_version/zenotravel-1-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 1
+
+Successful plans:
+Value: 1
+ ./solutions/base_version/zenotravel-1-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 2 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 22 reachable facts from 22 original facts.
+Found 135 applicable actions from 135 original actions
+Goal is: (and (at person3 city2)  (at person1 city1)  (at plane1 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.054014698 sec
+States expanded: 8
+States generated: 45
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (fly plane1 city0 city2 fl2 fl1)
+1: (board person1 plane1 city2)
+2: (refuel plane1 city2 fl1 fl2)
+3: (fly plane1 city2 city1 fl2 fl1)
+4: (debark person1 plane1 city1)
+5: (fly plane1 city1 city2 fl1 fl0)
+Final plan length is 6
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.14925569 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-2-2.sol
+Checking plan: ./solutions/base_version/zenotravel-2-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 6
+
+Successful plans:
+Value: 6
+ ./solutions/base_version/zenotravel-2-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 3 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 40 reachable facts from 40 original facts.
+Found 282 applicable actions from 282 original actions
+Goal is: (and (at person2 city0)  (at person3 city0)  (at person4 city1)  (at plane2 city2)  (at person1 city1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.360975131 sec
+States expanded: 11
+States generated: 156
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board person1 plane1 city0)
+1: (zoom plane1 city0 city1 fl4 fl3 fl2)
+2: (board person3 plane1 city1)
+3: (debark person1 plane1 city1)
+4: (zoom plane1 city1 city0 fl2 fl1 fl0)
+5: (debark person3 plane1 city0)
+Final plan length is 6
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.53392426 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-3-2.sol
+Checking plan: ./solutions/base_version/zenotravel-3-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 6
+
+Successful plans:
+Value: 6
+ ./solutions/base_version/zenotravel-3-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 4 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 45 reachable facts from 45 original facts.
+Found 294 applicable actions from 294 original actions
+Goal is: (and (at plane1 city0)  (at person2 city2)  (at person3 city0)  (at person4 city1)  (at person5 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.201323178 sec
+States expanded: 14
+States generated: 127
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (zoom plane1 city2 city0 fl5 fl4 fl3)
+1: (board person4 plane1 city0)
+2: (zoom plane1 city0 city1 fl3 fl2 fl1)
+3: (board person2 plane1 city1)
+4: (debark person4 plane1 city1)
+5: (fly plane1 city1 city2 fl1 fl0)
+6: (refuel plane1 city2 fl0 fl1)
+7: (debark person2 plane1 city2)
+8: (fly plane1 city2 city0 fl1 fl0)
+Final plan length is 9
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.391753954 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-4-2.sol
+Checking plan: ./solutions/base_version/zenotravel-4-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 9
+
+Successful plans:
+Value: 9
+ ./solutions/base_version/zenotravel-4-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 5 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 46 reachable facts from 46 original facts.
+Found 464 applicable actions from 464 original actions
+Goal is: (and (at person4 city3)  (at person2 city3)  (at person3 city3)  (at person1 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.58540255 sec
+States expanded: 19
+States generated: 210
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board person4 plane1 city1)
+1: (zoom plane1 city1 city3 fl6 fl5 fl4)
+2: (board person1 plane1 city3)
+3: (debark person4 plane1 city3)
+4: (fly plane1 city3 city2 fl4 fl3)
+5: (debark person1 plane1 city2)
+6: (fly plane1 city2 city0 fl3 fl2)
+7: (board person3 plane1 city0)
+8: (board person2 plane1 city0)
+9: (fly plane1 city0 city3 fl2 fl1)
+10: (debark person3 plane1 city3)
+11: (debark person2 plane1 city3)
+Final plan length is 12
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.867647501 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-5-2.sol
+Checking plan: ./solutions/base_version/zenotravel-5-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/base_version/zenotravel-5-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 6 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 52 reachable facts from 52 original facts.
+Found 480 applicable actions from 480 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person1 city3)  (at person2 city1)  (at person3 city3) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.705688677 sec
+States expanded: 18
+States generated: 237
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (zoom plane2 city1 city3 fl3 fl2 fl1)
+1: (board person5 plane1 city2)
+2: (zoom plane1 city2 city0 fl5 fl4 fl3)
+3: (board person1 plane1 city0)
+4: (zoom plane1 city0 city1 fl3 fl2 fl1)
+5: (debark person5 plane1 city1)
+6: (board person4 plane1 city1)
+7: (fly plane1 city1 city3 fl1 fl0)
+8: (debark person1 plane1 city3)
+9: (debark person4 plane1 city3)
+10: (refuel plane2 city3 fl1 fl2)
+11: (fly plane2 city3 city0 fl2 fl1)
+12: (board person2 plane2 city0)
+13: (fly plane2 city0 city1 fl1 fl0)
+14: (debark person2 plane2 city1)
+Final plan length is 15
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 1.080520475 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-6-2.sol
+Checking plan: ./solutions/base_version/zenotravel-6-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 15
+
+Successful plans:
+Value: 15
+ ./solutions/base_version/zenotravel-6-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 7 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 58 original facts.
+Found 496 applicable actions from 496 original actions
+Goal is: (and (at person4 city3)  (at plane2 city1)  (at person5 city2)  (at person3 city3)  (at person6 city2)  (at person1 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.022661905 sec
+States expanded: 29
+States generated: 362
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board person4 plane2 city1)
+1: (refuel plane1 city2 fl1 fl2)
+2: (fly plane1 city2 city3 fl2 fl1)
+3: (board person5 plane1 city3)
+4: (board person1 plane1 city3)
+5: (refuel plane1 city3 fl1 fl2)
+6: (fly plane1 city3 city2 fl2 fl1)
+7: (debark person1 plane1 city2)
+8: (debark person5 plane1 city2)
+9: (refuel plane2 city1 fl1 fl2)
+10: (fly plane2 city1 city3 fl2 fl1)
+11: (debark person4 plane2 city3)
+12: (fly plane2 city3 city1 fl1 fl0)
+13: (refuel plane1 city2 fl1 fl2)
+14: (fly plane1 city2 city0 fl2 fl1)
+15: (board person6 plane1 city0)
+16: (fly plane1 city0 city2 fl1 fl0)
+17: (debark person6 plane1 city2)
+Final plan length is 18
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 1.626786747 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-7-2.sol
+Checking plan: ./solutions/base_version/zenotravel-7-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 18
+
+Successful plans:
+Value: 18
+ ./solutions/base_version/zenotravel-7-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 8 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 84 reachable facts from 84 original facts.
+Found 1095 applicable actions from 1095 original actions
+Goal is: (and (at person1 city0)  (at person5 city3)  (at person4 city0)  (at person2 city0)  (at plane1 city3)  (at person6 city2)  (at person3 city1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.45831092 sec
+States expanded: 15
+States generated: 306
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (fly plane3 city0 city4 fl3 fl2)
+1: (board person6 plane3 city4)
+2: (fly plane3 city4 city2 fl2 fl1)
+3: (board person3 plane3 city2)
+4: (fly plane1 city0 city3 fl6 fl5)
+5: (debark person6 plane3 city2)
+6: (fly plane3 city2 city1 fl1 fl0)
+7: (board person1 plane3 city1)
+8: (refuel plane3 city1 fl0 fl1)
+9: (debark person3 plane3 city1)
+10: (fly plane3 city1 city0 fl1 fl0)
+11: (debark person1 plane3 city0)
+Final plan length is 12
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 2.590894872 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-8-2.sol
+Checking plan: ./solutions/base_version/zenotravel-8-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/base_version/zenotravel-8-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 9 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 92 reachable facts from 92 original facts.
+Found 1125 applicable actions from 1125 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person2 city0)  (at person6 city4)  (at person7 city4)  (at person3 city4)  (at person1 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.85686189 sec
+States expanded: 30
+States generated: 486
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (zoom plane2 city2 city0 fl2 fl1 fl0)
+1: (board person3 plane1 city2)
+2: (fly plane1 city2 city4 fl5 fl4)
+3: (board person1 plane1 city4)
+4: (board person5 plane1 city4)
+5: (debark person3 plane1 city4)
+6: (zoom plane1 city4 city3 fl4 fl3 fl2)
+7: (board person6 plane1 city3)
+8: (board person7 plane1 city3)
+9: (fly plane1 city3 city4 fl2 fl1)
+10: (debark person7 plane1 city4)
+11: (debark person6 plane1 city4)
+12: (board person4 plane2 city0)
+13: (refuel plane2 city0 fl0 fl1)
+14: (fly plane2 city0 city3 fl1 fl0)
+15: (debark person4 plane2 city3)
+16: (board person2 plane3 city1)
+17: (refuel plane3 city1 fl0 fl1)
+18: (fly plane3 city1 city0 fl1 fl0)
+19: (debark person2 plane3 city0)
+20: (refuel plane1 city4 fl1 fl2)
+21: (fly plane1 city4 city2 fl2 fl1)
+22: (debark person1 plane1 city2)
+23: (fly plane1 city2 city1 fl1 fl0)
+24: (debark person5 plane1 city1)
+Final plan length is 25
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 3.642232971 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-9-2.sol
+Checking plan: ./solutions/base_version/zenotravel-9-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 25
+
+Successful plans:
+Value: 25
+ ./solutions/base_version/zenotravel-9-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 10 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 100 reachable facts from 100 original facts.
+Found 1155 applicable actions from 1155 original actions
+Goal is: (and (at person8 city3)  (at person6 city3)  (at person2 city2)  (at person4 city1)  (at person7 city4)  (at person1 city1)  (at person3 city3)  (at plane1 city2)  (at person5 city0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 11 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 102 reachable facts from 102 original facts.
+Found 1548 applicable actions from 1548 original actions
+Goal is: (and (at person4 city2)  (at person7 city0)  (at person1 city4)  (at person3 city2)  (at plane1 city1)  (at person6 city4)  (at person2 city1)  (at person5 city2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 6.808108023 sec
+States expanded: 16
+States generated: 633
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (fly plane1 city4 city2 fl4 fl3)
+1: (board person6 plane1 city2)
+2: (board person2 plane1 city2)
+3: (zoom plane3 city1 city5 fl5 fl4 fl3)
+4: (board person7 plane3 city5)
+5: (fly plane1 city2 city4 fl3 fl2)
+6: (fly plane3 city5 city0 fl3 fl2)
+7: (board person4 plane3 city0)
+8: (debark person6 plane1 city4)
+9: (fly plane1 city4 city1 fl2 fl1)
+10: (debark person2 plane1 city1)
+11: (debark person7 plane3 city0)
+12: (fly plane3 city0 city2 fl2 fl1)
+13: (debark person4 plane3 city2)
+Final plan length is 14
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 9.834990205 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-11-2.sol
+Checking plan: ./solutions/base_version/zenotravel-11-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 14
+
+Successful plans:
+Value: 14
+ ./solutions/base_version/zenotravel-11-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 12 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 111 reachable facts from 111 original facts.
+Found 1584 applicable actions from 1584 original actions
+Goal is: (and (at person5 city4)  (at person8 city4)  (at person4 city4)  (at person6 city1)  (at person7 city3)  (at person2 city1)  (at person3 city1)  (at person1 city2) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 13 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 129 reachable facts from 129 original facts.
+Found 1656 applicable actions from 1656 original actions
+Goal is: (and (at person6 city3)  (at person4 city0)  (at person1 city4)  (at person9 city3)  (at plane1 city4)  (at person5 city2)  (at person3 city4)  (at person2 city5)  (at person10 city4)  (at person8 city0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 14 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 235 reachable facts from 235 original facts.
+Found 6800 applicable actions from 6800 original actions
+Goal is: (and (at person5 city1)  (at person6 city6)  (at plane4 city5)  (at person8 city1)  (at person3 city2)  (at person10 city9)  (at person4 city7)  (at plane2 city3)  (at person9 city5)  (at person2 city8)  (at person7 city5)  (at plane5 city8) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 15 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 350 reachable facts from 350 original facts.
+Found 10080 applicable actions from 10080 original actions
+Goal is: (and (at person12 city4)  (at person8 city11)  (at person4 city6)  (at person6 city11)  (at person5 city8)  (at person10 city9)  (at person11 city6)  (at person13 city11)  (at person7 city2)  (at person1 city1)  (at person14 city4)  (at person2 city4)  (at person15 city6)  (at person3 city7) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 16 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 390 reachable facts from 390 original facts.
+Found 13300 applicable actions from 13300 original actions
+Goal is: (and (at person13 city13)  (at person8 city11)  (at person1 city3)  (at person6 city7)  (at person12 city12)  (at plane3 city6)  (at plane2 city12)  (at person10 city6)  (at person9 city2)  (at person4 city13)  (at person14 city4)  (at person2 city4)  (at person7 city1)  (at person3 city11)  (at person5 city11)  (at person11 city0)  (at person15 city4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 17 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 535 reachable facts from 535 original facts.
+Found 17760 applicable actions from 17760 original actions
+Goal is: (and (at person5 city12)  (at person12 city6)  (at person10 city7)  (at person16 city12)  (at person11 city7)  (at person1 city4)  (at person2 city11)  (at person19 city5)  (at person8 city13)  (at person20 city13)  (at person15 city14)  (at plane3 city7)  (at person17 city1)  (at plane1 city14)  (at person7 city5)  (at person9 city9)  (at person18 city1)  (at person6 city0)  (at person3 city0)  (at plane5 city12)  (at person13 city2)  (at person4 city12)  (at person14 city10) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 18 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 585 reachable facts from 585 original facts.
+Found 21960 applicable actions from 21960 original actions
+Goal is: (and (at person2 city17)  (at person12 city4)  (at person14 city2)  (at person7 city6)  (at person9 city4)  (at person13 city14)  (at person15 city9)  (at person8 city8)  (at person5 city9)  (at person16 city9)  (at plane2 city6)  (at person19 city2)  (at person6 city13)  (at person11 city6)  (at person10 city16)  (at person20 city17)  (at person18 city6)  (at person4 city14)  (at person1 city2)  (at person3 city7)  (at person17 city15) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 19 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 760 reachable facts from 760 original facts.
+Found 27600 applicable actions from 27600 original actions
+Goal is: (and (at person10 city13)  (at person14 city0)  (at plane1 city11)  (at person11 city13)  (at person17 city0)  (at person2 city1)  (at person12 city17)  (at person24 city13)  (at person13 city3)  (at plane2 city8)  (at person23 city12)  (at person16 city19)  (at person1 city10)  (at person19 city17)  (at person18 city4)  (at person9 city17)  (at person25 city2)  (at person15 city13)  (at person20 city14)  (at person22 city4)  (at person5 city0)  (at person8 city0)  (at person7 city0)  (at person21 city17)  (at person3 city13)  (at person4 city9)  (at person6 city16) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 20 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 820 reachable facts from 820 original facts.
+Found 32780 applicable actions from 32780 original actions
+Goal is: (and (at person10 city5)  (at person24 city18)  (at person15 city0)  (at person23 city4)  (at person11 city18)  (at person22 city2)  (at person2 city0)  (at person25 city21)  (at person13 city0)  (at person17 city4)  (at person16 city13)  (at person6 city4)  (at person9 city20)  (at person5 city8)  (at person18 city9)  (at person7 city12)  (at person14 city1)  (at person21 city10)  (at person20 city1)  (at person19 city16)  (at person4 city7)  (at person3 city18)  (at person8 city16)  (at person1 city5)  (at person12 city10) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+

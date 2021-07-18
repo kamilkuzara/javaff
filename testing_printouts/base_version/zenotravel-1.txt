@@ -1,0 +1,1454 @@
+-------------------------------------- zenotravel - 1 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 18 reachable facts from 18 original facts.
+Found 129 applicable actions from 129 original actions
+Goal is: (and (at person1 city0)  (at person2 city2)  (at plane1 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+1 into depth [1]
+Evaluated 2 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 2
+States generated: 2
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city0 city1 fl1 fl0)
+Final plan length is 1
+EHC Plan Time = 0.024806458 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-1-1.sol
+Checking plan: ./solutions/base_version/zenotravel-1-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 1
+
+Successful plans:
+Value: 1
+ ./solutions/base_version/zenotravel-1-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 2 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 22 reachable facts from 22 original facts.
+Found 135 applicable actions from 135 original actions
+Goal is: (and (at person3 city2)  (at person1 city1)  (at plane1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+4 into depth [1]
+3 into depth [1]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 8 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 8
+States generated: 10
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city0 city2 fl2 fl1)
+1: (board person1 plane1 city2)
+2: (fly plane1 city2 city1 fl1 fl0)
+3: (debark person1 plane1 city1)
+4: (refuel plane1 city1 fl0 fl1)
+5: (fly plane1 city1 city2 fl1 fl0)
+Final plan length is 6
+EHC Plan Time = 0.037624114 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-2-1.sol
+Checking plan: ./solutions/base_version/zenotravel-2-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 6
+
+Successful plans:
+Value: 6
+ ./solutions/base_version/zenotravel-2-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 3 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 40 reachable facts from 40 original facts.
+Found 282 applicable actions from 282 original actions
+Goal is: (and (at person2 city0)  (at person3 city0)  (at person4 city1)  (at plane2 city2)  (at person1 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1][2][3]
+2 into depth [1]
+1 into depth [1]
+Evaluated 9 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 9
+States generated: 14
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person1 plane1 city0)
+1: (zoom plane1 city0 city1 fl4 fl3 fl2)
+2: (board person3 plane1 city1)
+3: (zoom plane1 city1 city0 fl2 fl1 fl0)
+4: (debark person3 plane1 city0)
+5: (refuel plane1 city0 fl0 fl1)
+6: (fly plane1 city0 city1 fl1 fl0)
+7: (debark person1 plane1 city1)
+Final plan length is 8
+EHC Plan Time = 0.072275434 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-3-1.sol
+Checking plan: ./solutions/base_version/zenotravel-3-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/base_version/zenotravel-3-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 4 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 45 reachable facts from 45 original facts.
+Found 294 applicable actions from 294 original actions
+Goal is: (and (at plane1 city0)  (at person2 city2)  (at person3 city0)  (at person4 city1)  (at person5 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+6 into depth [1][2]
+5 into depth [1][2]
+4 into depth [1][2][3]
+3 into depth [1][2]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 22 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 22
+States generated: 29
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city2 city0 fl5 fl4)
+1: (board person4 plane1 city0)
+2: (zoom plane1 city0 city1 fl4 fl3 fl2)
+3: (board person2 plane1 city1)
+4: (zoom plane1 city1 city2 fl2 fl1 fl0)
+5: (debark person2 plane1 city2)
+6: (refuel plane1 city2 fl0 fl1)
+7: (fly plane1 city2 city0 fl1 fl0)
+8: (refuel plane1 city0 fl0 fl1)
+9: (fly plane1 city0 city1 fl1 fl0)
+10: (debark person4 plane1 city1)
+11: (refuel plane1 city1 fl0 fl1)
+12: (fly plane1 city1 city0 fl1 fl0)
+Final plan length is 13
+EHC Plan Time = 0.121436519 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-4-1.sol
+Checking plan: ./solutions/base_version/zenotravel-4-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 13
+
+Successful plans:
+Value: 13
+ ./solutions/base_version/zenotravel-4-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 5 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 46 reachable facts from 46 original facts.
+Found 464 applicable actions from 464 original actions
+Goal is: (and (at person4 city3)  (at person2 city3)  (at person3 city3)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 14 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 14
+States generated: 33
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane1 city1)
+1: (fly plane1 city1 city3 fl6 fl5)
+2: (board person1 plane1 city3)
+3: (fly plane1 city3 city0 fl5 fl4)
+4: (board person2 plane1 city0)
+5: (board person3 plane1 city0)
+6: (fly plane1 city0 city2 fl4 fl3)
+7: (debark person1 plane1 city2)
+8: (fly plane1 city2 city3 fl3 fl2)
+9: (debark person2 plane1 city3)
+10: (debark person3 plane1 city3)
+11: (debark person4 plane1 city3)
+Final plan length is 12
+EHC Plan Time = 0.113175377 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-5-1.sol
+Checking plan: ./solutions/base_version/zenotravel-5-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/base_version/zenotravel-5-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 6 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 52 reachable facts from 52 original facts.
+Found 480 applicable actions from 480 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person1 city3)  (at person2 city1)  (at person3 city3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 13 states to a max depth of 1
+-------------------- Statistics --------------------
+States expanded: 13
+States generated: 43
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane2 city1)
+1: (board person5 plane1 city2)
+2: (fly plane1 city2 city0 fl5 fl4)
+3: (board person1 plane1 city0)
+4: (board person2 plane1 city0)
+5: (fly plane1 city0 city3 fl4 fl3)
+6: (debark person1 plane1 city3)
+7: (zoom plane1 city3 city1 fl3 fl2 fl1)
+8: (debark person2 plane1 city1)
+9: (debark person5 plane1 city1)
+10: (zoom plane2 city1 city3 fl3 fl2 fl1)
+11: (debark person4 plane2 city3)
+Final plan length is 12
+EHC Plan Time = 0.148670982 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-6-1.sol
+Checking plan: ./solutions/base_version/zenotravel-6-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/base_version/zenotravel-6-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 7 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 58 original facts.
+Found 496 applicable actions from 496 original actions
+Goal is: (and (at person4 city3)  (at plane2 city1)  (at person5 city2)  (at person3 city3)  (at person6 city2)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+11 into depth [1]
+10 into depth [1][2][3]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 54 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 54
+States generated: 70
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane2 city1)
+1: (fly plane1 city2 city3 fl1 fl0)
+2: (board person5 plane1 city3)
+3: (refuel plane1 city3 fl0 fl1)
+4: (board person1 plane1 city3)
+5: (fly plane1 city3 city0 fl1 fl0)
+6: (board person6 plane1 city0)
+7: (refuel plane1 city0 fl0 fl1)
+8: (fly plane1 city0 city2 fl1 fl0)
+9: (debark person1 plane1 city2)
+10: (debark person5 plane1 city2)
+11: (debark person6 plane1 city2)
+12: (fly plane2 city1 city3 fl1 fl0)
+13: (debark person4 plane2 city3)
+14: (refuel plane2 city3 fl0 fl1)
+15: (fly plane2 city3 city1 fl1 fl0)
+Final plan length is 16
+EHC Plan Time = 0.259341646 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-7-1.sol
+Checking plan: ./solutions/base_version/zenotravel-7-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/base_version/zenotravel-7-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 8 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 84 reachable facts from 84 original facts.
+Found 1095 applicable actions from 1095 original actions
+Goal is: (and (at person1 city0)  (at person5 city3)  (at person4 city0)  (at person2 city0)  (at plane1 city3)  (at person6 city2)  (at person3 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1][2]
+4 into depth [1][2][3]
+3 into depth [1][2]
+2 into depth [1]
+1 into depth [1]
+Evaluated 23 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 23
+States generated: 53
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city0 city1 fl6 fl5)
+1: (board person1 plane1 city1)
+2: (fly plane3 city0 city2 fl3 fl2)
+3: (board person3 plane3 city2)
+4: (zoom plane1 city1 city0 fl5 fl4 fl3)
+5: (debark person1 plane1 city0)
+6: (fly plane1 city0 city3 fl3 fl2)
+7: (zoom plane3 city2 city1 fl2 fl1 fl0)
+8: (debark person3 plane3 city1)
+9: (zoom plane1 city3 city4 fl2 fl1 fl0)
+10: (board person6 plane1 city4)
+11: (refuel plane1 city4 fl0 fl1)
+12: (fly plane1 city4 city2 fl1 fl0)
+13: (debark person6 plane1 city2)
+14: (refuel plane1 city2 fl0 fl1)
+15: (fly plane1 city2 city3 fl1 fl0)
+Final plan length is 16
+EHC Plan Time = 0.318612676 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-8-1.sol
+Checking plan: ./solutions/base_version/zenotravel-8-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/base_version/zenotravel-8-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 9 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 92 reachable facts from 92 original facts.
+Found 1125 applicable actions from 1125 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person2 city0)  (at person6 city4)  (at person7 city4)  (at person3 city4)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2][3]
+9 into depth [1][2]
+8 into depth [1]
+7 into depth [1][2]
+6 into depth [1]
+5 into depth [1][2]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 74 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 74
+States generated: 140
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person3 plane1 city2)
+1: (fly plane1 city2 city0 fl5 fl4)
+2: (board person4 plane1 city0)
+3: (fly plane1 city0 city1 fl4 fl3)
+4: (board person2 plane1 city1)
+5: (fly plane1 city1 city4 fl3 fl2)
+6: (board person1 plane1 city4)
+7: (board person5 plane1 city4)
+8: (debark person3 plane1 city4)
+9: (fly plane1 city4 city3 fl2 fl1)
+10: (board person6 plane1 city3)
+11: (board person7 plane1 city3)
+12: (fly plane1 city3 city0 fl1 fl0)
+13: (debark person2 plane1 city0)
+14: (refuel plane1 city0 fl0 fl1)
+15: (fly plane1 city0 city1 fl1 fl0)
+16: (refuel plane1 city1 fl0 fl1)
+17: (debark person5 plane1 city1)
+18: (fly plane1 city1 city2 fl1 fl0)
+19: (debark person1 plane1 city2)
+20: (refuel plane1 city2 fl0 fl1)
+21: (fly plane1 city2 city3 fl1 fl0)
+22: (debark person4 plane1 city3)
+23: (refuel plane1 city3 fl0 fl1)
+24: (fly plane1 city3 city4 fl1 fl0)
+25: (debark person6 plane1 city4)
+26: (debark person7 plane1 city4)
+Final plan length is 27
+EHC Plan Time = 0.672473904 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-9-1.sol
+Checking plan: ./solutions/base_version/zenotravel-9-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 27
+
+Successful plans:
+Value: 27
+ ./solutions/base_version/zenotravel-9-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 10 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 100 reachable facts from 100 original facts.
+Found 1155 applicable actions from 1155 original actions
+Goal is: (and (at person8 city3)  (at person6 city3)  (at person2 city2)  (at person4 city1)  (at person7 city4)  (at person1 city1)  (at person3 city3)  (at plane1 city2)  (at person5 city0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1][2]
+12 into depth [1][2]
+11 into depth [1]
+10 into depth [1][2][3]
+9 into depth [1][2]
+8 into depth [1]
+7 into depth [1][2][3]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 139 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 139
+States generated: 226
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person3 plane2 city4)
+1: (board person4 plane2 city4)
+2: (board person6 plane1 city0)
+3: (board person8 plane1 city0)
+4: (fly plane1 city0 city3 fl2 fl1)
+5: (board person1 plane1 city3)
+6: (board person2 plane1 city3)
+7: (debark person6 plane1 city3)
+8: (debark person8 plane1 city3)
+9: (fly plane1 city3 city0 fl1 fl0)
+10: (refuel plane1 city0 fl0 fl1)
+11: (fly plane2 city4 city3 fl5 fl4)
+12: (debark person3 plane2 city3)
+13: (zoom plane2 city3 city4 fl4 fl3 fl2)
+14: (fly plane1 city0 city2 fl1 fl0)
+15: (debark person2 plane1 city2)
+16: (refuel plane1 city2 fl0 fl1)
+17: (fly plane2 city4 city1 fl2 fl1)
+18: (board person5 plane2 city1)
+19: (board person7 plane2 city1)
+20: (fly plane1 city2 city1 fl1 fl0)
+21: (debark person1 plane1 city1)
+22: (debark person4 plane2 city1)
+23: (refuel plane1 city1 fl0 fl1)
+24: (fly plane1 city1 city2 fl1 fl0)
+25: (fly plane2 city1 city0 fl1 fl0)
+26: (debark person5 plane2 city0)
+27: (refuel plane2 city0 fl0 fl1)
+28: (fly plane2 city0 city4 fl1 fl0)
+29: (debark person7 plane2 city4)
+Final plan length is 30
+EHC Plan Time = 1.338754329 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-10-1.sol
+Checking plan: ./solutions/base_version/zenotravel-10-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 30
+
+Successful plans:
+Value: 30
+ ./solutions/base_version/zenotravel-10-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 11 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 102 reachable facts from 102 original facts.
+Found 1548 applicable actions from 1548 original actions
+Goal is: (and (at person4 city2)  (at person7 city0)  (at person1 city4)  (at person3 city2)  (at plane1 city1)  (at person6 city4)  (at person2 city1)  (at person5 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1][2]
+8 into depth [1][2][3]
+7 into depth [1][2]
+6 into depth [1][2][3]
+5 into depth [1]
+4 into depth [1]
+3 into depth [1][2]
+2 into depth [1]
+1 into depth [1]
+Evaluated 96 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 96
+States generated: 140
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city4 city0 fl4 fl3)
+1: (board person4 plane1 city0)
+2: (fly plane1 city0 city2 fl3 fl2)
+3: (board person2 plane1 city2)
+4: (board person6 plane1 city2)
+5: (fly plane1 city2 city1 fl2 fl1)
+6: (debark person2 plane1 city1)
+7: (fly plane1 city1 city2 fl1 fl0)
+8: (debark person4 plane1 city2)
+9: (refuel plane1 city2 fl0 fl1)
+10: (fly plane1 city2 city0 fl1 fl0)
+11: (refuel plane1 city0 fl0 fl1)
+12: (fly plane1 city0 city4 fl1 fl0)
+13: (debark person6 plane1 city4)
+14: (refuel plane1 city4 fl0 fl1)
+15: (fly plane1 city4 city1 fl1 fl0)
+16: (zoom plane3 city1 city0 fl5 fl4 fl3)
+17: (fly plane3 city0 city5 fl3 fl2)
+18: (board person7 plane3 city5)
+19: (fly plane3 city5 city0 fl2 fl1)
+20: (debark person7 plane3 city0)
+Final plan length is 21
+EHC Plan Time = 1.64461573 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-11-1.sol
+Checking plan: ./solutions/base_version/zenotravel-11-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 21
+
+Successful plans:
+Value: 21
+ ./solutions/base_version/zenotravel-11-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 12 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 111 reachable facts from 111 original facts.
+Found 1584 applicable actions from 1584 original actions
+Goal is: (and (at person5 city4)  (at person8 city4)  (at person4 city4)  (at person6 city1)  (at person7 city3)  (at person2 city1)  (at person3 city1)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1][2]
+9 into depth [1][2]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 34 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 34
+States generated: 123
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person6 plane1 city2)
+1: (board person7 plane3 city5)
+2: (board person8 plane3 city5)
+3: (fly plane2 city3 city4 fl6 fl5)
+4: (board person1 plane2 city4)
+5: (board person2 plane2 city4)
+6: (zoom plane1 city2 city0 fl3 fl2 fl1)
+7: (board person3 plane1 city0)
+8: (fly plane1 city0 city1 fl1 fl0)
+9: (debark person3 plane1 city1)
+10: (debark person6 plane1 city1)
+11: (fly plane2 city4 city1 fl5 fl4)
+12: (board person5 plane2 city1)
+13: (fly plane2 city1 city4 fl4 fl3)
+14: (debark person5 plane2 city4)
+15: (fly plane2 city4 city1 fl3 fl2)
+16: (debark person2 plane2 city1)
+17: (zoom plane2 city1 city2 fl2 fl1 fl0)
+18: (debark person1 plane2 city2)
+19: (zoom plane3 city5 city3 fl2 fl1 fl0)
+20: (debark person7 plane3 city3)
+21: (refuel plane3 city3 fl0 fl1)
+22: (fly plane3 city3 city4 fl1 fl0)
+23: (debark person8 plane3 city4)
+Final plan length is 24
+EHC Plan Time = 0.616438703 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-12-1.sol
+Checking plan: ./solutions/base_version/zenotravel-12-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 24
+
+Successful plans:
+Value: 24
+ ./solutions/base_version/zenotravel-12-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 13 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 129 reachable facts from 129 original facts.
+Found 1656 applicable actions from 1656 original actions
+Goal is: (and (at person6 city3)  (at person4 city0)  (at person1 city4)  (at person9 city3)  (at plane1 city4)  (at person5 city2)  (at person3 city4)  (at person2 city5)  (at person10 city4)  (at person8 city0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+23 into depth [1]
+22 into depth [1][2][3]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1][2]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1][2][3]
+9 into depth [1][2][3]
+8 into depth [1]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 152 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 152
+States generated: 226
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane1 city4)
+1: (zoom plane2 city3 city1 fl6 fl5 fl4)
+2: (board person1 plane2 city1)
+3: (board person3 plane2 city1)
+4: (board person6 plane2 city1)
+5: (board person9 plane2 city1)
+6: (fly plane2 city1 city3 fl4 fl3)
+7: (debark person6 plane2 city3)
+8: (debark person9 plane2 city3)
+9: (fly plane1 city4 city5 fl2 fl1)
+10: (board person10 plane1 city5)
+11: (board person5 plane1 city5)
+12: (zoom plane2 city3 city4 fl3 fl2 fl1)
+13: (debark person1 plane2 city4)
+14: (debark person3 plane2 city4)
+15: (fly plane1 city5 city0 fl1 fl0)
+16: (debark person4 plane1 city0)
+17: (refuel plane1 city0 fl0 fl1)
+18: (fly plane1 city0 city2 fl1 fl0)
+19: (debark person5 plane1 city2)
+20: (refuel plane1 city2 fl0 fl1)
+21: (board person2 plane1 city2)
+22: (board person8 plane1 city2)
+23: (fly plane1 city2 city0 fl1 fl0)
+24: (refuel plane1 city0 fl0 fl1)
+25: (debark person8 plane1 city0)
+26: (fly plane1 city0 city4 fl1 fl0)
+27: (debark person10 plane1 city4)
+28: (refuel plane1 city4 fl0 fl1)
+29: (fly plane1 city4 city5 fl1 fl0)
+30: (debark person2 plane1 city5)
+31: (refuel plane1 city5 fl0 fl1)
+32: (fly plane1 city5 city4 fl1 fl0)
+Final plan length is 33
+EHC Plan Time = 2.642950553 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-13-1.sol
+Checking plan: ./solutions/base_version/zenotravel-13-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 33
+
+Successful plans:
+Value: 33
+ ./solutions/base_version/zenotravel-13-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 14 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 235 reachable facts from 235 original facts.
+Found 6800 applicable actions from 6800 original actions
+Goal is: (and (at person5 city1)  (at person6 city6)  (at plane4 city5)  (at person8 city1)  (at person3 city2)  (at person10 city9)  (at person4 city7)  (at plane2 city3)  (at person9 city5)  (at person2 city8)  (at person7 city5)  (at plane5 city8) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1][2]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1][2]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1]
+9 into depth [1][2]
+8 into depth [1]
+7 into depth [1][2]
+6 into depth [1]
+5 into depth [1][2]
+4 into depth [1][2][3]
+3 into depth [1]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 116 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 116
+States generated: 287
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane5 city9)
+1: (board person9 plane3 city4)
+2: (fly plane4 city8 city6 fl3 fl2)
+3: (board person5 plane4 city6)
+4: (board person8 plane4 city6)
+5: (fly plane4 city6 city1 fl2 fl1)
+6: (board person2 plane4 city1)
+7: (debark person5 plane4 city1)
+8: (debark person8 plane4 city1)
+9: (fly plane4 city1 city5 fl1 fl0)
+10: (zoom plane3 city4 city5 fl6 fl5 fl4)
+11: (debark person9 plane3 city5)
+12: (fly plane5 city9 city7 fl4 fl3)
+13: (board person10 plane5 city7)
+14: (board person7 plane5 city7)
+15: (debark person4 plane5 city7)
+16: (fly plane5 city7 city5 fl3 fl2)
+17: (debark person7 plane5 city5)
+18: (fly plane2 city2 city3 fl6 fl5)
+19: (fly plane5 city5 city0 fl2 fl1)
+20: (board person3 plane5 city0)
+21: (board person6 plane5 city0)
+22: (refuel plane4 city5 fl0 fl1)
+23: (fly plane5 city0 city2 fl1 fl0)
+24: (debark person3 plane5 city2)
+25: (refuel plane5 city2 fl0 fl1)
+26: (fly plane5 city2 city6 fl1 fl0)
+27: (debark person6 plane5 city6)
+28: (refuel plane5 city6 fl0 fl1)
+29: (fly plane5 city6 city8 fl1 fl0)
+30: (refuel plane5 city8 fl0 fl1)
+31: (fly plane4 city5 city8 fl1 fl0)
+32: (debark person2 plane4 city8)
+33: (refuel plane4 city8 fl0 fl1)
+34: (fly plane4 city8 city5 fl1 fl0)
+35: (fly plane5 city8 city9 fl1 fl0)
+36: (debark person10 plane5 city9)
+37: (refuel plane5 city9 fl0 fl1)
+38: (fly plane5 city9 city8 fl1 fl0)
+Final plan length is 39
+EHC Plan Time = 17.033772657 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-14-1.sol
+Checking plan: ./solutions/base_version/zenotravel-14-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 39
+
+Successful plans:
+Value: 39
+ ./solutions/base_version/zenotravel-14-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 15 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 350 reachable facts from 350 original facts.
+Found 10080 applicable actions from 10080 original actions
+Goal is: (and (at person12 city4)  (at person8 city11)  (at person4 city6)  (at person6 city11)  (at person5 city8)  (at person10 city9)  (at person11 city6)  (at person13 city11)  (at person7 city2)  (at person1 city1)  (at person14 city4)  (at person2 city4)  (at person15 city6)  (at person3 city7) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1][2]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1][2]
+12 into depth [1]
+11 into depth [1][2]
+10 into depth [1]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1]
+6 into depth [1][2]
+5 into depth [1]
+4 into depth [1][2]
+3 into depth [1]
+2 into depth [1]
+1 into depth [1]
+Evaluated 173 states to a max depth of 2
+-------------------- Statistics --------------------
+States expanded: 173
+States generated: 401
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person12 plane5 city5)
+1: (board person4 plane5 city5)
+2: (fly plane2 city3 city10 fl4 fl3)
+3: (board person2 plane2 city10)
+4: (board person6 plane2 city10)
+5: (fly plane2 city10 city1 fl3 fl2)
+6: (board person15 plane2 city1)
+7: (board person5 plane2 city1)
+8: (fly plane2 city1 city11 fl2 fl1)
+9: (board person10 plane2 city11)
+10: (board person7 plane2 city11)
+11: (debark person6 plane2 city11)
+12: (fly plane2 city11 city8 fl1 fl0)
+13: (refuel plane2 city8 fl0 fl1)
+14: (board person1 plane2 city8)
+15: (board person13 plane2 city8)
+16: (board person8 plane2 city8)
+17: (fly plane5 city5 city4 fl1 fl0)
+18: (debark person12 plane5 city4)
+19: (debark person5 plane2 city8)
+20: (refuel plane5 city4 fl0 fl1)
+21: (board person11 plane5 city4)
+22: (fly plane5 city4 city6 fl1 fl0)
+23: (debark person11 plane5 city6)
+24: (debark person4 plane5 city6)
+25: (fly plane2 city8 city1 fl1 fl0)
+26: (refuel plane2 city1 fl0 fl1)
+27: (debark person1 plane2 city1)
+28: (fly plane2 city1 city11 fl1 fl0)
+29: (refuel plane2 city11 fl0 fl1)
+30: (debark person13 plane2 city11)
+31: (debark person8 plane2 city11)
+32: (fly plane2 city11 city2 fl1 fl0)
+33: (debark person7 plane2 city2)
+34: (refuel plane2 city2 fl0 fl1)
+35: (fly plane2 city2 city4 fl1 fl0)
+36: (debark person2 plane2 city4)
+37: (refuel plane2 city4 fl0 fl1)
+38: (fly plane2 city4 city6 fl1 fl0)
+39: (debark person15 plane2 city6)
+40: (refuel plane2 city6 fl0 fl1)
+41: (fly plane2 city6 city9 fl1 fl0)
+42: (debark person10 plane2 city9)
+Final plan length is 43
+EHC Plan Time = 26.791635497 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-15-1.sol
+Checking plan: ./solutions/base_version/zenotravel-15-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 43
+
+Successful plans:
+Value: 43
+ ./solutions/base_version/zenotravel-15-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 16 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 390 reachable facts from 390 original facts.
+Found 13300 applicable actions from 13300 original actions
+Goal is: (and (at person13 city13)  (at person8 city11)  (at person1 city3)  (at person6 city7)  (at person12 city12)  (at plane3 city6)  (at plane2 city12)  (at person10 city6)  (at person9 city2)  (at person4 city13)  (at person14 city4)  (at person2 city4)  (at person7 city1)  (at person3 city11)  (at person5 city11)  (at person11 city0)  (at person15 city4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1]
+29 into depth [1]
+28 into depth [1]
+27 into depth [1]
+26 into depth [1][2]
+25 into depth [1]
+24 into depth [1]
+23 into depth [1][2]
+22 into depth [1][2]
+21 into depth [1]
+20 into depth [1]
+19 into depth [1]
+18 into depth [1]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1]
+12 into depth [1]
+11 into depth [1]
+10 into depth [1][2]
+9 into depth [1][2][3]
+8 into depth [1][2]
+7 into depth [1][2][3]
+6 into depth [1]
+5 into depth [1]
+4 into depth [1][2][3]
+3 into depth [1][2]
+2 into depth [1]
+1 into depth [1]
+Evaluated 248 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 248
+States generated: 568
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person11 plane3 city10)
+1: (board person13 plane1 city6)
+2: (board person14 plane5 city1)
+3: (board person3 plane2 city0)
+4: (board person4 plane4 city4)
+5: (board person9 plane5 city1)
+6: (fly plane1 city6 city11 fl2 fl1)
+7: (fly plane2 city0 city6 fl3 fl2)
+8: (fly plane2 city6 city2 fl2 fl1)
+9: (board person10 plane2 city2)
+10: (board person8 plane2 city2)
+11: (fly plane3 city10 city0 fl5 fl4)
+12: (debark person11 plane3 city0)
+13: (fly plane5 city1 city2 fl6 fl5)
+14: (debark person9 plane5 city2)
+15: (zoom plane3 city0 city6 fl4 fl3 fl2)
+16: (fly plane2 city2 city11 fl1 fl0)
+17: (debark person3 plane2 city11)
+18: (debark person8 plane2 city11)
+19: (refuel plane2 city11 fl0 fl1)
+20: (fly plane1 city11 city13 fl1 fl0)
+21: (debark person13 plane1 city13)
+22: (fly plane4 city4 city13 fl4 fl3)
+23: (fly plane5 city2 city12 fl5 fl4)
+24: (board person15 plane4 city13)
+25: (board person2 plane5 city12)
+26: (board person5 plane4 city13)
+27: (debark person4 plane4 city13)
+28: (fly plane4 city13 city11 fl3 fl2)
+29: (debark person5 plane4 city11)
+30: (zoom plane4 city11 city4 fl2 fl1 fl0)
+31: (debark person15 plane4 city4)
+32: (zoom plane5 city12 city4 fl4 fl3 fl2)
+33: (debark person14 plane5 city4)
+34: (debark person2 plane5 city4)
+35: (fly plane2 city11 city12 fl1 fl0)
+36: (refuel plane2 city12 fl0 fl1)
+37: (fly plane2 city12 city6 fl1 fl0)
+38: (debark person10 plane2 city6)
+39: (refuel plane2 city6 fl0 fl1)
+40: (fly plane2 city6 city12 fl1 fl0)
+41: (fly plane5 city4 city12 fl2 fl1)
+42: (fly plane5 city12 city7 fl1 fl0)
+43: (board person12 plane5 city7)
+44: (refuel plane5 city7 fl0 fl1)
+45: (fly plane5 city7 city12 fl1 fl0)
+46: (debark person12 plane5 city12)
+47: (zoom plane3 city6 city8 fl2 fl1 fl0)
+48: (board person1 plane3 city8)
+49: (refuel plane3 city8 fl0 fl1)
+50: (fly plane3 city8 city3 fl1 fl0)
+51: (debark person1 plane3 city3)
+52: (refuel plane3 city3 fl0 fl1)
+53: (fly plane3 city3 city6 fl1 fl0)
+Final plan length is 54
+EHC Plan Time = 111.022454403 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-16-1.sol
+Checking plan: ./solutions/base_version/zenotravel-16-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 54
+
+Successful plans:
+Value: 54
+ ./solutions/base_version/zenotravel-16-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 17 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 535 reachable facts from 535 original facts.
+Found 17760 applicable actions from 17760 original actions
+Goal is: (and (at person5 city12)  (at person12 city6)  (at person10 city7)  (at person16 city12)  (at person11 city7)  (at person1 city4)  (at person2 city11)  (at person19 city5)  (at person8 city13)  (at person20 city13)  (at person15 city14)  (at plane3 city7)  (at person17 city1)  (at plane1 city14)  (at person7 city5)  (at person9 city9)  (at person18 city1)  (at person6 city0)  (at person3 city0)  (at plane5 city12)  (at person13 city2)  (at person4 city12)  (at person14 city10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+60 into depth [1]
+59 into depth [1]
+58 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1]
+54 into depth [1]
+53 into depth [1]
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1]
+47 into depth [1]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+42 into depth [1]
+41 into depth [1]
+40 into depth [1]
+39 into depth [1]
+38 into depth [1]
+37 into depth [1]
+36 into depth [1]
+35 into depth [1]
+34 into depth [1]
+33 into depth [1]
+32 into depth [1]
+31 into depth [1]
+30 into depth [1][2]
+29 into depth [1]
+28 into depth [1][2]
+27 into depth [1][2]
+26 into depth [1]
+25 into depth [1]
+24 into depth [1][2]
+23 into depth [1]
+22 into depth [1]
+21 into depth [1]
+20 into depth [1][2]
+19 into depth [1]
+18 into depth [1][2]
+17 into depth [1]
+16 into depth [1]
+15 into depth [1]
+14 into depth [1]
+13 into depth [1][2][3]
+12 into depth [1]
+11 into depth [1][2][3]
+10 into depth [1][2]
+9 into depth [1]
+8 into depth [1][2]
+7 into depth [1][2][3]
+6 into depth [1]
+5 into depth [1][2]
+4 into depth [1]
+3 into depth [1]
+2 into depth [1][2][3]
+1 into depth [1]
+Evaluated 384 states to a max depth of 3
+-------------------- Statistics --------------------
+States expanded: 384
+States generated: 1039
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person12 plane5 city15)
+1: (board person19 plane4 city11)
+2: (board person2 plane1 city14)
+3: (board person5 plane3 city4)
+4: (board person6 plane1 city14)
+5: (board person7 plane3 city4)
+6: (fly plane1 city14 city7 fl5 fl4)
+7: (board person15 plane1 city7)
+8: (board person17 plane1 city7)
+9: (board person4 plane1 city7)
+10: (fly plane3 city4 city12 fl5 fl4)
+11: (board person3 plane3 city12)
+12: (debark person5 plane3 city12)
+13: (fly plane4 city11 city0 fl3 fl2)
+14: (board person1 plane4 city0)
+15: (board person20 plane4 city0)
+16: (board person8 plane4 city0)
+17: (fly plane4 city0 city5 fl2 fl1)
+18: (board person18 plane4 city5)
+19: (fly plane5 city15 city12 fl2 fl1)
+20: (debark person19 plane4 city5)
+21: (zoom plane3 city12 city3 fl4 fl3 fl2)
+22: (board person11 plane3 city3)
+23: (board person9 plane3 city3)
+24: (fly plane3 city3 city7 fl2 fl1)
+25: (debark person11 plane3 city7)
+26: (zoom plane1 city7 city0 fl4 fl3 fl2)
+27: (debark person6 plane1 city0)
+28: (fly plane1 city0 city11 fl2 fl1)
+29: (debark person2 plane1 city11)
+30: (fly plane1 city11 city12 fl1 fl0)
+31: (debark person4 plane1 city12)
+32: (refuel plane1 city12 fl0 fl1)
+33: (fly plane1 city12 city1 fl1 fl0)
+34: (debark person17 plane1 city1)
+35: (fly plane4 city5 city1 fl1 fl0)
+36: (refuel plane1 city1 fl0 fl1)
+37: (board person14 plane1 city1)
+38: (debark person18 plane4 city1)
+39: (fly plane1 city1 city10 fl1 fl0)
+40: (board person13 plane1 city10)
+41: (debark person14 plane1 city10)
+42: (refuel plane1 city10 fl0 fl1)
+43: (refuel plane4 city1 fl0 fl1)
+44: (fly plane1 city10 city14 fl1 fl0)
+45: (debark person15 plane1 city14)
+46: (refuel plane1 city14 fl0 fl1)
+47: (fly plane4 city1 city13 fl1 fl0)
+48: (debark person20 plane4 city13)
+49: (debark person8 plane4 city13)
+50: (refuel plane4 city13 fl0 fl1)
+51: (fly plane4 city13 city4 fl1 fl0)
+52: (debark person1 plane4 city4)
+53: (fly plane1 city14 city2 fl1 fl0)
+54: (debark person13 plane1 city2)
+55: (refuel plane1 city2 fl0 fl1)
+56: (fly plane1 city2 city14 fl1 fl0)
+57: (fly plane3 city7 city0 fl1 fl0)
+58: (debark person3 plane3 city0)
+59: (refuel plane3 city0 fl0 fl1)
+60: (fly plane3 city0 city5 fl1 fl0)
+61: (debark person7 plane3 city5)
+62: (refuel plane3 city5 fl0 fl1)
+63: (fly plane3 city5 city7 fl1 fl0)
+64: (refuel plane3 city7 fl0 fl1)
+65: (fly plane3 city7 city9 fl1 fl0)
+66: (debark person9 plane3 city9)
+67: (refuel plane3 city9 fl0 fl1)
+68: (board person16 plane3 city9)
+69: (fly plane3 city9 city12 fl1 fl0)
+70: (debark person16 plane3 city12)
+71: (refuel plane3 city12 fl0 fl1)
+72: (fly plane3 city12 city7 fl1 fl0)
+73: (fly plane5 city12 city6 fl1 fl0)
+74: (debark person12 plane5 city6)
+75: (refuel plane5 city6 fl0 fl1)
+76: (fly plane5 city6 city12 fl1 fl0)
+Final plan length is 77
+EHC Plan Time = 174.614822715 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/zenotravel-17-1.sol
+Checking plan: ./solutions/base_version/zenotravel-17-1.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 77
+
+Successful plans:
+Value: 77
+ ./solutions/base_version/zenotravel-17-1.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 18 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 585 reachable facts from 585 original facts.
+Found 21960 applicable actions from 21960 original actions
+Goal is: (and (at person2 city17)  (at person12 city4)  (at person14 city2)  (at person7 city6)  (at person9 city4)  (at person13 city14)  (at person15 city9)  (at person8 city8)  (at person5 city9)  (at person16 city9)  (at plane2 city6)  (at person19 city2)  (at person6 city13)  (at person11 city6)  (at person10 city16)  (at person20 city17)  (at person18 city6)  (at person4 city14)  (at person1 city2)  (at person3 city7)  (at person17 city15) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+60 into depth [1]
+59 into depth [1]
+58 into depth [1]
+57 into depth [1]
+55 into depth [1]
+54 into depth [1]
+53 into depth [1]
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1]
+47 into depth [1]
+46 into depth [1]
+45 into depth [1]
+44 into depth [1]
+43 into depth [1]
+41 into depth [1]
+40 into depth [1][2]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 19 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 760 reachable facts from 760 original facts.
+Found 27600 applicable actions from 27600 original actions
+Goal is: (and (at person10 city13)  (at person14 city0)  (at plane1 city11)  (at person11 city13)  (at person17 city0)  (at person2 city1)  (at person12 city17)  (at person24 city13)  (at person13 city3)  (at plane2 city8)  (at person23 city12)  (at person16 city19)  (at person1 city10)  (at person19 city17)  (at person18 city4)  (at person9 city17)  (at person25 city2)  (at person15 city13)  (at person20 city14)  (at person22 city4)  (at person5 city0)  (at person8 city0)  (at person7 city0)  (at person21 city17)  (at person3 city13)  (at person4 city9)  (at person6 city16) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+70 into depth [1]
+69 into depth [1]
+68 into depth [1]
+67 into depth [1]
+66 into depth [1]
+65 into depth [1]
+64 into depth [1]
+63 into depth [1]
+62 into depth [1]
+61 into depth [1]
+60 into depth [1]
+59 into depth [1]
+58 into depth [1]
+57 into depth [1]
+56 into depth [1]
+55 into depth [1]
+54 into depth [1]
+53 into depth [1][2]
+52 into depth [1]
+51 into depth [1]
+50 into depth [1]
+49 into depth [1]
+48 into depth [1]
+47 into depth [1][2]
+46 into depth [1][2]
+45 into depth [1][2]---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 20 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 820 reachable facts from 820 original facts.
+Found 32780 applicable actions from 32780 original actions
+Goal is: (and (at person10 city5)  (at person24 city18)  (at person15 city0)  (at person23 city4)  (at person11 city18)  (at person22 city2)  (at person2 city0)  (at person25 city21)  (at person13 city0)  (at person17 city4)  (at person16 city13)  (at person6 city4)  (at person9 city20)  (at person5 city8)  (at person18 city9)  (at person7 city12)  (at person14 city1)  (at person21 city10)  (at person20 city1)  (at person19 city16)  (at person4 city7)  (at person3 city18)  (at person8 city16)  (at person1 city5)  (at person12 city10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+82 into depth [1]
+78 into depth [1]
+77 into depth [1]
+76 into depth [1]
+74 into depth [1]
+73 into depth [1]
+72 into depth [1]
+71 into depth [1]
+70 into depth [1]
+69 into depth [1]
+68 into depth [1]
+67 into depth [1][2]---------------------------------------------------------------------------------------------
+
+

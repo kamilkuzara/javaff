@@ -1,0 +1,494 @@
+-------------------------------------- satellite - 1 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 17 reachable facts from 17 original facts.
+Found 52 applicable actions from 52 original actions
+Goal is: (and (have_image phenomenon4 thermograph0)  (have_image phenomenon6 thermograph0)  (have_image star5 thermograph0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.046958259 sec
+States expanded: 12
+States generated: 85
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (turn_to satellite0 groundstation2 phenomenon6)
+2: (calibrate satellite0 instrument0 groundstation2)
+3: (turn_to satellite0 phenomenon4 groundstation2)
+4: (take_image satellite0 phenomenon4 instrument0 thermograph0)
+5: (turn_to satellite0 phenomenon6 phenomenon4)
+6: (take_image satellite0 phenomenon6 instrument0 thermograph0)
+7: (turn_to satellite0 star5 phenomenon6)
+8: (take_image satellite0 star5 instrument0 thermograph0)
+Final plan length is 9
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.088638891 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-1-2.sol
+Checking plan: ./solutions/base_version/satellite-1-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 9
+
+Successful plans:
+Value: 9
+ ./solutions/base_version/satellite-1-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 2 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 37 reachable facts from 37 original facts.
+Found 102 applicable actions from 102 original actions
+Goal is: (and (have_image planet3 infrared0)  (have_image phenomenon5 image2)  (have_image star7 infrared0)  (have_image phenomenon6 infrared0)  (have_image planet4 infrared0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.099203369 sec
+States expanded: 18
+States generated: 169
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument1 satellite0)
+1: (turn_to satellite0 groundstation2 planet4)
+2: (calibrate satellite0 instrument1 groundstation2)
+3: (turn_to satellite0 planet4 groundstation2)
+4: (take_image satellite0 planet4 instrument1 infrared0)
+5: (turn_to satellite0 phenomenon5 planet4)
+6: (take_image satellite0 phenomenon5 instrument1 image2)
+7: (turn_to satellite0 star7 phenomenon5)
+8: (take_image satellite0 star7 instrument1 infrared0)
+9: (turn_to satellite0 planet3 star7)
+10: (take_image satellite0 planet3 instrument1 infrared0)
+11: (turn_to satellite0 phenomenon6 planet3)
+12: (take_image satellite0 phenomenon6 instrument1 infrared0)
+Final plan length is 13
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.171348728 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-2-2.sol
+Checking plan: ./solutions/base_version/satellite-2-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 13
+
+Successful plans:
+Value: 13
+ ./solutions/base_version/satellite-2-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 3 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 50 reachable facts from 50 original facts.
+Found 188 applicable actions from 188 original actions
+Goal is: (and (pointing satellite0 phenomenon5)  (have_image star4 spectrograph2)  (have_image star3 infrared0)  (have_image phenomenon7 spectrograph2)  (have_image phenomenon5 spectrograph2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.358864679 sec
+States expanded: 28
+States generated: 464
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument0 satellite0)
+1: (turn_to satellite0 star1 star4)
+2: (calibrate satellite0 instrument0 star1)
+3: (turn_to satellite0 phenomenon7 star1)
+4: (take_image satellite0 phenomenon7 instrument0 spectrograph2)
+5: (turn_to satellite0 phenomenon5 phenomenon7)
+6: (take_image satellite0 phenomenon5 instrument0 spectrograph2)
+7: (turn_to satellite0 star4 phenomenon5)
+8: (take_image satellite0 star4 instrument0 spectrograph2)
+9: (turn_to satellite0 star3 star4)
+10: (take_image satellite0 star3 instrument0 infrared0)
+11: (turn_to satellite0 phenomenon5 star3)
+Final plan length is 12
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 0.660345627 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-3-2.sol
+Checking plan: ./solutions/base_version/satellite-3-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/base_version/satellite-3-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 4 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 58 original facts.
+Found 259 applicable actions from 259 original actions
+Goal is: (and (pointing satellite1 planet5)  (have_image phenomenon9 infrared0)  (have_image star4 infrared1)  (have_image star6 infrared1)  (have_image phenomenon8 thermograph2)  (have_image planet5 thermograph2)  (have_image star7 infrared0)  (have_image planet3 infrared1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.610635236 sec
+States expanded: 27
+States generated: 577
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument1 satellite1)
+1: (turn_to satellite1 star2 star0)
+2: (calibrate satellite1 instrument1 star2)
+3: (turn_to satellite1 phenomenon9 star2)
+4: (take_image satellite1 phenomenon9 instrument1 infrared0)
+5: (turn_to satellite1 planet3 phenomenon9)
+6: (take_image satellite1 planet3 instrument1 infrared1)
+7: (turn_to satellite1 planet5 planet3)
+8: (take_image satellite1 planet5 instrument1 thermograph2)
+9: (turn_to satellite1 phenomenon8 planet5)
+10: (take_image satellite1 phenomenon8 instrument1 thermograph2)
+11: (turn_to satellite1 star7 phenomenon8)
+12: (take_image satellite1 star7 instrument1 infrared0)
+13: (turn_to satellite1 star6 star7)
+14: (take_image satellite1 star6 instrument1 infrared1)
+15: (turn_to satellite1 star4 star6)
+16: (take_image satellite1 star4 instrument1 infrared1)
+17: (turn_to satellite1 planet5 star4)
+Final plan length is 18
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 1.023245488 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-4-2.sol
+Checking plan: ./solutions/base_version/satellite-4-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 18
+
+Successful plans:
+Value: 18
+ ./solutions/base_version/satellite-4-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 5 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 81 reachable facts from 81 original facts.
+Found 497 applicable actions from 497 original actions
+Goal is: (and (pointing satellite0 phenomenon5)  (pointing satellite1 groundstation2)  (have_image planet9 spectrograph1)  (have_image phenomenon8 image2)  (have_image phenomenon6 image2)  (have_image star3 thermograph0)  (have_image phenomenon5 image2)  (have_image star7 thermograph0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.891803323 sec
+States expanded: 17
+States generated: 584
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument8 satellite2)
+1: (turn_to satellite0 phenomenon5 phenomenon8)
+2: (turn_to satellite2 groundstation0 phenomenon5)
+3: (calibrate satellite2 instrument8 groundstation0)
+4: (turn_to satellite2 star3 groundstation0)
+5: (take_image satellite2 star3 instrument8 thermograph0)
+6: (turn_to satellite2 phenomenon8 star3)
+7: (take_image satellite2 phenomenon8 instrument8 image2)
+8: (turn_to satellite2 star7 phenomenon8)
+9: (take_image satellite2 star7 instrument8 thermograph0)
+10: (turn_to satellite2 planet9 star7)
+11: (take_image satellite2 planet9 instrument8 spectrograph1)
+12: (turn_to satellite2 phenomenon6 planet9)
+13: (take_image satellite2 phenomenon6 instrument8 image2)
+14: (turn_to satellite2 phenomenon5 phenomenon6)
+15: (take_image satellite2 phenomenon5 instrument8 image2)
+Final plan length is 16
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 1.595659503 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-5-2.sol
+Checking plan: ./solutions/base_version/satellite-5-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/base_version/satellite-5-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 6 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 90 reachable facts from 90 original facts.
+Found 455 applicable actions from 455 original actions
+Goal is: (and (have_image phenomenon8 spectrograph0)  (have_image star9 infrared1)  (have_image planet5 spectrograph0)  (have_image star10 infrared3)  (have_image star7 infrared3)  (have_image planet4 thermograph2)  (have_image star6 thermograph2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.16144762 sec
+States expanded: 24
+States generated: 821
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (switch_on instrument2 satellite1)
+1: (switch_on instrument0 satellite0)
+2: (turn_to satellite0 star1 phenomenon8)
+3: (calibrate satellite0 instrument0 star1)
+4: (turn_to satellite0 star9 star1)
+5: (take_image satellite0 star9 instrument0 infrared1)
+6: (turn_to satellite0 planet5 star9)
+7: (take_image satellite0 planet5 instrument0 spectrograph0)
+8: (turn_to satellite0 phenomenon8 planet5)
+9: (take_image satellite0 phenomenon8 instrument0 spectrograph0)
+10: (turn_to satellite1 star2 star6)
+11: (calibrate satellite1 instrument2 star2)
+12: (turn_to satellite1 star10 star2)
+13: (take_image satellite1 star10 instrument2 infrared3)
+14: (turn_to satellite1 star7 star10)
+15: (take_image satellite1 star7 instrument2 infrared3)
+16: (turn_to satellite1 star6 star7)
+17: (take_image satellite1 star6 instrument2 thermograph2)
+18: (turn_to satellite1 planet4 star6)
+19: (take_image satellite1 planet4 instrument2 thermograph2)
+Final plan length is 20
+EHC Plan Time = 0.0 sec
+BFS Plan Time = 2.107396777 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/base_version/satellite-6-2.sol
+Checking plan: ./solutions/base_version/satellite-6-2.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 20
+
+Successful plans:
+Value: 20
+ ./solutions/base_version/satellite-6-2.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 7 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 116 reachable facts from 116 original facts.
+Found 756 applicable actions from 756 original actions
+Goal is: (and (have_image star6 image1)  (have_image planet11 image2)  (pointing satellite2 phenomenon5)  (have_image planet9 image3)  (have_image planet10 image0)  (have_image planet8 image0)  (pointing satellite1 star1)  (have_image phenomenon5 image0)  (have_image star7 image0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 8 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 144 reachable facts from 144 original facts.
+Found 1185 applicable actions from 1185 original actions
+Goal is: (and (have_image phenomenon5 thermograph1)  (have_image planet11 thermograph2)  (have_image phenomenon9 image0)  (have_image star7 spectrograph3)  (have_image star10 spectrograph3)  (have_image phenomenon8 image0)  (have_image star6 thermograph1)  (have_image phenomenon12 image0)  (have_image phenomenon14 thermograph2)  (have_image phenomenon13 thermograph1) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 9 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 177 reachable facts from 177 original facts.
+Found 1473 applicable actions from 1473 original actions
+Goal is: (and (have_image phenomenon6 image3)  (have_image phenomenon7 infrared1)  (have_image planet11 spectrograph0)  (have_image phenomenon8 image2)  (have_image planet10 image4)  (have_image planet5 image2)  (pointing satellite0 phenomenon7)  (pointing satellite4 planet5)  (have_image star9 image3)  (have_image star14 image4)  (pointing satellite3 star9)  (have_image phenomenon13 spectrograph0)  (have_image phenomenon12 image3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 10 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 197 reachable facts from 197 original facts.
+Found 1784 applicable actions from 1784 original actions
+Goal is: (and (have_image phenomenon8 image4)  (have_image phenomenon14 spectrograph1)  (have_image planet9 infrared0)  (pointing satellite4 planet9)  (have_image star7 image4)  (have_image star16 image2)  (have_image planet5 image4)  (have_image star6 infrared3)  (have_image star12 image4)  (have_image planet10 infrared3)  (have_image star15 spectrograph1)  (have_image phenomenon13 image4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 11 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 223 reachable facts from 223 original facts.
+Found 2287 applicable actions from 2287 original actions
+Goal is: (and (have_image star8 image3)  (pointing satellite1 star4)  (have_image phenomenon7 infrared1)  (pointing satellite4 star11)  (have_image planet16 image3)  (have_image star5 image3)  (have_image planet13 spectrograph4)  (pointing satellite0 phenomenon9)  (have_image star10 thermograph2)  (have_image planet14 thermograph2)  (have_image phenomenon15 infrared0)  (have_image star17 infrared0)  (have_image star11 infrared1)  (have_image planet6 infrared1) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 12 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 275 reachable facts from 275 original facts.
+Found 3555 applicable actions from 3555 original actions
+Goal is: (and (have_image phenomenon6 spectrograph4)  (have_image planet8 infrared1)  (have_image phenomenon21 thermograph2)  (have_image star19 thermograph2)  (have_image planet10 thermograph2)  (have_image star23 spectrograph4)  (have_image phenomenon13 spectrograph4)  (have_image planet11 infrared3)  (have_image phenomenon24 infrared0)  (have_image star9 spectrograph4)  (have_image star14 thermograph2)  (have_image phenomenon17 spectrograph4)  (have_image planet16 infrared1)  (have_image star22 infrared1)  (have_image star7 infrared0)  (have_image planet5 infrared0)  (have_image star18 spectrograph4)  (have_image planet20 thermograph2)  (have_image star15 infrared3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 13 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 323 reachable facts from 323 original facts.
+Found 4917 applicable actions from 4917 original actions
+Goal is: (and (have_image planet23 thermograph1)  (have_image planet25 thermograph1)  (have_image star22 image4)  (pointing satellite4 planet11)  (have_image planet11 thermograph2)  (have_image star21 thermograph1)  (have_image planet9 thermograph0)  (have_image planet15 thermograph0)  (have_image star14 image3)  (have_image phenomenon27 thermograph1)  (have_image planet8 image3)  (have_image phenomenon18 image3)  (have_image planet7 image3)  (have_image planet10 thermograph1)  (have_image planet28 thermograph2)  (have_image planet16 image3)  (have_image planet13 thermograph1)  (pointing satellite2 planet11)  (have_image star26 thermograph0)  (have_image star19 thermograph0)  (have_image phenomenon5 thermograph1)  (have_image planet6 image4)  (have_image planet24 thermograph2)  (have_image planet29 thermograph0)  (pointing satellite1 phenomenon5)  (have_image planet17 image4)  (have_image phenomenon12 image3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 14 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 305 reachable facts from 305 original facts.
+Found 4311 applicable actions from 4311 original actions
+Goal is: (and (have_image phenomenon5 image1)  (have_image star19 thermograph4)  (have_image star20 thermograph4)  (have_image star9 thermograph0)  (have_image planet15 image2)  (have_image planet8 image2)  (pointing satellite0 planet21)  (have_image star14 thermograph4)  (have_image phenomenon12 thermograph0)  (have_image phenomenon13 image1)  (have_image planet21 thermograph0)  (pointing satellite2 star14)  (have_image phenomenon7 thermograph0)  (have_image star10 thermograph3)  (have_image planet23 image1)  (have_image planet17 image2)  (have_image phenomenon18 image1)  (pointing satellite5 planet17)  (have_image star22 thermograph3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 15 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 371 reachable facts from 371 original facts.
+Found 5632 applicable actions from 5632 original actions
+Goal is: (and (pointing satellite1 planet22)  (have_image phenomenon9 infrared0)  (have_image planet21 infrared0)  (have_image planet20 image1)  (have_image phenomenon16 image1)  (have_image star13 thermograph3)  (have_image phenomenon5 spectrograph2)  (have_image planet17 thermograph3)  (have_image planet24 infrared0)  (pointing satellite5 planet24)  (have_image planet6 spectrograph2)  (have_image star18 image1)  (pointing satellite2 star13)  (pointing satellite7 star3)  (pointing satellite3 planet14)  (have_image phenomenon10 image1)  (have_image planet23 thermograph3)  (have_image star12 thermograph3)  (pointing satellite0 star19)  (have_image planet14 thermograph4)  (have_image planet11 image1)  (have_image planet22 image1)  (have_image planet7 infrared0)  (have_image star15 thermograph4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 16 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 431 reachable facts from 431 original facts.
+Found 7194 applicable actions from 7194 original actions
+Goal is: (and (have_image planet10 image0)  (have_image phenomenon18 spectrograph3)  (have_image planet22 image2)  (have_image phenomenon9 image2)  (have_image star12 image0)  (have_image planet21 thermograph1)  (have_image planet7 image0)  (pointing satellite5 planet6)  (have_image star13 image0)  (have_image star15 image0)  (have_image planet11 infrared4)  (have_image phenomenon17 infrared4)  (pointing satellite7 star3)  (pointing satellite9 star16)  (have_image phenomenon5 thermograph1)  (have_image planet6 infrared4)  (have_image phenomenon23 image0)  (have_image star20 image0)  (have_image star14 thermograph1)  (have_image star24 infrared4)  (pointing satellite8 star15)  (have_image planet8 thermograph1)  (have_image star16 thermograph1) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 17 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 485 reachable facts from 485 original facts.
+Found 8322 applicable actions from 8322 original actions
+Goal is: (and (have_image planet7 image4)  (have_image planet11 image4)  (have_image star10 thermograph1)  (have_image planet12 thermograph1)  (have_image phenomenon24 infrared3)  (have_image planet5 image0)  (have_image star22 image4)  (pointing satellite8 planet16)  (have_image phenomenon15 infrared2)  (have_image phenomenon23 infrared3)  (have_image phenomenon14 infrared2)  (have_image planet6 image4)  (have_image planet13 infrared3)  (have_image star21 thermograph1)  (pointing satellite4 phenomenon20)  (have_image phenomenon17 thermograph1)  (have_image planet16 infrared2)  (pointing satellite1 star22)  (have_image phenomenon9 image4)  (have_image star18 image4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 18 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 281 reachable facts from 281 original facts.
+Found 3589 applicable actions from 3589 original actions
+Goal is: (and (have_image star9 image1)  (have_image phenomenon17 thermograph4)  (have_image phenomenon5 thermograph4)  (have_image planet20 thermograph4)  (have_image star15 thermograph2)  (have_image phenomenon13 thermograph2)  (have_image planet7 image1)  (have_image phenomenon21 image1)  (have_image star8 thermograph3)  (have_image star10 image1)  (have_image phenomenon18 image1)  (have_image planet19 thermograph2)  (have_image star22 thermograph3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 19 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 380 reachable facts from 380 original facts.
+Found 4300 applicable actions from 4300 original actions
+Goal is: (and (have_image planet9 spectrograph0)  (have_image star12 spectrograph6)  (have_image planet9 spectrograph6)  (have_image star19 infrared3)  (have_image planet21 image5)  (have_image phenomenon5 infrared7)  (have_image star10 spectrograph6)  (have_image star19 thermograph1)  (pointing satellite0 planet17)  (have_image phenomenon5 image4)  (have_image star18 infrared2)  (have_image star14 infrared2)  (have_image star12 thermograph1)  (have_image phenomenon13 infrared7)  (have_image phenomenon24 image5)  (have_image phenomenon7 thermograph1)  (have_image planet17 image5)  (have_image planet22 infrared2)  (have_image phenomenon24 spectrograph6)  (have_image phenomenon11 infrared2)  (have_image phenomenon13 infrared2)  (have_image phenomenon20 spectrograph0)  (have_image planet15 infrared2)  (have_image star10 infrared3)  (have_image planet21 infrared3)  (have_image star23 infrared2)  (have_image star16 image4)  (have_image planet17 image4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 20 --------------------------------------------
+Parsed Domain file ./problems/satellite/domain.pddl successfully
+Parsed Problem file ./problems/satellite/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 438 reachable facts from 438 original facts.
+Found 4437 applicable actions from 4437 original actions
+Goal is: (and (have_image planet13 spectrograph6)  (have_image planet13 image2)  (have_image phenomenon21 image4)  (have_image phenomenon14 thermograph7)  (have_image planet7 spectrograph6)  (have_image phenomenon8 spectrograph6)  (have_image planet9 spectrograph6)  (have_image planet7 image2)  (have_image star11 thermograph7)  (have_image star6 spectrograph6)  (have_image phenomenon8 thermograph7)  (have_image star10 spectrograph6)  (have_image star6 spectrograph0)  (have_image planet18 infrared5)  (have_image phenomenon5 spectrograph0)  (have_image planet13 infrared5)  (have_image phenomenon19 image4)  (have_image star11 image3)  (have_image star16 image3)  (have_image star24 infrared5)  (have_image planet18 infrared9)  (have_image star23 infrared9)  (have_image phenomenon12 image4)  (have_image phenomenon19 image2)  (have_image planet22 spectrograph6)  (have_image planet22 image2)  (have_image planet7 infrared5)  (have_image phenomenon8 infrared5)  (have_image planet15 image3)  (have_image star24 spectrograph6)  (have_image phenomenon5 image3)  (have_image star20 spectrograph0)  (pointing satellite1 phenomenon19)  (have_image star6 image3)  (have_image star23 image2)  (have_image star11 image4)  (have_image phenomenon21 image2)  (have_image star16 image4)  (have_image phenomenon21 thermograph7)  (have_image phenomenon5 thermograph8)  (have_image planet18 thermograph7) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
