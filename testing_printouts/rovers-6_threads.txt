@@ -1,0 +1,737 @@
+-------------------------------------- rovers - 1 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 35 reachable facts from 45 original facts.
+Found 63 applicable actions from 77 original actions
+Goal is: (and (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint3)  (communicated_soil_data waypoint2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.086030429 sec
+States expanded: 11
+States generated: 62
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective1 waypoint3)
+1: (take_image rover0 waypoint3 objective1 camera0 high_res)
+2: (communicate_image_data rover0 general objective1 high_res waypoint3 waypoint0)
+3: (sample_rock rover0 rover0store waypoint3)
+4: (communicate_rock_data rover0 general waypoint3 waypoint3 waypoint0)
+5: (drop rover0 rover0store)
+6: (navigate rover0 waypoint3 waypoint1)
+7: (navigate rover0 waypoint1 waypoint2)
+8: (sample_soil rover0 rover0store waypoint2)
+9: (communicate_soil_data rover0 general waypoint2 waypoint2 waypoint0)
+Final plan length is 10
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.100784386sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-1-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-1-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10
+
+Successful plans:
+Value: 10
+ ./solutions/concurrent_heuristics_BFS/rovers-1-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 2 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 28 reachable facts from 46 original facts.
+Found 53 applicable actions from 77 original actions
+Goal is: (and (communicated_image_data objective1 low_res)  (communicated_soil_data waypoint0)  (communicated_rock_data waypoint0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.070778648 sec
+States expanded: 9
+States generated: 69
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective0 waypoint0)
+1: (take_image rover0 waypoint0 objective1 camera0 low_res)
+2: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)
+3: (sample_rock rover0 rover0store waypoint0)
+4: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)
+5: (drop rover0 rover0store)
+6: (sample_soil rover0 rover0store waypoint0)
+7: (communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)
+Final plan length is 8
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.086986543sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-2-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-2-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/concurrent_heuristics_BFS/rovers-2-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 3 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 44 reachable facts from 67 original facts.
+Found 76 applicable actions from 132 original actions
+Goal is: (and (communicated_image_data objective0 colour)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.142308766 sec
+States expanded: 15
+States generated: 108
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (navigate rover1 waypoint3 waypoint2)
+1: (sample_soil rover1 rover1store waypoint2)
+2: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint0)
+3: (navigate rover1 waypoint2 waypoint3)
+4: (drop rover1 rover1store)
+5: (navigate rover1 waypoint3 waypoint0)
+6: (sample_rock rover1 rover1store waypoint0)
+7: (navigate rover1 waypoint0 waypoint1)
+8: (communicate_rock_data rover1 general waypoint0 waypoint1 waypoint0)
+9: (calibrate rover1 camera1 objective0 waypoint1)
+10: (take_image rover1 waypoint1 objective0 camera1 colour)
+11: (communicate_image_data rover1 general objective0 colour waypoint1 waypoint0)
+Final plan length is 12
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.161321634sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-3-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-3-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/concurrent_heuristics_BFS/rovers-3-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 4 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 50 reachable facts from 77 original facts.
+Found 86 applicable actions from 145 original actions
+Goal is: (and (communicated_soil_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_rock_data waypoint1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.097373279 sec
+States expanded: 9
+States generated: 81
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (navigate rover1 waypoint2 waypoint1)
+1: (sample_rock rover1 rover1store waypoint1)
+2: (sample_soil rover0 rover0store waypoint3)
+3: (calibrate rover1 camera0 objective0 waypoint1)
+4: (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+5: (take_image rover1 waypoint1 objective0 camera0 high_res)
+6: (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+7: (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+Final plan length is 8
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.114541405sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-4-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-4-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/concurrent_heuristics_BFS/rovers-4-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 5 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 59 reachable facts from 77 original facts.
+Found 144 applicable actions from 201 original actions
+Goal is: (and (communicated_image_data objective2 high_res)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 colour)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint2)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.391919266 sec
+States expanded: 26
+States generated: 415
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (calibrate rover1 camera1 objective1 waypoint0)
+1: (navigate rover1 waypoint0 waypoint1)
+2: (sample_rock rover0 rover0store waypoint0)
+3: (drop rover0 rover0store)
+4: (navigate rover0 waypoint0 waypoint1)
+5: (sample_rock rover0 rover0store waypoint1)
+6: (communicate_rock_data rover0 general waypoint1 waypoint1 waypoint3)
+7: (communicate_rock_data rover0 general waypoint0 waypoint1 waypoint3)
+8: (sample_soil rover1 rover1store waypoint1)
+9: (communicate_soil_data rover1 general waypoint1 waypoint1 waypoint3)
+10: (drop rover1 rover1store)
+11: (navigate rover1 waypoint1 waypoint2)
+12: (sample_soil rover1 rover1store waypoint2)
+13: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint3)
+14: (calibrate rover0 camera2 objective1 waypoint1)
+15: (take_image rover0 waypoint1 objective2 camera2 high_res)
+16: (communicate_image_data rover0 general objective2 high_res waypoint1 waypoint3)
+17: (take_image rover1 waypoint2 objective0 camera1 high_res)
+18: (calibrate rover1 camera1 objective1 waypoint2)
+19: (communicate_image_data rover1 general objective0 high_res waypoint2 waypoint3)
+20: (take_image rover1 waypoint2 objective0 camera1 colour)
+21: (communicate_image_data rover1 general objective0 colour waypoint2 waypoint3)
+Final plan length is 22
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.415875824sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-5-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-5-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 22
+
+Successful plans:
+Value: 22
+ ./solutions/concurrent_heuristics_BFS/rovers-5-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 6 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 63 reachable facts from 88 original facts.
+Found 178 applicable actions from 276 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 colour)  (communicated_image_data objective1 low_res)  (communicated_soil_data waypoint2)  (communicated_image_data objective0 low_res)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.774564305 sec
+States expanded: 112
+States generated: 1737
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (calibrate rover0 camera1 objective1 waypoint1)
+1: (navigate rover0 waypoint1 waypoint0)
+2: (take_image rover0 waypoint0 objective0 camera1 low_res)
+3: (communicate_image_data rover0 general objective0 low_res waypoint0 waypoint3)
+4: (calibrate rover0 camera1 objective1 waypoint0)
+5: (take_image rover0 waypoint0 objective1 camera1 low_res)
+6: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint3)
+7: (calibrate rover0 camera1 objective1 waypoint0)
+8: (take_image rover0 waypoint0 objective0 camera1 colour)
+9: (communicate_image_data rover0 general objective0 colour waypoint0 waypoint3)
+10: (sample_rock rover0 rover0store waypoint0)
+11: (drop rover0 rover0store)
+12: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint3)
+13: (sample_soil rover1 rover1store waypoint4)
+14: (communicate_soil_data rover1 general waypoint4 waypoint4 waypoint3)
+15: (drop rover1 rover1store)
+16: (navigate rover0 waypoint0 waypoint2)
+17: (sample_rock rover0 rover0store waypoint2)
+18: (communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)
+19: (drop rover0 rover0store)
+20: (navigate rover0 waypoint2 waypoint0)
+21: (navigate rover0 waypoint0 waypoint3)
+22: (sample_rock rover0 rover0store waypoint3)
+23: (navigate rover0 waypoint3 waypoint0)
+24: (communicate_rock_data rover0 general waypoint3 waypoint0 waypoint3)
+25: (navigate rover1 waypoint4 waypoint5)
+26: (sample_soil rover1 rover1store waypoint5)
+27: (communicate_soil_data rover1 general waypoint5 waypoint5 waypoint3)
+28: (drop rover1 rover1store)
+29: (navigate rover1 waypoint5 waypoint2)
+30: (sample_soil rover1 rover1store waypoint2)
+31: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint3)
+32: (drop rover1 rover1store)
+33: (navigate rover1 waypoint2 waypoint5)
+34: (navigate rover1 waypoint5 waypoint4)
+35: (navigate rover1 waypoint4 waypoint1)
+36: (sample_soil rover1 rover1store waypoint1)
+37: (communicate_soil_data rover1 general waypoint1 waypoint1 waypoint3)
+Final plan length is 38
+EHC Plan Time = 0.0sec
+BFS Plan Time = 1.81139864sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-6-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-6-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 38
+
+Successful plans:
+Value: 38
+ ./solutions/concurrent_heuristics_BFS/rovers-6-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 7 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 68 reachable facts from 114 original facts.
+Found 151 applicable actions from 261 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.37188821 sec
+States expanded: 23
+States generated: 319
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (sample_rock rover1 rover1store waypoint3)
+1: (navigate rover1 waypoint3 waypoint2)
+2: (calibrate rover0 camera0 objective0 waypoint2)
+3: (communicate_rock_data rover1 general waypoint3 waypoint2 waypoint3)
+4: (take_image rover0 waypoint2 objective0 camera0 high_res)
+5: (communicate_image_data rover0 general objective0 high_res waypoint2 waypoint3)
+6: (sample_rock rover2 rover2store waypoint4)
+7: (drop rover2 rover2store)
+8: (sample_soil rover2 rover2store waypoint4)
+9: (communicate_rock_data rover2 general waypoint4 waypoint4 waypoint3)
+10: (communicate_soil_data rover2 general waypoint4 waypoint4 waypoint3)
+11: (sample_rock rover0 rover0store waypoint2)
+12: (communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)
+13: (drop rover0 rover0store)
+14: (navigate rover0 waypoint2 waypoint1)
+15: (sample_soil rover0 rover0store waypoint1)
+16: (navigate rover0 waypoint1 waypoint2)
+17: (communicate_soil_data rover0 general waypoint1 waypoint2 waypoint3)
+Final plan length is 18
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.392233683sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-7-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-7-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 18
+
+Successful plans:
+Value: 18
+ ./solutions/concurrent_heuristics_BFS/rovers-7-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 8 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 110 reachable facts from 158 original facts.
+Found 328 applicable actions from 494 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 low_res)  (communicated_rock_data waypoint5)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 2.152633884 sec
+States expanded: 50
+States generated: 1055
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (navigate rover0 waypoint2 waypoint4)
+1: (calibrate rover1 camera2 objective0 waypoint2)
+2: (navigate rover2 waypoint2 waypoint5)
+3: (sample_rock rover2 rover2store waypoint5)
+4: (navigate rover2 waypoint5 waypoint2)
+5: (communicate_rock_data rover2 general waypoint5 waypoint2 waypoint0)
+6: (take_image rover1 waypoint2 objective2 camera2 low_res)
+7: (communicate_image_data rover1 general objective2 low_res waypoint2 waypoint0)
+8: (calibrate rover1 camera2 objective0 waypoint2)
+9: (take_image rover1 waypoint2 objective0 camera2 low_res)
+10: (communicate_image_data rover1 general objective0 low_res waypoint2 waypoint0)
+11: (calibrate rover1 camera2 objective0 waypoint2)
+12: (take_image rover1 waypoint2 objective0 camera2 high_res)
+13: (communicate_image_data rover1 general objective0 high_res waypoint2 waypoint0)
+14: (sample_rock rover0 rover0store waypoint4)
+15: (communicate_rock_data rover0 general waypoint4 waypoint4 waypoint0)
+16: (drop rover0 rover0store)
+17: (sample_soil rover0 rover0store waypoint4)
+18: (communicate_soil_data rover0 general waypoint4 waypoint4 waypoint0)
+19: (sample_soil rover3 rover3store waypoint3)
+20: (communicate_soil_data rover3 general waypoint3 waypoint3 waypoint0)
+21: (drop rover3 rover3store)
+22: (navigate rover3 waypoint3 waypoint0)
+23: (navigate rover3 waypoint0 waypoint1)
+24: (sample_soil rover3 rover3store waypoint1)
+25: (communicate_soil_data rover3 general waypoint1 waypoint1 waypoint0)
+Final plan length is 26
+EHC Plan Time = 0.0sec
+BFS Plan Time = 2.192015668sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-8-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-8-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/concurrent_heuristics_BFS/rovers-8-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 9 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 116 reachable facts from 175 original facts.
+Found 362 applicable actions from 519 original actions
+Goal is: (and (communicated_rock_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint6)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 4.293186398 sec
+States expanded: 137
+States generated: 2831
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (calibrate rover2 camera3 objective0 waypoint0)
+1: (navigate rover2 waypoint0 waypoint6)
+2: (navigate rover3 waypoint2 waypoint1)
+3: (navigate rover3 waypoint1 waypoint4)
+4: (sample_soil rover3 rover3store waypoint4)
+5: (navigate rover3 waypoint4 waypoint1)
+6: (communicate_soil_data rover3 general waypoint4 waypoint1 waypoint4)
+7: (take_image rover2 waypoint6 objective2 camera3 colour)
+8: (calibrate rover1 camera4 objective1 waypoint2)
+9: (communicate_image_data rover2 general objective2 colour waypoint6 waypoint4)
+10: (take_image rover1 waypoint2 objective2 camera4 low_res)
+11: (navigate rover1 waypoint2 waypoint6)
+12: (communicate_image_data rover1 general objective2 low_res waypoint6 waypoint4)
+13: (sample_rock rover1 rover1store waypoint6)
+14: (communicate_rock_data rover1 general waypoint6 waypoint6 waypoint4)
+15: (drop rover1 rover1store)
+16: (navigate rover1 waypoint6 waypoint2)
+17: (navigate rover1 waypoint2 waypoint1)
+18: (sample_soil rover2 rover2store waypoint6)
+19: (drop rover2 rover2store)
+20: (communicate_soil_data rover2 general waypoint6 waypoint6 waypoint4)
+21: (navigate rover2 waypoint6 waypoint0)
+22: (sample_soil rover2 rover2store waypoint0)
+23: (navigate rover2 waypoint0 waypoint6)
+24: (communicate_soil_data rover2 general waypoint0 waypoint6 waypoint4)
+25: (navigate rover1 waypoint1 waypoint3)
+26: (sample_rock rover1 rover1store waypoint3)
+27: (communicate_rock_data rover1 general waypoint3 waypoint3 waypoint4)
+28: (drop rover1 rover1store)
+29: (navigate rover1 waypoint3 waypoint1)
+30: (navigate rover1 waypoint1 waypoint2)
+31: (navigate rover1 waypoint2 waypoint0)
+32: (sample_rock rover1 rover1store waypoint0)
+33: (navigate rover1 waypoint0 waypoint2)
+34: (navigate rover1 waypoint2 waypoint6)
+35: (communicate_rock_data rover1 general waypoint0 waypoint6 waypoint4)
+Final plan length is 36
+EHC Plan Time = 0.0sec
+BFS Plan Time = 4.343352293sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-9-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-9-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 36
+
+Successful plans:
+Value: 36
+ ./solutions/concurrent_heuristics_BFS/rovers-9-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 10 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 125 reachable facts from 191 original facts.
+Found 382 applicable actions from 672 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_image_data objective3 colour)  (communicated_rock_data waypoint3)  (communicated_rock_data waypoint1)  (communicated_image_data objective3 low_res)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_soil_data waypoint6)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 11 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 118 reachable facts from 190 original facts.
+Found 436 applicable actions from 814 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_image_data objective1 high_res)  (communicated_soil_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_rock_data waypoint7)  (communicated_soil_data waypoint0)  (communicated_soil_data waypoint6)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 12 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 108 reachable facts from 205 original facts.
+Found 366 applicable actions from 784 original actions
+Goal is: (and (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_image_data objective3 low_res)  (communicated_soil_data waypoint0)  (communicated_image_data objective2 low_res) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.218985428 sec
+States expanded: 25
+States generated: 472
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (navigate rover3 waypoint7 waypoint3)
+1: (calibrate rover3 camera3 objective3 waypoint3)
+2: (sample_rock rover3 rover3store waypoint3)
+3: (communicate_rock_data rover3 general waypoint3 waypoint3 waypoint2)
+4: (navigate rover2 waypoint7 waypoint0)
+5: (sample_soil rover2 rover2store waypoint0)
+6: (communicate_soil_data rover2 general waypoint0 waypoint0 waypoint2)
+7: (take_image rover3 waypoint3 objective1 camera3 high_res)
+8: (calibrate rover3 camera3 objective3 waypoint3)
+9: (communicate_image_data rover3 general objective1 high_res waypoint3 waypoint2)
+10: (take_image rover3 waypoint3 objective3 camera3 low_res)
+11: (communicate_image_data rover3 general objective3 low_res waypoint3 waypoint2)
+12: (calibrate rover3 camera3 objective3 waypoint3)
+13: (take_image rover3 waypoint3 objective2 camera3 low_res)
+14: (communicate_image_data rover3 general objective2 low_res waypoint3 waypoint2)
+15: (navigate rover1 waypoint4 waypoint6)
+16: (sample_rock rover1 rover1store waypoint6)
+17: (navigate rover1 waypoint6 waypoint4)
+18: (communicate_rock_data rover1 general waypoint6 waypoint4 waypoint2)
+Final plan length is 19
+EHC Plan Time = 0.0sec
+BFS Plan Time = 1.270638417sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-12-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-12-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 19
+
+Successful plans:
+Value: 19
+ ./solutions/concurrent_heuristics_BFS/rovers-12-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 13 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 148 reachable facts from 222 original facts.
+Found 749 applicable actions from 1205 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_rock_data waypoint4)  (communicated_image_data objective2 high_res)  (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint8)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint6)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint7)  (communicated_image_data objective3 high_res)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 14 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 122 reachable facts from 238 original facts.
+Found 525 applicable actions from 893 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_rock_data waypoint8)  (communicated_image_data objective0 colour)  (communicated_image_data objective0 low_res)  (communicated_rock_data waypoint5)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint6) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 3.476249996 sec
+States expanded: 63
+States generated: 1432
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (navigate rover1 waypoint4 waypoint6)
+1: (calibrate rover1 camera3 objective0 waypoint6)
+2: (navigate rover0 waypoint1 waypoint2)
+3: (navigate rover0 waypoint2 waypoint3)
+4: (sample_soil rover0 rover0store waypoint3)
+5: (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint7)
+6: (calibrate rover0 camera4 objective3 waypoint3)
+7: (take_image rover0 waypoint3 objective0 camera4 colour)
+8: (communicate_image_data rover0 general objective0 colour waypoint3 waypoint7)
+9: (sample_soil rover1 rover1store waypoint6)
+10: (drop rover1 rover1store)
+11: (calibrate rover0 camera4 objective3 waypoint3)
+12: (take_image rover0 waypoint3 objective2 camera4 low_res)
+13: (take_image rover1 waypoint6 objective0 camera3 low_res)
+14: (communicate_image_data rover0 general objective2 low_res waypoint3 waypoint7)
+15: (navigate rover1 waypoint6 waypoint8)
+16: (communicate_soil_data rover1 general waypoint6 waypoint8 waypoint7)
+17: (communicate_image_data rover1 general objective0 low_res waypoint8 waypoint7)
+18: (sample_rock rover1 rover1store waypoint8)
+19: (drop rover1 rover1store)
+20: (communicate_rock_data rover1 general waypoint8 waypoint8 waypoint7)
+21: (navigate rover1 waypoint8 waypoint6)
+22: (navigate rover1 waypoint6 waypoint4)
+23: (sample_rock rover1 rover1store waypoint4)
+24: (drop rover1 rover1store)
+25: (navigate rover1 waypoint4 waypoint5)
+26: (communicate_rock_data rover1 general waypoint4 waypoint5 waypoint7)
+27: (sample_rock rover1 rover1store waypoint5)
+28: (communicate_rock_data rover1 general waypoint5 waypoint5 waypoint7)
+Final plan length is 29
+EHC Plan Time = 0.0sec
+BFS Plan Time = 3.529233394sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/rovers-14-6_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/rovers-14-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 29
+
+Successful plans:
+Value: 29
+ ./solutions/concurrent_heuristics_BFS/rovers-14-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 15 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 153 reachable facts from 268 original facts.
+Found 751 applicable actions from 1236 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_soil_data waypoint10)  (communicated_soil_data waypoint8)  (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint8)  (communicated_image_data objective1 low_res)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint2)  (communicated_soil_data waypoint0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 16 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 180 reachable facts from 284 original facts.
+Found 671 applicable actions from 1047 original actions
+Goal is: (and (communicated_image_data objective2 high_res)  (communicated_image_data objective4 high_res)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint9)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint10)  (communicated_rock_data waypoint5)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 17 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 266 reachable facts from 482 original facts.
+Found 1227 applicable actions from 2216 original actions
+Goal is: (and (communicated_image_data objective5 colour)  (communicated_image_data objective3 colour)  (communicated_rock_data waypoint3)  (communicated_image_data objective4 colour)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint12)  (communicated_image_data objective2 colour)  (communicated_rock_data waypoint5)  (communicated_rock_data waypoint9)  (communicated_soil_data waypoint5)  (communicated_soil_data waypoint3)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint14) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 18 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 370 reachable facts from 613 original facts.
+Found 1837 applicable actions from 2538 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_image_data objective5 colour)  (communicated_rock_data waypoint2)  (communicated_image_data objective4 high_res)  (communicated_rock_data waypoint6)  (communicated_image_data objective3 low_res)  (communicated_rock_data waypoint7)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_rock_data waypoint5)  (communicated_soil_data waypoint14) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 19 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 362 reachable facts from 634 original facts.
+Found 2838 applicable actions from 4476 original actions
+Goal is: (and (communicated_image_data objective7 colour)  (communicated_rock_data waypoint4)  (communicated_image_data objective5 colour)  (communicated_image_data objective7 low_res)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 colour)  (communicated_image_data objective6 low_res)  (communicated_rock_data waypoint6)  (communicated_rock_data waypoint19)  (communicated_rock_data waypoint17)  (communicated_rock_data waypoint9)  (communicated_soil_data waypoint5)  (communicated_soil_data waypoint8)  (communicated_image_data objective4 high_res)  (communicated_soil_data waypoint18)  (communicated_image_data objective2 low_res) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 20 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 480 reachable facts from 948 original facts.
+Found 3976 applicable actions from 7364 original actions
+Goal is: (and (communicated_image_data objective7 colour)  (communicated_soil_data waypoint13)  (communicated_rock_data waypoint18)  (communicated_image_data objective3 colour)  (communicated_soil_data waypoint11)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint20)  (communicated_rock_data waypoint14)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint12)  (communicated_rock_data waypoint21)  (communicated_rock_data waypoint10)  (communicated_rock_data waypoint22)  (communicated_rock_data waypoint9)  (communicated_image_data objective2 high_res)  (communicated_soil_data waypoint8)  (communicated_rock_data waypoint16)  (communicated_rock_data waypoint7)  (communicated_image_data objective5 high_res)  (communicated_soil_data waypoint23) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+

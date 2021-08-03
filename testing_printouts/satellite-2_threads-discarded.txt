@@ -1,0 +1,120 @@
+-------------------------------------- satellite - 1 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 2 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 3 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 4 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 5 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 6 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 7 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 8 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 9 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 10 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 11 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 12 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 13 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 14 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 15 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 16 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 17 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 18 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 19 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- satellite - 20 --------------------------------------------
+File ./problems/satellite/domain.pddl has not been found
+Parsing of Domain file ./problems/satellite/domain.pddl failed
+---------------------------------------------------------------------------------------------
+
+

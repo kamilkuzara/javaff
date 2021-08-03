@@ -1,0 +1,759 @@
+-------------------------------------- driverlog - 1 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 32 reachable facts from 40 original facts.
+Found 88 applicable actions from 120 original actions
+Goal is: (and (at package1 s0)  (at truck1 s1)  (at driver1 s1)  (at package2 s0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.058909955 sec
+States expanded: 10
+States generated: 69
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (walk driver1 s2 p1-2)
+1: (walk driver1 p1-2 s1)
+2: (walk driver2 s2 p1-2)
+3: (walk driver2 p1-2 s1)
+4: (walk driver2 s1 p1-0)
+5: (walk driver2 p1-0 s0)
+6: (board-truck driver2 truck1 s0)
+7: (drive-truck truck1 s0 s1 driver2)
+Final plan length is 8
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.073168217sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-1-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-1-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/concurrent_heuristics_BFS/driverlog-1-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 2 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 39 reachable facts from 61 original facts.
+Found 108 applicable actions from 188 original actions
+Goal is: (and (at package3 s0)  (at truck2 s0)  (at package1 s0)  (at driver1 s1)  (at driver2 s1)  (at package2 s2)  (at truck1 s2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.168407715 sec
+States expanded: 32
+States generated: 233
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver2 truck1 s0)
+1: (walk driver1 s0 p0-1)
+2: (walk driver1 p0-1 s1)
+3: (drive-truck truck1 s0 s1 driver2)
+4: (load-truck package2 truck1 s1)
+5: (load-truck package3 truck1 s1)
+6: (drive-truck truck1 s1 s2 driver2)
+7: (unload-truck package2 truck1 s2)
+8: (load-truck package1 truck1 s2)
+9: (drive-truck truck1 s2 s0 driver2)
+10: (unload-truck package1 truck1 s0)
+11: (unload-truck package3 truck1 s0)
+12: (drive-truck truck1 s0 s2 driver2)
+13: (disembark-truck driver2 truck1 s2)
+14: (walk driver2 s2 p2-1)
+15: (walk driver2 p2-1 s1)
+16: (board-truck driver1 truck2 s1)
+17: (drive-truck truck2 s1 s0 driver1)
+18: (disembark-truck driver1 truck2 s0)
+19: (walk driver1 s0 p0-1)
+20: (walk driver1 p0-1 s1)
+Final plan length is 21
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.187496603sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-2-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-2-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 21
+
+Successful plans:
+Value: 21
+ ./solutions/concurrent_heuristics_BFS/driverlog-2-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 3 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 44 reachable facts from 62 original facts.
+Found 120 applicable actions from 192 original actions
+Goal is: (and (at truck2 s2)  (at package2 s1)  (at truck1 s1)  (at package1 s1)  (at driver2 s2)  (at package3 s2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.121437328 sec
+States expanded: 14
+States generated: 108
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (walk driver2 s0 p2-0)
+1: (walk driver2 p2-0 s2)
+2: (load-truck package3 truck1 s1)
+3: (board-truck driver1 truck1 s1)
+4: (drive-truck truck1 s1 s2 driver1)
+5: (unload-truck package3 truck1 s2)
+6: (drive-truck truck1 s2 s0 driver1)
+7: (load-truck package2 truck1 s0)
+8: (load-truck package1 truck1 s0)
+9: (drive-truck truck1 s0 s1 driver1)
+10: (unload-truck package2 truck1 s1)
+11: (unload-truck package1 truck1 s1)
+Final plan length is 12
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.135655631sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-3-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-3-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/concurrent_heuristics_BFS/driverlog-3-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 4 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 49 reachable facts from 79 original facts.
+Found 144 applicable actions from 256 original actions
+Goal is: (and (at truck2 s2)  (at truck1 s1)  (at package1 s1)  (at driver1 s1)  (at driver2 s0)  (at driver3 s1)  (at package2 s2)  (at package4 s0)  (at package3 s2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.201524716 sec
+States expanded: 20
+States generated: 186
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver3 truck2 s0)
+1: (walk driver2 s1 p0-1)
+2: (walk driver2 p0-1 s0)
+3: (load-truck package3 truck2 s0)
+4: (drive-truck truck2 s0 s1 driver3)
+5: (load-truck package4 truck2 s1)
+6: (drive-truck truck2 s1 s2 driver3)
+7: (unload-truck package3 truck2 s2)
+8: (load-truck package1 truck2 s2)
+9: (drive-truck truck2 s2 s1 driver3)
+10: (unload-truck package1 truck2 s1)
+11: (drive-truck truck2 s1 s0 driver3)
+12: (unload-truck package4 truck2 s0)
+13: (drive-truck truck2 s0 s2 driver3)
+14: (disembark-truck driver3 truck2 s2)
+15: (walk driver3 s2 p1-2)
+16: (walk driver3 p1-2 s1)
+Final plan length is 17
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.223392896sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-4-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-4-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 17
+
+Successful plans:
+Value: 17
+ ./solutions/concurrent_heuristics_BFS/driverlog-4-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 5 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 57 reachable facts from 78 original facts.
+Found 168 applicable actions from 264 original actions
+Goal is: (and (at truck2 s2)  (at package5 s1)  (at package2 s1)  (at package3 s1)  (at package1 s1)  (at driver2 s2)  (at package4 s0)  (at truck1 s2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.296634588 sec
+States expanded: 26
+States generated: 278
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (walk driver2 s0 p0-2)
+1: (walk driver2 p0-2 s2)
+2: (board-truck driver1 truck2 s1)
+3: (drive-truck truck2 s1 s2 driver1)
+4: (load-truck package3 truck2 s2)
+5: (load-truck package4 truck2 s2)
+6: (drive-truck truck2 s2 s1 driver1)
+7: (unload-truck package3 truck2 s1)
+8: (drive-truck truck2 s1 s0 driver1)
+9: (unload-truck package4 truck2 s0)
+10: (load-truck package1 truck2 s0)
+11: (load-truck package2 truck2 s0)
+12: (drive-truck truck2 s0 s1 driver1)
+13: (unload-truck package1 truck2 s1)
+14: (unload-truck package2 truck2 s1)
+15: (drive-truck truck2 s1 s2 driver1)
+16: (walk driver3 s0 p0-1)
+17: (walk driver3 p0-1 s1)
+18: (board-truck driver3 truck1 s1)
+19: (drive-truck truck1 s1 s2 driver3)
+Final plan length is 20
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.315010292sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-5-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-5-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 20
+
+Successful plans:
+Value: 20
+ ./solutions/concurrent_heuristics_BFS/driverlog-5-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 6 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 66 reachable facts from 82 original facts.
+Found 222 applicable actions from 318 original actions
+Goal is: (and (at package3 s0)  (at package4 s1)  (at truck1 s0)  (at package1 s2)  (at package5 s1)  (at package2 s1)  (at truck2 s0)  (at driver1 s1)  (at driver2 s0)  (at truck3 s2) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.252108292 sec
+States expanded: 16
+States generated: 204
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (load-truck package1 truck3 s1)
+1: (walk driver2 s2 p2-0)
+2: (walk driver2 p2-0 s0)
+3: (walk driver1 s2 p1-2)
+4: (walk driver1 p1-2 s1)
+5: (board-truck driver3 truck2 s1)
+6: (drive-truck truck2 s1 s0 driver3)
+7: (board-truck driver1 truck3 s1)
+8: (drive-truck truck3 s1 s2 driver1)
+9: (unload-truck package1 truck3 s2)
+10: (disembark-truck driver1 truck3 s2)
+11: (walk driver1 s2 p1-2)
+12: (walk driver1 p1-2 s1)
+Final plan length is 13
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.269433545sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-6-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-6-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 13
+
+Successful plans:
+Value: 13
+ ./solutions/concurrent_heuristics_BFS/driverlog-6-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 7 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 75 reachable facts from 102 original facts.
+Found 252 applicable actions from 414 original actions
+Goal is: (and (at package2 s1)  (at truck2 s0)  (at package1 s0)  (at package3 s1)  (at truck1 s1)  (at driver1 s0)  (at driver2 s0)  (at package6 s0)  (at package4 s2)  (at package5 s0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.26080532 sec
+States expanded: 14
+States generated: 182
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver1 truck2 s1)
+1: (walk driver2 s2 p0-2)
+2: (walk driver2 p0-2 s0)
+3: (load-truck package4 truck2 s1)
+4: (load-truck package5 truck2 s1)
+5: (drive-truck truck2 s1 s2 driver1)
+6: (unload-truck package4 truck2 s2)
+7: (load-truck package2 truck2 s2)
+8: (drive-truck truck2 s2 s1 driver1)
+9: (unload-truck package2 truck2 s1)
+10: (drive-truck truck2 s1 s0 driver1)
+11: (unload-truck package5 truck2 s0)
+12: (disembark-truck driver1 truck2 s0)
+Final plan length is 13
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.281142854sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-7-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-7-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 13
+
+Successful plans:
+Value: 13
+ ./solutions/concurrent_heuristics_BFS/driverlog-7-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 8 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 81 reachable facts from 111 original facts.
+Found 270 applicable actions from 450 original actions
+Goal is: (and (at package1 s2)  (at package5 s1)  (at package3 s1)  (at truck2 s1)  (at driver1 s2)  (at package6 s2)  (at driver2 s0)  (at package4 s2)  (at package7 s1)  (at truck3 s0)  (at package2 s0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.554891497 sec
+States expanded: 30
+States generated: 421
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver1 truck3 s2)
+1: (load-truck package7 truck3 s2)
+2: (drive-truck truck3 s2 s1 driver1)
+3: (unload-truck package7 truck3 s1)
+4: (load-truck package2 truck3 s1)
+5: (drive-truck truck3 s1 s0 driver1)
+6: (unload-truck package2 truck3 s0)
+7: (load-truck package4 truck3 s0)
+8: (load-truck package1 truck3 s0)
+9: (load-truck package3 truck3 s0)
+10: (drive-truck truck3 s0 s2 driver1)
+11: (unload-truck package1 truck3 s2)
+12: (unload-truck package4 truck3 s2)
+13: (drive-truck truck3 s2 s1 driver1)
+14: (unload-truck package3 truck3 s1)
+15: (drive-truck truck3 s1 s0 driver1)
+16: (disembark-truck driver1 truck3 s0)
+17: (walk driver1 s0 p2-0)
+18: (walk driver1 p2-0 s2)
+19: (walk driver3 s1 p2-1)
+20: (walk driver3 p2-1 s2)
+21: (board-truck driver3 truck2 s2)
+22: (drive-truck truck2 s2 s1 driver3)
+Final plan length is 23
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.575989367sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-8-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-8-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 23
+
+Successful plans:
+Value: 23
+ ./solutions/concurrent_heuristics_BFS/driverlog-8-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 9 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 94 reachable facts from 148 original facts.
+Found 384 applicable actions from 672 original actions
+Goal is: (and (at package5 s1)  (at truck1 s3)  (at package1 s3)  (at truck2 s3)  (at package3 s1)  (at driver1 s3)  (at package2 s2)  (at package4 s0)  (at driver2 s4)  (at package6 s1) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.106164434 sec
+States expanded: 72
+States generated: 731
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (walk driver2 s1 p1-2)
+1: (load-truck package1 truck1 s2)
+2: (walk driver2 p1-2 s2)
+3: (board-truck driver2 truck1 s2)
+4: (walk driver1 s4 p3-4)
+5: (walk driver1 p3-4 s3)
+6: (drive-truck truck1 s2 s3 driver2)
+7: (unload-truck package1 truck1 s3)
+8: (load-truck package3 truck1 s3)
+9: (drive-truck truck1 s3 s2 driver2)
+10: (drive-truck truck1 s2 s1 driver2)
+11: (unload-truck package3 truck1 s1)
+12: (load-truck package2 truck1 s1)
+13: (drive-truck truck1 s1 s2 driver2)
+14: (unload-truck package2 truck1 s2)
+15: (drive-truck truck1 s2 s3 driver2)
+16: (disembark-truck driver2 truck1 s3)
+17: (board-truck driver2 truck3 s3)
+18: (drive-truck truck3 s3 s4 driver2)
+19: (disembark-truck driver2 truck3 s4)
+20: (walk driver2 s4 p4-0)
+21: (walk driver2 p4-0 s0)
+22: (board-truck driver2 truck2 s0)
+23: (drive-truck truck2 s0 s3 driver2)
+24: (disembark-truck driver2 truck2 s3)
+25: (walk driver2 s3 p3-4)
+26: (walk driver2 p3-4 s4)
+Final plan length is 27
+EHC Plan Time = 0.0sec
+BFS Plan Time = 1.141684832sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-9-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-9-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 27
+
+Successful plans:
+Value: 27
+ ./solutions/concurrent_heuristics_BFS/driverlog-9-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 10 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 111 reachable facts from 192 original facts.
+Found 516 applicable actions from 948 original actions
+Goal is: (and (at package4 s1)  (at package2 s1)  (at package3 s5)  (at package1 s5)  (at package6 s2)  (at driver1 s1)  (at driver2 s0)  (at package5 s3) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 0.533503963 sec
+States expanded: 21
+States generated: 245
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver1 truck2 s4)
+1: (drive-truck truck2 s4 s1 driver1)
+2: (load-truck package1 truck2 s1)
+3: (drive-truck truck2 s1 s0 driver1)
+4: (load-truck package2 truck2 s0)
+5: (drive-truck truck2 s0 s5 driver1)
+6: (unload-truck package1 truck2 s5)
+7: (drive-truck truck2 s5 s4 driver1)
+8: (load-truck package3 truck2 s4)
+9: (load-truck package5 truck2 s4)
+10: (load-truck package4 truck2 s4)
+11: (drive-truck truck2 s4 s3 driver1)
+12: (unload-truck package5 truck2 s3)
+13: (drive-truck truck2 s3 s5 driver1)
+14: (unload-truck package3 truck2 s5)
+15: (drive-truck truck2 s5 s1 driver1)
+16: (disembark-truck driver1 truck2 s1)
+17: (unload-truck package4 truck2 s1)
+18: (unload-truck package2 truck2 s1)
+Final plan length is 19
+EHC Plan Time = 0.0sec
+BFS Plan Time = 0.559254892sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-10-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-10-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 19
+
+Successful plans:
+Value: 19
+ ./solutions/concurrent_heuristics_BFS/driverlog-10-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 11 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 126 reachable facts from 225 original facts.
+Found 616 applicable actions from 1144 original actions
+Goal is: (and (at package2 s3)  (at package5 s1)  (at package3 s4)  (at package1 s6)  (at truck2 s4)  (at driver2 s4)  (at package4 s6) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.794791938 sec
+States expanded: 79
+States generated: 899
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (board-truck driver2 truck1 s0)
+1: (drive-truck truck1 s0 s2 driver2)
+2: (load-truck package2 truck1 s2)
+3: (drive-truck truck1 s2 s6 driver2)
+4: (walk driver1 s6 p2-6)
+5: (walk driver1 p2-6 s2)
+6: (board-truck driver1 truck2 s2)
+7: (drive-truck truck2 s2 s4 driver1)
+8: (disembark-truck driver1 truck2 s4)
+9: (drive-truck truck1 s6 s3 driver2)
+10: (unload-truck package2 truck1 s3)
+11: (load-truck package3 truck1 s3)
+12: (drive-truck truck1 s3 s6 driver2)
+13: (drive-truck truck1 s6 s4 driver2)
+14: (unload-truck package3 truck1 s4)
+15: (drive-truck truck1 s4 s0 driver2)
+16: (load-truck package4 truck1 s0)
+17: (drive-truck truck1 s0 s6 driver2)
+18: (unload-truck package4 truck1 s6)
+19: (drive-truck truck1 s6 s4 driver2)
+20: (walk driver1 s4 p4-2)
+21: (walk driver1 p4-2 s2)
+22: (board-truck driver1 truck3 s2)
+23: (disembark-truck driver2 truck1 s4)
+24: (drive-truck truck3 s2 s5 driver1)
+25: (load-truck package5 truck3 s5)
+26: (drive-truck truck3 s5 s1 driver1)
+27: (unload-truck package5 truck3 s1)
+Final plan length is 28
+EHC Plan Time = 0.0sec
+BFS Plan Time = 1.837849666sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-11-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-11-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 28
+
+Successful plans:
+Value: 28
+ ./solutions/concurrent_heuristics_BFS/driverlog-11-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 12 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 173 reachable facts from 335 original facts.
+Found 948 applicable actions from 1812 original actions
+Goal is: (and (at package4 s1)  (at package1 s2)  (at driver2 s9)  (at package6 s2)  (at truck2 s5)  (at driver1 s4)  (at package3 s9)  (at package2 s2)  (at package5 s0)  (at truck3 s0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 13 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 209 reachable facts from 434 original facts.
+Found 1148 applicable actions from 2348 original actions
+Goal is: (and (at truck3 s4)  (at package6 s5)  (at driver1 s11)  (at package3 s4)  (at package1 s5)  (at truck2 s8)  (at package4 s0)  (at package2 s0) )
+Running FF with BFS...
+Performing search using BFS
+-------------------- Statistics --------------------
+Total time computing heuristics: 1.720941251 sec
+States expanded: 31
+States generated: 432
+----------------------------------------------------
+Found BFS plan: 
+Final plan...
+0: (load-truck package6 truck3 s2)
+1: (walk driver1 s0 p0-2)
+2: (walk driver1 p0-2 s2)
+3: (board-truck driver1 truck3 s2)
+4: (drive-truck truck3 s2 s3 driver1)
+5: (board-truck driver2 truck2 s9)
+6: (drive-truck truck3 s3 s11 driver1)
+7: (drive-truck truck3 s11 s6 driver1)
+8: (load-truck package2 truck3 s6)
+9: (load-truck package4 truck3 s6)
+10: (drive-truck truck3 s6 s4 driver1)
+11: (drive-truck truck2 s9 s8 driver2)
+12: (load-truck package1 truck3 s4)
+13: (drive-truck truck3 s4 s5 driver1)
+14: (unload-truck package1 truck3 s5)
+15: (unload-truck package6 truck3 s5)
+16: (load-truck package3 truck3 s5)
+17: (drive-truck truck3 s5 s4 driver1)
+18: (unload-truck package3 truck3 s4)
+19: (drive-truck truck3 s4 s0 driver1)
+20: (unload-truck package4 truck3 s0)
+21: (unload-truck package2 truck3 s0)
+22: (drive-truck truck3 s0 s4 driver1)
+23: (disembark-truck driver1 truck3 s4)
+24: (walk driver1 s4 p11-4)
+25: (walk driver1 p11-4 s11)
+Final plan length is 26
+EHC Plan Time = 0.0sec
+BFS Plan Time = 1.763176528sec
+Scheduling Time = 0.0sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/concurrent_heuristics_BFS/driverlog-13-4_threads.sol
+Checking plan: ./solutions/concurrent_heuristics_BFS/driverlog-13-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/concurrent_heuristics_BFS/driverlog-13-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 14 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 192 reachable facts from 330 original facts.
+Found 1158 applicable actions from 1968 original actions
+Goal is: (and (at truck3 s3)  (at package4 s4)  (at truck1 s6)  (at package1 s0)  (at package6 s5)  (at package3 s4)  (at driver3 s1)  (at package2 s0)  (at package5 s3) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 15 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 332 reachable facts from 612 original facts.
+Found 2592 applicable actions from 4800 original actions
+Goal is: (and (at driver3 s8)  (at package1 s2)  (at package4 s7)  (at package3 s1)  (at package6 s11)  (at package2 s5)  (at truck3 s8)  (at package8 s0)  (at package7 s2)  (at package5 s0) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 16 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 515 reachable facts from 940 original facts.
+Found 5040 applicable actions from 9240 original actions
+Goal is: (and (at driver5 s11)  (at driver1 s12)  (at driver2 s11)  (at package1 s13)  (at driver3 s11)  (at package10 s8)  (at truck1 s5)  (at package5 s9)  (at package8 s6)  (at driver4 s12)  (at package7 s3)  (at package2 s0)  (at package9 s4)  (at package4 s11)  (at truck2 s6)  (at truck5 s14)  (at truck3 s8)  (at truck4 s12)  (at package6 s2) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 17 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 660 reachable facts from 1305 original facts.
+Found 6170 applicable actions from 12570 original actions
+Goal is: (and (at truck1 s14)  (at package6 s8)  (at package15 s4)  (at truck2 s1)  (at package1 s1)  (at truck4 s8)  (at package10 s11)  (at package11 s8)  (at driver5 s15)  (at truck5 s6)  (at package8 s13)  (at package12 s6)  (at package5 s6)  (at package14 s1)  (at truck3 s5)  (at package2 s15)  (at package13 s10)  (at package3 s10)  (at package9 s1)  (at driver2 s1)  (at package7 s0)  (at package4 s3)  (at driver4 s1) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 18 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 895 reachable facts from 1750 original facts.
+Found 8960 applicable actions from 17460 original actions
+Goal is: (and (at package6 s7)  (at truck2 s0)  (at package15 s18)  (at package1 s1)  (at driver5 s9)  (at package18 s3)  (at package11 s13)  (at package17 s16)  (at package10 s10)  (at package7 s10)  (at package9 s7)  (at package12 s12)  (at truck1 s17)  (at truck3 s3)  (at package2 s7)  (at truck5 s9)  (at package4 s10)  (at package5 s15)  (at driver1 s1)  (at package13 s12)  (at package19 s2)  (at package16 s8)  (at package14 s15) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 19 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 1045 reachable facts from 2220 original facts.
+Found 10010 applicable actions from 21710 original actions
+Goal is: (and (at package7 s7)  (at package10 s14)  (at package15 s11)  (at driver4 s7)  (at driver5 s5)  (at package5 s14)  (at package18 s15)  (at package17 s17)  (at package24 s2)  (at package12 s11)  (at package9 s7)  (at driver2 s13)  (at truck1 s2)  (at package21 s3)  (at truck4 s3)  (at package1 s19)  (at package4 s11)  (at package22 s8)  (at package23 s17)  (at package20 s7)  (at package3 s19)  (at package13 s15)  (at truck3 s10)  (at driver1 s16)  (at package25 s12)  (at package14 s6)  (at package6 s18)  (at package19 s4)  (at package11 s13)  (at package8 s6)  (at truck2 s11)  (at package16 s10)  (at truck5 s16)  (at package2 s10) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- driverlog - 20 --------------------------------------------
+Parsed Domain file ./problems/driverlog/domain.pddl successfully
+Parsed Problem file ./problems/driverlog/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 1296 reachable facts from 2505 original facts.
+Found 15696 applicable actions from 31140 original actions
+Goal is: (and (at driver1 s13)  (at driver3 s15)  (at driver6 s5)  (at package13 s11)  (at package22 s14)  (at package6 s14)  (at package23 s10)  (at package25 s16)  (at package9 s13)  (at package12 s3)  (at truck4 s18)  (at package4 s11)  (at package1 s6)  (at package20 s7)  (at truck3 s5)  (at package7 s19)  (at package15 s2)  (at package18 s2)  (at package14 s14)  (at truck6 s12)  (at package10 s9)  (at package16 s12)  (at driver7 s8)  (at package19 s4)  (at driver2 s6)  (at driver5 s6)  (at package11 s7)  (at package3 s3)  (at package2 s7)  (at package5 s5)  (at package21 s8)  (at package8 s16)  (at package24 s4) )
+Running FF with BFS...
+Performing search using BFS
+---------------------------------------------------------------------------------------------
+
+
