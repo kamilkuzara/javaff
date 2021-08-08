@@ -1,0 +1,797 @@
+-------------------------------------- depots - 1 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 46 reachable facts from 58 original facts.
+Found 90 applicable actions from 270 original actions
+Goal is: (and (on crate0 pallet2)  (on crate1 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 19
+States generated: 30
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist1 crate0 pallet1 distributor0)
+1: (drive truck0 distributor1 distributor0)
+2: (load hoist1 crate0 truck0 distributor0)
+3: (drive truck0 distributor0 distributor1)
+4: (lift hoist0 crate1 pallet0 depot0)
+5: (load hoist0 crate1 truck1 depot0)
+6: (drive truck1 depot0 distributor0)
+7: (unload hoist1 crate1 truck1 distributor0)
+8: (drop hoist1 crate1 pallet1 distributor0)
+9: (unload hoist2 crate0 truck0 distributor1)
+10: (drop hoist2 crate0 pallet2 distributor1)
+Final plan length is 11
+EHC Plan Time = 0.065128622 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-1-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-1-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 11
+
+Successful plans:
+Value: 11
+ ./solutions/parallel_EHC/depots-1-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 2 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 82 reachable facts from 94 original facts.
+Found 210 applicable actions from 666 original actions
+Goal is: (and (on crate0 pallet2)  (on crate2 pallet0)  (on crate1 crate3)  (on crate3 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 31
+States generated: 55
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate0 pallet0 depot0)
+1: (load hoist0 crate0 truck1 depot0)
+2: (drive truck1 depot0 distributor0)
+3: (drive truck0 depot0 distributor1)
+4: (lift hoist2 crate2 crate1 distributor1)
+5: (load hoist2 crate2 truck0 distributor1)
+6: (drive truck0 distributor1 depot0)
+7: (lift hoist2 crate1 pallet2 distributor1)
+8: (drive truck1 distributor0 distributor1)
+9: (load hoist2 crate1 truck1 distributor1)
+10: (unload hoist0 crate2 truck0 depot0)
+11: (drop hoist0 crate2 pallet0 depot0)
+12: (unload hoist2 crate0 truck1 distributor1)
+13: (drive truck1 distributor1 distributor0)
+14: (drop hoist2 crate0 pallet2 distributor1)
+15: (unload hoist1 crate1 truck1 distributor0)
+16: (drop hoist1 crate1 crate3 distributor0)
+Final plan length is 17
+EHC Plan Time = 0.179984777 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-2-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-2-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 17
+
+Successful plans:
+Value: 17
+ ./solutions/parallel_EHC/depots-2-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 3 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 126 reachable facts from 138 original facts.
+Found 378 applicable actions from 1206 original actions
+Goal is: (and (on crate2 pallet0)  (on crate5 crate0)  (on crate3 crate2)  (on crate4 pallet1)  (on crate1 pallet2)  (on crate0 crate1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 1165
+States generated: 5894
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-3-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-3-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 4 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 178 reachable facts from 190 original facts.
+Found 594 applicable actions from 1890 original actions
+Goal is: (and (on crate0 crate4)  (on crate2 crate6)  (on crate5 pallet2)  (on crate7 pallet0)  (on crate4 crate7)  (on crate6 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 37
+States generated: 116
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-4-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-4-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 5 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 238 reachable facts from 250 original facts.
+Found 858 applicable actions from 2718 original actions
+Goal is: (and (on crate9 pallet0)  (on crate2 crate0)  (on crate5 crate4)  (on crate6 crate9)  (on crate8 crate3)  (on crate1 pallet1)  (on crate4 crate6)  (on crate7 crate1)  (on crate0 crate5)  (on crate3 pallet2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 3950
+States generated: 25334
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-5-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-5-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 6 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 423 reachable facts from 435 original facts.
+Found 1728 applicable actions from 5418 original actions
+Goal is: (and (on crate12 pallet2)  (on crate3 crate12)  (on crate5 crate0)  (on crate9 pallet1)  (on crate4 crate11)  (on crate8 pallet0)  (on crate11 crate5)  (on crate0 crate8)  (on crate1 crate9)  (on crate2 crate1)  (on crate10 crate4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 7 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 150 reachable facts from 168 original facts.
+Found 450 applicable actions from 1530 original actions
+Goal is: (and (on crate0 pallet3)  (on crate1 crate4)  (on crate5 crate1)  (on crate3 pallet1)  (on crate4 pallet5) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 70
+States generated: 313
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-7-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-7-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 8 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 274 reachable facts from 292 original facts.
+Found 978 applicable actions from 3258 original actions
+Goal is: (and (on crate0 pallet3)  (on crate3 crate8)  (on crate9 pallet0)  (on crate7 pallet1)  (on crate1 crate0)  (on crate8 pallet4)  (on crate6 pallet2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 165
+States generated: 881
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-8-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-8-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 9 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 474 reachable facts from 492 original facts.
+Found 1908 applicable actions from 6228 original actions
+Goal is: (and (on crate4 crate6)  (on crate0 crate5)  (on crate1 crate2)  (on crate10 pallet2)  (on crate6 pallet4)  (on crate9 crate1)  (on crate12 crate14)  (on crate11 pallet1)  (on crate14 pallet3)  (on crate2 crate10)  (on crate5 pallet5)  (on crate3 pallet0)  (on crate13 crate3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 10 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 198 reachable facts from 258 original facts.
+Found 900 applicable actions from 6120 original actions
+Goal is: (and (on crate0 crate4)  (on crate2 pallet3)  (on crate4 pallet5)  (on crate3 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 140
+States generated: 791
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-10-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-10-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 11 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 346 reachable facts from 406 original facts.
+Found 1932 applicable actions from 13032 original actions
+Goal is: (and (on crate6 crate5)  (on crate2 pallet5)  (on crate3 crate9)  (on crate4 pallet0)  (on crate7 crate1)  (on crate5 pallet2)  (on crate8 pallet3)  (on crate9 crate2)  (on crate0 crate7)  (on crate1 pallet4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 623
+States generated: 4824
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-11-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-11-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 12 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 576 reachable facts from 636 original facts.
+Found 3762 applicable actions from 24912 original actions
+Goal is: (and (on crate1 crate12)  (on crate12 pallet5)  (on crate2 crate0)  (on crate14 crate10)  (on crate0 pallet4)  (on crate5 pallet0)  (on crate3 crate9)  (on crate9 pallet2)  (on crate6 crate2)  (on crate10 crate13)  (on crate13 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 13 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 230 reachable facts from 310 original facts.
+Found 1068 applicable actions from 7848 original actions
+Goal is: (and (on crate4 pallet9)  (on crate3 pallet7)  (on crate2 pallet4)  (on crate5 pallet1)  (on crate1 pallet5)  (on crate0 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 72
+States generated: 291
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate2 pallet0 depot0)
+1: (load hoist0 crate2 truck1 depot0)
+2: (drive truck0 distributor1 depot1)
+3: (lift hoist2 crate5 crate1 depot2)
+4: (drive truck0 depot1 depot2)
+5: (load hoist2 crate5 truck0 depot2)
+6: (lift hoist2 crate1 crate0 depot2)
+7: (load hoist2 crate1 truck0 depot2)
+8: (drive truck0 depot2 depot1)
+9: (lift hoist0 crate3 pallet8 depot0)
+10: (lift hoist2 crate0 pallet2 depot2)
+11: (drop hoist0 crate3 pallet7 depot0)
+12: (lift hoist3 crate4 pallet3 distributor0)
+13: (unload hoist1 crate5 truck0 depot1)
+14: (drive truck0 depot1 distributor2)
+15: (drive truck1 depot0 depot2)
+16: (drop hoist1 crate5 pallet1 depot1)
+17: (drop hoist3 crate4 pallet9 distributor0)
+18: (load hoist2 crate0 truck1 depot2)
+19: (drive truck1 depot2 depot0)
+20: (unload hoist0 crate0 truck1 depot0)
+21: (drive truck1 depot0 distributor1)
+22: (drop hoist0 crate0 pallet0 depot0)
+23: (unload hoist4 crate2 truck1 distributor1)
+24: (drop hoist4 crate2 pallet4 distributor1)
+25: (unload hoist5 crate1 truck0 distributor2)
+26: (drop hoist5 crate1 pallet5 distributor2)
+Final plan length is 27
+EHC Plan Time = 1.018305112 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-13-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-13-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 27
+
+Successful plans:
+Value: 27
+ ./solutions/parallel_EHC/depots-13-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 14 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 394 reachable facts from 474 original facts.
+Found 2212 applicable actions from 15912 original actions
+Goal is: (and (on crate1 pallet8)  (on crate2 pallet3)  (on crate9 crate7)  (on crate7 crate6)  (on crate4 pallet0)  (on crate5 pallet5)  (on crate6 pallet1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 184
+States generated: 1064
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-14-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-14-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 15 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 644 reachable facts from 724 original facts.
+Found 4182 applicable actions from 29232 original actions
+Goal is: (and (on crate6 pallet6)  (on crate9 crate4)  (on crate1 crate10)  (on crate14 pallet9)  (on crate12 crate5)  (on crate0 crate8)  (on crate4 crate7)  (on crate2 pallet0)  (on crate10 crate11)  (on crate13 pallet8)  (on crate3 pallet1)  (on crate5 pallet5)  (on crate7 pallet4)  (on crate8 pallet7)  (on crate11 crate9) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 16 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 234 reachable facts from 282 original facts.
+Found 1516 applicable actions from 6976 original actions
+Goal is: (and (on crate0 pallet3)  (on crate2 pallet1)  (on crate4 crate3)  (on crate5 pallet2)  (on crate3 pallet0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 148
+States generated: 711
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist0 crate5 crate2 depot0)
+1: (lift hoist5 crate3 crate1 depot1)
+2: (load hoist0 crate5 truck2 depot0)
+3: (drop hoist5 crate3 pallet6 depot1)
+4: (lift hoist0 crate2 pallet0 depot0)
+5: (load hoist0 crate2 truck2 depot0)
+6: (drive truck2 depot0 depot1)
+7: (lift hoist2 crate4 pallet2 distributor0)
+8: (drive truck2 depot1 distributor0)
+9: (load hoist2 crate4 truck2 distributor0)
+10: (drive truck0 depot1 depot0)
+11: (drive truck2 distributor0 depot1)
+12: (lift hoist5 crate0 pallet4 depot1)
+13: (lift hoist6 crate1 pallet1 depot1)
+14: (load hoist5 crate0 truck2 depot1)
+15: (drive truck0 depot0 depot1)
+16: (unload hoist1 crate4 truck2 depot1)
+17: (drive truck2 depot1 distributor0)
+18: (unload hoist2 crate5 truck2 distributor0)
+19: (drive truck2 distributor0 depot1)
+20: (drop hoist2 crate5 pallet2 distributor0)
+21: (unload hoist5 crate2 truck2 depot1)
+22: (drive truck2 depot1 distributor1)
+23: (drop hoist5 crate2 pallet1 depot1)
+24: (unload hoist7 crate0 truck2 distributor1)
+25: (drop hoist7 crate0 pallet3 distributor1)
+26: (lift hoist5 crate3 pallet6 depot1)
+27: (load hoist5 crate3 truck0 depot1)
+28: (drive truck0 depot1 depot0)
+29: (load hoist1 crate4 truck1 depot1)
+30: (drive truck1 depot1 depot0)
+31: (unload hoist0 crate3 truck0 depot0)
+32: (drop hoist0 crate3 pallet0 depot0)
+33: (unload hoist0 crate4 truck1 depot0)
+34: (drop hoist0 crate4 crate3 depot0)
+Final plan length is 35
+EHC Plan Time = 3.358577292 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-16-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-16-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 35
+
+Successful plans:
+Value: 35
+ ./solutions/parallel_EHC/depots-16-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 17 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 398 reachable facts from 446 original facts.
+Found 3114 applicable actions from 14144 original actions
+Goal is: (and (on crate3 crate8)  (on crate2 pallet4)  (on crate7 crate3)  (on crate4 pallet0)  (on crate6 pallet1)  (on crate1 pallet7)  (on crate8 pallet6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 140
+States generated: 873
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist1 crate4 pallet1 depot1)
+1: (lift hoist6 crate3 pallet6 depot0)
+2: (lift hoist7 crate8 crate6 distributor1)
+3: (drop hoist6 crate3 pallet6 depot0)
+4: (lift hoist3 crate6 pallet7 distributor1)
+5: (load hoist1 crate4 truck2 depot1)
+6: (load hoist3 crate6 truck1 distributor1)
+7: (drive truck2 depot1 depot0)
+8: (lift hoist3 crate1 pallet5 distributor1)
+9: (lift hoist0 crate3 pallet6 depot0)
+10: (drop hoist7 crate8 crate7 distributor1)
+11: (drive truck1 distributor1 depot1)
+12: (unload hoist1 crate6 truck1 depot1)
+13: (drop hoist1 crate6 pallet1 depot1)
+14: (unload hoist4 crate4 truck2 depot0)
+15: (drop hoist3 crate1 pallet7 distributor1)
+16: (drive truck2 depot0 distributor1)
+17: (lift hoist7 crate8 crate7 distributor1)
+18: (drop hoist0 crate3 pallet6 depot0)
+19: (drop hoist4 crate4 pallet0 depot0)
+20: (lift hoist3 crate7 crate5 distributor1)
+21: (load hoist3 crate7 truck2 distributor1)
+22: (load hoist7 crate8 truck2 distributor1)
+23: (drive truck2 distributor1 depot0)
+24: (lift hoist0 crate3 pallet6 depot0)
+25: (unload hoist5 crate8 truck2 depot0)
+26: (drop hoist5 crate8 pallet6 depot0)
+27: (drop hoist0 crate3 crate8 depot0)
+28: (unload hoist6 crate7 truck2 depot0)
+29: (drop hoist6 crate7 crate3 depot0)
+Final plan length is 30
+EHC Plan Time = 7.425999552 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-17-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-17-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 30
+
+Successful plans:
+Value: 30
+ ./solutions/parallel_EHC/depots-17-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 18 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 648 reachable facts from 696 original facts.
+Found 5824 applicable actions from 25984 original actions
+Goal is: (and (on crate12 crate5)  (on crate10 pallet1)  (on crate1 pallet6)  (on crate6 pallet7)  (on crate13 pallet3)  (on crate9 crate1)  (on crate8 crate4)  (on crate0 crate10)  (on crate2 crate12)  (on crate14 pallet0)  (on crate5 pallet2)  (on crate11 pallet5)  (on crate4 pallet4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 603
+States generated: 5897
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist1 crate11 crate1 depot1)
+1: (lift hoist5 crate13 crate7 depot0)
+2: (lift hoist4 crate8 crate6 distributor0)
+3: (lift hoist2 crate6 pallet5 distributor0)
+4: (lift hoist6 crate14 crate12 distributor0)
+5: (load hoist1 crate11 truck0 depot1)
+6: (lift hoist1 crate1 pallet1 depot1)
+7: (lift hoist3 crate10 crate9 distributor1)
+8: (lift hoist7 crate9 pallet3 distributor1)
+9: (load hoist1 crate1 truck3 depot1)
+10: (lift hoist1 crate5 pallet7 depot1)
+11: (load hoist5 crate13 truck2 depot0)
+12: (load hoist6 crate14 truck1 distributor0)
+13: (load hoist4 crate8 truck1 distributor0)
+14: (drive truck0 depot1 distributor0)
+15: (drive truck1 distributor0 depot0)
+16: (drive truck2 depot0 distributor1)
+17: (load hoist3 crate10 truck2 distributor1)
+18: (drive truck3 depot1 distributor1)
+19: (lift hoist4 crate12 crate2 distributor0)
+20: (lift hoist6 crate2 pallet2 distributor0)
+21: (drive truck0 distributor0 depot1)
+22: (load hoist1 crate5 truck0 depot1)
+23: (drive truck0 depot1 distributor0)
+24: (drive truck2 distributor1 depot0)
+25: (lift hoist5 crate7 crate4 depot0)
+26: (lift hoist0 crate4 crate0 depot0)
+27: (load hoist5 crate7 truck1 depot0)
+28: (drop hoist0 crate4 pallet4 depot0)
+29: (lift hoist0 crate0 pallet0 depot0)
+30: (drive truck2 depot0 depot1)
+31: (load hoist0 crate0 truck1 depot0)
+32: (unload hoist0 crate14 truck1 depot0)
+33: (drop hoist0 crate14 pallet0 depot0)
+34: (unload hoist1 crate10 truck2 depot1)
+35: (drop hoist1 crate10 pallet1 depot1)
+36: (drive truck2 depot1 distributor1)
+37: (unload hoist5 crate8 truck1 depot0)
+38: (drive truck1 depot0 depot1)
+39: (drop hoist5 crate8 crate4 depot0)
+40: (lift hoist3 crate3 pallet6 distributor1)
+41: (load hoist3 crate3 truck2 distributor1)
+42: (unload hoist3 crate1 truck3 distributor1)
+43: (drop hoist3 crate1 pallet6 distributor1)
+44: (drop hoist7 crate9 crate1 distributor1)
+45: (unload hoist3 crate13 truck2 distributor1)
+46: (drop hoist3 crate13 pallet3 distributor1)
+47: (load hoist2 crate6 truck0 distributor0)
+48: (unload hoist2 crate11 truck0 distributor0)
+49: (drive truck0 distributor0 depot1)
+50: (unload hoist1 crate6 truck0 depot1)
+51: (drive truck0 depot1 distributor0)
+52: (drop hoist4 crate12 pallet2 distributor0)
+53: (drop hoist1 crate6 pallet7 depot1)
+54: (drop hoist2 crate11 pallet5 distributor0)
+55: (lift hoist4 crate12 pallet2 distributor0)
+56: (unload hoist1 crate0 truck1 depot1)
+57: (drop hoist1 crate0 crate10 depot1)
+58: (unload hoist2 crate5 truck0 distributor0)
+59: (drop hoist2 crate5 pallet2 distributor0)
+60: (drop hoist4 crate12 crate5 distributor0)
+61: (drop hoist6 crate2 crate12 distributor0)
+Final plan length is 62
+EHC Plan Time = 120.116975815 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-18-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-18-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 62
+
+Successful plans:
+Value: 62
+ ./solutions/parallel_EHC/depots-18-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 19 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 380 reachable facts from 506 original facts.
+Found 2512 applicable actions from 22784 original actions
+Goal is: (and (on crate1 pallet8)  (on crate6 pallet4)  (on crate0 pallet6)  (on crate7 crate4)  (on crate5 crate7)  (on crate4 pallet5)  (on crate3 crate1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 547
+States generated: 5507
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/depots-19-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/depots-19-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 20 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 758 reachable facts from 884 original facts.
+Found 6166 applicable actions from 55936 original actions
+Goal is: (and (on crate4 crate5)  (on crate5 crate14)  (on crate1 crate11)  (on crate9 crate8)  (on crate2 pallet6)  (on crate3 crate0)  (on crate0 pallet3)  (on crate6 pallet4)  (on crate7 pallet2)  (on crate13 crate2)  (on crate11 pallet5)  (on crate14 pallet1)  (on crate8 pallet7)  (on crate12 crate6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 21 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile21.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 782 reachable facts from 1167 original facts.
+Found 8934 applicable actions from 130464 original actions
+Goal is: (and (on crate8 pallet15)  (on crate0 pallet2)  (on crate7 pallet18)  (on crate6 pallet12)  (on crate2 pallet11)  (on crate5 pallet5)  (on crate1 pallet7)  (on crate3 pallet3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 245
+States generated: 2012
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (lift hoist13 crate3 pallet15 depot1)
+1: (drive truck1 depot0 depot1)
+2: (drive truck3 distributor0 depot1)
+3: (lift hoist7 crate8 pallet7 distributor1)
+4: (drive truck1 depot1 distributor1)
+5: (load hoist7 crate8 truck1 distributor1)
+6: (drive truck1 distributor1 depot1)
+7: (drive truck1 depot1 depot2)
+8: (drive truck3 depot1 depot3)
+9: (lift hoist0 crate1 pallet0 depot0)
+10: (lift hoist11 crate2 pallet13 distributor5)
+11: (lift hoist4 crate6 pallet4 depot4)
+12: (drop hoist11 crate2 pallet11 distributor5)
+13: (load hoist0 crate1 truck4 depot0)
+14: (drive truck4 depot0 distributor1)
+15: (load hoist4 crate6 truck5 depot4)
+16: (drive truck5 depot4 distributor1)
+17: (drive truck3 depot3 depot1)
+18: (drive truck3 depot1 depot5)
+19: (drive truck1 depot2 depot1)
+20: (lift hoist1 crate0 pallet16 depot1)
+21: (load hoist1 crate0 truck1 depot1)
+22: (load hoist13 crate3 truck1 depot1)
+23: (lift hoist13 crate5 pallet1 depot1)
+24: (drive truck1 depot1 depot3)
+25: (unload hoist3 crate3 truck1 depot3)
+26: (drive truck1 depot3 depot1)
+27: (drive truck1 depot1 depot2)
+28: (drive truck3 depot5 depot1)
+29: (drop hoist3 crate3 pallet3 depot3)
+30: (load hoist13 crate5 truck3 depot1)
+31: (drive truck3 depot1 depot5)
+32: (unload hoist12 crate5 truck3 depot5)
+33: (drop hoist12 crate5 pallet5 depot5)
+34: (unload hoist2 crate0 truck1 depot2)
+35: (drive truck1 depot2 depot1)
+36: (drop hoist2 crate0 pallet2 depot2)
+37: (unload hoist1 crate8 truck1 depot1)
+38: (drop hoist1 crate8 pallet15 depot1)
+39: (unload hoist7 crate1 truck4 distributor1)
+40: (drop hoist7 crate1 pallet7 distributor1)
+41: (unload hoist7 crate6 truck5 distributor1)
+42: (drop hoist7 crate6 pallet12 distributor1)
+Final plan length is 43
+EHC Plan Time = 60.33554624 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/depots-21-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/depots-21-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 43
+
+Successful plans:
+Value: 43
+ ./solutions/parallel_EHC/depots-21-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- depots - 22 --------------------------------------------
+Parsed Domain file ./problems/depots/domain.pddl successfully
+Parsed Problem file ./problems/depots/pfile22.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 1622 reachable facts from 2007 original facts.
+Found 22924 applicable actions from 332064 original actions
+Goal is: (and (on crate6 pallet6)  (on crate1 pallet15)  (on crate12 pallet16)  (on crate10 crate17)  (on crate13 crate16)  (on crate18 pallet4)  (on crate17 pallet2)  (on crate5 pallet12)  (on crate8 crate10)  (on crate9 pallet17)  (on crate16 crate15)  (on crate19 pallet9)  (on crate11 pallet1)  (on crate15 pallet7)  (on crate2 pallet13)  (on crate7 pallet5)  (on crate0 pallet14)  (on crate3 pallet18) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+

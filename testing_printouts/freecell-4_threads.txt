@@ -1,0 +1,702 @@
+-------------------------------------- freecell - 1 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 202 original facts.
+Found 512 applicable actions from 1856 original actions
+Goal is: (and (home club2)  (home diamond2)  (home heart2)  (home spade2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 11
+States generated: 4
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (sendtohome diamonda hearta diamond n1 diamond0 n0)
+1: (sendtohome spadea spade2 spade n1 spade0 n0)
+2: (sendtofree club2 diamond2 n2 n1)
+3: (sendtofree heart2 cluba n1 n0)
+4: (sendtohome-b cluba club n1 club0 n0 n0 n1)
+5: (homefromfreecell club2 club n2 cluba n1 n0 n1)
+6: (sendtohome-b diamond2 diamond n2 diamonda n1 n1 n2)
+7: (sendtohome-b hearta heart n1 heart0 n0 n2 n3)
+8: (homefromfreecell heart2 heart n2 hearta n1 n1 n2)
+9: (sendtohome-b spade2 spade n2 spadea n1 n3 n4)
+Final plan length is 10
+EHC Plan Time = 0.142382897 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/freecell-1-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/freecell-1-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10
+
+Successful plans:
+Value: 10
+ ./solutions/parallel_EHC/freecell-1-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 2 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 86 reachable facts from 332 original facts.
+Found 1160 applicable actions from 4088 original actions
+Goal is: (and (home club3)  (home diamond3)  (home heart3)  (home spade3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 17
+States generated: 6
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (sendtohome cluba diamonda club n1 club0 n0)
+1: (sendtohome club2 diamond3 club n2 cluba n1)
+2: (sendtofree diamond3 spadea n2 n1)
+3: (sendtofree heart3 diamond2 n1 n0)
+4: (sendtohome-b diamonda diamond n1 diamond0 n0 n0 n1)
+5: (sendtohome-b diamond2 diamond n2 diamonda n1 n1 n2)
+6: (homefromfreecell diamond3 diamond n3 diamond2 n2 n0 n1)
+7: (sendtofree spade3 heart2 n1 n0)
+8: (sendtohome-b spadea spade n1 spade0 n0 n2 n3)
+9: (sendtohome spade2 club3 spade n2 spadea n1)
+10: (homefromfreecell spade3 spade n3 spade2 n2 n0 n1)
+11: (sendtofree heart2 hearta n1 n0)
+12: (sendtohome-b club3 club n3 club2 n2 n3 n4)
+13: (sendtohome-b hearta heart n1 heart0 n0 n4 n5)
+14: (homefromfreecell heart2 heart n2 hearta n1 n0 n1)
+15: (homefromfreecell heart3 heart n3 heart2 n2 n1 n2)
+Final plan length is 16
+EHC Plan Time = 0.468459976 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/freecell-2-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/freecell-2-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/parallel_EHC/freecell-2-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 3 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 114 reachable facts from 492 original facts.
+Found 1640 applicable actions from 6200 original actions
+Goal is: (and (home club4)  (home heart4)  (home spade4)  (home diamond4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 24
+States generated: 21
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (sendtohome diamonda spade2 diamond n1 diamond0 n0)
+1: (sendtohome diamond2 cluba diamond n2 diamonda n1)
+2: (sendtohome cluba heart4 club n1 club0 n0)
+3: (sendtofree club3 spade3 n2 n1)
+4: (sendtofree diamond4 diamond3 n1 n0)
+5: (sendtohome diamond3 club2 diamond n3 diamond2 n2)
+6: (homefromfreecell diamond4 diamond n4 diamond3 n3 n0 n1)
+7: (sendtofree heart3 spadea n1 n0)
+8: (sendtohome spadea hearta spade n1 spade0 n0)
+9: (sendtohome spade2 club4 spade n2 spadea n1)
+10: (sendtohome spade3 heart2 spade n3 spade2 n2)
+11: (sendtohome-b club2 club n2 cluba n1 n0 n1)
+12: (homefromfreecell club3 club n3 club2 n2 n0 n1)
+13: (sendtohome-b club4 club n4 club3 n3 n1 n2)
+14: (sendtohome-b hearta heart n1 heart0 n0 n2 n3)
+15: (sendtohome heart2 spade4 heart n2 hearta n1)
+16: (homefromfreecell heart3 heart n3 heart2 n2 n1 n2)
+17: (sendtohome-b heart4 heart n4 heart3 n3 n3 n4)
+18: (sendtohome-b spade4 spade n4 spade3 n3 n4 n5)
+Final plan length is 19
+EHC Plan Time = 1.177263005 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/freecell-3-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/freecell-3-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 19
+
+Successful plans:
+Value: 19
+ ./solutions/parallel_EHC/freecell-3-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 4 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 140 reachable facts from 684 original facts.
+Found 2086 applicable actions from 8728 original actions
+Goal is: (and (home club5)  (home heart5)  (home spade5)  (home diamond5) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 43
+States generated: 48
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (move heart4 spade5 club5)
+1: (sendtofree club2 diamond3 n2 n1)
+2: (sendtofree club3 club4 n1 n0)
+3: (colfromfreecell club3 heart4 n0 n1)
+4: (sendtofree club4 heart2 n1 n0)
+5: (colfromfreecell club2 diamond3 n0 n1)
+6: (move heart2 cluba club3)
+7: (sendtofree heart2 club3 n1 n0)
+8: (sendtohome-b cluba club n1 club0 n0 n0 n1)
+9: (sendtohome club2 diamond3 club n2 cluba n1)
+10: (sendtohome club3 heart4 club n3 club2 n2)
+11: (homefromfreecell club4 club n4 club3 n3 n0 n1)
+12: (sendtofree diamond3 hearta n1 n0)
+13: (sendtohome hearta spadea heart n1 heart0 n0)
+14: (homefromfreecell heart2 heart n2 hearta n1 n0 n1)
+15: (sendtohome-b spadea spade n1 spade0 n0 n1 n2)
+16: (sendtonewcol heart4 club5 n2 n1)
+17: (sendtohome club5 heart3 club n5 club4 n4)
+18: (sendtohome heart3 diamond4 heart n3 heart2 n2)
+19: (sendtofree diamond4 heart5 n1 n0)
+20: (sendtohome-b heart4 heart n4 heart3 n3 n1 n2)
+21: (sendtohome-b heart5 heart n5 heart4 n4 n2 n3)
+22: (sendtonewcol spade4 diamond2 n3 n2)
+23: (sendtonewcol diamond2 diamond5 n2 n1)
+24: (sendtonewcol spade5 diamonda n1 n0)
+25: (sendtohome diamonda spade2 diamond n1 diamond0 n0)
+26: (sendtohome-b diamond2 diamond n2 diamonda n1 n0 n1)
+27: (homefromfreecell diamond3 diamond n3 diamond2 n2 n0 n1)
+28: (homefromfreecell diamond4 diamond n4 diamond3 n3 n1 n2)
+29: (sendtohome diamond5 spade3 diamond n5 diamond4 n4)
+30: (sendtohome-b spade2 spade n2 spadea n1 n1 n2)
+31: (sendtohome-b spade3 spade n3 spade2 n2 n2 n3)
+32: (sendtohome-b spade4 spade n4 spade3 n3 n3 n4)
+33: (sendtohome-b spade5 spade n5 spade4 n4 n4 n5)
+Final plan length is 34
+EHC Plan Time = 3.311107228 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/freecell-4-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/freecell-4-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 34
+
+Successful plans:
+Value: 34
+ ./solutions/parallel_EHC/freecell-4-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 5 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 172 reachable facts from 910 original facts.
+Found 3358 applicable actions from 13984 original actions
+Goal is: (and (home club6)  (home diamond6)  (home heart6)  (home spade6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 17
+States generated: 55
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-5-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-5-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 6 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 199 reachable facts from 1168 original facts.
+Found 4943 applicable actions from 20968 original actions
+Goal is: (and (home club7)  (home diamond7)  (home heart7)  (home spade7) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 73
+States generated: 161
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (sendtohome cluba club3 club n1 club0 n0)
+1: (sendtohome spadea club6 spade n1 spade0 n0)
+2: (sendtofree club5 spade5 n3 n2)
+3: (sendtofree club6 heart7 n2 n1)
+4: (sendtofree diamond5 diamond3 n1 n0)
+5: (colfromfreecell club6 heart7 n0 n1)
+6: (sendtofree diamond3 club2 n1 n0)
+7: (sendtohome club2 heart3 club n2 cluba n1)
+8: (sendtohome club3 diamond6 club n3 club2 n2)
+9: (colfromfreecell diamond5 club6 n0 n1)
+10: (sendtofree heart2 club7 n1 n0)
+11: (colfromfreecell club5 diamond6 n0 n1)
+12: (sendtofree club7 heart4 n1 n0)
+13: (move heart4 hearta club5)
+14: (sendtohome hearta spade2 heart n1 heart0 n0)
+15: (homefromfreecell heart2 heart n2 hearta n1 n0 n1)
+16: (sendtohome heart3 spade3 heart n3 heart2 n2)
+17: (sendtohome heart4 club5 heart n4 heart3 n3)
+18: (sendtofree club5 diamond6 n1 n0)
+19: (sendtohome-b spade2 spade n2 spadea n1 n0 n1)
+20: (sendtohome-b spade3 spade n3 spade2 n2 n1 n2)
+21: (sendtonewcol diamond4 club4 n2 n1)
+22: (sendtohome club4 diamond2 club n4 club3 n3)
+23: (homefromfreecell club5 club n5 club4 n4 n0 n1)
+24: (sendtofree diamond2 heart6 n1 n0)
+25: (sendtonewcol diamond5 club6 n1 n0)
+26: (sendtohome club6 heart7 club n6 club5 n5)
+27: (homefromfreecell club7 club n7 club6 n6 n0 n1)
+28: (sendtofree diamond6 heart5 n1 n0)
+29: (sendtohome heart5 spade4 heart n5 heart4 n4)
+30: (sendtohome heart6 diamond7 heart n6 heart5 n5)
+31: (sendtohome heart7 spade7 heart n7 heart6 n6)
+32: (sendtohome-b spade4 spade n4 spade3 n3 n0 n1)
+33: (sendtohome spade5 diamonda spade n5 spade4 n4)
+34: (sendtohome diamonda spade6 diamond n1 diamond0 n0)
+35: (homefromfreecell diamond2 diamond n2 diamonda n1 n0 n1)
+36: (homefromfreecell diamond3 diamond n3 diamond2 n2 n1 n2)
+37: (sendtohome-b diamond4 diamond n4 diamond3 n3 n1 n2)
+38: (sendtohome-b diamond5 diamond n5 diamond4 n4 n2 n3)
+39: (homefromfreecell diamond6 diamond n6 diamond5 n5 n2 n3)
+40: (sendtohome-b diamond7 diamond n7 diamond6 n6 n3 n4)
+41: (sendtohome-b spade6 spade n6 spade5 n5 n4 n5)
+42: (sendtohome-b spade7 spade n7 spade6 n6 n5 n6)
+Final plan length is 43
+EHC Plan Time = 27.264613706 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/freecell-6-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/freecell-6-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 43
+
+Successful plans:
+Value: 43
+ ./solutions/parallel_EHC/freecell-6-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 7 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 201 reachable facts from 1168 original facts.
+Found 4973 applicable actions from 20968 original actions
+Goal is: (and (home club7)  (home diamond7)  (home heart7)  (home spade7) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 23
+States generated: 54
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-7-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-7-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 8 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 231 reachable facts from 1458 original facts.
+Found 7037 applicable actions from 29920 original actions
+Goal is: (and (home diamond8)  (home club8)  (home heart8)  (home spade8) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 39
+States generated: 89
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-8-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-8-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 9 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 232 reachable facts from 1458 original facts.
+Found 7054 applicable actions from 29920 original actions
+Goal is: (and (home diamond8)  (home club8)  (home heart8)  (home spade8) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 21
+States generated: 34
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-9-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-9-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 10 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 260 reachable facts from 1780 original facts.
+Found 9558 applicable actions from 41080 original actions
+Goal is: (and (home spade9)  (home diamond9)  (home club9)  (home heart9) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 38
+States generated: 144
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-10-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-10-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 11 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 262 reachable facts from 1780 original facts.
+Found 9598 applicable actions from 41080 original actions
+Goal is: (and (home spade9)  (home diamond9)  (home club9)  (home heart9) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 49
+States generated: 63
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-11-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-11-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 12 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 260 reachable facts from 1780 original facts.
+Found 9556 applicable actions from 41080 original actions
+Goal is: (and (home spade9)  (home diamond9)  (home club9)  (home heart9) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 11
+States generated: 26
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-12-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-12-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 13 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 289 reachable facts from 2134 original facts.
+Found 12601 applicable actions from 54688 original actions
+Goal is: (and (home heart10)  (home club10)  (home spade10)  (home diamond10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 30
+States generated: 109
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-13-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-13-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 14 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 289 reachable facts from 2134 original facts.
+Found 12601 applicable actions from 54688 original actions
+Goal is: (and (home heart10)  (home club10)  (home spade10)  (home diamond10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 47
+States generated: 138
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-14-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-14-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 15 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 319 reachable facts from 2520 original facts.
+Found 16245 applicable actions from 70984 original actions
+Goal is: (and (home diamondj)  (home heartj)  (home spadej)  (home clubj) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 74
+States generated: 290
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-15-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-15-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 16 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 317 reachable facts from 2520 original facts.
+Found 16193 applicable actions from 70984 original actions
+Goal is: (and (home diamondj)  (home heartj)  (home spadej)  (home clubj) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 141
+States generated: 555
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-16-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-16-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 17 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 347 reachable facts from 2938 original facts.
+Found 20457 applicable actions from 90208 original actions
+Goal is: (and (home heartq)  (home spadeq)  (home diamondq)  (home clubq) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 51
+States generated: 202
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-17-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-17-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 18 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 350 reachable facts from 2938 original facts.
+Found 20536 applicable actions from 90208 original actions
+Goal is: (and (home heartq)  (home spadeq)  (home diamondq)  (home clubq) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 70
+States generated: 168
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-18-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-18-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 19 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 380 reachable facts from 3388 original facts.
+Found 25478 applicable actions from 112600 original actions
+Goal is: (and (home diamondk)  (home heartk)  (home spadek)  (home clubk) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 28
+States generated: 70
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-19-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-19-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- freecell - 20 --------------------------------------------
+Parsed Domain file ./problems/freecell/domain.pddl successfully
+Parsed Problem file ./problems/freecell/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 378 reachable facts from 3388 original facts.
+Found 25418 applicable actions from 112600 original actions
+Goal is: (and (home diamondk)  (home heartk)  (home spadek)  (home clubk) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 14
+States generated: 61
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/freecell-20-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/freecell-20-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+

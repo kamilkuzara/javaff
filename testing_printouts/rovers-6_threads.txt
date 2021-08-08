@@ -1,0 +1,1258 @@
+-------------------------------------- rovers - 1 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 35 reachable facts from 45 original facts.
+Found 63 applicable actions from 77 original actions
+Goal is: (and (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint3)  (communicated_soil_data waypoint2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 19
+States generated: 30
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective1 waypoint3)
+1: (take_image rover0 waypoint3 objective1 camera0 high_res)
+2: (communicate_image_data rover0 general objective1 high_res waypoint3 waypoint0)
+3: (sample_rock rover0 rover0store waypoint3)
+4: (communicate_rock_data rover0 general waypoint3 waypoint3 waypoint0)
+5: (drop rover0 rover0store)
+6: (navigate rover0 waypoint3 waypoint1)
+7: (navigate rover0 waypoint1 waypoint2)
+8: (sample_soil rover0 rover0store waypoint2)
+9: (communicate_soil_data rover0 general waypoint2 waypoint2 waypoint0)
+Final plan length is 10
+EHC Plan Time = 0.064420179 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-1-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-1-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 10
+
+Successful plans:
+Value: 10
+ ./solutions/parallel_EHC/rovers-1-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 2 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 28 reachable facts from 46 original facts.
+Found 53 applicable actions from 77 original actions
+Goal is: (and (communicated_image_data objective1 low_res)  (communicated_soil_data waypoint0)  (communicated_rock_data waypoint0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 10
+States generated: 9
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective0 waypoint0)
+1: (sample_rock rover0 rover0store waypoint0)
+2: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)
+3: (drop rover0 rover0store)
+4: (sample_soil rover0 rover0store waypoint0)
+5: (communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)
+6: (take_image rover0 waypoint0 objective1 camera0 low_res)
+7: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)
+Final plan length is 8
+EHC Plan Time = 0.04768918 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-2-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-2-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/parallel_EHC/rovers-2-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 3 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 44 reachable facts from 67 original facts.
+Found 76 applicable actions from 132 original actions
+Goal is: (and (communicated_image_data objective0 colour)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 27
+States generated: 63
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (navigate rover0 waypoint1 waypoint0)
+1: (navigate rover1 waypoint3 waypoint0)
+2: (calibrate rover1 camera1 objective0 waypoint0)
+3: (navigate rover0 waypoint0 waypoint1)
+4: (navigate rover1 waypoint0 waypoint1)
+5: (take_image rover1 waypoint1 objective0 camera1 colour)
+6: (communicate_image_data rover1 general objective0 colour waypoint1 waypoint0)
+7: (navigate rover0 waypoint1 waypoint0)
+8: (sample_rock rover0 rover0store waypoint0)
+9: (navigate rover0 waypoint0 waypoint1)
+10: (communicate_rock_data rover0 general waypoint0 waypoint1 waypoint0)
+11: (navigate rover1 waypoint1 waypoint0)
+12: (navigate rover1 waypoint0 waypoint3)
+13: (navigate rover1 waypoint3 waypoint2)
+14: (sample_soil rover1 rover1store waypoint2)
+15: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint0)
+Final plan length is 16
+EHC Plan Time = 0.089185071 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-3-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-3-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/parallel_EHC/rovers-3-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 4 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 50 reachable facts from 77 original facts.
+Found 86 applicable actions from 145 original actions
+Goal is: (and (communicated_soil_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_rock_data waypoint1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 9
+States generated: 4
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover1 camera0 objective0 waypoint2)
+1: (navigate rover1 waypoint2 waypoint1)
+2: (sample_rock rover1 rover1store waypoint1)
+3: (communicate_rock_data rover1 general waypoint1 waypoint1 waypoint2)
+4: (sample_soil rover0 rover0store waypoint3)
+5: (communicate_soil_data rover0 general waypoint3 waypoint3 waypoint2)
+6: (take_image rover1 waypoint1 objective0 camera0 high_res)
+7: (communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2)
+Final plan length is 8
+EHC Plan Time = 0.045799597 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-4-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-4-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 8
+
+Successful plans:
+Value: 8
+ ./solutions/parallel_EHC/rovers-4-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 5 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 59 reachable facts from 77 original facts.
+Found 144 applicable actions from 201 original actions
+Goal is: (and (communicated_image_data objective2 high_res)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 colour)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint2)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 46
+States generated: 160
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera2 objective1 waypoint0)
+1: (navigate rover0 waypoint0 waypoint1)
+2: (navigate rover1 waypoint0 waypoint1)
+3: (navigate rover1 waypoint1 waypoint2)
+4: (navigate rover0 waypoint1 waypoint0)
+5: (sample_rock rover0 rover0store waypoint0)
+6: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint3)
+7: (drop rover0 rover0store)
+8: (navigate rover0 waypoint0 waypoint1)
+9: (sample_rock rover0 rover0store waypoint1)
+10: (communicate_rock_data rover0 general waypoint1 waypoint1 waypoint3)
+11: (navigate rover1 waypoint2 waypoint1)
+12: (sample_soil rover1 rover1store waypoint1)
+13: (communicate_soil_data rover1 general waypoint1 waypoint1 waypoint3)
+14: (drop rover1 rover1store)
+15: (navigate rover1 waypoint1 waypoint2)
+16: (sample_soil rover1 rover1store waypoint2)
+17: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint3)
+18: (take_image rover0 waypoint1 objective0 camera2 colour)
+19: (calibrate rover1 camera0 objective1 waypoint2)
+20: (take_image rover1 waypoint2 objective0 camera0 high_res)
+21: (communicate_image_data rover1 general objective0 high_res waypoint2 waypoint3)
+22: (communicate_image_data rover0 general objective0 colour waypoint1 waypoint3)
+23: (calibrate rover1 camera1 objective1 waypoint2)
+24: (take_image rover1 waypoint2 objective2 camera1 high_res)
+25: (communicate_image_data rover1 general objective2 high_res waypoint2 waypoint3)
+Final plan length is 26
+EHC Plan Time = 0.178669221 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-5-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-5-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/parallel_EHC/rovers-5-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 6 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 63 reachable facts from 88 original facts.
+Found 178 applicable actions from 276 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 colour)  (communicated_image_data objective1 low_res)  (communicated_soil_data waypoint2)  (communicated_image_data objective0 low_res)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 133
+States generated: 694
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective0 waypoint1)
+1: (navigate rover0 waypoint1 waypoint0)
+2: (navigate rover0 waypoint0 waypoint2)
+3: (navigate rover1 waypoint4 waypoint1)
+4: (navigate rover0 waypoint2 waypoint0)
+5: (navigate rover0 waypoint0 waypoint3)
+6: (sample_rock rover0 rover0store waypoint3)
+7: (drop rover0 rover0store)
+8: (navigate rover0 waypoint3 waypoint0)
+9: (communicate_rock_data rover0 general waypoint3 waypoint0 waypoint3)
+10: (navigate rover0 waypoint0 waypoint2)
+11: (sample_rock rover0 rover0store waypoint2)
+12: (communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)
+13: (drop rover0 rover0store)
+14: (navigate rover0 waypoint2 waypoint0)
+15: (sample_rock rover0 rover0store waypoint0)
+16: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint3)
+17: (navigate rover1 waypoint1 waypoint4)
+18: (navigate rover1 waypoint4 waypoint5)
+19: (navigate rover1 waypoint5 waypoint2)
+20: (sample_soil rover1 rover1store waypoint2)
+21: (communicate_soil_data rover1 general waypoint2 waypoint2 waypoint3)
+22: (drop rover1 rover1store)
+23: (navigate rover1 waypoint2 waypoint5)
+24: (navigate rover1 waypoint5 waypoint4)
+25: (navigate rover1 waypoint4 waypoint1)
+26: (sample_soil rover1 rover1store waypoint1)
+27: (communicate_soil_data rover1 general waypoint1 waypoint1 waypoint3)
+28: (drop rover1 rover1store)
+29: (navigate rover1 waypoint1 waypoint4)
+30: (navigate rover1 waypoint4 waypoint5)
+31: (sample_soil rover1 rover1store waypoint5)
+32: (communicate_soil_data rover1 general waypoint5 waypoint5 waypoint3)
+33: (drop rover1 rover1store)
+34: (navigate rover1 waypoint5 waypoint4)
+35: (sample_soil rover1 rover1store waypoint4)
+36: (communicate_soil_data rover1 general waypoint4 waypoint4 waypoint3)
+37: (take_image rover0 waypoint0 objective0 camera0 colour)
+38: (communicate_image_data rover0 general objective0 colour waypoint0 waypoint3)
+39: (calibrate rover0 camera0 objective0 waypoint0)
+40: (take_image rover0 waypoint0 objective0 camera0 low_res)
+41: (communicate_image_data rover0 general objective0 low_res waypoint0 waypoint3)
+42: (calibrate rover0 camera0 objective0 waypoint0)
+43: (take_image rover0 waypoint0 objective1 camera0 low_res)
+44: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint3)
+Final plan length is 45
+EHC Plan Time = 0.309752844 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-6-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-6-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 45
+
+Successful plans:
+Value: 45
+ ./solutions/parallel_EHC/rovers-6-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 7 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 68 reachable facts from 114 original facts.
+Found 151 applicable actions from 261 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 35
+States generated: 105
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera0 objective0 waypoint2)
+1: (navigate rover0 waypoint2 waypoint1)
+2: (sample_rock rover1 rover1store waypoint3)
+3: (navigate rover1 waypoint3 waypoint0)
+4: (communicate_rock_data rover1 general waypoint3 waypoint0 waypoint3)
+5: (navigate rover0 waypoint1 waypoint2)
+6: (sample_rock rover0 rover0store waypoint2)
+7: (communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)
+8: (drop rover0 rover0store)
+9: (navigate rover0 waypoint2 waypoint1)
+10: (sample_soil rover0 rover0store waypoint1)
+11: (navigate rover0 waypoint1 waypoint2)
+12: (communicate_soil_data rover0 general waypoint1 waypoint2 waypoint3)
+13: (sample_rock rover2 rover2store waypoint4)
+14: (communicate_rock_data rover2 general waypoint4 waypoint4 waypoint3)
+15: (drop rover2 rover2store)
+16: (sample_soil rover2 rover2store waypoint4)
+17: (communicate_soil_data rover2 general waypoint4 waypoint4 waypoint3)
+18: (take_image rover0 waypoint2 objective0 camera0 high_res)
+19: (communicate_image_data rover0 general objective0 high_res waypoint2 waypoint3)
+Final plan length is 20
+EHC Plan Time = 0.147222698 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-7-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-7-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 20
+
+Successful plans:
+Value: 20
+ ./solutions/parallel_EHC/rovers-7-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 8 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 110 reachable facts from 158 original facts.
+Found 328 applicable actions from 494 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 low_res)  (communicated_rock_data waypoint5)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 62
+States generated: 242
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover1 camera2 objective0 waypoint2)
+1: (navigate rover2 waypoint2 waypoint4)
+2: (sample_rock rover2 rover2store waypoint4)
+3: (communicate_rock_data rover2 general waypoint4 waypoint4 waypoint0)
+4: (navigate rover1 waypoint2 waypoint5)
+5: (sample_rock rover1 rover1store waypoint5)
+6: (navigate rover1 waypoint5 waypoint2)
+7: (communicate_rock_data rover1 general waypoint5 waypoint2 waypoint0)
+8: (navigate rover3 waypoint3 waypoint0)
+9: (navigate rover0 waypoint2 waypoint4)
+10: (sample_soil rover0 rover0store waypoint4)
+11: (communicate_soil_data rover0 general waypoint4 waypoint4 waypoint0)
+12: (navigate rover3 waypoint0 waypoint1)
+13: (sample_soil rover3 rover3store waypoint1)
+14: (communicate_soil_data rover3 general waypoint1 waypoint1 waypoint0)
+15: (drop rover3 rover3store)
+16: (navigate rover3 waypoint1 waypoint0)
+17: (navigate rover3 waypoint0 waypoint3)
+18: (sample_soil rover3 rover3store waypoint3)
+19: (communicate_soil_data rover3 general waypoint3 waypoint3 waypoint0)
+20: (take_image rover1 waypoint2 objective0 camera2 high_res)
+21: (communicate_image_data rover1 general objective0 high_res waypoint2 waypoint0)
+22: (calibrate rover1 camera2 objective0 waypoint2)
+23: (take_image rover1 waypoint2 objective0 camera2 low_res)
+24: (communicate_image_data rover1 general objective0 low_res waypoint2 waypoint0)
+25: (calibrate rover1 camera2 objective0 waypoint2)
+26: (take_image rover1 waypoint2 objective2 camera2 low_res)
+27: (communicate_image_data rover1 general objective2 low_res waypoint2 waypoint0)
+Final plan length is 28
+EHC Plan Time = 0.331475456 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-8-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-8-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 28
+
+Successful plans:
+Value: 28
+ ./solutions/parallel_EHC/rovers-8-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 9 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 116 reachable facts from 175 original facts.
+Found 362 applicable actions from 519 original actions
+Goal is: (and (communicated_rock_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint6)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 258
+States generated: 1489
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/rovers-9-6_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/rovers-9-6_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 10 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 125 reachable facts from 191 original facts.
+Found 382 applicable actions from 672 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_image_data objective3 colour)  (communicated_rock_data waypoint3)  (communicated_rock_data waypoint1)  (communicated_image_data objective3 low_res)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_soil_data waypoint6)  (communicated_rock_data waypoint0)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 329
+States generated: 2594
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover1 camera1 objective3 waypoint0)
+1: (calibrate rover1 camera2 objective1 waypoint0)
+2: (navigate rover0 waypoint4 waypoint3)
+3: (take_image rover1 waypoint0 objective2 camera1 colour)
+4: (communicate_image_data rover1 general objective2 colour waypoint0 waypoint1)
+5: (navigate rover0 waypoint3 waypoint4)
+6: (navigate rover0 waypoint4 waypoint6)
+7: (sample_soil rover1 rover1store waypoint0)
+8: (communicate_soil_data rover1 general waypoint0 waypoint0 waypoint1)
+9: (navigate rover0 waypoint6 waypoint4)
+10: (navigate rover0 waypoint4 waypoint0)
+11: (drop rover1 rover1store)
+12: (navigate rover0 waypoint0 waypoint4)
+13: (navigate rover0 waypoint4 waypoint3)
+14: (navigate rover1 waypoint0 waypoint6)
+15: (sample_soil rover1 rover1store waypoint6)
+16: (navigate rover1 waypoint6 waypoint0)
+17: (communicate_soil_data rover1 general waypoint6 waypoint0 waypoint1)
+18: (sample_rock rover2 rover2store waypoint3)
+19: (drop rover2 rover2store)
+20: (navigate rover0 waypoint3 waypoint4)
+21: (navigate rover0 waypoint4 waypoint0)
+22: (navigate rover2 waypoint3 waypoint4)
+23: (communicate_rock_data rover2 general waypoint3 waypoint4 waypoint1)
+24: (navigate rover0 waypoint0 waypoint4)
+25: (navigate rover3 waypoint1 waypoint0)
+26: (sample_rock rover3 rover3store waypoint0)
+27: (communicate_rock_data rover3 general waypoint0 waypoint0 waypoint1)
+28: (navigate rover0 waypoint4 waypoint3)
+29: (drop rover3 rover3store)
+30: (navigate rover0 waypoint3 waypoint4)
+31: (navigate rover2 waypoint4 waypoint1)
+32: (sample_rock rover0 rover0store waypoint4)
+33: (drop rover0 rover0store)
+34: (navigate rover0 waypoint4 waypoint3)
+35: (navigate rover2 waypoint1 waypoint4)
+36: (navigate rover3 waypoint0 waypoint4)
+37: (navigate rover0 waypoint3 waypoint4)
+38: (communicate_rock_data rover0 general waypoint4 waypoint4 waypoint1)
+39: (navigate rover2 waypoint4 waypoint1)
+40: (sample_rock rover2 rover2store waypoint1)
+41: (navigate rover2 waypoint1 waypoint4)
+42: (communicate_rock_data rover2 general waypoint1 waypoint4 waypoint1)
+43: (navigate rover3 waypoint4 waypoint3)
+44: (sample_soil rover0 rover0store waypoint4)
+45: (communicate_soil_data rover0 general waypoint4 waypoint4 waypoint1)
+46: (sample_soil rover3 rover3store waypoint3)
+47: (navigate rover3 waypoint3 waypoint4)
+48: (communicate_soil_data rover3 general waypoint3 waypoint4 waypoint1)
+49: (take_image rover1 waypoint0 objective3 camera2 colour)
+50: (communicate_image_data rover1 general objective3 colour waypoint0 waypoint1)
+51: (calibrate rover1 camera2 objective1 waypoint0)
+52: (take_image rover1 waypoint0 objective3 camera2 low_res)
+53: (communicate_image_data rover1 general objective3 low_res waypoint0 waypoint1)
+Final plan length is 54
+EHC Plan Time = 0.990738164 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-10-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-10-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 54
+
+Successful plans:
+Value: 54
+ ./solutions/parallel_EHC/rovers-10-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 11 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 118 reachable facts from 190 original facts.
+Found 436 applicable actions from 814 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_image_data objective1 high_res)  (communicated_soil_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_rock_data waypoint7)  (communicated_soil_data waypoint0)  (communicated_soil_data waypoint6)  (communicated_soil_data waypoint1)  (communicated_rock_data waypoint0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 12 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 108 reachable facts from 205 original facts.
+Found 366 applicable actions from 784 original actions
+Goal is: (and (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint3)  (communicated_rock_data waypoint6)  (communicated_image_data objective3 low_res)  (communicated_soil_data waypoint0)  (communicated_image_data objective2 low_res) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 45
+States generated: 143
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (navigate rover2 waypoint7 waypoint0)
+1: (calibrate rover2 camera1 objective1 waypoint0)
+2: (navigate rover3 waypoint7 waypoint0)
+3: (calibrate rover3 camera3 objective3 waypoint0)
+4: (sample_soil rover2 rover2store waypoint0)
+5: (communicate_soil_data rover2 general waypoint0 waypoint0 waypoint2)
+6: (take_image rover2 waypoint0 objective1 camera1 high_res)
+7: (communicate_image_data rover2 general objective1 high_res waypoint0 waypoint2)
+8: (navigate rover1 waypoint4 waypoint6)
+9: (sample_rock rover1 rover1store waypoint6)
+10: (navigate rover1 waypoint6 waypoint4)
+11: (communicate_rock_data rover1 general waypoint6 waypoint4 waypoint2)
+12: (navigate rover3 waypoint0 waypoint7)
+13: (navigate rover3 waypoint7 waypoint3)
+14: (sample_rock rover3 rover3store waypoint3)
+15: (communicate_rock_data rover3 general waypoint3 waypoint3 waypoint2)
+16: (take_image rover3 waypoint3 objective2 camera3 low_res)
+17: (communicate_image_data rover3 general objective2 low_res waypoint3 waypoint2)
+18: (calibrate rover3 camera3 objective3 waypoint3)
+19: (take_image rover3 waypoint3 objective3 camera3 low_res)
+20: (communicate_image_data rover3 general objective3 low_res waypoint3 waypoint2)
+Final plan length is 21
+EHC Plan Time = 0.274336693 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-12-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-12-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 21
+
+Successful plans:
+Value: 21
+ ./solutions/parallel_EHC/rovers-12-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 13 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 148 reachable facts from 222 original facts.
+Found 749 applicable actions from 1205 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_rock_data waypoint4)  (communicated_image_data objective2 high_res)  (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint8)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint6)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint7)  (communicated_image_data objective3 high_res)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 425
+States generated: 3218
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover2 camera0 objective1 waypoint6)
+1: (navigate rover2 waypoint6 waypoint0)
+2: (navigate rover0 waypoint7 waypoint2)
+3: (sample_soil rover0 rover0store waypoint2)
+4: (navigate rover0 waypoint2 waypoint4)
+5: (communicate_soil_data rover0 general waypoint2 waypoint4 waypoint2)
+6: (navigate rover2 waypoint0 waypoint1)
+7: (drop rover0 rover0store)
+8: (navigate rover2 waypoint1 waypoint0)
+9: (navigate rover2 waypoint0 waypoint4)
+10: (navigate rover3 waypoint3 waypoint7)
+11: (sample_soil rover0 rover0store waypoint4)
+12: (communicate_soil_data rover0 general waypoint4 waypoint4 waypoint2)
+13: (navigate rover2 waypoint4 waypoint0)
+14: (navigate rover2 waypoint0 waypoint1)
+15: (sample_rock rover2 rover2store waypoint1)
+16: (communicate_rock_data rover2 general waypoint1 waypoint1 waypoint2)
+17: (drop rover2 rover2store)
+18: (navigate rover2 waypoint1 waypoint0)
+19: (navigate rover2 waypoint0 waypoint4)
+20: (sample_rock rover2 rover2store waypoint4)
+21: (communicate_rock_data rover2 general waypoint4 waypoint4 waypoint2)
+22: (drop rover2 rover2store)
+23: (navigate rover2 waypoint4 waypoint0)
+24: (navigate rover2 waypoint0 waypoint5)
+25: (sample_rock rover3 rover3store waypoint7)
+26: (communicate_rock_data rover3 general waypoint7 waypoint7 waypoint2)
+27: (drop rover3 rover3store)
+28: (navigate rover2 waypoint5 waypoint0)
+29: (navigate rover2 waypoint0 waypoint6)
+30: (navigate rover2 waypoint6 waypoint2)
+31: (navigate rover2 waypoint2 waypoint8)
+32: (navigate rover3 waypoint7 waypoint3)
+33: (navigate rover3 waypoint3 waypoint5)
+34: (navigate rover1 waypoint6 waypoint0)
+35: (navigate rover1 waypoint0 waypoint7)
+36: (navigate rover2 waypoint8 waypoint2)
+37: (sample_soil rover1 rover1store waypoint7)
+38: (communicate_soil_data rover1 general waypoint7 waypoint7 waypoint2)
+39: (sample_soil rover3 rover3store waypoint5)
+40: (communicate_soil_data rover3 general waypoint5 waypoint5 waypoint2)
+41: (take_image rover2 waypoint2 objective1 camera0 high_res)
+42: (calibrate rover0 camera4 objective1 waypoint4)
+43: (navigate rover2 waypoint2 waypoint6)
+44: (communicate_image_data rover2 general objective1 high_res waypoint6 waypoint2)
+45: (navigate rover2 waypoint6 waypoint2)
+46: (navigate rover2 waypoint2 waypoint8)
+47: (sample_rock rover2 rover2store waypoint8)
+48: (communicate_rock_data rover2 general waypoint8 waypoint8 waypoint2)
+49: (drop rover2 rover2store)
+50: (navigate rover2 waypoint8 waypoint2)
+51: (navigate rover2 waypoint2 waypoint6)
+52: (sample_rock rover2 rover2store waypoint6)
+53: (communicate_rock_data rover2 general waypoint6 waypoint6 waypoint2)
+54: (take_image rover0 waypoint4 objective2 camera4 high_res)
+55: (communicate_image_data rover0 general objective2 high_res waypoint4 waypoint2)
+56: (calibrate rover2 camera0 objective1 waypoint6)
+57: (take_image rover2 waypoint6 objective3 camera0 high_res)
+58: (communicate_image_data rover2 general objective3 high_res waypoint6 waypoint2)
+Final plan length is 59
+EHC Plan Time = 2.698815515 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-13-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-13-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 59
+
+Successful plans:
+Value: 59
+ ./solutions/parallel_EHC/rovers-13-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 14 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 122 reachable facts from 238 original facts.
+Found 525 applicable actions from 893 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_soil_data waypoint3)  (communicated_rock_data waypoint8)  (communicated_image_data objective0 colour)  (communicated_image_data objective0 low_res)  (communicated_rock_data waypoint5)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint6) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 72
+States generated: 263
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/rovers-14-6_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/rovers-14-6_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 15 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 153 reachable facts from 268 original facts.
+Found 751 applicable actions from 1236 original actions
+Goal is: (and (communicated_soil_data waypoint5)  (communicated_soil_data waypoint10)  (communicated_soil_data waypoint8)  (communicated_image_data objective1 high_res)  (communicated_rock_data waypoint2)  (communicated_rock_data waypoint8)  (communicated_image_data objective1 low_res)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint2)  (communicated_soil_data waypoint0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 580
+States generated: 4214
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera1 objective4 waypoint4)
+1: (navigate rover2 waypoint6 waypoint10)
+2: (sample_soil rover2 rover2store waypoint10)
+3: (navigate rover0 waypoint4 waypoint2)
+4: (drop rover2 rover2store)
+5: (navigate rover0 waypoint2 waypoint4)
+6: (navigate rover2 waypoint10 waypoint6)
+7: (communicate_soil_data rover2 general waypoint10 waypoint6 waypoint9)
+8: (navigate rover0 waypoint4 waypoint0)
+9: (navigate rover0 waypoint0 waypoint7)
+10: (navigate rover2 waypoint6 waypoint4)
+11: (navigate rover2 waypoint4 waypoint2)
+12: (navigate rover0 waypoint7 waypoint0)
+13: (navigate rover0 waypoint0 waypoint4)
+14: (sample_soil rover2 rover2store waypoint2)
+15: (navigate rover0 waypoint4 waypoint5)
+16: (navigate rover2 waypoint2 waypoint4)
+17: (communicate_soil_data rover2 general waypoint2 waypoint4 waypoint9)
+18: (sample_soil rover0 rover0store waypoint5)
+19: (drop rover0 rover0store)
+20: (navigate rover0 waypoint5 waypoint4)
+21: (communicate_soil_data rover0 general waypoint5 waypoint4 waypoint9)
+22: (navigate rover0 waypoint4 waypoint0)
+23: (navigate rover0 waypoint0 waypoint3)
+24: (drop rover2 rover2store)
+25: (navigate rover0 waypoint3 waypoint0)
+26: (navigate rover0 waypoint0 waypoint4)
+27: (take_image rover0 waypoint4 objective1 camera1 high_res)
+28: (communicate_image_data rover0 general objective1 high_res waypoint4 waypoint9)
+29: (calibrate rover1 camera2 objective4 waypoint6)
+30: (take_image rover1 waypoint6 objective1 camera2 low_res)
+31: (communicate_image_data rover1 general objective1 low_res waypoint6 waypoint9)
+32: (navigate rover0 waypoint4 waypoint0)
+33: (navigate rover0 waypoint0 waypoint3)
+34: (navigate rover2 waypoint4 waypoint6)
+35: (navigate rover0 waypoint3 waypoint0)
+36: (navigate rover2 waypoint6 waypoint9)
+37: (sample_soil rover0 rover0store waypoint0)
+38: (navigate rover0 waypoint0 waypoint4)
+39: (communicate_soil_data rover0 general waypoint0 waypoint4 waypoint9)
+40: (drop rover0 rover0store)
+41: (navigate rover0 waypoint4 waypoint8)
+42: (sample_soil rover0 rover0store waypoint8)
+43: (communicate_soil_data rover0 general waypoint8 waypoint8 waypoint9)
+44: (navigate rover3 waypoint4 waypoint1)
+45: (sample_rock rover3 rover3store waypoint1)
+46: (navigate rover3 waypoint1 waypoint4)
+47: (communicate_rock_data rover3 general waypoint1 waypoint4 waypoint9)
+48: (drop rover3 rover3store)
+49: (navigate rover3 waypoint4 waypoint2)
+50: (sample_rock rover3 rover3store waypoint2)
+51: (drop rover3 rover3store)
+52: (navigate rover3 waypoint2 waypoint4)
+53: (communicate_rock_data rover3 general waypoint2 waypoint4 waypoint9)
+54: (navigate rover3 waypoint4 waypoint8)
+55: (sample_rock rover3 rover3store waypoint8)
+56: (communicate_rock_data rover3 general waypoint8 waypoint8 waypoint9)
+Final plan length is 57
+EHC Plan Time = 3.42639256 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-15-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-15-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 57
+
+Successful plans:
+Value: 57
+ ./solutions/parallel_EHC/rovers-15-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 16 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 180 reachable facts from 284 original facts.
+Found 671 applicable actions from 1047 original actions
+Goal is: (and (communicated_image_data objective2 high_res)  (communicated_image_data objective4 high_res)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint9)  (communicated_rock_data waypoint1)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint10)  (communicated_rock_data waypoint5)  (communicated_soil_data waypoint1)  (communicated_soil_data waypoint4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 281
+States generated: 2264
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover0 camera2 objective2 waypoint6)
+1: (navigate rover0 waypoint6 waypoint1)
+2: (navigate rover1 waypoint2 waypoint10)
+3: (navigate rover0 waypoint1 waypoint3)
+4: (navigate rover1 waypoint10 waypoint2)
+5: (navigate rover1 waypoint2 waypoint4)
+6: (navigate rover1 waypoint4 waypoint7)
+7: (navigate rover0 waypoint3 waypoint1)
+8: (navigate rover3 waypoint0 waypoint10)
+9: (navigate rover0 waypoint1 waypoint9)
+10: (navigate rover1 waypoint7 waypoint4)
+11: (navigate rover2 waypoint9 waypoint2)
+12: (navigate rover0 waypoint9 waypoint1)
+13: (sample_rock rover3 rover3store waypoint10)
+14: (navigate rover3 waypoint10 waypoint7)
+15: (communicate_rock_data rover3 general waypoint10 waypoint7 waypoint6)
+16: (navigate rover0 waypoint1 waypoint3)
+17: (navigate rover1 waypoint4 waypoint7)
+18: (navigate rover2 waypoint2 waypoint5)
+19: (sample_rock rover2 rover2store waypoint5)
+20: (navigate rover2 waypoint5 waypoint2)
+21: (communicate_rock_data rover2 general waypoint5 waypoint2 waypoint6)
+22: (navigate rover0 waypoint3 waypoint1)
+23: (navigate rover0 waypoint1 waypoint9)
+24: (drop rover2 rover2store)
+25: (navigate rover0 waypoint9 waypoint1)
+26: (navigate rover0 waypoint1 waypoint3)
+27: (sample_rock rover0 rover0store waypoint3)
+28: (drop rover0 rover0store)
+29: (navigate rover0 waypoint3 waypoint1)
+30: (communicate_rock_data rover0 general waypoint3 waypoint1 waypoint6)
+31: (navigate rover0 waypoint1 waypoint9)
+32: (navigate rover1 waypoint7 waypoint4)
+33: (sample_soil rover0 rover0store waypoint9)
+34: (drop rover0 rover0store)
+35: (navigate rover0 waypoint9 waypoint1)
+36: (communicate_soil_data rover0 general waypoint9 waypoint1 waypoint6)
+37: (navigate rover1 waypoint4 waypoint7)
+38: (sample_rock rover0 rover0store waypoint1)
+39: (communicate_rock_data rover0 general waypoint1 waypoint1 waypoint6)
+40: (drop rover0 rover0store)
+41: (sample_soil rover0 rover0store waypoint1)
+42: (communicate_soil_data rover0 general waypoint1 waypoint1 waypoint6)
+43: (navigate rover1 waypoint7 waypoint4)
+44: (sample_soil rover1 rover1store waypoint4)
+45: (drop rover1 rover1store)
+46: (navigate rover1 waypoint4 waypoint7)
+47: (communicate_soil_data rover1 general waypoint4 waypoint7 waypoint6)
+48: (sample_soil rover1 rover1store waypoint7)
+49: (communicate_soil_data rover1 general waypoint7 waypoint7 waypoint6)
+50: (take_image rover0 waypoint1 objective0 camera2 high_res)
+51: (communicate_image_data rover0 general objective0 high_res waypoint1 waypoint6)
+52: (calibrate rover0 camera2 objective2 waypoint1)
+53: (take_image rover0 waypoint1 objective2 camera2 high_res)
+54: (communicate_image_data rover0 general objective2 high_res waypoint1 waypoint6)
+55: (calibrate rover0 camera2 objective2 waypoint1)
+56: (take_image rover0 waypoint1 objective4 camera2 high_res)
+57: (communicate_image_data rover0 general objective4 high_res waypoint1 waypoint6)
+Final plan length is 58
+EHC Plan Time = 1.252081411 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-16-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-16-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 58
+
+Successful plans:
+Value: 58
+ ./solutions/parallel_EHC/rovers-16-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 17 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 266 reachable facts from 482 original facts.
+Found 1227 applicable actions from 2216 original actions
+Goal is: (and (communicated_image_data objective5 colour)  (communicated_image_data objective3 colour)  (communicated_rock_data waypoint3)  (communicated_image_data objective4 colour)  (communicated_soil_data waypoint2)  (communicated_rock_data waypoint12)  (communicated_image_data objective2 colour)  (communicated_rock_data waypoint5)  (communicated_rock_data waypoint9)  (communicated_soil_data waypoint5)  (communicated_soil_data waypoint3)  (communicated_image_data objective2 low_res)  (communicated_soil_data waypoint14) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 344
+States generated: 2143
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover3 camera1 objective2 waypoint13)
+1: (calibrate rover4 camera0 objective2 waypoint1)
+2: (navigate rover3 waypoint13 waypoint0)
+3: (navigate rover0 waypoint12 waypoint0)
+4: (navigate rover0 waypoint0 waypoint3)
+5: (navigate rover4 waypoint1 waypoint0)
+6: (navigate rover0 waypoint3 waypoint0)
+7: (take_image rover4 waypoint0 objective2 camera0 low_res)
+8: (communicate_image_data rover4 general objective2 low_res waypoint0 waypoint13)
+9: (navigate rover0 waypoint0 waypoint12)
+10: (navigate rover4 waypoint0 waypoint3)
+11: (sample_rock rover0 rover0store waypoint12)
+12: (navigate rover0 waypoint12 waypoint0)
+13: (communicate_rock_data rover0 general waypoint12 waypoint0 waypoint13)
+14: (sample_rock rover4 rover4store waypoint3)
+15: (communicate_rock_data rover4 general waypoint3 waypoint3 waypoint13)
+16: (navigate rover3 waypoint0 waypoint13)
+17: (navigate rover3 waypoint13 waypoint3)
+18: (navigate rover2 waypoint5 waypoint1)
+19: (calibrate rover2 camera6 objective5 waypoint1)
+20: (navigate rover2 waypoint1 waypoint0)
+21: (take_image rover2 waypoint0 objective5 camera6 colour)
+22: (communicate_image_data rover2 general objective5 colour waypoint0 waypoint13)
+23: (navigate rover3 waypoint3 waypoint13)
+24: (calibrate rover2 camera6 objective5 waypoint0)
+25: (navigate rover3 waypoint13 waypoint0)
+26: (navigate rover5 waypoint8 waypoint5)
+27: (navigate rover3 waypoint0 waypoint13)
+28: (navigate rover3 waypoint13 waypoint3)
+29: (take_image rover2 waypoint0 objective2 camera6 colour)
+30: (communicate_image_data rover2 general objective2 colour waypoint0 waypoint13)
+31: (navigate rover3 waypoint3 waypoint13)
+32: (calibrate rover2 camera6 objective5 waypoint0)
+33: (navigate rover3 waypoint13 waypoint3)
+34: (take_image rover2 waypoint0 objective3 camera6 colour)
+35: (communicate_image_data rover2 general objective3 colour waypoint0 waypoint13)
+36: (take_image rover3 waypoint3 objective4 camera1 colour)
+37: (communicate_image_data rover3 general objective4 colour waypoint3 waypoint13)
+38: (sample_rock rover5 rover5store waypoint5)
+39: (communicate_rock_data rover5 general waypoint5 waypoint5 waypoint13)
+40: (drop rover5 rover5store)
+41: (sample_soil rover3 rover3store waypoint3)
+42: (communicate_soil_data rover3 general waypoint3 waypoint3 waypoint13)
+43: (drop rover3 rover3store)
+44: (navigate rover3 waypoint3 waypoint13)
+45: (navigate rover3 waypoint13 waypoint5)
+46: (navigate rover3 waypoint5 waypoint14)
+47: (navigate rover5 waypoint5 waypoint8)
+48: (navigate rover5 waypoint8 waypoint9)
+49: (sample_rock rover5 rover5store waypoint9)
+50: (navigate rover3 waypoint14 waypoint5)
+51: (navigate rover5 waypoint9 waypoint8)
+52: (navigate rover5 waypoint8 waypoint5)
+53: (communicate_rock_data rover5 general waypoint9 waypoint5 waypoint13)
+54: (navigate rover3 waypoint5 waypoint14)
+55: (sample_soil rover3 rover3store waypoint14)
+56: (communicate_soil_data rover3 general waypoint14 waypoint14 waypoint13)
+57: (drop rover3 rover3store)
+58: (navigate rover3 waypoint14 waypoint5)
+59: (navigate rover3 waypoint5 waypoint2)
+60: (sample_soil rover3 rover3store waypoint2)
+61: (drop rover3 rover3store)
+62: (navigate rover3 waypoint2 waypoint5)
+63: (communicate_soil_data rover3 general waypoint2 waypoint5 waypoint13)
+64: (sample_soil rover3 rover3store waypoint5)
+65: (communicate_soil_data rover3 general waypoint5 waypoint5 waypoint13)
+Final plan length is 66
+EHC Plan Time = 4.30302727 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-17-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-17-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 66
+
+Successful plans:
+Value: 66
+ ./solutions/parallel_EHC/rovers-17-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 18 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 370 reachable facts from 613 original facts.
+Found 1837 applicable actions from 2538 original actions
+Goal is: (and (communicated_rock_data waypoint4)  (communicated_image_data objective5 colour)  (communicated_rock_data waypoint2)  (communicated_image_data objective4 high_res)  (communicated_rock_data waypoint6)  (communicated_image_data objective3 low_res)  (communicated_rock_data waypoint7)  (communicated_image_data objective2 colour)  (communicated_soil_data waypoint0)  (communicated_rock_data waypoint5)  (communicated_soil_data waypoint14) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 442
+States generated: 3518
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover2 camera1 objective6 waypoint0)
+1: (calibrate rover5 camera6 objective6 waypoint0)
+2: (navigate rover1 waypoint9 waypoint4)
+3: (sample_rock rover1 rover1store waypoint4)
+4: (navigate rover1 waypoint4 waypoint11)
+5: (sample_soil rover2 rover2store waypoint0)
+6: (communicate_soil_data rover2 general waypoint0 waypoint0 waypoint17)
+7: (communicate_rock_data rover1 general waypoint4 waypoint11 waypoint17)
+8: (take_image rover5 waypoint0 objective4 camera6 high_res)
+9: (communicate_image_data rover5 general objective4 high_res waypoint0 waypoint17)
+10: (navigate rover0 waypoint2 waypoint0)
+11: (drop rover2 rover2store)
+12: (navigate rover0 waypoint0 waypoint2)
+13: (navigate rover0 waypoint2 waypoint14)
+14: (sample_soil rover0 rover0store waypoint14)
+15: (navigate rover0 waypoint14 waypoint2)
+16: (drop rover0 rover0store)
+17: (navigate rover0 waypoint2 waypoint0)
+18: (communicate_soil_data rover0 general waypoint14 waypoint0 waypoint17)
+19: (navigate rover0 waypoint0 waypoint2)
+20: (sample_rock rover0 rover0store waypoint2)
+21: (drop rover0 rover0store)
+22: (navigate rover0 waypoint2 waypoint0)
+23: (communicate_rock_data rover0 general waypoint2 waypoint0 waypoint17)
+24: (navigate rover0 waypoint0 waypoint2)
+25: (navigate rover0 waypoint2 waypoint6)
+26: (sample_rock rover0 rover0store waypoint6)
+27: (navigate rover0 waypoint6 waypoint19)
+28: (communicate_rock_data rover0 general waypoint6 waypoint19 waypoint17)
+29: (navigate rover5 waypoint0 waypoint1)
+30: (navigate rover3 waypoint18 waypoint0)
+31: (navigate rover3 waypoint0 waypoint9)
+32: (navigate rover3 waypoint9 waypoint5)
+33: (navigate rover5 waypoint1 waypoint11)
+34: (sample_rock rover3 rover3store waypoint5)
+35: (navigate rover3 waypoint5 waypoint9)
+36: (navigate rover3 waypoint9 waypoint0)
+37: (communicate_rock_data rover3 general waypoint5 waypoint0 waypoint17)
+38: (navigate rover5 waypoint11 waypoint1)
+39: (navigate rover5 waypoint1 waypoint7)
+40: (sample_rock rover5 rover5store waypoint7)
+41: (navigate rover5 waypoint7 waypoint1)
+42: (navigate rover5 waypoint1 waypoint11)
+43: (communicate_rock_data rover5 general waypoint7 waypoint11 waypoint17)
+44: (take_image rover2 waypoint0 objective2 camera1 colour)
+45: (calibrate rover2 camera1 objective6 waypoint0)
+46: (take_image rover2 waypoint0 objective3 camera1 low_res)
+47: (communicate_image_data rover2 general objective2 colour waypoint0 waypoint17)
+48: (communicate_image_data rover2 general objective3 low_res waypoint0 waypoint17)
+49: (calibrate rover2 camera1 objective6 waypoint0)
+50: (take_image rover2 waypoint0 objective5 camera1 colour)
+51: (communicate_image_data rover2 general objective5 colour waypoint0 waypoint17)
+Final plan length is 52
+EHC Plan Time = 6.42292484 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-18-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-18-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 52
+
+Successful plans:
+Value: 52
+ ./solutions/parallel_EHC/rovers-18-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 19 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 362 reachable facts from 634 original facts.
+Found 2838 applicable actions from 4476 original actions
+Goal is: (and (communicated_image_data objective7 colour)  (communicated_rock_data waypoint4)  (communicated_image_data objective5 colour)  (communicated_image_data objective7 low_res)  (communicated_rock_data waypoint3)  (communicated_image_data objective0 high_res)  (communicated_image_data objective0 colour)  (communicated_image_data objective6 low_res)  (communicated_rock_data waypoint6)  (communicated_rock_data waypoint19)  (communicated_rock_data waypoint17)  (communicated_rock_data waypoint9)  (communicated_soil_data waypoint5)  (communicated_soil_data waypoint8)  (communicated_image_data objective4 high_res)  (communicated_soil_data waypoint18)  (communicated_image_data objective2 low_res) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 6
+States expanded: 606
+States generated: 5782
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (calibrate rover2 camera0 objective0 waypoint13)
+1: (calibrate rover4 camera4 objective2 waypoint0)
+2: (navigate rover2 waypoint13 waypoint6)
+3: (navigate rover2 waypoint6 waypoint8)
+4: (navigate rover3 waypoint11 waypoint16)
+5: (navigate rover3 waypoint16 waypoint5)
+6: (sample_soil rover2 rover2store waypoint8)
+7: (communicate_soil_data rover2 general waypoint8 waypoint8 waypoint6)
+8: (navigate rover5 waypoint12 waypoint1)
+9: (sample_soil rover3 rover3store waypoint5)
+10: (navigate rover3 waypoint5 waypoint16)
+11: (communicate_soil_data rover3 general waypoint5 waypoint16 waypoint6)
+12: (drop rover3 rover3store)
+13: (navigate rover3 waypoint16 waypoint11)
+14: (navigate rover3 waypoint11 waypoint9)
+15: (sample_rock rover3 rover3store waypoint9)
+16: (navigate rover3 waypoint9 waypoint0)
+17: (communicate_rock_data rover3 general waypoint9 waypoint0 waypoint6)
+18: (take_image rover4 waypoint0 objective2 camera4 low_res)
+19: (communicate_image_data rover4 general objective2 low_res waypoint0 waypoint6)
+20: (navigate rover4 waypoint0 waypoint18)
+21: (drop rover3 rover3store)
+22: (navigate rover3 waypoint0 waypoint9)
+23: (navigate rover3 waypoint9 waypoint11)
+24: (navigate rover3 waypoint11 waypoint16)
+25: (navigate rover3 waypoint16 waypoint6)
+26: (sample_rock rover3 rover3store waypoint6)
+27: (sample_soil rover4 rover4store waypoint18)
+28: (navigate rover3 waypoint6 waypoint16)
+29: (communicate_rock_data rover3 general waypoint6 waypoint16 waypoint6)
+30: (drop rover3 rover3store)
+31: (navigate rover4 waypoint18 waypoint0)
+32: (communicate_soil_data rover4 general waypoint18 waypoint0 waypoint6)
+33: (drop rover4 rover4store)
+34: (navigate rover4 waypoint0 waypoint2)
+35: (navigate rover4 waypoint2 waypoint17)
+36: (navigate rover5 waypoint1 waypoint12)
+37: (navigate rover4 waypoint17 waypoint2)
+38: (navigate rover4 waypoint2 waypoint19)
+39: (navigate rover5 waypoint12 waypoint4)
+40: (sample_rock rover4 rover4store waypoint19)
+41: (communicate_rock_data rover4 general waypoint19 waypoint19 waypoint6)
+42: (navigate rover5 waypoint4 waypoint12)
+43: (drop rover4 rover4store)
+44: (navigate rover3 waypoint16 waypoint11)
+45: (navigate rover3 waypoint11 waypoint17)
+46: (sample_rock rover3 rover3store waypoint17)
+47: (navigate rover3 waypoint17 waypoint11)
+48: (navigate rover3 waypoint11 waypoint16)
+49: (communicate_rock_data rover3 general waypoint17 waypoint16 waypoint6)
+50: (navigate rover4 waypoint19 waypoint2)
+51: (navigate rover4 waypoint2 waypoint3)
+52: (navigate rover5 waypoint12 waypoint1)
+53: (navigate rover4 waypoint3 waypoint2)
+54: (navigate rover4 waypoint2 waypoint8)
+55: (take_image rover2 waypoint8 objective0 camera0 colour)
+56: (communicate_image_data rover2 general objective0 colour waypoint8 waypoint6)
+57: (calibrate rover2 camera0 objective0 waypoint8)
+58: (navigate rover4 waypoint8 waypoint2)
+59: (navigate rover4 waypoint2 waypoint3)
+60: (sample_rock rover4 rover4store waypoint3)
+61: (drop rover4 rover4store)
+62: (navigate rover4 waypoint3 waypoint2)
+63: (navigate rover4 waypoint2 waypoint8)
+64: (communicate_rock_data rover4 general waypoint3 waypoint8 waypoint6)
+65: (navigate rover5 waypoint1 waypoint12)
+66: (navigate rover5 waypoint12 waypoint4)
+67: (sample_rock rover5 rover5store waypoint4)
+68: (navigate rover5 waypoint4 waypoint12)
+69: (navigate rover5 waypoint12 waypoint1)
+70: (communicate_rock_data rover5 general waypoint4 waypoint1 waypoint6)
+71: (take_image rover2 waypoint8 objective0 camera0 high_res)
+72: (calibrate rover2 camera0 objective0 waypoint8)
+73: (take_image rover2 waypoint8 objective4 camera0 high_res)
+74: (calibrate rover2 camera0 objective0 waypoint8)
+75: (communicate_image_data rover2 general objective0 high_res waypoint8 waypoint6)
+76: (communicate_image_data rover2 general objective4 high_res waypoint8 waypoint6)
+77: (take_image rover2 waypoint8 objective5 camera0 colour)
+78: (calibrate rover2 camera0 objective0 waypoint8)
+79: (take_image rover2 waypoint8 objective6 camera0 low_res)
+80: (calibrate rover2 camera0 objective0 waypoint8)
+81: (communicate_image_data rover2 general objective6 low_res waypoint8 waypoint6)
+82: (take_image rover2 waypoint8 objective7 camera0 colour)
+83: (communicate_image_data rover2 general objective5 colour waypoint8 waypoint6)
+84: (communicate_image_data rover2 general objective7 colour waypoint8 waypoint6)
+85: (calibrate rover5 camera6 objective6 waypoint1)
+86: (take_image rover5 waypoint1 objective7 camera6 low_res)
+87: (communicate_image_data rover5 general objective7 low_res waypoint1 waypoint6)
+Final plan length is 88
+EHC Plan Time = 29.808198446 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/rovers-19-6_threads.sol
+Checking plan: ./solutions/parallel_EHC/rovers-19-6_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 88
+
+Successful plans:
+Value: 88
+ ./solutions/parallel_EHC/rovers-19-6_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- rovers - 20 --------------------------------------------
+Parsed Domain file ./problems/rovers/domain.pddl successfully
+Parsed Problem file ./problems/rovers/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 480 reachable facts from 948 original facts.
+Found 3976 applicable actions from 7364 original actions
+Goal is: (and (communicated_image_data objective7 colour)  (communicated_soil_data waypoint13)  (communicated_rock_data waypoint18)  (communicated_image_data objective3 colour)  (communicated_soil_data waypoint11)  (communicated_image_data objective0 high_res)  (communicated_soil_data waypoint20)  (communicated_rock_data waypoint14)  (communicated_soil_data waypoint7)  (communicated_rock_data waypoint12)  (communicated_rock_data waypoint21)  (communicated_rock_data waypoint10)  (communicated_rock_data waypoint22)  (communicated_rock_data waypoint9)  (communicated_image_data objective2 high_res)  (communicated_soil_data waypoint8)  (communicated_rock_data waypoint16)  (communicated_rock_data waypoint7)  (communicated_image_data objective5 high_res)  (communicated_soil_data waypoint23) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+

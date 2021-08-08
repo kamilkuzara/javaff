@@ -1,0 +1,821 @@
+-------------------------------------- zenotravel - 1 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile1.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 18 reachable facts from 18 original facts.
+Found 129 applicable actions from 129 original actions
+Goal is: (and (at person1 city0)  (at person2 city2)  (at plane1 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 2
+States generated: 1
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city0 city1 fl1 fl0)
+Final plan length is 1
+EHC Plan Time = 0.022833906 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-1-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-1-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 1
+
+Successful plans:
+Value: 1
+ ./solutions/parallel_EHC/zenotravel-1-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 2 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile2.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 22 reachable facts from 22 original facts.
+Found 135 applicable actions from 135 original actions
+Goal is: (and (at person3 city2)  (at person1 city1)  (at plane1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 5
+States generated: 5
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-2-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-2-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 3 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile3.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 40 reachable facts from 40 original facts.
+Found 282 applicable actions from 282 original actions
+Goal is: (and (at person2 city0)  (at person3 city0)  (at person4 city1)  (at plane2 city2)  (at person1 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 6
+States generated: 8
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-3-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-3-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 4 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile4.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 45 reachable facts from 45 original facts.
+Found 294 applicable actions from 294 original actions
+Goal is: (and (at plane1 city0)  (at person2 city2)  (at person3 city0)  (at person4 city1)  (at person5 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 15
+States generated: 31
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-4-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-4-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 5 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile5.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 46 reachable facts from 46 original facts.
+Found 464 applicable actions from 464 original actions
+Goal is: (and (at person4 city3)  (at person2 city3)  (at person3 city3)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 14
+States generated: 11
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane1 city1)
+1: (fly plane1 city1 city3 fl6 fl5)
+2: (board person1 plane1 city3)
+3: (fly plane1 city3 city0 fl5 fl4)
+4: (board person2 plane1 city0)
+5: (board person3 plane1 city0)
+6: (fly plane1 city0 city2 fl4 fl3)
+7: (debark person1 plane1 city2)
+8: (fly plane1 city2 city3 fl3 fl2)
+9: (debark person2 plane1 city3)
+10: (debark person3 plane1 city3)
+11: (debark person4 plane1 city3)
+Final plan length is 12
+EHC Plan Time = 0.110358388 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-5-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-5-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/parallel_EHC/zenotravel-5-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 6 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile6.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 52 reachable facts from 52 original facts.
+Found 480 applicable actions from 480 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person1 city3)  (at person2 city1)  (at person3 city3) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 13
+States generated: 7
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane2 city1)
+1: (board person5 plane1 city2)
+2: (fly plane1 city2 city0 fl5 fl4)
+3: (board person1 plane1 city0)
+4: (board person2 plane1 city0)
+5: (fly plane1 city0 city3 fl4 fl3)
+6: (debark person1 plane1 city3)
+7: (zoom plane1 city3 city1 fl3 fl2 fl1)
+8: (debark person2 plane1 city1)
+9: (debark person5 plane1 city1)
+10: (zoom plane2 city1 city3 fl3 fl2 fl1)
+11: (debark person4 plane2 city3)
+Final plan length is 12
+EHC Plan Time = 0.127895313 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-6-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-6-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 12
+
+Successful plans:
+Value: 12
+ ./solutions/parallel_EHC/zenotravel-6-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 7 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile7.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 58 reachable facts from 58 original facts.
+Found 496 applicable actions from 496 original actions
+Goal is: (and (at person4 city3)  (at plane2 city1)  (at person5 city2)  (at person3 city3)  (at person6 city2)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 46
+States generated: 138
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-7-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-7-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 8 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile8.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 84 reachable facts from 84 original facts.
+Found 1095 applicable actions from 1095 original actions
+Goal is: (and (at person1 city0)  (at person5 city3)  (at person4 city0)  (at person2 city0)  (at plane1 city3)  (at person6 city2)  (at person3 city1) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 25
+States generated: 27
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (fly plane1 city0 city1 fl6 fl5)
+1: (board person1 plane1 city1)
+2: (fly plane3 city0 city2 fl3 fl2)
+3: (board person3 plane3 city2)
+4: (zoom plane1 city1 city0 fl5 fl4 fl3)
+5: (debark person1 plane1 city0)
+6: (fly plane1 city0 city3 fl3 fl2)
+7: (zoom plane3 city2 city1 fl2 fl1 fl0)
+8: (debark person3 plane3 city1)
+9: (zoom plane1 city3 city4 fl2 fl1 fl0)
+10: (board person6 plane1 city4)
+11: (refuel plane1 city4 fl0 fl1)
+12: (fly plane1 city4 city2 fl1 fl0)
+13: (debark person6 plane1 city2)
+14: (refuel plane1 city2 fl0 fl1)
+15: (fly plane1 city2 city3 fl1 fl0)
+Final plan length is 16
+EHC Plan Time = 0.315257569 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-8-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-8-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 16
+
+Successful plans:
+Value: 16
+ ./solutions/parallel_EHC/zenotravel-8-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 9 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile9.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 92 reachable facts from 92 original facts.
+Found 1125 applicable actions from 1125 original actions
+Goal is: (and (at person5 city1)  (at person4 city3)  (at person2 city0)  (at person6 city4)  (at person7 city4)  (at person3 city4)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 31
+States generated: 76
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-9-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-9-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 10 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile10.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 100 reachable facts from 100 original facts.
+Found 1155 applicable actions from 1155 original actions
+Goal is: (and (at person8 city3)  (at person6 city3)  (at person2 city2)  (at person4 city1)  (at person7 city4)  (at person1 city1)  (at person3 city3)  (at plane1 city2)  (at person5 city0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 74
+States generated: 327
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person3 plane2 city4)
+1: (board person4 plane2 city4)
+2: (board person6 plane1 city0)
+3: (board person8 plane1 city0)
+4: (fly plane1 city0 city3 fl2 fl1)
+5: (board person1 plane1 city3)
+6: (board person2 plane1 city3)
+7: (debark person6 plane1 city3)
+8: (debark person8 plane1 city3)
+9: (fly plane1 city3 city0 fl1 fl0)
+10: (refuel plane1 city0 fl0 fl1)
+11: (fly plane2 city4 city1 fl5 fl4)
+12: (board person5 plane2 city1)
+13: (board person7 plane2 city1)
+14: (fly plane1 city0 city1 fl1 fl0)
+15: (debark person1 plane1 city1)
+16: (debark person2 plane1 city1)
+17: (board person2 plane2 city1)
+18: (refuel plane1 city1 fl0 fl1)
+19: (fly plane1 city1 city2 fl1 fl0)
+20: (debark person4 plane2 city1)
+21: (fly plane2 city1 city3 fl4 fl3)
+22: (debark person3 plane2 city3)
+23: (zoom plane2 city3 city0 fl3 fl2 fl1)
+24: (debark person5 plane2 city0)
+25: (fly plane2 city0 city2 fl1 fl0)
+26: (debark person2 plane2 city2)
+27: (refuel plane2 city2 fl0 fl1)
+28: (fly plane2 city2 city4 fl1 fl0)
+29: (debark person7 plane2 city4)
+Final plan length is 30
+EHC Plan Time = 0.596006521 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-10-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-10-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 30
+
+Successful plans:
+Value: 30
+ ./solutions/parallel_EHC/zenotravel-10-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 11 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile11.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 102 reachable facts from 102 original facts.
+Found 1548 applicable actions from 1548 original actions
+Goal is: (and (at person4 city2)  (at person7 city0)  (at person1 city4)  (at person3 city2)  (at plane1 city1)  (at person6 city4)  (at person2 city1)  (at person5 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 119
+States generated: 438
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-11-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-11-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 12 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile12.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 111 reachable facts from 111 original facts.
+Found 1584 applicable actions from 1584 original actions
+Goal is: (and (at person5 city4)  (at person8 city4)  (at person4 city4)  (at person6 city1)  (at person7 city3)  (at person2 city1)  (at person3 city1)  (at person1 city2) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 38
+States generated: 83
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person6 plane1 city2)
+1: (board person7 plane3 city5)
+2: (board person8 plane3 city5)
+3: (fly plane2 city3 city4 fl6 fl5)
+4: (board person1 plane2 city4)
+5: (board person2 plane2 city4)
+6: (fly plane2 city4 city1 fl5 fl4)
+7: (board person5 plane2 city1)
+8: (fly plane2 city1 city4 fl4 fl3)
+9: (debark person5 plane2 city4)
+10: (fly plane2 city4 city1 fl3 fl2)
+11: (debark person2 plane2 city1)
+12: (zoom plane1 city2 city1 fl3 fl2 fl1)
+13: (debark person6 plane1 city1)
+14: (zoom plane2 city1 city2 fl2 fl1 fl0)
+15: (debark person1 plane2 city2)
+16: (fly plane1 city1 city0 fl1 fl0)
+17: (board person3 plane1 city0)
+18: (refuel plane1 city0 fl0 fl1)
+19: (fly plane1 city0 city1 fl1 fl0)
+20: (debark person3 plane1 city1)
+21: (zoom plane3 city5 city3 fl2 fl1 fl0)
+22: (debark person7 plane3 city3)
+23: (refuel plane3 city3 fl0 fl1)
+24: (fly plane3 city3 city4 fl1 fl0)
+25: (debark person8 plane3 city4)
+Final plan length is 26
+EHC Plan Time = 0.615722655 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-12-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-12-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26
+
+Successful plans:
+Value: 26
+ ./solutions/parallel_EHC/zenotravel-12-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 13 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile13.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 129 reachable facts from 129 original facts.
+Found 1656 applicable actions from 1656 original actions
+Goal is: (and (at person6 city3)  (at person4 city0)  (at person1 city4)  (at person9 city3)  (at plane1 city4)  (at person5 city2)  (at person3 city4)  (at person2 city5)  (at person10 city4)  (at person8 city0) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 134
+States generated: 868
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person4 plane1 city4)
+1: (fly plane1 city4 city1 fl2 fl1)
+2: (board person1 plane1 city1)
+3: (board person3 plane1 city1)
+4: (board person6 plane1 city1)
+5: (board person9 plane1 city1)
+6: (fly plane1 city1 city0 fl1 fl0)
+7: (refuel plane1 city0 fl0 fl1)
+8: (fly plane2 city3 city4 fl6 fl5)
+9: (debark person4 plane1 city0)
+10: (fly plane1 city0 city3 fl1 fl0)
+11: (debark person6 plane1 city3)
+12: (debark person9 plane1 city3)
+13: (fly plane3 city3 city2 fl6 fl5)
+14: (board person2 plane3 city2)
+15: (board person8 plane3 city2)
+16: (fly plane3 city2 city0 fl5 fl4)
+17: (debark person8 plane3 city0)
+18: (fly plane3 city0 city5 fl4 fl3)
+19: (board person10 plane3 city5)
+20: (board person5 plane3 city5)
+21: (refuel plane1 city3 fl0 fl1)
+22: (debark person2 plane3 city5)
+23: (fly plane1 city3 city4 fl1 fl0)
+24: (debark person1 plane1 city4)
+25: (debark person3 plane1 city4)
+26: (fly plane3 city5 city4 fl3 fl2)
+27: (debark person10 plane3 city4)
+28: (zoom plane3 city4 city2 fl2 fl1 fl0)
+29: (debark person5 plane3 city2)
+Final plan length is 30
+EHC Plan Time = 1.766333085 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-13-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-13-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 30
+
+Successful plans:
+Value: 30
+ ./solutions/parallel_EHC/zenotravel-13-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 14 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile14.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 235 reachable facts from 235 original facts.
+Found 6800 applicable actions from 6800 original actions
+Goal is: (and (at person5 city1)  (at person6 city6)  (at plane4 city5)  (at person8 city1)  (at person3 city2)  (at person10 city9)  (at person4 city7)  (at plane2 city3)  (at person9 city5)  (at person2 city8)  (at person7 city5)  (at plane5 city8) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 78
+States generated: 434
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-14-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-14-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 15 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile15.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 350 reachable facts from 350 original facts.
+Found 10080 applicable actions from 10080 original actions
+Goal is: (and (at person12 city4)  (at person8 city11)  (at person4 city6)  (at person6 city11)  (at person5 city8)  (at person10 city9)  (at person11 city6)  (at person13 city11)  (at person7 city2)  (at person1 city1)  (at person14 city4)  (at person2 city4)  (at person15 city6)  (at person3 city7) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 141
+States generated: 780
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person12 plane5 city5)
+1: (board person4 plane5 city5)
+2: (fly plane2 city3 city10 fl4 fl3)
+3: (board person2 plane2 city10)
+4: (board person6 plane2 city10)
+5: (fly plane2 city10 city1 fl3 fl2)
+6: (board person15 plane2 city1)
+7: (board person5 plane2 city1)
+8: (fly plane2 city1 city11 fl2 fl1)
+9: (board person10 plane2 city11)
+10: (board person7 plane2 city11)
+11: (debark person6 plane2 city11)
+12: (fly plane2 city11 city2 fl1 fl0)
+13: (debark person7 plane2 city2)
+14: (fly plane3 city2 city11 fl1 fl0)
+15: (fly plane4 city9 city11 fl1 fl0)
+16: (refuel plane2 city2 fl0 fl1)
+17: (fly plane2 city2 city11 fl1 fl0)
+18: (fly plane5 city5 city1 fl1 fl0)
+19: (refuel plane2 city11 fl0 fl1)
+20: (refuel plane5 city1 fl0 fl1)
+21: (fly plane2 city11 city8 fl1 fl0)
+22: (board person13 plane2 city8)
+23: (board person8 plane2 city8)
+24: (fly plane5 city1 city4 fl1 fl0)
+25: (board person1 plane2 city8)
+26: (board person11 plane5 city4)
+27: (debark person5 plane2 city8)
+28: (refuel plane2 city8 fl0 fl1)
+29: (debark person12 plane5 city4)
+30: (fly plane2 city8 city1 fl1 fl0)
+31: (debark person1 plane2 city1)
+32: (refuel plane2 city1 fl0 fl1)
+33: (fly plane2 city1 city11 fl1 fl0)
+34: (debark person13 plane2 city11)
+35: (debark person8 plane2 city11)
+36: (refuel plane2 city11 fl0 fl1)
+37: (fly plane2 city11 city4 fl1 fl0)
+38: (debark person2 plane2 city4)
+39: (refuel plane2 city4 fl0 fl1)
+40: (fly plane2 city4 city6 fl1 fl0)
+41: (debark person15 plane2 city6)
+42: (refuel plane2 city6 fl0 fl1)
+43: (fly plane2 city6 city9 fl1 fl0)
+44: (debark person10 plane2 city9)
+45: (refuel plane5 city4 fl0 fl1)
+46: (fly plane5 city4 city6 fl1 fl0)
+47: (debark person11 plane5 city6)
+48: (debark person4 plane5 city6)
+Final plan length is 49
+EHC Plan Time = 15.654710334 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-15-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-15-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 49
+
+Successful plans:
+Value: 49
+ ./solutions/parallel_EHC/zenotravel-15-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 16 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile16.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 390 reachable facts from 390 original facts.
+Found 13300 applicable actions from 13300 original actions
+Goal is: (and (at person13 city13)  (at person8 city11)  (at person1 city3)  (at person6 city7)  (at person12 city12)  (at plane3 city6)  (at plane2 city12)  (at person10 city6)  (at person9 city2)  (at person4 city13)  (at person14 city4)  (at person2 city4)  (at person7 city1)  (at person3 city11)  (at person5 city11)  (at person11 city0)  (at person15 city4) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 140
+States generated: 872
+----------------------------------------------------
+Found EHC plan: 
+Final plan...
+0: (board person11 plane3 city10)
+1: (board person13 plane1 city6)
+2: (board person14 plane5 city1)
+3: (board person3 plane2 city0)
+4: (board person4 plane4 city4)
+5: (board person9 plane5 city1)
+6: (fly plane1 city6 city11 fl2 fl1)
+7: (fly plane1 city11 city13 fl1 fl0)
+8: (board person5 plane1 city13)
+9: (debark person13 plane1 city13)
+10: (fly plane2 city0 city6 fl3 fl2)
+11: (fly plane2 city6 city12 fl2 fl1)
+12: (board person2 plane2 city12)
+13: (fly plane2 city12 city11 fl1 fl0)
+14: (debark person3 plane2 city11)
+15: (fly plane3 city10 city0 fl5 fl4)
+16: (debark person11 plane3 city0)
+17: (fly plane3 city0 city11 fl4 fl3)
+18: (fly plane3 city11 city6 fl3 fl2)
+19: (fly plane4 city4 city13 fl4 fl3)
+20: (board person15 plane4 city13)
+21: (fly plane5 city1 city2 fl6 fl5)
+22: (board person10 plane5 city2)
+23: (board person8 plane5 city2)
+24: (debark person4 plane4 city13)
+25: (debark person9 plane5 city2)
+26: (fly plane4 city13 city12 fl3 fl2)
+27: (fly plane4 city12 city4 fl2 fl1)
+28: (debark person15 plane4 city4)
+29: (fly plane4 city4 city12 fl1 fl0)
+30: (fly plane5 city2 city11 fl5 fl4)
+31: (debark person8 plane5 city11)
+32: (fly plane5 city11 city7 fl4 fl3)
+33: (board person12 plane5 city7)
+34: (fly plane5 city7 city12 fl3 fl2)
+35: (debark person12 plane5 city12)
+36: (refuel plane1 city13 fl0 fl1)
+37: (fly plane1 city13 city11 fl1 fl0)
+38: (debark person5 plane1 city11)
+39: (refuel plane2 city11 fl0 fl1)
+40: (fly plane5 city12 city4 fl2 fl1)
+41: (debark person14 plane5 city4)
+42: (fly plane5 city4 city6 fl1 fl0)
+43: (debark person10 plane5 city6)
+44: (fly plane2 city11 city12 fl1 fl0)
+45: (refuel plane2 city12 fl0 fl1)
+46: (zoom plane3 city6 city3 fl2 fl1 fl0)
+47: (fly plane2 city12 city4 fl1 fl0)
+48: (debark person2 plane2 city4)
+49: (refuel plane2 city4 fl0 fl1)
+50: (fly plane2 city4 city12 fl1 fl0)
+51: (refuel plane3 city3 fl0 fl1)
+52: (fly plane3 city3 city8 fl1 fl0)
+53: (board person1 plane3 city8)
+54: (refuel plane3 city8 fl0 fl1)
+55: (fly plane3 city8 city3 fl1 fl0)
+56: (debark person1 plane3 city3)
+57: (refuel plane3 city3 fl0 fl1)
+58: (fly plane3 city3 city6 fl1 fl0)
+Final plan length is 59
+EHC Plan Time = 41.120113494 sec
+BFS Plan Time = 0.0 sec
+Scheduling Time = 0.0 sec
+Plan written to /home/msi/Documents/University/Year3/Individual_Project/Making Search in AI Planning More Efficient or User Scrutible/javaff/./solutions/parallel_EHC/zenotravel-16-4_threads.sol
+Checking plan: ./solutions/parallel_EHC/zenotravel-16-4_threads.sol
+Plan executed successfully - checking goal
+Plan valid
+Final value: 59
+
+Successful plans:
+Value: 59
+ ./solutions/parallel_EHC/zenotravel-16-4_threads.sol 
+
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 17 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile17.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 535 reachable facts from 535 original facts.
+Found 17760 applicable actions from 17760 original actions
+Goal is: (and (at person5 city12)  (at person12 city6)  (at person10 city7)  (at person16 city12)  (at person11 city7)  (at person1 city4)  (at person2 city11)  (at person19 city5)  (at person8 city13)  (at person20 city13)  (at person15 city14)  (at plane3 city7)  (at person17 city1)  (at plane1 city14)  (at person7 city5)  (at person9 city9)  (at person18 city1)  (at person6 city0)  (at person3 city0)  (at plane5 city12)  (at person13 city2)  (at person4 city12)  (at person14 city10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 266
+States generated: 1869
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-17-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-17-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 18 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile18.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 585 reachable facts from 585 original facts.
+Found 21960 applicable actions from 21960 original actions
+Goal is: (and (at person2 city17)  (at person12 city4)  (at person14 city2)  (at person7 city6)  (at person9 city4)  (at person13 city14)  (at person15 city9)  (at person8 city8)  (at person5 city9)  (at person16 city9)  (at plane2 city6)  (at person19 city2)  (at person6 city13)  (at person11 city6)  (at person10 city16)  (at person20 city17)  (at person18 city6)  (at person4 city14)  (at person1 city2)  (at person3 city7)  (at person17 city15) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+-------------------- Statistics --------------------
+Number of threads used: 4
+States expanded: 297
+States generated: 1903
+----------------------------------------------------
+Failed to find solution using EHC
+No plan found
+Checking plan: ./solutions/parallel_EHC/zenotravel-18-4_threads.sol
+Bad plan file!
+
+
+Failed plans:
+ ./solutions/parallel_EHC/zenotravel-18-4_threads.sol 
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 19 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile19.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 760 reachable facts from 760 original facts.
+Found 27600 applicable actions from 27600 original actions
+Goal is: (and (at person10 city13)  (at person14 city0)  (at plane1 city11)  (at person11 city13)  (at person17 city0)  (at person2 city1)  (at person12 city17)  (at person24 city13)  (at person13 city3)  (at plane2 city8)  (at person23 city12)  (at person16 city19)  (at person1 city10)  (at person19 city17)  (at person18 city4)  (at person9 city17)  (at person25 city2)  (at person15 city13)  (at person20 city14)  (at person22 city4)  (at person5 city0)  (at person8 city0)  (at person7 city0)  (at person21 city17)  (at person3 city13)  (at person4 city9)  (at person6 city16) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
+-------------------------------------- zenotravel - 20 --------------------------------------------
+Parsed Domain file ./problems/zenotravel/domain.pddl successfully
+Parsed Problem file ./problems/zenotravel/pfile20.pddl successfully
+Grounding...
+Grounding complete
+Performing RPG reachability analysis...
+Found 820 reachable facts from 820 original facts.
+Found 32780 applicable actions from 32780 original actions
+Goal is: (and (at person10 city5)  (at person24 city18)  (at person15 city0)  (at person23 city4)  (at person11 city18)  (at person22 city2)  (at person2 city0)  (at person25 city21)  (at person13 city0)  (at person17 city4)  (at person16 city13)  (at person6 city4)  (at person9 city20)  (at person5 city8)  (at person18 city9)  (at person7 city12)  (at person14 city1)  (at person21 city10)  (at person20 city1)  (at person19 city16)  (at person4 city7)  (at person3 city18)  (at person8 city16)  (at person1 city5)  (at person12 city10) )
+Running FF with EHC...
+Performing search using EHC with standard helpful action filter
+---------------------------------------------------------------------------------------------
+
+
