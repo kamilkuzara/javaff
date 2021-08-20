@@ -1,37 +1,37 @@
-# JavaFF2.1
-An implementation of the [FF](https://fai.cs.uni-saarland.de/hoffmann/ff.html) forward search planning system in Java. JavaFF 2.1 is itself a branch of [JavaFF](https://nms.kcl.ac.uk/planning/software/javaff.html) planner by Andrew Coles, to allow parsing and solving of PDDL 2.1 level 1 problems. Additional improvements include optimisation to enable order-of-magnitude speedups over vanilla JavaFF. This is most likely version 2.1.8, which supports STRIPS and ADL planning, but not metrics and temporal aspects. The code to do this exists within JavaFF but has been disabled (somewhere) as it was unnecessary for my purposes and introduced additional complexity. 
+# JavaFF
+This repository contains the implementation of the parallel algorithms proposed as part of the 3rd year individual project entitled "Introducing parallelism to the JavaFF planner". The algorithms developed reside in different branches:
 
-Older versions of JavaFF are kicking about Github in various places via people who requested the code personally, most likely JavaFF 2.1.5. See http://personal.strath.ac.uk/david.pattison/ (while it is still available) for this and other older versions.
+ - Vanilla JavaFF - branch name: main
+ - Parallel Computation of Heuristics - branch name: concurrent-heuristics-BFS
+ - Parallel Best-First Search - branch name: concurrent-BFS
+ - Parallel Enforced Hill-Climbing Search - branch name: parallel-EHC
+
+You are currently in branch: main. In order to switch to a different branch, type:
+    git checkout <branch-name>
 
 # Usage
-The usage of the code is the same as [vanilla JavaFF](https://nms.kcl.ac.uk/planning/software/javaff.html). In other words, run javaff.JavaFF.main() with a domain and problem file.  Be sure to add the contents of the /lib directory to the classpath.
+The system comes with a suite of shell scripts designed to make using and testing of the system more convenient. Each script is listed below along with a description of what it does and how to use it.
 
-# Citation
+1. clean.sh - removes all .class files from the workspace, it is recommended to use this script every time before compiling the code; 
+    usage: ./clean.sh
+2. compile.sh - compiles the source code; 
+    usage: ./compile.sh
+3. run.sh - runs the program on the given input; takes 3 arguments: domain name, number of the problem file, solution file path (optionally); problems can be selected from the "problem" directory;
+    note: the program must be compiled before executing run.sh; 
+    usage: ./run.sh <domain-name> <problem-file-number> [<solution-file>]
+            e.g. ./run.sh driverlog 8
+4. validate.sh - runs the validate program from the "res" directory; note: res/validate must first be made executable (to do this, run: chmod u+x ./res/validate);
+    usage: ./validate.sh <domain-name> <problem-file-number> <solution-file>
+            e.g. ./validate.sh driverlog 8 plan.sol
+5. runall.sh - runs the program for multiple problems with a 10 min limit for a problem, otherwise equivalent to executing run.sh multiple times;
+    usage: ./runall.sh <domain-name> <first-problem-file-number> <last-problem-file-number>
+            e.g. ./runall.sh driverlog 1 15     <- will run JavaFF on all problems from 1 to 15 (inclusive)
 
-For citing JavaFF 2.1 specifically, use 
+Note, that the scripts may need to be made executable first. To do this, run:
+    chmod u+x <script-name>
+    e.g. chmod u+x run.sh   <- to make the run.sh script executable
 
-```
-@phdthesis{phdthesis,
-  author       = {David Pattison}, 
-  title        = {A New Heuristic Based Model of Goal Recognition Without Libraries},
-  school       = {University of Strathclyde},
-  year         = 2015
-}
-```
+The rest of the scripts have been used for testing purposes and are not needed in order to use JavaFF.
 
-For citing JavaFF generally, use Coles' paper from 2008
-
-```
-@INPROCEEDINGS{ac2008001,
-	author = "A. I. Coles and M. Fox and D. Long and A. J. Smith",
-	title = "Teaching Forward-Chaining Planning with {JavaFF}",
-	booktitle = "Colloquium on {AI} Education, Twenty-Third {AAAI} Conference on Artificial Intelligence",
-	year = "2008",
-	month = "July",
-}
-```
-
-
-
-# Help
-As far as I'm concerned, JavaFF can be considered completely obsolete from a planning perspective (15 year old heuristic), but the underlying framework is robust enough to develop from (although I never did get around to decoupling the PlanningGraph from States, which causes me great depression). However, I personally do not maintain this code base, so I release it to the Github ether in the hope others will find it useful. Feel free to send me a message asking questions about the code, but I can't guarantee I will have a useful answer!
+# Problem Files
+The repository has been supplied with domains and problem files from the Strips track of the 2002 IPC. They can be found in the "problems" directory. When using any of the shell scripts, where JavaFF is executed, the problems will be selected from this directory.
