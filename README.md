@@ -2,7 +2,7 @@
 This repository contains the implementation of the parallel algorithms proposed as part of the 3rd year individual project entitled "Introducing parallelism to the JavaFF planner". The algorithms developed reside in different branches:
 
  - Vanilla JavaFF - branch name: main
- - Parallel Computation of Heuristics - branch name: concurrent-heuristics-BFS
+ - Parallel Computation of Heuristics - branch name: concurrent-heuristics-BFS      (this is the only algorithm described in the report)
  - Parallel Best-First Search - branch name: concurrent-BFS
  - Parallel Enforced Hill-Climbing Search - branch name: parallel-EHC
 
